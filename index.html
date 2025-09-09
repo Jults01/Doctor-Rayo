@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- ================== META BÁSICA ================== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Doctor Rayo - Compra, vende o repara tu celular</title>
+  <meta name="description" content="Doctor Rayo es tu sitio ideal para comprar, vender o reparar celulares en Bogotá. Servicio técnico a domicilio con garantía, compra y venta segura de móviles.">
+  <link rel="canonical" href="https://www.doctorrayo.com/">
+
+  <!-- ================== FUENTES ================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+  </noscript>
+
+  <!-- ================== CSS GLOBAL ================== -->
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+  <!-- ================== HEADER ==================
+       Logo + acciones rápidas (Renueva, Login, Carrito) -->
+  <header class="main-header">
+    <div class="header-wrapper">
+      <div class="logo">
+        <a href="index.html" aria-label="Inicio Doctor Rayo">
+          <h1>Doctor Rayo</h1>
+        </a>
+      </div>
+
+      <div class="header-actions">
+        <!-- Botón RENUEVA (estilo outline definido en index.css) -->
+        <div class="header-action renueva-button">
+          <a href="/renueva.html" class="button">
+            Renueva
+            <img src="img/renueva-icon.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+          </a>
+        </div>
+
+        <!-- Login -->
+        <div class="header-action login-button">
+          <a href="/login.html" aria-label="Iniciar sesión">
+            <img src="img/login-icon.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+          </a>
+        </div>
+
+        <!-- Carrito -->
+        <div class="header-action carrito-button">
+          <a href="/carrito.html" aria-label="Ver carrito de compras">
+            <img src="img/cart-icon.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+            <span class="cart-count visually-hidden">0</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================== NAV CATEGORÍAS (desktop) ==================
+       Dropdowns accesibles con JS al final de la página -->
+  <nav class="categorias-nav" aria-label="Categorías principales de productos">
+    <ul id="main-navigation">
+      <li class="dropdown">
+        <a href="categorias/celulares" class="nav-link" id="celularesDropdown" aria-haspopup="true" aria-expanded="false">Celulares</a>
+        <ul class="dropdown-menu" aria-labelledby="celularesDropdown">
+          <li><a href="categorias/celulares/iphone">iPhone</a></li>
+          <li><a href="categorias/celulares/samsung">Samsung</a></li>
+          <li><a href="categorias/celulares/xiaomi">Xiaomi</a></li>
+          <li><a href="categorias/celulares/motorola">Motorola</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="categorias/tablets" class="nav-link" id="tabletsDropdown" aria-haspopup="true" aria-expanded="false">Tablets</a>
+        <ul class="dropdown-menu" aria-labelledby="tabletsDropdown">
+          <li><a href="categorias/tablets/ipad">iPad</a></li>
+        </ul>
+      </li>
+
+      <li><a href="categorias/accesorios" class="nav-link">Accesorios</a></li>
+      <li><a href="ofertas" class="nav-link">Ofertas</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- ================== BANNER PRINCIPAL ================== -->
+    <section class="banner-principal" role="banner">
+      <div class="overlay">
+        <h2>¡Compra, vende o repara tu celular!</h2>
+        <p>La mejor solución para tus dispositivos móviles.</p>
+      </div>
+    </section>
+
+    <!-- ================== REPARACIÓN A DOMICILIO (compacto) ==================
+         4 tarjetas compactas: icono a la izquierda + título -->
+    <section class="benefits benefits--checklist" aria-label="Reparación a domicilio">
+      <div class="container">
+        <h2>Reparamos tu celular sin salir de casa</h2>
+
+        <ul class="checklist">
+          <li>
+            <details>
+              <summary>
+                <span class="benefit-icon">
+                  <img src="img/domicilio.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+                </span>
+                <span class="benefit-title">Servicio a domicilio</span>
+              </summary>
+            </details>
+          </li>
+
+          <li>
+            <details>
+              <summary>
+                <span class="benefit-icon">
+                  <img src="img/repuestos.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+                </span>
+                <span class="benefit-title">Repuestos de calidad</span>
+              </summary>
+            </details>
+          </li>
+
+          <li>
+            <details>
+              <summary>
+                <span class="benefit-icon">
+                  <img src="img/garantia.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+                </span>
+                <span class="benefit-title">Garantía 90 días</span>
+              </summary>
+            </details>
+          </li>
+
+          <li>
+            <details>
+              <summary>
+                <span class="benefit-icon">
+                  <img src="img/cobertura.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+                </span>
+                <span class="benefit-title">Cobertura Bogotá</span>
+              </summary>
+            </details>
+          </li>
+        </ul>
+
+        <!-- CTA hacia la página de Reparación -->
+        <div class="benefits-cta">
+          <a class="cta-button button" href="reparacion.html">Cotiza ahora</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================== MODELOS DESTACADOS ================== -->
+    <section class="shelf" aria-label="Modelos destacados">
+      <div class="container">
+        <div class="shelf-head">
+          <h2>Sugerencias para ti</h2>
+          <a class="shelf-ver-todo" href="categorias/celulares">Ver todos</a>
+        </div>
+
+        <!-- Track de tarjetas inyectadas por JS (mock) -->
+        <div class="shelf-track" id="shelf-track" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- ================== ¿CÓMO TRABAJAMOS? ================== -->
+    <section class="descripcion-servicios">
+      <div class="container">
+        <h2>¿Cómo trabajamos?</h2>
+        <p>Doctor Rayo es el sitio ideal para comprar, vender o reparar tu celular. El proceso es rápido y seguro.</p>
+        <p>Para vender, envías fotos por WhatsApp y en menos de 15 minutos te damos una oferta clara y justa.</p>
+        <p>En reparaciones, contamos con servicio técnico a domicilio. Usamos repuestos de calidad y herramientas profesionales.</p>
+        <p>Cada reparación incluye garantía por escrito de hasta 90 días y soporte post-servicio.</p>
+      </div>
+    </section>
+
+    <!-- ================== REVIEWS (FLECHAS, SIN AUTOPLAY) ================== -->
+    <section class="reviews" aria-label="Opiniones de clientes">
+      <div class="container">
+        <h2>Clientes felices</h2>
+
+        <div class="reviews-row">
+          <button class="reviews-btn reviews-prev" type="button" aria-label="Anterior" aria-controls="reviews-track">‹</button>
+
+          <div class="reviews-viewport" tabindex="0" aria-label="Carrusel de opiniones">
+            <div class="reviews-track" id="reviews-track">
+              <figure class="review">
+                <blockquote>Excelente servicio, me cambiaron pantalla a domicilio y quedó como nueva.</blockquote>
+                <figcaption>— Laura G.</figcaption>
+              </figure>
+              <figure class="review">
+                <blockquote>Vendí mi iPhone en el mismo día, pago justo y rápido.</blockquote>
+                <figcaption>— Andrés P.</figcaption>
+              </figure>
+              <figure class="review">
+                <blockquote>Demasiado contenta con mi iPhone 11 Pro. Increíble el estado en el que me lo dieron.</blockquote>
+                <figcaption>— Rosa</figcaption>
+              </figure>
+              <figure class="review">
+                <blockquote>iPhone 12 mini perfecto, llegó en 2 días y con batería muy buena.</blockquote>
+                <figcaption>— Joanna</figcaption>
+              </figure>
+              <figure class="review">
+                <blockquote>Todo claro y rápido, 100% recomendados.</blockquote>
+                <figcaption>— Camila R.</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <button class="reviews-btn reviews-next" type="button" aria-label="Siguiente" aria-controls="reviews-track">›</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================== FOOTER ================== -->
+  <footer class="main-footer" role="contentinfo">
+    <div class="footer-wrapper container">
+      <div class="footer-column footer-about">
+        <h2>Doctor Rayo</h2>
+        <p>Sitio ideal para comprar, vender o reparar tu celular.</p>
+      </div>
+
+      <div class="footer-column footer-services">
+        <h3>Servicios</h3>
+        <nav aria-label="Servicios">
+          <ul>
+            <li><a href="comprar.html">Comprar</a></li>
+            <li><a href="vender.html">Vender</a></li>
+            <li><a href="reparacion.html">Reparar</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer-column footer-contact">
+        <h3>Contacto</h3>
+        <address>
+          <p>Email: <a href="mailto:contacto@doctorrayo.com">contacto@doctorrayo.com</a></p>
+          <p>Teléfono: <a href="tel:+573046486740">+57 304 6486740</a></p>
+          <p>Ciudad: Bogotá, Colombia</p>
+        </address>
+      </div>
+
+      <div class="footer-column footer-social">
+        <h3>Síguenos</h3>
+        <ul class="redes-sociales">
+          <li><a href="https://www.instagram.com/doctorrayo" target="_blank" rel="noopener" aria-label="Instagram de Doctor Rayo">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; <span id="current-year"></span> Doctor Rayo. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- ================== BOTÓN WHATSAPP FLOTANTE ================== -->
+  <a href="https://wa.me/573046486740" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Enviar mensaje por WhatsApp a Doctor Rayo">
+    <img src="whatsapp-icon.png" alt="WhatsApp" loading="lazy" decoding="async">
+  </a>
+
+  <!-- ================== JS: NAV DROPDOWN (accesible) ================== -->
+  <script>
+    (() => {
+      document.querySelectorAll(".dropdown > .nav-link").forEach(link => {
+        link.addEventListener("click", e => {
+          const li = link.parentElement;
+          const open = li.classList.toggle("show");
+          link.setAttribute("aria-expanded", String(open));
+          e.preventDefault();
+        });
+      });
+      const closeAll = () => {
+        document.querySelectorAll(".dropdown.show").forEach(li => {
+          li.classList.remove("show");
+          const a = li.querySelector(".nav-link");
+          a && a.setAttribute("aria-expanded","false");
+        });
+      };
+      document.addEventListener("click", e => { if(!e.target.closest(".dropdown")) closeAll(); });
+      document.addEventListener("keydown", e => { if(e.key === "Escape") closeAll(); });
+    })();
+  </script>
+
+  <!-- ================== JS: MODELOS DESTACADOS (mock) ================== -->
+  <script>
+    (() => {
+      const data = [
+        {name:"iPhone 12",   price:"Desde $1.190.000", badge:"Mejor precio", img:"img/prod-iphone12.jpg", href:"categorias/celulares/iphone"},
+        {name:"iPhone 13",   price:"Desde $1.690.000", badge:"Top ventas",   img:"img/prod-iphone13.jpg", href:"categorias/celulares/iphone"},
+        {name:"Samsung S21", price:"Desde $1.250.000", badge:"Recomendado",  img:"img/prod-s21.jpg",      href:"categorias/celulares/samsung"},
+        {name:"Xiaomi 12",   price:"Desde $980.000",   badge:"Ahorra",       img:"img/prod-xiaomi12.jpg", href:"categorias/celulares/xiaomi"},
+        {name:"Motorola G",  price:"Desde $620.000",   badge:"Económico",    img:"img/prod-moto-g.jpg",   href:"categorias/celulares/motorola"}
+      ];
+      const track = document.getElementById("shelf-track");
+      if(!track) return;
+
+      track.innerHTML = data.map(p => `
+        <article class="shelf-card">
+          <img src="${p.img}" alt="${p.name}" loading="lazy" decoding="async">
+          <div class="card-body">
+            <span class="badge">${p.badge}</span>
+            <h3>${p.name}</h3>
+            <div class="price">${p.price}</div>
+            <a class="cta" href="${p.href}">Ver más</a>
+          </div>
+        </article>
+      `).join("");
+    })();
+  </script>
+
+  <!-- ================== JS: REVIEWS (flechas, sin autoplay) ================== -->
+  <script>
+    (() => {
+      const track    = document.getElementById('reviews-track');
+      const prev     = document.querySelector('.reviews-prev');
+      const next     = document.querySelector('.reviews-next');
+      const viewport = document.querySelector('.reviews-viewport');
+      if(!track || !prev || !next) return;
+
+      const getGap = () => {
+        const cs = getComputedStyle(track);
+        return parseInt(cs.columnGap || cs.gap || "16", 10);
+      };
+      const getStep = () => {
+        const first = track.querySelector('.review');
+        if(!first) return 0;
+        return first.offsetWidth + getGap(); // desplaza exactamente 1 tarjeta
+      };
+      const clamp = () => {
+        const max = track.scrollWidth - track.clientWidth - 1;
+        const atStart = track.scrollLeft <= 0;
+        const atEnd   = track.scrollLeft >= max;
+        prev.classList.toggle('is-disabled', atStart);
+        next.classList.toggle('is-disabled', atEnd);
+        prev.setAttribute('aria-disabled', atStart ? 'true' : 'false');
+        next.setAttribute('aria-disabled', atEnd ? 'true' : 'false');
+      };
+      const by = (dir) => {
+        const step = getStep();
+        if(!step) return;
+        track.scrollBy({ left: dir * step, behavior: 'smooth' });
+      };
+
+      viewport?.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft')  { e.preventDefault(); by(-1); }
+        if (e.key === 'ArrowRight') { e.preventDefault(); by( 1); }
+      });
+      prev.addEventListener('click', () => by(-1));
+      next.addEventListener('click', () => by( 1));
+      track.addEventListener('scroll', clamp, { passive: true });
+      addEventListener('resize', clamp);
+      clamp();
+    })();
+  </script>
+
+  <!-- ================== JS: AÑO DEL FOOTER ================== -->
+  <script>
+    document.getElementById("current-year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

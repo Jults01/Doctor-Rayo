@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Cambio de batería | Doctor Rayo</title>
+  <meta name="description" content="Cambia la batería de tu celular con repuestos de calidad y garantía. Servicio a domicilio en Bogotá.">
+  <link rel="canonical" href="https://www.doctorrayo.com/bateria.html">
+
+  <!-- CSS global -->
+  <link rel="stylesheet" href="css/index.css">
+  <!-- CSS específico -->
+  <link rel="stylesheet" href="css/bateria.css">
+</head>
+<body class="battery-page" data-service="bateria">
+
+  <!-- ======= HEADER ======= -->
+  <header class="main-header">
+    <div class="header-wrapper">
+      <div class="logo"><a href="index.html"><h1>Doctor Rayo</h1></a></div>
+      <div class="header-actions">
+        <div class="header-action renueva-button">
+          <a href="/renueva.html">Renueva
+            <img src="img/renueva-icon.svg" alt="" aria-hidden="true">
+          </a>
+        </div>
+        <div class="header-action login-button">
+          <a href="/login.html" aria-label="Iniciar sesión">
+            <img src="img/login-icon.svg" alt="" aria-hidden="true">
+          </a>
+        </div>
+        <div class="header-action carrito-button">
+          <a href="/carrito.html" aria-label="Ver carrito">
+            <img src="img/cart-icon.svg" alt="" aria-hidden="true">
+            <span class="cart-count visually-hidden">0</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======= NAV ======= -->
+  <nav class="categorias-nav" aria-label="Categorías principales de productos">
+    <ul id="main-navigation">
+      <li class="dropdown">
+        <a href="categorias/celulares" class="nav-link">Celulares</a>
+        <ul class="dropdown-menu">
+          <li><a href="categorias/celulares/iphone">iPhone</a></li>
+          <li><a href="categorias/celulares/samsung">Samsung</a></li>
+          <li><a href="categorias/celulares/xiaomi">Xiaomi</a></li>
+          <li><a href="categorias/celulares/motorola">Motorola</a></li>
+        </ul>
+      </li>
+      <li><a href="categorias/tablets" class="nav-link">Tablets</a></li>
+      <li><a href="categorias/accesorios" class="nav-link">Accesorios</a></li>
+      <li><a href="ofertas" class="nav-link">Ofertas</a></li>
+    </ul>
+  </nav>
+
+  <!-- ======= HERO ======= -->
+  <section class="battery-hero" role="banner">
+    <div class="overlay">
+      <h1>Cambio de batería</h1>
+      <p>Reemplazamos la batería con repuestos de calidad, mano de obra incluida y garantía.</p>
+    </div>
+  </section>
+
+  <!-- ======= SELECTOR ======= -->
+  <section class="scr" aria-label="Selecciona tu equipo">
+    <div class="container">
+      <h2>Elige tu equipo</h2>
+      <div class="scr-row">
+        <!-- Marca -->
+        <div class="scr-card">
+          <div class="scr-dd" id="dd-marca">
+            <button type="button" class="scr-dd-btn" aria-haspopup="listbox" aria-expanded="false">
+              <span class="label">Marca</span>
+              <span class="value" data-placeholder="Selecciona">Selecciona</span>
+              <span class="chev">▼</span>
+            </button>
+            <ul class="scr-dd-menu" role="listbox" aria-label="Marcas"></ul>
+          </div>
+        </div>
+        <!-- Modelo -->
+        <div class="scr-card">
+          <div class="scr-dd is-disabled" id="dd-modelo">
+            <button type="button" class="scr-dd-btn" aria-haspopup="listbox" aria-expanded="false" disabled>
+              <span class="label">Modelo</span>
+              <span class="value" data-placeholder="Selecciona">Selecciona</span>
+              <span class="chev">▼</span>
+            </button>
+            <ul class="scr-dd-menu" role="listbox" aria-label="Modelos"></ul>
+          </div>
+        </div>
+        <!-- Estimado -->
+        <div class="scr-card">
+          <div class="scr-estimado">
+            <div class="txt">
+              <div class="monto" id="estimado-monto">Estimado: —</div>
+              <div class="nota">Incluye mano de obra</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="scr-cta">
+        <a id="cta-wa" class="button" href="#" target="_blank" rel="noopener" disabled>Enviar a WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= INCLUYE ======= -->
+  <section class="includes" aria-label="Qué incluye">
+    <div class="container">
+      <h2>¿Qué incluye?</h2>
+      <ul class="list">
+        <li>Batería nueva de alta calidad</li>
+        <li>Mano de obra especializada</li>
+        <li>Pruebas de carga y rendimiento</li>
+        <li>Revisión de conectores y limpieza</li>
+        <li>Garantía por escrito de hasta 90 días</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ======= FAQ ======= -->
+  <section class="svc-faq" aria-label="Preguntas frecuentes">
+    <div class="container">
+      <h2>Preguntas frecuentes</h2>
+      <details>
+        <summary>¿Cuánto tarda el cambio de batería?</summary>
+        <p>La mayoría entre 30 y 60 minutos, según modelo y disponibilidad.</p>
+      </details>
+      <details>
+        <summary>¿La batería es original?</summary>
+        <p>Trabajamos con repuestos de calidad premium y, en algunos casos, originales.</p>
+      </details>
+      <details>
+        <summary>¿Mantengo la garantía del fabricante?</summary>
+        <p>No, ya que el equipo es abierto. Pero tienes nuestra garantía por escrito.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ======= FOOTER ======= -->
+  <footer class="main-footer" role="contentinfo">
+    <div class="footer-wrapper container">
+      <div class="footer-column footer-about">
+        <h2>Doctor Rayo</h2>
+        <p>Reparación, compra y venta de celulares.</p>
+      </div>
+      <div class="footer-column footer-services">
+        <h3>Servicios</h3>
+        <ul>
+          <li><a href="comprar.html">Comprar</a></li>
+          <li><a href="vender.html">Vender</a></li>
+          <li><a href="reparacion.html">Reparar</a></li>
+        </ul>
+      </div>
+      <div class="footer-column footer-contact">
+        <h3>Contacto</h3>
+        <address>
+          <p>Email: <a href="mailto:contacto@doctorrayo.com">contacto@doctorrayo.com</a></p>
+          <p>Teléfono: <a href="tel:+573046486740">+57 304 6486740</a></p>
+          <p>Bogotá, Colombia</p>
+        </address>
+      </div>
+      <div class="footer-column footer-social">
+        <h3>Síguenos</h3>
+        <ul class="redes-sociales">
+          <li><a href="https://www.instagram.com/doctorrayo" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="current-year"></span> Doctor Rayo. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- ======= JS ======= -->
+  <script src="js/service.js"></script>
+  <script>
+    // Año dinámico en footer
+    document.getElementById("current-year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "Apple": {
+    "iPhone 11": 200000,
+    "iPhone 12": 230000,
+    "iPhone 13": 250000
+  },
+  "Samsung": {
+    "Galaxy S20": 180000,
+    "Galaxy S21": 200000,
+    "Galaxy A54": 170000
+  },
+  "Xiaomi": {
+    "Redmi Note 10": 150000,
+    "Redmi Note 11": 160000
+  },
+  "Motorola": {
+    "Moto G60": 150000,
+    "Moto G Stylus": 160000
+  }
+}

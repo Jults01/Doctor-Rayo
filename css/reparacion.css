@@ -1,0 +1,234 @@
+/* ========================================================================
+   reparacion.css — estilos solo para la página de Reparación
+   ======================================================================== */
+
+/* ==================== BANNER ==================== */
+.banner-principal{
+  background:url('../img/reparar-hero.jpg') no-repeat center/cover;
+  height:350px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  text-align:center;
+  overflow:hidden;
+}
+.banner-principal .overlay{
+  background:var(--color-overlay);
+  padding:var(--space-xxl) var(--space-xxxl);
+  border-radius:10px;
+  color:var(--color-text-light);
+  max-width:90%;
+}
+.banner-principal h2{
+  font-size:var(--font-size-xxl-h2);
+  margin-bottom:var(--gap-title-content);
+  line-height:1.2;
+  color:#fff;
+}
+.banner-principal p{
+  font-size:var(--font-size-base);
+  margin-bottom:var(--gap-title-content);
+  max-width:500px;
+  margin-inline:auto;
+  color:#f5f5f5;
+}
+
+/* ==================== VARIABLES LOCALES ==================== */
+.repair-page{
+  --gap-title-content-repair: var(--gap-title-content);
+  --gap-section-repair: var(--gap-section);
+
+  --steps-grid-gap: 10px;
+  --step-card-padding: 12px;
+  --step-n-size: 44px;
+  --step-n-left: 10px;
+  --step-title-mb: 2px;
+  --step-text-mt: 2px;
+}
+
+/* ==================== HERO TEXTO ==================== */
+.repair-page .hero{
+  padding:32px 0;
+  text-align:center;
+  background:var(--color-white);
+}
+.repair-page .hero h1{
+  font-size:clamp(1.8rem,2.2vw,2.4rem);
+  color:var(--color-text-dark);
+  margin:0 0 var(--gap-title-content-repair);
+}
+.repair-page .hero p{
+  max-width:720px;
+  margin:0 auto var(--gap-title-content-repair);
+  color:var(--color-text-medium);
+}
+
+/* ==================== SECCIÓN ¿CUÁL ES TU DAÑO? ==================== */
+.reparar-main{
+  max-width:1200px;
+  margin:var(--gap-section-repair) auto;
+  padding:0 1rem;
+}
+.elige-dano{
+  text-align:center;
+  margin-bottom:0 !important;
+}
+.elige-dano h2{
+  font-size:2rem;
+  font-weight:700;
+  margin:0 0 12px;
+}
+.elige-dano p{
+  font-size:1rem;
+  color:#555;
+  max-width:700px;
+  margin:12px auto;
+}
+.grid-danos{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:1.5rem;
+  padding:1rem 1rem 0 !important; /* quita padding inferior */
+  max-width:1000px;
+  margin:0 auto;
+}
+.dano-card{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:1rem;
+  background:#fff;
+  border:1px solid #ddd;
+  border-radius:8px;
+  transition:box-shadow .3s ease, transform .2s ease;
+  text-decoration:none;
+  color:#222;
+}
+.dano-card:hover{
+  box-shadow:0 4px 15px rgba(0,0,0,.1);
+  transform:translateY(-3px);
+}
+.dano-card img{
+  width:60px;
+  height:60px;
+  object-fit:contain;
+  margin-bottom:.5rem;
+}
+.dano-card span{
+  font-size:1rem;
+  font-weight:600;
+}
+
+/* ==================== PASOS (CÓMO FUNCIONA) ==================== */
+.repair-page .steps{
+  margin-top:0 !important; 
+  margin-bottom:var(--gap-section-repair);
+}
+.repair-page .steps h2{
+  text-align:center;
+  margin-bottom:var(--gap-title-content-repair);
+  font-size:var(--font-size-xxl-h2);
+  color:var(--color-text-dark);
+}
+.repair-page .steps-grid{
+  display:grid;
+  gap:var(--steps-grid-gap);
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+}
+.repair-page .step{
+  border:1px solid var(--color-medium-gray);
+  border-radius:12px;
+  background:#fff;
+  box-shadow:0 2px 6px var(--color-shadow-light);
+  padding:var(--step-card-padding);
+  padding-left:calc(var(--step-card-padding) + var(--step-n-size) + var(--step-n-left) + 1px);
+  position:relative;
+  display:grid;
+  grid-template-columns:1fr;
+  align-items:flex-start;
+}
+.repair-page .step .n{
+  width:var(--step-n-size);
+  height:var(--step-n-size);
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font-weight:700;
+  color:var(--color-text-dark);
+  position:absolute;
+  left:var(--step-n-left);
+  top:50%;
+  transform:translateY(-50%);
+}
+.repair-page .step h3{
+  margin:0 0 var(--step-title-mb);
+  font-weight:700;
+  font-size:.95rem;
+  color:var(--color-text-dark);
+}
+.repair-page .step p{
+  margin:var(--step-text-mt) 0 0;
+  color:var(--color-text-medium);
+  font-size:.95rem;
+}
+.repair-page .steps .cta-bottom{
+  display:flex;
+  justify-content:center;
+  margin-top:var(--gap-title-content-repair);
+}
+
+/* ==================== FAQ (CUADROS ESTILO TARJETA) ==================== */
+.repair-page .faq{
+  margin:var(--gap-section-repair) 0;
+}
+.repair-page .faq .container{
+  max-width:900px;
+  margin:0 auto;
+  padding:0 var(--space-xl);
+}
+.repair-page .faq h2{
+  text-align:center;
+  margin:0 0 var(--gap-title-content-repair);
+  font-size:var(--font-size-xxl-h2);
+  color:var(--color-text-dark);
+}
+.repair-page .faq details{
+  border:1px solid var(--color-medium-gray);
+  border-radius:10px;
+  background:#fff;
+  box-shadow:0 2px 6px var(--color-shadow-light);
+  padding:12px;
+  margin-bottom:12px;
+  transition:border-color .15s ease, box-shadow .15s ease;
+}
+.repair-page .faq summary{
+  cursor:pointer;
+  font-weight:600;
+  color:var(--color-text-dark);
+  list-style:none; /* evita la viñeta */
+}
+.repair-page .faq summary::-webkit-details-marker{
+  display:none !important; /* quita la flecha en Chrome/Safari */
+}
+.repair-page .faq summary::marker{
+  content:""; /* quita la flecha en Firefox */
+}
+.repair-page .faq details[open]{
+  border-color:var(--color-primary);
+  box-shadow:0 8px 18px var(--color-shadow-medium);
+}
+.repair-page .faq p{
+  margin-top:8px;
+  color:var(--color-text-medium);
+}
+
+/* ==================== NAV CATEGORÍAS ==================== */
+.repair-page .categorias-nav{
+  display:none;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width:767px){
+  .repair-page .hero{ padding:24px 0; }
+}

@@ -1,0 +1,43 @@
+{
+  "Apple": {
+    "iPhone 11": {
+      "economica": { "precio": [280000, 330000] },
+      "premium":   { "precio": [380000, 450000] },
+      "original":  { "precio": [520000, 650000] },
+      "tiempo": "60–90 min",
+      "garantia": "90 días"
+    },
+    "iPhone 13": {
+      "economica": { "precio": [520000, 600000] },
+      "premium":   { "precio": [650000, 780000] },
+      "original":  { "precio": [900000, 1150000] },
+      "tiempo": "60–90 min",
+      "garantia": "90 días"
+    }
+  },
+  "Samsung": {
+    "Galaxy S21": {
+      "economica": { "precio": [450000, 520000] },
+      "premium":   { "precio": [600000, 750000] },
+      "original":  { "precio": [850000, 1100000] },
+      "tiempo": "60–90 min",
+      "garantia": "90 días"
+    }
+  },
+  "Xiaomi": {
+    "Redmi Note 10": {
+      "economica": { "precio": [220000, 260000] },
+      "premium":   { "precio": [300000, 360000] },
+      "tiempo": "45–75 min",
+      "garantia": "90 días"
+    }
+  },
+  "Motorola": {
+    "Moto G60": {
+      "economica": { "precio": [260000, 320000] },
+      "premium":   { "precio": [340000, 400000] },
+      "tiempo": "60–90 min",
+      "garantia": "90 días"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "brands": [
+    {
+      "id": "apple",
+      "name": "Apple",
+      "models": [
+        { "id": "iphone-11", "name": "iPhone 11", "est": 320000 },
+        { "id": "iphone-12", "name": "iPhone 12", "est": 420000 },
+        { "id": "iphone-13", "name": "iPhone 13", "est": 520000 }
+      ]
+    },
+    {
+      "id": "samsung",
+      "name": "Samsung",
+      "models": [
+        { "id": "galaxy-s21", "name": "Galaxy S21", "est": 360000 },
+        { "id": "galaxy-s22", "name": "Galaxy S22", "est": 450000 }
+      ]
+    },
+    {
+      "id": "xiaomi",
+      "name": "Xiaomi",
+      "models": [
+        { "id": "mi-11", "name": "Mi 11", "est": 280000 },
+        { "id": "redmi-note-10", "name": "Redmi Note 10", "est": 210000 }
+      ]
+    }
+  ]
+}

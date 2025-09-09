@@ -1,0 +1,652 @@
+/* =========================================================
+   [S1] VARIABLES GLOBALES
+   - Colores, tipografía, espaciados y tamaños base reutilizables
+   - Los bloques con [EDITA AQUÍ] son los más “tocables” sin romper nada
+   ========================================================= */
+:root{
+  /* ---- Paleta ---- */
+  --color-primary:#e60000;
+  --color-primary-dark:#c40000;
+  --color-accent-green:#25d366;
+  --color-accent-green-dark:#1ebe57;
+  --color-text-dark:#0b0b0b;
+  --color-text-medium:#333;
+  --color-text-light:#e6e6e6;
+  --color-white:#fff;
+  --color-light-gray:#eee;
+  --color-medium-gray:#ddd;
+  --color-dark-gray:#444;
+  --color-black:#000;
+  --color-footer-text:#ccc;
+  --color-shadow-light:rgba(0,0,0,.05);
+  --color-shadow-medium:rgba(0,0,0,.08);
+  --color-shadow-strong:rgba(0,0,0,.15);
+  --color-overlay:rgba(0,0,0,.65);
+
+  /* ---- Espaciado + ritmo vertical ---- */
+  --space-xs:5px;
+  --space-sm:8px;
+  --space-md:12px;
+  --space-lg:16px;
+  --space-xl:20px;
+  --space-xxl:30px;
+  --space-xxxl:40px;
+  --gap-title-content:24px;   /* [EDITA AQUÍ] distancia típica Título → Contenido */
+  --gap-section:24px;         /* [EDITA AQUÍ] separación entre secciones */
+  --transition-speed:.3s;
+
+  /* ---- Tipografía ---- */
+  --font-size-sm:.9rem;
+  --font-size-base:1rem;
+  --font-size-md:15px;
+  --font-size-lg:20px;
+  --font-size-xl-h1:20px;                /* tamaño del “logo” (H1 en header) */
+  --font-size-xxl-h2:2rem;               /* títulos de sección */
+  --font-size-xxxl-h2-banner:2.5rem;     /* H2 del banner */
+
+  /* ---- Modelos destacados (shelf) ---- */
+  --shelf-card-w:180px;   /* [EDITA AQUÍ] ancho de cada card en carrusel móvil */
+  --shelf-img-h:140px;    /* [EDITA AQUÍ] alto fijo del contenedor de la imagen */
+  --shelf-gap:10px;
+
+  /* ---- Reviews (carrusel) ---- */
+  --reviews-cols:4;
+  --reviews-gap:14px;
+  --reviews-card-min:220px;
+  --reviews-card-max:280px;
+  --reviews-nav-size:40px;
+  --reviews-edge-pad:6px;
+
+  /* ---- Beneficios (checklist debajo del banner) ---- */
+  /* [EDITA AQUÍ] tamaños de tarjetas e iconos del bloque “Reparamos tu celular…” */
+  --benefit-card-min:220px;     /* ancho mínimo de cada tarjeta */
+  --benefit-card-gap:12px;      /* separación entre tarjetas */
+  --benefit-card-padding:2px;   /* padding interno de la tarjeta */
+  --benefit-icon-size:44px;     /* diámetro del icono circular */
+  --benefit-title-size:1rem;    /* tamaño del título */
+  --benefit-more-size:.95rem;   /* tamaño del texto extra */
+}
+
+
+/* =========================================================
+   [S2] BASE / RESET
+   - Estilos base, helpers y utilidades generales
+   ========================================================= */
+*{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; }
+body{
+  font-family:'Poppins',sans-serif;
+  line-height:1.6;
+  background:var(--color-white);
+  color:var(--color-text-dark);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+a{ text-decoration:none; color:inherit; }
+.container{ max-width:1200px; margin:0 auto; padding:0 var(--space-xl); }
+.visually-hidden{
+  position:absolute; width:1px; height:1px; margin:-1px; padding:0;
+  overflow:hidden; clip:rect(0,0,0,0); border:0; white-space:nowrap;
+}
+
+/* Botón principal (CTA sólido) — usado en banner, “Cotiza ahora”, etc. */
+.button{
+  display:inline-block;
+  padding:var(--space-md) var(--space-xxl);
+  border-radius:999px;
+  font-weight:600;
+  border:1px solid var(--color-primary);
+  background:var(--color-primary);
+  color:#fff;
+  cursor:pointer;
+  transition:background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+.button:hover,
+.button:focus{
+  transform:translateY(-2px);
+  outline:none;
+  background:var(--color-primary-dark);
+  border-color:var(--color-primary-dark);
+}
+
+
+/* =========================================================
+   [S3] HEADER
+   - Cabecera, logo y acciones (Renueva, login, carrito)
+   ========================================================= */
+.main-header{
+  background:var(--color-white);
+  border-bottom:0;
+  padding:var(--space-sm) 0;
+  box-shadow:none;
+}
+.header-wrapper{
+  max-width:1200px;
+  margin:0 auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 var(--space-xl);
+}
+.logo h1,
+.logo a{ 
+  font-weight:600; color:var(--color-primary); 
+  font-size:var(--font-size-xl-h1); 
+}
+.logo a:hover h1,
+.logo a:focus h1{ color:var(--color-primary-dark); }
+
+.header-actions{ display:flex; gap:var(--space-lg); align-items:center; }
+.header-action a{ transition:border-color var(--transition-speed) ease, transform var(--transition-speed) ease; }
+
+/* Botón “Renueva” en formato outline (sin fondo) */
+.renueva-button a{
+  display:inline-flex;
+  align-items:center;
+  gap:var(--space-sm);
+  padding:var(--space-xs) var(--space-md);
+  border-radius:20px;
+  font-weight:500;
+  font-size:14px;
+  color:var(--color-text-dark);
+  border:1px solid var(--color-medium-gray);
+  background:transparent;
+  transition:border-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+.renueva-button a:hover,
+.renueva-button a:focus{
+  background:transparent !important;     /* no rellenar */
+  border-color:var(--color-primary);     /* solo borde rojo */
+  color:var(--color-text-dark);          /* conserva color de texto */
+}
+.renueva-button a img{                   /* [EDITA AQUÍ] tamaño icono Renueva */
+  width:var(--space-lg);
+  height:var(--space-lg);
+}
+
+.login-button a,
+.carrito-button a{
+  display:inline-flex;
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  justify-content:center;
+  align-items:center;
+  border:1px solid var(--color-medium-gray);
+  position:relative;
+}
+.login-button a img,
+.carrito-button a img{ width:18px; height:18px; } /* [EDITA AQUÍ] tamaño iconos login/carrito */
+
+.carrito-button .cart-count{
+  position:absolute; top:-5px; right:-5px;
+  background:var(--color-primary); color:#fff;
+  font-size:.7rem; font-weight:600; padding:2px 6px; border-radius:50%;
+  min-width:18px; text-align:center; line-height:1; display:flex; align-items:center; justify-content:center;
+}
+.header-action a:hover,
+.header-action a:focus{ border-color:var(--color-primary); transform:translateY(-1px); }
+
+
+/* =========================================================
+   [S4] NAV + DROPDOWN
+   - Menú de categorías y submenús
+   ========================================================= */
+.categorias-nav{
+  background:var(--color-white);
+  border-bottom:1px solid var(--color-light-gray);
+  margin-top:-15px;
+}
+.categorias-nav ul{
+  max-width:1200px; 
+  margin:0 auto; 
+  padding:1px 10px; 
+  list-style:none;
+  display:flex; 
+  gap:30px; 
+  justify-content:center; 
+  flex-wrap:wrap;
+}
+.categorias-nav li{ position:relative; }
+.categorias-nav .nav-link{
+  font-weight:500; color:var(--color-text-medium); font-size:var(--font-size-md);
+  padding:4px; display:block; transition:color var(--transition-speed) ease;
+}
+.categorias-nav .nav-link:hover,
+.categorias-nav .nav-link:focus,
+.categorias-nav li.active > .nav-link{ color:var(--color-primary); }
+
+.dropdown-menu{
+  position:absolute; top:100%; left:50%;
+  transform:translateX(-50%) translateY(8px) scale(.96);
+  background:#fff; border:1px solid var(--color-medium-gray); border-radius:8px;
+  width:max-content; min-width:140px; max-width:250px;
+  box-shadow:0 4px 12px rgba(0,0,0,.06);
+  z-index:100; padding:var(--space-xs) 0; list-style:none;
+  display:block !important;
+  opacity:0; visibility:hidden; pointer-events:none;
+  transition:opacity var(--transition-speed) ease, transform var(--transition-speed) ease, visibility var(--transition-speed) ease;
+}
+.dropdown.show .dropdown-menu,
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu{
+  opacity:1; visibility:visible; pointer-events:auto;
+  transform:translateX(-50%) translateY(0) scale(1);
+  box-shadow:0 12px 26px var(--color-shadow-strong);
+}
+.dropdown-menu li a{
+  padding:6px var(--space-md); color:var(--color-text-dark); font-size:var(--font-size-sm);
+  display:block; text-align:center; transition:color .2s ease;
+}
+.dropdown-menu li a:hover,
+.dropdown-menu li a:focus{ color:var(--color-primary); }
+
+.dropdown.show > .nav-link{ background:var(--color-light-gray); border-radius:8px; color:var(--color-primary); }
+#main-navigation .nav-link::before{ content:none !important; }
+#nav-indicator{ display:none !important; }
+
+
+/* =========================================================
+   [S5] BANNER (home)
+   - Hero principal con título + texto
+   ========================================================= */
+.banner-principal{
+  background:url('../img/celular-vertical.jpg') no-repeat center/cover;
+  height:350px;
+  display:flex; align-items:center; justify-content:center;
+  position:relative; text-align:center; overflow:hidden;
+}
+.banner-principal .overlay{
+  background:var(--color-overlay);
+  padding:var(--space-xxl) var(--space-xxxl);
+  border-radius:10px;
+  color:var(--color-text-light);
+  max-width:90%;
+}
+.banner-principal h2{
+  font-size:var(--font-size-xxl-h2);
+  margin-bottom:var(--gap-title-content);
+  line-height:1.2;
+  color:#fff;
+}
+.banner-principal p{
+  font-size:var(--font-size-base);
+  margin-bottom:var(--gap-title-content);
+  max-width:500px;
+  margin-inline:auto;
+  color:#f5f5f5;
+}
+
+
+/* =========================================================
+   [S6] BENEFICIOS (checklist + CTA)
+   - Bloque “Reparamos tu celular sin salir de casa”
+   - Icono a la izquierda + título (sin bold) + CTA inferior
+   ========================================================= */
+.benefits h2{
+  font-size:var(--font-size-xxl-h2);
+  color:var(--color-text-dark);
+  text-align:center;
+  margin-bottom:var(--gap-title-content);
+}
+
+/* grid de tarjetas */
+.benefits--checklist .checklist{
+  list-style:none;
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(var(--benefit-card-min), 1fr));
+  gap:var(--benefit-card-gap);
+  margin:0;
+  padding:0;
+}
+
+/* tarjeta / accordion */
+.benefits--checklist details{
+  border:1px solid var(--color-medium-gray);
+  border-radius:10px;
+  background:#fff;
+  box-shadow:0 2px 6px var(--color-shadow-light);
+  padding:var(--benefit-card-padding);
+  transition:border-color .15s ease, box-shadow .15s ease;
+}
+.benefits--checklist details:hover,
+.benefits--checklist details:focus-within{
+  border-color:var(--color-primary);
+  box-shadow:0 8px 18px var(--color-shadow-medium);
+}
+
+/* encabezado: icono izq + texto der */
+.benefits--checklist summary{
+  list-style:none;
+  cursor:pointer;
+  display:grid;
+  grid-template-columns:auto 1fr;
+  align-items:center;
+  gap:10px;
+  text-align:left;
+}
+.benefits--checklist summary::-webkit-details-marker{ display:none; }
+
+/* icono circular (puede llevar emoji o <img>) */
+.benefits--checklist .benefit-icon{
+  width:var(--benefit-icon-size);
+  height:var(--benefit-icon-size);
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:none;
+  overflow:hidden;
+}
+/* [EDITA AQUÍ] escala del <img> dentro del icono */
+.benefits--checklist .benefit-icon img{
+  width:70%;
+  height:70%;
+  object-fit:contain;
+  display:block;
+}
+
+/* textos sin negrilla */
+.benefits--checklist .benefit-title{
+  font-weight:400;
+  font-size:var(--benefit-title-size);
+  color:var(--color-text-dark);
+}
+.benefits--checklist .more{
+  margin-top:10px;
+  color:var(--color-text-medium);
+  font-size:var(--benefit-more-size);
+}
+.benefits--checklist .more-link{
+  margin-left:8px;
+  font-weight:400;
+  color:var(--color-primary);
+  text-decoration:underline;
+  text-underline-offset:2px;
+  transition:opacity .15s ease;
+}
+.benefits--checklist .more-link:hover,
+.benefits--checklist .more-link:focus{ opacity:.85; }
+
+/* CTA inferior (mismo botón del banner) */
+.benefits-cta{
+  margin-top:var(--gap-title-content);
+  display:flex;
+  justify-content:center;
+}
+
+
+/* =========================================================
+   [S7] SHELF (Modelos destacados)
+   - Carrusel en móvil / grid centrado en desktop
+   ========================================================= */
+.shelf{ background:#fff; padding:24px 0 0; }
+.shelf-head{ position:relative; padding:14px 0 22px; margin-bottom:0; }
+.shelf-head h2{
+  position:absolute; left:0; right:0; top:50%; transform:translateY(-50%);
+  font-size:var(--font-size-xxl-h2); color:var(--color-text-dark);
+  text-align:center; margin:0; pointer-events:none;
+}
+.shelf-ver-todo{ position:absolute; right:0; top:50%; transform:translateY(-50%); font-weight:600; color:var(--color-primary); }
+.shelf-ver-todo:hover{ text-decoration:underline; }
+
+/* Carrusel móvil/tablet */
+.shelf-track{
+  margin-top:var(--gap-title-content);
+  display:grid;
+  grid-auto-flow:column;
+  grid-auto-columns:var(--shelf-card-w);
+  gap:var(--shelf-gap);
+  overflow-x:auto;
+  padding-bottom:6px;
+  scroll-snap-type:x proximity;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+  touch-action:pan-x;
+}
+.shelf-track::-webkit-scrollbar{ display:none; }
+
+.shelf-card{
+  scroll-snap-align:start;
+  background:#fff;
+  border:1px solid var(--color-medium-gray);
+  border-radius:10px;
+  box-shadow:0 2px 6px var(--color-shadow-light);
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  transition:transform .2s ease, box-shadow .2s ease;
+  width:var(--shelf-card-w);
+  max-width:var(--shelf-card-w);
+}
+.shelf-card:hover{ transform:translateY(-4px); box-shadow:0 8px 18px var(--color-shadow-medium); }
+
+/* [EDITA AQUÍ] alto contenedor de imagen del producto */
+.shelf-card img{
+  width:100%;
+  height:var(--shelf-img-h);
+  object-fit:contain;
+  background:#fff;
+  padding:6px;
+}
+.shelf-card .card-body{ padding:6px 8px 10px; display:flex; flex-direction:column; gap:4px; }
+.shelf-card .badge{ align-self:flex-start; font-size:.65rem; font-weight:600; color:#fff; background:var(--color-primary); padding:2px 6px; border-radius:999px; }
+.shelf-card h3{ font-size:.9rem; color:var(--color-text-dark); line-height:1.2; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.shelf-card .price{ font-weight:700; color:var(--color-text-dark); font-size:.9rem; }
+.shelf-card .cta{
+  margin-top:6px;
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  border:1px solid var(--color-primary);
+  color:#fff;
+  background:var(--color-primary);
+  border-radius:999px;
+  padding:6px 10px;
+  font-weight:600;
+  font-size:.85rem;
+}
+.shelf-card .cta:hover{ background:var(--color-primary-dark); border-color:var(--color-primary-dark); }
+
+/* Desktop: pasa a grid 4→5 columnas (no afecta alto de imagen) */
+@media (min-width:992px){
+  .shelf-track{
+    display:grid; grid-auto-flow:initial; overflow:visible;
+    gap:var(--shelf-gap);
+    grid-template-columns:repeat(4,minmax(220px,1fr));
+    justify-content:center;
+  }
+  .shelf-card{ width:auto; max-width:none; }
+}
+@media (min-width:1200px){
+  .shelf-track{ grid-template-columns:repeat(5,minmax(220px,1fr)); }
+}
+
+
+/* =========================================================
+   [S8] DESCRIPCIÓN & REVIEWS
+   - Texto explicativo + carrusel de reseñas
+   ========================================================= */
+.descripcion-servicios{
+  background:var(--color-white);
+  max-width:900px;
+  margin:0 auto;
+  padding:0 var(--space-lg);
+  text-align:center;
+  color:var(--color-text-dark);
+}
+.descripcion-servicios h2,
+.reviews h2{
+  font-size:var(--font-size-xxl-h2);
+  text-align:center;
+  margin-bottom:var(--gap-title-content);
+}
+.descripcion-servicios p{
+  margin-bottom:var(--space-lg);
+  font-size:var(--font-size-base);
+  max-width:700px;
+  margin-inline:auto;
+}
+.descripcion-servicios p:last-child{ margin-bottom:0; }
+.descripcion-servicios p strong{ color:var(--color-primary-dark); }
+
+.reviews{ background:#fff; padding:0; }
+.reviews .container{ position:relative; }
+.reviews-row{ display:flex; align-items:center; gap:14px; }
+
+.reviews-btn{
+  width:var(--reviews-nav-size); height:var(--reviews-nav-size); aspect-ratio:1/1;
+  border-radius:50%; display:inline-flex; align-items:center; justify-content:center;
+  background:#fff; border:1px solid var(--color-medium-gray);
+  box-shadow:0 6px 16px var(--color-shadow-medium);
+  font-size:18px; line-height:1; cursor:pointer; user-select:none;
+  transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease, opacity .15s ease;
+}
+.reviews-btn:hover,
+.reviews-btn:focus{ transform:scale(1.06); border-color:var(--color-primary); box-shadow:0 10px 22px var(--color-shadow-strong); outline:none; }
+.reviews-btn.is-disabled{ opacity:.35; cursor:default; pointer-events:none; }
+
+.reviews-viewport{
+  position:relative; flex:1 1 auto; overflow:hidden; padding-inline:var(--reviews-edge-pad);
+}
+.reviews-viewport::before,
+.reviews-viewport::after{
+  content:""; position:absolute; top:0; bottom:0; width:34px; pointer-events:none;
+}
+.reviews-viewport::before{ left:0;  background:linear-gradient(90deg,#fff 40%,rgba(255,255,255,0)); }
+.reviews-viewport::after { right:0; background:linear-gradient(270deg,#fff 40%,rgba(255,255,255,0)); }
+
+.reviews-track{
+  display:grid; grid-auto-flow:column; gap:var(--reviews-gap);
+  overflow-x:auto; scroll-snap-type:x proximity; -webkit-overflow-scrolling:touch;
+  padding:6px 0; scrollbar-width:none;
+  grid-auto-columns:minmax(
+    var(--reviews-card-min),
+    min(var(--reviews-card-max),
+        calc((100% - (var(--reviews-gap) * (var(--reviews-cols) - 1))) / var(--reviews-cols))
+    )
+  );
+}
+.reviews-track::-webkit-scrollbar{ display:none; }
+
+.review{
+  scroll-snap-align:start;
+  border:1px solid var(--color-medium-gray);
+  border-radius:10px;
+  padding:12px;
+  background:#fff;
+  box-shadow:0 2px 6px var(--color-shadow-light);
+}
+.review blockquote{ margin:0 0 6px; font-size:.95rem; line-height:1.45; }
+.review figcaption{ color:var(--color-text-medium); font-weight:600; font-size:.9rem; }
+
+
+/* =========================================================
+   [S9] FOOTER
+   - Información de pie de página
+   ========================================================= */
+.main-footer{
+  background:var(--color-black);
+  color:#fff;
+  padding:var(--space-xxxl) var(--space-xl) var(--space-xl);
+  font-size:14px;
+}
+.footer-wrapper{
+  max-width:1200px; margin:0 auto var(--space-xl);
+  display:flex; flex-wrap:wrap; justify-content:space-between; gap:var(--space-xxl);
+}
+.footer-column{ flex:1 1 220px; min-width:180px; }
+.footer-column h2,
+.footer-column h3{ color:#fff; margin-bottom:var(--space-md); font-size:var(--font-size-lg); }
+.footer-column p,
+.footer-column ul li a{ color:var(--color-footer-text); line-height:1.8; }
+.footer-column ul{ list-style:none; padding:0; }
+.footer-column ul li{ margin-bottom:var(--space-sm); }
+.footer-column ul li a{ transition:color var(--transition-speed) ease; }
+.footer-column ul li a:hover,
+.footer-column ul li a:focus{ color:var(--color-primary); }
+.footer-column address{ font-style:normal; }
+.redes-sociales{ display:flex; gap:var(--space-lg); }
+
+
+/* =========================================================
+   [S10] WHATSAPP FLOAT
+   - Botón flotante de WhatsApp
+   ========================================================= */
+.whatsapp-float{
+  position:fixed; width:60px; height:60px; bottom:var(--space-xxl); right:var(--space-xxl);
+  background:var(--color-accent-green); border-radius:50%;
+  box-shadow:2px 2px 5px rgba(0,0,0,.3);
+  transition:background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+  z-index:1000; display:flex; align-items:center; justify-content:center;
+}
+.whatsapp-float img{ width:35px; } /* [EDITA AQUÍ] tamaño del ícono */
+.whatsapp-float:hover,
+.whatsapp-float:focus{ background:var(--color-accent-green-dark); transform:scale(1.05); outline:none; }
+
+
+/* =========================================================
+   [S11] RITMO / UTILIDADES
+   - Separaciones entre bloques y helpers de alineación
+   ========================================================= */
+.benefits h2,
+.shelf-head h2,
+.descripcion-servicios h2,
+.reviews h2{ margin-bottom:var(--gap-title-content); }
+
+.benefits,
+.shelf{ margin-bottom:0; padding-bottom:0; }
+.descripcion-servicios{ padding-top:0; }
+.reviews{ padding-top:0; }
+
+.benefits + .shelf{ margin-top:var(--gap-section); }
+.shelf + .descripcion-servicios{ margin-top:var(--gap-section); }
+.descripcion-servicios + .reviews{ margin-top:var(--gap-section); }
+
+/* Utilidades de texto/alineación */
+.u-text-left{ text-align:left!important; }
+.u-text-center{ text-align:center!important; }
+.u-text-right{ text-align:right!important; }
+.u-title-center h1,
+.u-title-center h2,
+.u-title-center h3{ text-align:center!important; }
+.u-subtitle-center h4,
+.u-subtitle-center h5,
+.u-subtitle-center h6,
+.u-subtitle-center p{ text-align:center!important; }
+.u-content-center{ text-align:center!important; }
+.u-content-center *{ text-align:inherit; }
+[data-title-align="center"] h1,
+[data-title-align="center"] h2,
+[data-title-align="center"] h3{ text-align:center!important; }
+
+
+/* =========================================================
+   [S12] RESPONSIVE
+   - Ajustes para móvil / tablet / desktop
+   ========================================================= */
+@media (max-width:767px){
+  .header-wrapper{ flex-direction:column; gap:var(--space-lg); padding:var(--space-md) var(--space-lg); }
+  .header-actions{ width:100%; justify-content:center; }
+  .logo{ margin-bottom:var(--space-sm); }
+  .categorias-nav{ display:none; }
+
+  .banner-principal{ height:280px; }
+  .banner-principal .overlay{ padding:var(--space-xl) var(--space-lg); }
+  .banner-principal h2{ font-size:1.6rem; }
+  .banner-principal p{ font-size:.9rem; }
+
+  /* Carruseles más anchos en móvil */
+  .shelf-track{ grid-auto-columns:80%; }
+  .reviews-btn{ display:none; }     /* swipe natural */
+  .reviews-track{ grid-auto-columns:85%; }
+
+  .whatsapp-float{ width:50px; height:50px; bottom:var(--space-lg); right:var(--space-lg); }
+  .whatsapp-float img{ width:30px; } /* ícono más pequeño en móvil */
+}
+@media (min-width:768px){
+  .banner-principal{ height:420px; }
+  .banner-principal h2{ font-size:var(--font-size-xxxl-h2-banner); }
+}
+@media (min-width:1024px){
+  .banner-principal{ height:500px; }
+}

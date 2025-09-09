@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* ==================== RESET ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff;
+  color: #000;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ==================== HEADER ==================== */
+header {
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 16px 24px;
+}
+
+.header-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo h1 {
+  font-size: 28px;
+  font-weight: 700;
+  transition: color 0.3s;
+}
+
+.logo h1:hover {
+  color: #e60000; /* COLOR AL HACER HOVER EN LOGO */
+}
+
+/* ==================== MENÚ ==================== */
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+}
+
+.menu a {
+  font-weight: 600;
+  color: #000;
+  transition: color 0.3s;
+}
+
+.menu a:hover {
+  color: #e60000;
+}
+
+/* ==================== HERO ==================== */
+.comprar-hero {
+  position: relative;
+  min-height: 300px;
+  background: url('../img/comprar-hero.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comprar-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
+.comprar-overlay {
+  position: relative;
+  color: #fff;
+  text-align: center;
+  max-width: 700px;
+  padding: 2rem;
+  background-color: rgba(0,0,0,0.6);
+  border-radius: 10px;
+}
+
+.comprar-overlay h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  /* CAMBIAR COLOR DEL H1 HERO */
+  color: #e6e6e6; 
+}
+
+.comprar-overlay p {
+  font-size: 1.1rem;
+}
+
+/* ==================== SECCIÓN MARCAS ==================== */
+.marcas {
+  background-color: #f9f9f9;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.marcas h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  color: #000; /* CAMBIAR COLOR DEL TÍTULO "Elige tu marca" */
+}
+
+.grid-marcas {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.5rem;
+}
+
+/* TARJETA DE CADA MARCA */
+.marca-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 2rem 1rem;
+  display: flex;                   /* Hacemos flex para centrar */
+  flex-direction: column;          /* Imagen arriba, texto abajo */
+  align-items: center;             /* Centrado horizontal */
+  justify-content: center;         /* Centrado vertical */
+  text-align: center;
+  transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.marca-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+
+/* IMAGEN DE LA MARCA */
+.marca-card img {
+  width: 80px;                     /* Tamaño consistente con beneficios */
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+/* TEXTO DE LA MARCA */
+.marca-card span {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #000; /* CAMBIAR COLOR DEL NOMBRE DE LA MARCA */
+}
+
+
+.beneficios {
+  padding: 3rem 1rem;
+  text-align: center;
+  background-color: #fff;
+}
+
+.beneficios h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  color: #000;
+}
+
+.grid-beneficios {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.beneficio-card {
+  background: transparent;
+  border: none;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.beneficio-card:hover {
+  transform: translateY(-3px);
+}
+
+.beneficio-card img {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 1rem;
+  object-fit: contain;
+  opacity: 0.9;
+}
+
+.beneficio-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #c40000;
+  transition: color 0.3s;
+}
+
+.beneficio-card h3:hover {
+  color: #e60000;
+}
+
+.beneficio-card p {
+  font-size: 0.95rem;
+  color: #555;
+  max-width: 260px;
+  margin: 0 auto;
+}
+
+
+/* ==================== CTA WHATSAPP ==================== */
+.cta-whatsapp {
+  padding: 3rem 1rem;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.cta-whatsapp h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: #000;
+}
+
+.cta-whatsapp .cta-subtext {
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+.cta-button {
+  background-color: #e60000;
+  color: #fff;
+  padding: 14px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #c40000;
+}
+
+
+/* ==================== FOOTER ==================== */
+footer {
+  background: #000;
+  color: #ccc;
+  padding: 2rem 1rem;
+}
+
+.footer-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.footer-column {
+  flex: 1 1 200px;
+  min-width: 180px;
+}
+
+.footer-column h2,
+.footer-column h3 {
+  color: #fff;
+  margin-bottom: 0.8rem;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-column a {
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.footer-column a:hover {
+  color: #e60000;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+/* ==================== WHATSAPP FLOAT ==================== */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+}
+
+.whatsapp-float img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 50%;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
+
+.whatsapp-float:hover img {
+  transform: scale(1.1);
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+  .comprar-overlay h1 {
+    font-size: 1.6rem;
+  }
+
+  .comprar-overlay p {
+    font-size: 1rem;
+  }
+
+  .cta-whatsapp h2 {
+    font-size: 1.6rem;
+  }
+}
+
+
+

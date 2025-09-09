@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Carrito de compras | Doctor Rayo</title>
+<link rel="stylesheet" href="carrito.css" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<header>
+  <div class="header-wrapper">
+    <div class="logo"><a href="index.html"><h1>Doctor Rayo</h1></a></div>
+    <nav class="menu">
+      <ul>
+        <li><a href="comprar.html">Compra</a></li>
+        <li><a href="vender.html">Vende</a></li>
+        <li><a href="reparar.html">Repara</a></li>
+        <li><a href="carrito.html" class="activo">Carrito</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="carrito-section">
+    <h2>Tu carrito de compras</h2>
+    <div id="carrito-container">
+      <!-- Aquí se inyectan los productos del carrito -->
+    </div>
+
+    <div class="total-compra" id="total-compra">
+      Total: $0 COP
+    </div>
+
+    <button id="btn-pagar" disabled>Proceder al pago</button>
+  </section>
+</main>
+
+<footer>
+  <!-- footer si quieres -->
+</footer>
+
+<script>
+  const carritoContainer = document.getElementById('carrito-container');
+  const totalCompraEl = document.getElementById('total-compra');
+  const btnPagar = document.getElementById('btn-pagar');
+
+  // Cargar carrito desde localStorage
+  let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+  function renderizarCarrito() {
+    carritoContainer.innerHTML = '';
+
+    if(carrito.length === 0) {
+      carritoContainer.innerHTML = '<p class="carrito-vacio">Tu carrito está vacío.</p>';
+      totalCompraEl.textContent = 'Total: $0 COP';
+      btnPagar.disabled = true;
+      return;
+    }
+
+    btnPagar.disabled = false;
+
+    carrito.forEach((producto, index) => {
+      const productoDiv = document.createElement('div');
+      productoDiv.classList.add('producto-carrito');
+
+      productoDiv.innerHTML = `
+        <img src="${producto.imagen}" alt="${producto.nombre}" />
+        <div class="info-producto">
+          <h3>${producto.nombre}</h3>
+          <p>${producto.descripcion}</p>
+          <p class="precio">$${producto.precio.toLocaleString('es-CO')} COP</p>
+          <div class="cantidad-control">
+            <label for="cantidad-${index}">Cantidad:</label>
+            <input type="number" id="cantidad-${index}" min="1" value="${producto.cantidad}" />
+          </div>
+          <button class="btn-eliminar" aria-label="Eliminar ${producto.nombre}">Eliminar</button>
+        </div>
+      `;
+
+      carritoContainer.appendChild(productoDiv);
+
+      // Event listener para cantidad
+      const inputCantidad = productoDiv.querySelector(`#cantidad-${index}`);
+      inputCantidad.addEventListener('change', (e) => {
+        let valor = parseInt(e.target.value);
+        if(isNaN(valor) || valor < 1) valor = 1;
+        e.target.value = valor;
+        carrito[index].cantidad = valor;
+        guardarYCacularTotal();
+      });
+
+      // Event listener para eliminar
+      const btnEliminar = productoDiv.querySelector('.btn-eliminar');
+      btnEliminar.addEventListener('click', () => {
+        carrito.splice(index, 1);
+        guardarYCacularTotal();
+        renderizarCarrito();
+      });
+    });
+
+    guardarYCacularTotal();
+  }
+
+  function guardarYCacularTotal() {
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+
+    const total = carrito.reduce((acc, prod) => acc + (prod.precio * prod.cantidad), 0);
+    totalCompraEl.textContent = `Total: $${total.toLocaleString('es-CO')} COP`;
+
+    btnPagar.disabled = carrito.length === 0;
+  }
+
+  btnPagar.addEventListener('click', () => {
+    alert('Funcionalidad de pasarela de pagos en desarrollo.');
+  });
+
+  // Inicializamos
+  renderizarCarrito();
+</script>
+
+</body>
+</html>
+
