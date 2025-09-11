@@ -650,3 +650,73 @@ a{ text-decoration:none; color:inherit; }
 @media (min-width:1024px){
   .banner-principal{ height:500px; }
 }
+/* =========================================================
+   FIXES MÓVILES - Doctor Rayo
+   ========================================================= */
+
+/* [FIX 1] Ajustar jerarquía de tamaños de títulos en móvil */
+@media (max-width:767px){
+  
+  /* Aumentar ligeramente el logo del header para mantener jerarquía */
+  .logo h1,
+  .logo a{ 
+    font-size: 22px; /* era 20px - ligeramente más grande */
+  }
+
+  /* Reducir títulos de sección para que no compitan con el header */
+  .shelf-head h2,
+  .benefits h2,
+  .descripcion-servicios h2,
+  .reviews h2{
+    font-size: 1.4rem; /* era 2rem - más proporcionado en móvil */
+    line-height: 1.3;
+  }
+
+  /* Título del banner se mantiene grande pero controlado */
+  .banner-principal h2{ 
+    font-size: 1.6rem; /* ya estaba bien */
+    line-height: 1.2;
+  }
+
+  /* [FIX 2] Reducir salto visual entre secciones en móvil */
+  :root {
+    --gap-title-content: 18px; /* era 24px - menos espacio en móvil */
+    --gap-section: 20px; /* era 24px - secciones más compactas */
+  }
+
+  /* [FIX 3] Ajustar espaciado específico del shelf/sugerencias */
+  .shelf-head{ 
+    padding: 10px 0 16px; /* era 14px 0 22px - más compacto */
+    margin-bottom: 0;
+  }
+
+  /* [FIX 4] Mejorar proporción de cards en móvil */
+  .shelf-track{ 
+    grid-auto-columns: 75%; /* era 80% - un poco más ajustado */
+    gap: 12px; /* era var(--shelf-gap) 10px - más espacio entre cards */
+  }
+
+  /* [FIX 5] Ajustar padding general en móvil */
+  .container{ 
+    padding: 0 16px; /* era var(--space-xl) 20px - más contenido visible */
+  }
+}
+
+/* [FIX 6] Tablet intermedio - suavizar la transición */
+@media (min-width:768px) and (max-width:991px){
+  .shelf-head h2,
+  .benefits h2,
+  .descripcion-servicios h2,
+  .reviews h2{
+    font-size: 1.6rem; /* transición suave entre móvil y desktop */
+  }
+}
+
+/* [FIX 7] Mejorar legibilidad en pantallas pequeñas */
+@media (max-width:479px){  
+  .shelf-head h2,
+  .benefits h2{
+    font-size: 1rem; /* aún más compacto en móviles pequeños */
+    font-weight: 600;
+  }
+}
