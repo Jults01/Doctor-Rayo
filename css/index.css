@@ -1,7 +1,5 @@
 /* =========================================================
-   [S1] VARIABLES GLOBALES
-   - Colores, tipografía, espaciados y tamaños base reutilizables
-   - Los bloques con [EDITA AQUÍ] son los más "tocables" sin romper nada
+   [S1] VARIABLES GLOBALES - [ACTUALIZADO]
    ========================================================= */
 :root{
   /* ---- Paleta ---- */
@@ -31,8 +29,8 @@
   --space-xl:20px;
   --space-xxl:30px;
   --space-xxxl:40px;
-  --gap-title-content:24px;   /* [EDITA AQUÍ] distancia típica Título → Contenido */
-  --gap-section:24px;         /* [EDITA AQUÍ] separación entre secciones */
+  --gap-title-content:24px;
+  --gap-section:24px;
   --transition-speed:.3s;
 
   /* ---- Tipografía ---- */
@@ -40,13 +38,13 @@
   --font-size-base:1rem;
   --font-size-md:15px;
   --font-size-lg:20px;
-  --font-size-xl-h1:20px;                /* tamaño del "logo" (H1 en header) */
-  --font-size-xxl-h2:2rem;               /* títulos de sección */
-  --font-size-xxxl-h2-banner:2.5rem;     /* H2 del banner */
+  --font-size-xl-h1:20px;
+  --font-size-xxl-h2:2rem;
+  --font-size-xxxl-h2-banner:2.5rem;
 
   /* ---- Modelos destacados (shelf) ---- */
-  --shelf-card-w:180px;   /* [EDITA AQUÍ] ancho de cada card en carrusel móvil */
-  --shelf-img-h:140px;    /* [EDITA AQUÍ] alto fijo del contenedor de la imagen */
+  --shelf-card-w:180px;
+  --shelf-img-h:140px;
   --shelf-gap:10px;
 
   /* ---- Reviews (carrusel) ---- */
@@ -58,20 +56,14 @@
   --reviews-edge-pad:6px;
 
   /* ---- Beneficios (checklist debajo del banner) ---- */
-  /* [EDITA AQUÍ] tamaños de tarjetas e iconos del bloque "Reparamos tu celular…" */
-  --benefit-card-min:220px;     /* ancho mínimo de cada tarjeta */
-  --benefit-card-gap:12px;      /* separación entre tarjetas */
-  --benefit-card-padding:2px;   /* padding interno de la tarjeta */
-  --benefit-icon-size:44px;     /* diámetro del icono circular */
-  --benefit-title-size:1rem;    /* tamaño del título */
-  --benefit-more-size:.95rem;   /* tamaño del texto extra */
+  --benefit-card-min:220px;
+  --benefit-card-gap:12px;
+  --benefit-card-padding:2px;
+  --benefit-icon-size:44px;
+  --benefit-title-size:1rem;
+  --benefit-more-size:.95rem;
 }
 
-
-/* =========================================================
-   [S2] BASE / RESET
-   - Estilos base, helpers y utilidades generales
-   ========================================================= */
 *{ box-sizing:border-box; margin:0; padding:0; }
 html{ scroll-behavior:smooth; }
 body{
@@ -89,7 +81,6 @@ a{ text-decoration:none; color:inherit; }
   overflow:hidden; clip:rect(0,0,0,0); border:0; white-space:nowrap;
 }
 
-/* Botón principal (CTA sólido) — usado en banner, "Cotiza ahora", etc. */
 .button{
   display:inline-block;
   padding:var(--space-md) var(--space-xxl);
@@ -109,11 +100,6 @@ a{ text-decoration:none; color:inherit; }
   border-color:var(--color-primary-dark);
 }
 
-
-/* =========================================================
-   [S3] HEADER
-   - Cabecera, logo y acciones (Renueva, login, carrito)
-   ========================================================= */
 .main-header{
   background:var(--color-white);
   border-bottom:0;
@@ -139,7 +125,6 @@ a{ text-decoration:none; color:inherit; }
 .header-actions{ display:flex; gap:var(--space-lg); align-items:center; }
 .header-action a{ transition:border-color var(--transition-speed) ease, transform var(--transition-speed) ease; }
 
-/* Botón "Renueva" en formato outline (sin fondo) */
 .renueva-button a{
   display:inline-flex;
   align-items:center;
@@ -155,11 +140,11 @@ a{ text-decoration:none; color:inherit; }
 }
 .renueva-button a:hover,
 .renueva-button a:focus{
-  background:transparent !important;     /* no rellenar */
-  border-color:var(--color-primary);     /* solo borde rojo */
-  color:var(--color-text-dark);          /* conserva color de texto */
+  background:transparent !important;
+  border-color:var(--color-primary);
+  color:var(--color-text-dark);
 }
-.renueva-button a img{                   /* [EDITA AQUÍ] tamaño icono Renueva */
+.renueva-button a img{
   width:var(--space-lg);
   height:var(--space-lg);
 }
@@ -176,7 +161,7 @@ a{ text-decoration:none; color:inherit; }
   position:relative;
 }
 .login-button a img,
-.carrito-button a img{ width:18px; height:18px; } /* [EDITA AQUÍ] tamaño iconos login/carrito */
+.carrito-button a img{ width:18px; height:18px; }
 
 .carrito-button .cart-count{
   position:absolute; top:-5px; right:-5px;
@@ -187,11 +172,6 @@ a{ text-decoration:none; color:inherit; }
 .header-action a:hover,
 .header-action a:focus{ border-color:var(--color-primary); transform:translateY(-1px); }
 
-
-/* =========================================================
-   [S4] NAV + DROPDOWN
-   - Menú de categorías y submenús
-   ========================================================= */
 .categorias-nav{
   background:var(--color-white);
   border-bottom:1px solid var(--color-light-gray);
@@ -245,11 +225,6 @@ a{ text-decoration:none; color:inherit; }
 #main-navigation .nav-link::before{ content:none !important; }
 #nav-indicator{ display:none !important; }
 
-
-/* =========================================================
-   [S5] BANNER (home)
-   - Hero principal con título + texto
-   ========================================================= */
 .banner-principal{
   background:url('../img/celular-vertical.jpg') no-repeat center/cover;
   height:350px;
@@ -277,12 +252,6 @@ a{ text-decoration:none; color:inherit; }
   color:#f5f5f5;
 }
 
-
-/* =========================================================
-   [S6] BENEFICIOS (checklist + CTA)
-   - Bloque "Reparamos tu celular sin salir de casa"
-   - Icono a la izquierda + título (sin bold) + CTA inferior
-   ========================================================= */
 .benefits h2{
   font-size:var(--font-size-xxl-h2);
   color:var(--color-text-dark);
@@ -290,7 +259,6 @@ a{ text-decoration:none; color:inherit; }
   margin-bottom:var(--gap-title-content);
 }
 
-/* grid de tarjetas */
 .benefits--checklist .checklist{
   list-style:none;
   display:grid;
@@ -300,7 +268,6 @@ a{ text-decoration:none; color:inherit; }
   padding:0;
 }
 
-/* tarjeta / accordion */
 .benefits--checklist details{
   border:1px solid var(--color-medium-gray);
   border-radius:10px;
@@ -315,7 +282,6 @@ a{ text-decoration:none; color:inherit; }
   box-shadow:0 8px 18px var(--color-shadow-medium);
 }
 
-/* encabezado: icono izq + texto der */
 .benefits--checklist summary{
   list-style:none;
   cursor:pointer;
@@ -327,7 +293,6 @@ a{ text-decoration:none; color:inherit; }
 }
 .benefits--checklist summary::-webkit-details-marker{ display:none; }
 
-/* icono circular (puede llevar emoji o <img>) */
 .benefits--checklist .benefit-icon{
   width:var(--benefit-icon-size);
   height:var(--benefit-icon-size);
@@ -337,7 +302,6 @@ a{ text-decoration:none; color:inherit; }
   background:none;
   overflow:hidden;
 }
-/* [EDITA AQUÍ] escala del <img> dentro del icono */
 .benefits--checklist .benefit-icon img{
   width:70%;
   height:70%;
@@ -345,7 +309,6 @@ a{ text-decoration:none; color:inherit; }
   display:block;
 }
 
-/* textos sin negrilla */
 .benefits--checklist .benefit-title{
   font-weight:400;
   font-size:var(--benefit-title-size);
@@ -367,18 +330,12 @@ a{ text-decoration:none; color:inherit; }
 .benefits--checklist .more-link:hover,
 .benefits--checklist .more-link:focus{ opacity:.85; }
 
-/* CTA inferior (mismo botón del banner) */
 .benefits-cta{
   margin-top:var(--gap-title-content);
   display:flex;
   justify-content:center;
 }
 
-
-/* =========================================================
-   [S7] SHELF (Modelos destacados)
-   - Carrusel en móvil / grid centrado en desktop
-   ========================================================= */
 .shelf{ background:#fff; padding:24px 0 0; }
 .shelf-head{ position:relative; padding:14px 0 22px; margin-bottom:0; }
 .shelf-head h2{
@@ -389,7 +346,6 @@ a{ text-decoration:none; color:inherit; }
 .shelf-ver-todo{ position:absolute; right:0; top:50%; transform:translateY(-50%); font-weight:600; color:var(--color-primary); }
 .shelf-ver-todo:hover{ text-decoration:underline; }
 
-/* Carrusel móvil/tablet */
 .shelf-track{
   margin-top:var(--gap-title-content);
   display:grid;
@@ -420,7 +376,6 @@ a{ text-decoration:none; color:inherit; }
 }
 .shelf-card:hover{ transform:translateY(-4px); box-shadow:0 8px 18px var(--color-shadow-medium); }
 
-/* [EDITA AQUÍ] alto contenedor de imagen del producto */
 .shelf-card img{
   width:100%;
   height:var(--shelf-img-h);
@@ -447,7 +402,6 @@ a{ text-decoration:none; color:inherit; }
 }
 .shelf-card .cta:hover{ background:var(--color-primary-dark); border-color:var(--color-primary-dark); }
 
-/* Desktop: pasa a grid 4→5 columnas (no afecta alto de imagen) */
 @media (min-width:992px){
   .shelf-track{
     display:grid; grid-auto-flow:initial; overflow:visible;
@@ -461,11 +415,6 @@ a{ text-decoration:none; color:inherit; }
   .shelf-track{ grid-template-columns:repeat(5,minmax(220px,1fr)); }
 }
 
-
-/* =========================================================
-   [S8] DESCRIPCIÓN & REVIEWS
-   - Texto explicativo + carrusel de reseñas
-   ========================================================= */
 .descripcion-servicios{
   background:var(--color-white);
   max-width:900px;
@@ -539,11 +488,6 @@ a{ text-decoration:none; color:inherit; }
 .review blockquote{ margin:0 0 6px; font-size:.95rem; line-height:1.45; }
 .review figcaption{ color:var(--color-text-medium); font-weight:600; font-size:.9rem; }
 
-
-/* =========================================================
-   [S9] FOOTER
-   - Información de pie de página
-   ========================================================= */
 .main-footer{
   background:var(--color-black);
   color:#fff;
@@ -567,11 +511,6 @@ a{ text-decoration:none; color:inherit; }
 .footer-column address{ font-style:normal; }
 .redes-sociales{ display:flex; gap:var(--space-lg); }
 
-
-/* =========================================================
-   [S10] WHATSAPP FLOAT
-   - Botón flotante de WhatsApp
-   ========================================================= */
 .whatsapp-float{
   position:fixed; width:60px; height:60px; bottom:var(--space-xxl); right:var(--space-xxl);
   background:var(--color-accent-green); border-radius:50%;
@@ -579,15 +518,10 @@ a{ text-decoration:none; color:inherit; }
   transition:background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
   z-index:1000; display:flex; align-items:center; justify-content:center;
 }
-.whatsapp-float img{ width:35px; } /* [EDITA AQUÍ] tamaño del ícono */
+.whatsapp-float img{ width:35px; }
 .whatsapp-float:hover,
 .whatsapp-float:focus{ background:var(--color-accent-green-dark); transform:scale(1.05); outline:none; }
 
-
-/* =========================================================
-   [S11] RITMO / UTILIDADES
-   - Separaciones entre bloques y helpers de alineación
-   ========================================================= */
 .benefits h2,
 .shelf-head h2,
 .descripcion-servicios h2,
@@ -602,7 +536,6 @@ a{ text-decoration:none; color:inherit; }
 .shelf + .descripcion-servicios{ margin-top:var(--gap-section); }
 .descripcion-servicios + .reviews{ margin-top:var(--gap-section); }
 
-/* Utilidades de texto/alineación */
 .u-text-left{ text-align:left!important; }
 .u-text-center{ text-align:center!important; }
 .u-text-right{ text-align:right!important; }
@@ -619,10 +552,8 @@ a{ text-decoration:none; color:inherit; }
 [data-title-align="center"] h2,
 [data-title-align="center"] h3{ text-align:center!important; }
 
-
 /* =========================================================
-   [S12] RESPONSIVE
-   - Ajustes para móvil / tablet / desktop
+   [S12] RESPONSIVE + FIX DEFINITIVO MÓVIL
    ========================================================= */
 @media (max-width:767px){
   .header-wrapper{ flex-direction:column; gap:var(--space-lg); padding:var(--space-md) var(--space-lg); }
@@ -635,92 +566,71 @@ a{ text-decoration:none; color:inherit; }
   .banner-principal h2{ font-size:1.6rem; }
   .banner-principal p{ font-size:.9rem; }
 
-  /* Carruseles más anchos en móvil */
-  .shelf-track{ grid-auto-columns:80%; }
-  .reviews-btn{ display:none; }     /* swipe natural */
-  .reviews-track{ grid-auto-columns:85%; }
-
-  .whatsapp-float{ width:50px; height:50px; bottom:var(--space-lg); right:var(--space-lg); }
-  .whatsapp-float img{ width:30px; } /* ícono más pequeño en móvil */
-}
-@media (min-width:768px){
-  .banner-principal{ height:420px; }
-  .banner-principal h2{ font-size:var(--font-size-xxxl-h2-banner); }
-}
-@media (min-width:1024px){
-  .banner-principal{ height:500px; }
-}
-
-
-/* =========================================================
-   [S13] FIXES MÓVILES - INTEGRADOS
-   - Eliminar saltos visuales y unificar títulos
-   ========================================================= */
-@media (max-width:767px){
+  /* FIX DEFINITIVO: ELIMINAR SALTO ENTRE BENEFITS Y SHELF */
   
-  /* ELIMINAR COMPLETAMENTE EL SALTO EN SHELF */
-  .shelf {
-    background: #fff;
-    padding: 0 !important;
-    margin: 0 !important;
+  /* 1. Eliminar margen/padding entre secciones */
+  .benefits + .shelf {
+    margin-top: 0 !important;
   }
   
-  /* TÍTULO SUGERENCIAS: Tamaño pequeño y sin espacio superior */
+  /* 2. Reducir padding de ambas secciones */
+  .benefits {
+    padding-bottom: 0 !important;
+  }
+  
+  .shelf {
+    padding-top: 8px !important;  /* Mínimo espacio */
+  }
+  
+  /* 3. Reducir espacio después del botón CTA */
+  .benefits-cta {
+    margin-top: 16px;
+    margin-bottom: 0 !important;
+  }
+  
+  /* 4. Comprimir título "Sugerencias para ti" */
   .shelf-head {
     padding: 8px 0 12px !important;
-    margin: 0 !important;
-    position: relative;
   }
   
   .shelf-head h2 {
-    font-size: 1.1rem !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    line-height: 1.3;
-    text-align: center;
+    font-size: 1.2rem !important;
     position: static !important;
     transform: none !important;
+    margin: 0 !important;
   }
   
-  /* TRACK: Sin margen superior */
+  /* 5. Reducir margen del track */
   .shelf-track {
     margin-top: 12px !important;
     grid-auto-columns: 75%;
     gap: 12px;
   }
   
-  /* BENEFITS: Reducir espacio después del CTA */
-  .benefits-cta {
-    margin-top: 16px;
-    margin-bottom: 8px !important;
-  }
-  
-  /* FORZAR SEPARACIÓN MÍNIMA */
-  .benefits + .shelf {
-    margin-top: 8px !important;
-  }
-  
-  /* OTROS TÍTULOS: Mismo tamaño para consistencia */
+  /* 6. Títulos H2 consistentes */
   .benefits h2,
   .descripcion-servicios h2,
   .reviews h2 {
-    font-size: 1.1rem !important;
-    line-height: 1.3;
+    font-size: 1.2rem !important;
     margin-bottom: 16px !important;
   }
   
-  /* CONTAINER: Optimizar espacio */
+  /* 7. Container padding optimizado */
   .container {
     padding: 0 16px;
   }
+
+  .reviews-btn{ display:none; }
+  .reviews-track{ grid-auto-columns:85%; }
+  .whatsapp-float{ width:50px; height:50px; bottom:var(--space-lg); right:var(--space-lg); }
+  .whatsapp-float img{ width:30px; }
 }
 
-/* Tablet */
-@media (min-width:768px) and (max-width:991px){
-  .shelf-head h2,
-  .benefits h2,
-  .descripcion-servicios h2,
-  .reviews h2 {
-    font-size: 1.4rem;
-  }
+@media (min-width:768px){
+  .banner-principal{ height:420px; }
+  .banner-principal h2{ font-size:var(--font-size-xxxl-h2-banner); }
+}
+
+@media (min-width:1024px){
+  .banner-principal{ height:500px; }
 }
