@@ -651,72 +651,101 @@ a{ text-decoration:none; color:inherit; }
   .banner-principal{ height:500px; }
 }
 /* =========================================================
-   FIXES MÓVILES - Doctor Rayo
+   FIX DEFINITIVO MÓVIL - Doctor Rayo
+   REEMPLAZA TODO EL BLOQUE DE FIXES ANTERIOR
    ========================================================= */
 
-/* [FIX 1] Ajustar jerarquía de tamaños de títulos en móvil */
+/* [FIX DEFINITIVO] Móvil - Eliminar saltos y unificar tamaños */
 @media (max-width:767px){
   
-  /* Aumentar ligeramente el logo del header para mantener jerarquía */
-  .logo h1,
-  .logo a{ 
-    font-size: 22px; /* era 20px - ligeramente más grande */
-  }
-
-  /* Reducir títulos de sección para que no compitan con el header */
-  .shelf-head h2,
+  /* TÍTULOS: Tamaño consistente para todos los H2 de sección */
   .benefits h2,
+  .shelf-head h2, 
   .descripcion-servicios h2,
-  .reviews h2{
-    font-size: 1.4rem; /* era 2rem - más proporcionado en móvil */
+  .reviews h2 {
+    font-size: 1.25rem !important; /* Forzar tamaño consistente */
+    font-weight: 600;
     line-height: 1.3;
+    margin-bottom: 16px !important; /* Espaciado consistente */
+    text-align: center;
   }
 
-  /* Título del banner se mantiene grande pero controlado */
-  .banner-principal h2{ 
-    font-size: 1.6rem; /* ya estaba bien */
-    line-height: 1.2;
-  }
-
-  /* [FIX 2] Reducir salto visual entre secciones en móvil */
-  :root {
-    --gap-title-content: 18px; /* era 24px - menos espacio en móvil */
-    --gap-section: 20px; /* era 24px - secciones más compactas */
-  }
-
-  /* [FIX 3] Ajustar espaciado específico del shelf/sugerencias */
-  .shelf-head{ 
-    padding: 10px 0 16px; /* era 14px 0 22px - más compacto */
+  /* SHELF: Eliminar padding y márgenes que causan el salto */
+  .shelf {
+    background: #fff;
+    padding: 0 !important; /* Eliminar padding superior */
+    margin-top: 16px !important; /* Espaciado controlado desde benefits */
     margin-bottom: 0;
   }
-
-  /* [FIX 4] Mejorar proporción de cards en móvil */
-  .shelf-track{ 
-    grid-auto-columns: 75%; /* era 80% - un poco más ajustado */
-    gap: 12px; /* era var(--shelf-gap) 10px - más espacio entre cards */
+  
+  .shelf-head {
+    padding: 16px 0 16px !important; /* Espaciado uniforme arriba y abajo */
+    margin-bottom: 0;
+    position: relative;
   }
 
-  /* [FIX 5] Ajustar padding general en móvil */
-  .container{ 
-    padding: 0 16px; /* era var(--space-xl) 20px - más contenido visible */
+  /* BENEFITS: Controlar el espaciado del CTA */
+  .benefits-cta {
+    margin-top: 20px;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* SEPARACIONES: Control total entre secciones */
+  .benefits + .shelf { 
+    margin-top: 16px !important; /* Espacio controlado después del CTA */
+  }
+  
+  .shelf + .descripcion-servicios { 
+    margin-top: 24px !important; 
+  }
+  
+  .descripcion-servicios + .reviews { 
+    margin-top: 24px !important; 
+  }
+
+  /* CONTAINER: Padding consistente */
+  .container { 
+    padding: 0 16px;
+  }
+
+  /* SHELF TRACK: Mejorar el carrusel */
+  .shelf-track {
+    margin-top: 16px !important; /* Era var(--gap-title-content) que causaba problemas */
+    grid-auto-columns: 75%;
+    gap: 12px;
+  }
+
+  /* BANNER: Ajustar para que no interfiera */
+  .banner-principal h2 { 
+    font-size: 1.6rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
   }
 }
 
-/* [FIX 6] Tablet intermedio - suavizar la transición */
+/* [FIX] Tablet - Transición suave */
 @media (min-width:768px) and (max-width:991px){
-  .shelf-head h2,
   .benefits h2,
+  .shelf-head h2,
   .descripcion-servicios h2,
-  .reviews h2{
-    font-size: 1.6rem; /* transición suave entre móvil y desktop */
+  .reviews h2 {
+    font-size: 1.5rem;
   }
 }
 
-/* [FIX 7] Mejorar legibilidad en pantallas pequeñas */
-@media (max-width:479px){  
+/* [FIX] Móvil muy pequeño */
+@media (max-width:479px){
+  .benefits h2,
   .shelf-head h2,
-  .benefits h2{
-    font-size: 1rem; /* aún más compacto en móviles pequeños */
-    font-weight: 600;
+  .descripcion-servicios h2,
+  .reviews h2 {
+    font-size: 1.1rem !important;
+    margin-bottom: 14px !important;
+  }
+  
+  .shelf-head {
+    padding: 14px 0 14px !important;
   }
 }
