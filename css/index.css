@@ -1,7 +1,7 @@
 /* =========================================================
    [S1] VARIABLES GLOBALES
    - Colores, tipografía, espaciados y tamaños base reutilizables
-   - Los bloques con [EDITA AQUÍ] son los más “tocables” sin romper nada
+   - Los bloques con [EDITA AQUÍ] son los más "tocables" sin romper nada
    ========================================================= */
 :root{
   /* ---- Paleta ---- */
@@ -40,7 +40,7 @@
   --font-size-base:1rem;
   --font-size-md:15px;
   --font-size-lg:20px;
-  --font-size-xl-h1:20px;                /* tamaño del “logo” (H1 en header) */
+  --font-size-xl-h1:20px;                /* tamaño del "logo" (H1 en header) */
   --font-size-xxl-h2:2rem;               /* títulos de sección */
   --font-size-xxxl-h2-banner:2.5rem;     /* H2 del banner */
 
@@ -58,7 +58,7 @@
   --reviews-edge-pad:6px;
 
   /* ---- Beneficios (checklist debajo del banner) ---- */
-  /* [EDITA AQUÍ] tamaños de tarjetas e iconos del bloque “Reparamos tu celular…” */
+  /* [EDITA AQUÍ] tamaños de tarjetas e iconos del bloque "Reparamos tu celular…" */
   --benefit-card-min:220px;     /* ancho mínimo de cada tarjeta */
   --benefit-card-gap:12px;      /* separación entre tarjetas */
   --benefit-card-padding:2px;   /* padding interno de la tarjeta */
@@ -89,7 +89,7 @@ a{ text-decoration:none; color:inherit; }
   overflow:hidden; clip:rect(0,0,0,0); border:0; white-space:nowrap;
 }
 
-/* Botón principal (CTA sólido) — usado en banner, “Cotiza ahora”, etc. */
+/* Botón principal (CTA sólido) — usado en banner, "Cotiza ahora", etc. */
 .button{
   display:inline-block;
   padding:var(--space-md) var(--space-xxl);
@@ -139,7 +139,7 @@ a{ text-decoration:none; color:inherit; }
 .header-actions{ display:flex; gap:var(--space-lg); align-items:center; }
 .header-action a{ transition:border-color var(--transition-speed) ease, transform var(--transition-speed) ease; }
 
-/* Botón “Renueva” en formato outline (sin fondo) */
+/* Botón "Renueva" en formato outline (sin fondo) */
 .renueva-button a{
   display:inline-flex;
   align-items:center;
@@ -280,7 +280,7 @@ a{ text-decoration:none; color:inherit; }
 
 /* =========================================================
    [S6] BENEFICIOS (checklist + CTA)
-   - Bloque “Reparamos tu celular sin salir de casa”
+   - Bloque "Reparamos tu celular sin salir de casa"
    - Icono a la izquierda + título (sin bold) + CTA inferior
    ========================================================= */
 .benefits h2{
@@ -650,102 +650,77 @@ a{ text-decoration:none; color:inherit; }
 @media (min-width:1024px){
   .banner-principal{ height:500px; }
 }
-/* =========================================================
-   FIX DEFINITIVO MÓVIL - Doctor Rayo
-   REEMPLAZA TODO EL BLOQUE DE FIXES ANTERIOR
-   ========================================================= */
 
-/* [FIX DEFINITIVO] Móvil - Eliminar saltos y unificar tamaños */
+
+/* =========================================================
+   [S13] FIXES MÓVILES - INTEGRADOS
+   - Eliminar saltos visuales y unificar títulos
+   ========================================================= */
 @media (max-width:767px){
   
-  /* TÍTULOS: Tamaño consistente para todos los H2 de sección */
-  .benefits h2,
-  .shelf-head h2, 
-  .descripcion-servicios h2,
-  .reviews h2 {
-    font-size: 1.25rem !important; /* Forzar tamaño consistente */
-    font-weight: 600;
-    line-height: 1.3;
-    margin-bottom: 16px !important; /* Espaciado consistente */
-    text-align: center;
-  }
-
-  /* SHELF: Eliminar padding y márgenes que causan el salto */
+  /* ELIMINAR COMPLETAMENTE EL SALTO EN SHELF */
   .shelf {
     background: #fff;
-    padding: 0 !important; /* Eliminar padding superior */
-    margin-top: 16px !important; /* Espaciado controlado desde benefits */
-    margin-bottom: 0;
+    padding: 0 !important;
+    margin: 0 !important;
   }
   
+  /* TÍTULO SUGERENCIAS: Tamaño pequeño y sin espacio superior */
   .shelf-head {
-    padding: 16px 0 16px !important; /* Espaciado uniforme arriba y abajo */
-    margin-bottom: 0;
+    padding: 8px 0 12px !important;
+    margin: 0 !important;
     position: relative;
   }
-
-  /* BENEFITS: Controlar el espaciado del CTA */
-  .benefits-cta {
-    margin-top: 20px;
-    margin-bottom: 0;
-    display: flex;
-    justify-content: center;
-  }
-
-  /* SEPARACIONES: Control total entre secciones */
-  .benefits + .shelf { 
-    margin-top: 16px !important; /* Espacio controlado después del CTA */
+  
+  .shelf-head h2 {
+    font-size: 1.1rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.3;
+    text-align: center;
+    position: static !important;
+    transform: none !important;
   }
   
-  .shelf + .descripcion-servicios { 
-    margin-top: 24px !important; 
-  }
-  
-  .descripcion-servicios + .reviews { 
-    margin-top: 24px !important; 
-  }
-
-  /* CONTAINER: Padding consistente */
-  .container { 
-    padding: 0 16px;
-  }
-
-  /* SHELF TRACK: Mejorar el carrusel */
+  /* TRACK: Sin margen superior */
   .shelf-track {
-    margin-top: 16px !important; /* Era var(--gap-title-content) que causaba problemas */
+    margin-top: 12px !important;
     grid-auto-columns: 75%;
     gap: 12px;
   }
-
-  /* BANNER: Ajustar para que no interfiera */
-  .banner-principal h2 { 
-    font-size: 1.6rem;
-    line-height: 1.2;
-    margin-bottom: 20px;
+  
+  /* BENEFITS: Reducir espacio después del CTA */
+  .benefits-cta {
+    margin-top: 16px;
+    margin-bottom: 8px !important;
   }
-}
-
-/* [FIX] Tablet - Transición suave */
-@media (min-width:768px) and (max-width:991px){
-  .benefits h2,
-  .shelf-head h2,
-  .descripcion-servicios h2,
-  .reviews h2 {
-    font-size: 1.5rem;
+  
+  /* FORZAR SEPARACIÓN MÍNIMA */
+  .benefits + .shelf {
+    margin-top: 8px !important;
   }
-}
-
-/* [FIX] Móvil muy pequeño */
-@media (max-width:479px){
+  
+  /* OTROS TÍTULOS: Mismo tamaño para consistencia */
   .benefits h2,
-  .shelf-head h2,
   .descripcion-servicios h2,
   .reviews h2 {
     font-size: 1.1rem !important;
-    margin-bottom: 14px !important;
+    line-height: 1.3;
+    margin-bottom: 16px !important;
   }
   
-  .shelf-head {
-    padding: 14px 0 14px !important;
+  /* CONTAINER: Optimizar espacio */
+  .container {
+    padding: 0 16px;
+  }
+}
+
+/* Tablet */
+@media (min-width:768px) and (max-width:991px){
+  .shelf-head h2,
+  .benefits h2,
+  .descripcion-servicios h2,
+  .reviews h2 {
+    font-size: 1.4rem;
   }
 }
