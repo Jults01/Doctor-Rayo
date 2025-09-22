@@ -553,8 +553,9 @@ a{ text-decoration:none; color:inherit; }
 [data-title-align="center"] h3{ text-align:center!important; }
 
 /* =========================================================
-   [S12] RESPONSIVE + FIX DEFINITIVO MÓVIL
-   ========================================================= */
+   FIX FINAL - REEMPLAZAR TODO EL BLOQUE RESPONSIVE
+   Eliminar desde /* [S12] RESPONSIVE + FIX DEFINITIVO MÓVIL */ 
+   
 @media (max-width:767px){
   .header-wrapper{ flex-direction:column; gap:var(--space-lg); padding:var(--space-md) var(--space-lg); }
   .header-actions{ width:100%; justify-content:center; }
@@ -566,31 +567,34 @@ a{ text-decoration:none; color:inherit; }
   .banner-principal h2{ font-size:1.6rem; }
   .banner-principal p{ font-size:.9rem; }
 
-  /* FIX DEFINITIVO: ELIMINAR SALTO ENTRE BENEFITS Y SHELF */
+  /* ======== FIX SALTO MÓVIL - UNIFICADO ======== */
   
-  /* 1. Eliminar margen/padding entre secciones */
+  /* Eliminar COMPLETAMENTE el espacio entre benefits y shelf */
   .benefits + .shelf {
     margin-top: 0 !important;
   }
   
-  /* 2. Reducir padding de ambas secciones */
+  /* Eliminar padding de benefits y shelf */
   .benefits {
     padding-bottom: 0 !important;
-  }
-  
-  .shelf {
-    padding-top: 8px !important;  /* Mínimo espacio */
-  }
-  
-  /* 3. Reducir espacio después del botón CTA */
-  .benefits-cta {
-    margin-top: 16px;
     margin-bottom: 0 !important;
   }
   
-  /* 4. Comprimir título "Sugerencias para ti" */
+  .shelf {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  /* Comprimir benefits-cta al máximo */
+  .benefits-cta {
+    margin-top: 16px !important;
+    margin-bottom: 0 !important;
+  }
+  
+  /* Comprimir shelf-head */
   .shelf-head {
-    padding: 8px 0 12px !important;
+    padding: 4px 0 8px !important;
+    margin: 0 !important;
   }
   
   .shelf-head h2 {
@@ -598,16 +602,17 @@ a{ text-decoration:none; color:inherit; }
     position: static !important;
     transform: none !important;
     margin: 0 !important;
+    padding: 0 !important;
   }
   
-  /* 5. Reducir margen del track */
+  /* Comprimir shelf-track */
   .shelf-track {
-    margin-top: 12px !important;
+    margin-top: 8px !important;
     grid-auto-columns: 75%;
     gap: 12px;
   }
   
-  /* 6. Títulos H2 consistentes */
+  /* Títulos consistentes */
   .benefits h2,
   .descripcion-servicios h2,
   .reviews h2 {
@@ -615,7 +620,6 @@ a{ text-decoration:none; color:inherit; }
     margin-bottom: 16px !important;
   }
   
-  /* 7. Container padding optimizado */
   .container {
     padding: 0 16px;
   }
