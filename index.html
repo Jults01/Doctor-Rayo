@@ -203,8 +203,8 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      // Dropdowns nav
       var dropdowns = document.querySelectorAll('.dropdown > .nav-link');
-      
       function closeAll() {
         document.querySelectorAll('.dropdown.show').forEach(function(li) {
           li.classList.remove('show');
@@ -212,7 +212,6 @@
           if (link) link.setAttribute('aria-expanded', 'false');
         });
       }
-
       dropdowns.forEach(function(link) {
         link.addEventListener('click', function(e) {
           var li = link.parentElement;
@@ -221,15 +220,14 @@
           e.preventDefault();
         });
       });
-
       document.addEventListener('click', function(e) {
         if (!e.target.closest('.dropdown')) closeAll();
       });
-      
       document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') closeAll();
       });
 
+      // Shelf cards data (optimizadas)
       var shelfData = [
         {name:'iPhone 12', price:'Desde $1.190.000', badge:'Mejor precio', img:'img/prod-iphone12.jpg', href:'categorias/celulares/iphone'},
         {name:'iPhone 13', price:'Desde $1.690.000', badge:'Top ventas', img:'img/prod-iphone13.jpg', href:'categorias/celulares/iphone'},
@@ -237,12 +235,11 @@
         {name:'Xiaomi 12', price:'Desde $980.000', badge:'Ahorra', img:'img/prod-xiaomi12.jpg', href:'categorias/celulares/xiaomi'},
         {name:'Motorola G', price:'Desde $620.000', badge:'Económico', img:'img/prod-moto-g.jpg', href:'categorias/celulares/motorola'}
       ];
-      
       var track = document.getElementById('shelf-track');
       if (track) {
         track.innerHTML = shelfData.map(function(p) {
           return '<article class="shelf-card">' +
-            '<img src="' + p.img + '" alt="' + p.name + '" loading="lazy" decoding="async">' +
+            '<img src="' + p.img + '" alt="' + p.name + '" width="180" height="70" loading="lazy" decoding="async">' +
             '<div class="card-body">' +
               '<span class="badge">' + p.badge + '</span>' +
               '<h3>' + p.name + '</h3>' +
@@ -253,11 +250,11 @@
         }).join('');
       }
 
+      // Reviews carrusel
       var reviewsTrack = document.getElementById('reviews-track');
       var prevBtn = document.querySelector('.reviews-prev');
       var nextBtn = document.querySelector('.reviews-next');
       var viewport = document.querySelector('.reviews-viewport');
-      
       if (reviewsTrack && prevBtn && nextBtn) {
         function getStep() {
           var first = reviewsTrack.querySelector('.review');
@@ -265,30 +262,25 @@
           var gap = parseInt(getComputedStyle(reviewsTrack).gap || '16', 10);
           return first.offsetWidth + gap;
         }
-
         function updateButtons() {
           var max = reviewsTrack.scrollWidth - reviewsTrack.clientWidth - 1;
           var atStart = reviewsTrack.scrollLeft <= 0;
           var atEnd = reviewsTrack.scrollLeft >= max;
-          
           prevBtn.classList.toggle('is-disabled', atStart);
           nextBtn.classList.toggle('is-disabled', atEnd);
           prevBtn.setAttribute('aria-disabled', atStart ? 'true' : 'false');
           nextBtn.setAttribute('aria-disabled', atEnd ? 'true' : 'false');
         }
-
         function scroll(direction) {
           var step = getStep();
           if (step) {
             reviewsTrack.scrollBy({ left: direction * step, behavior: 'smooth' });
           }
         }
-
         prevBtn.addEventListener('click', function() { scroll(-1); });
         nextBtn.addEventListener('click', function() { scroll(1); });
         reviewsTrack.addEventListener('scroll', updateButtons, { passive: true });
         window.addEventListener('resize', updateButtons);
-
         if (viewport) {
           viewport.addEventListener('keydown', function(e) {
             if (e.key === 'ArrowLeft') { 
@@ -301,10 +293,9 @@
             }
           });
         }
-
         updateButtons();
       }
-
+      // Año actual en footer
       var yearElement = document.getElementById('current-year');
       if (yearElement) {
         yearElement.textContent = new Date().getFullYear();
