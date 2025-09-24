@@ -1021,8 +1021,8 @@ img {
   
   .shelf-card {
     flex: 0 0 60vw;
-    max-width: 60vw;
-    min-width: 60vw;
+    max-width: 30vw;
+    min-width: 10vw;
     background: #fff;
     margin: 0;
     scroll-snap-align: start;
