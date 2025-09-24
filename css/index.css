@@ -1,28 +1,63 @@
 /* ====================================================
-   DOCTOR RAYO - CSS OPTIMIZADO Y CORREGIDO
+   DOCTOR RAYO - HOJA DE ESTILOS PRINCIPAL
+   Versión: 1.0
+   Última actualización: Diciembre 2024
    ==================================================== */
 
-/* ========== VARIABLES CSS ========== */
+/* ====================================================
+   TABLA DE CONTENIDOS
+   1. Variables CSS (Custom Properties)
+   2. Reset y Estilos Base
+   3. Utilidades Globales
+   4. Componentes
+      4.1 Botones
+      4.2 Header y Navegación
+      4.3 Dropdown Menu
+   5. Secciones de Contenido
+      5.1 Banner Principal
+      5.2 Beneficios
+      5.3 Shelf (Productos Destacados)
+      5.4 Descripción de Servicios
+      5.5 Reviews (Testimonios)
+   6. Footer
+   7. Elementos Flotantes (WhatsApp)
+   8. Media Queries
+      8.1 Tablet (768px+)
+      8.2 Desktop (992px+)
+      8.3 Desktop XL (1200px+)
+      8.4 Móvil (max-767px)
+   ==================================================== */
+
+/* ====================================================
+   1. VARIABLES CSS (CUSTOM PROPERTIES)
+   ==================================================== */
 :root {
+  /* --- Colores Principales --- */
   --color-primary: #e60000;
   --color-primary-dark: #c40000;
   --color-accent-green: #25d366;
   --color-accent-green-dark: #1ebe57;
+  
+  /* --- Colores de Texto --- */
   --color-text-dark: #0b0b0b;
   --color-text-medium: #333;
   --color-text-light: #e6e6e6;
+  
+  /* --- Colores de Fondo --- */
   --color-white: #fff;
+  --color-black: #000;
   --color-light-gray: #eee;
   --color-medium-gray: #ddd;
   --color-dark-gray: #444;
-  --color-black: #000;
   --color-footer-text: #ccc;
-  --color-overlay: rgba(0,0,0,.65);
+  --color-overlay: rgba(0, 0, 0, 0.65);
 
-  --shadow-light: 0 2px 6px rgba(0,0,0,.05);
-  --shadow-medium: 0 8px 18px rgba(0,0,0,.08);
-  --shadow-strong: 0 12px 26px rgba(0,0,0,.15);
+  /* --- Sombras --- */
+  --shadow-light: 0 2px 6px rgba(0, 0, 0, 0.05);
+  --shadow-medium: 0 8px 18px rgba(0, 0, 0, 0.08);
+  --shadow-strong: 0 12px 26px rgba(0, 0, 0, 0.15);
 
+  /* --- Espaciado --- */
   --space-xs: 5px;
   --space-sm: 8px;
   --space-md: 12px;
@@ -33,7 +68,8 @@
   --gap-content: 24px;
   --gap-section: 24px;
 
-  --font-size-sm: .9rem;
+  /* --- Tipografía --- */
+  --font-size-sm: 0.9rem;
   --font-size-base: 1rem;
   --font-size-md: 15px;
   --font-size-lg: 20px;
@@ -41,21 +77,30 @@
   --font-size-xxl: 2rem;
   --font-size-xxxl: 2.5rem;
 
+  /* --- Componentes Específicos --- */
   --shelf-card-width: 180px;
   --shelf-img-height: 140px;
   --benefit-card-min: 220px;
   --benefit-icon-size: 44px;
   --reviews-nav-size: 40px;
-  --transition-speed: .3s;
+  --transition-speed: 0.3s;
 }
 
-/* ========== RESET Y BASE ========== */
-*, *::before, *::after {
+/* ====================================================
+   2. RESET Y ESTILOS BASE
+   ==================================================== */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-html { scroll-behavior: smooth; }
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
@@ -64,20 +109,43 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-a { text-decoration: none; color: inherit; }
-img { max-width: 100%; height: auto; }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ====================================================
+   3. UTILIDADES GLOBALES
+   ==================================================== */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 var(--space-xl);
 }
+
 .visually-hidden {
-  position: absolute; width: 1px; height: 1px; margin: -1px;
-  padding: 0; overflow: hidden; clip: rect(0,0,0,0); border: 0; white-space: nowrap;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  white-space: nowrap;
 }
 
-/* ========== BOTÓN PRINCIPAL ========== */
+/* ====================================================
+   4. COMPONENTES
+   ==================================================== */
+
+/* --- 4.1 Botones --- */
 .button {
   display: inline-flex;
   align-items: center;
@@ -91,36 +159,46 @@ img { max-width: 100%; height: auto; }
   cursor: pointer;
   transition: all var(--transition-speed) ease;
 }
-.button:hover, .button:focus {
+
+.button:hover,
+.button:focus {
   transform: translateY(-2px);
   outline: none;
   background: var(--color-primary-dark);
   border-color: var(--color-primary-dark);
 }
 
-/* ========== HEADER ========== */
+/* --- 4.2 Header y Navegación --- */
 .main-header {
   background: var(--color-white);
   padding: var(--space-sm) 0;
 }
+
 .header-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.logo h1, .logo a {
+
+.logo h1,
+.logo a {
   font-weight: 600;
   color: var(--color-primary);
   font-size: var(--font-size-xl);
 }
-.logo a:hover h1, .logo a:focus h1 {
+
+.logo a:hover h1,
+.logo a:focus h1 {
   color: var(--color-primary-dark);
 }
+
 .header-actions {
   display: flex;
   gap: var(--space-lg);
   align-items: center;
 }
+
+/* Botón Renueva */
 .renueva-button a {
   padding: var(--space-xs) var(--space-md);
   border-radius: 20px;
@@ -130,15 +208,21 @@ img { max-width: 100%; height: auto; }
   border: 1px solid var(--color-medium-gray);
   background: transparent;
 }
-.renueva-button a:hover, .renueva-button a:focus {
+
+.renueva-button a:hover,
+.renueva-button a:focus {
   background: transparent;
   border-color: var(--color-primary);
 }
+
 .renueva-button a img {
   width: var(--space-lg);
   height: var(--space-lg);
 }
-.login-button a, .carrito-button a {
+
+/* Botones Login y Carrito */
+.login-button a,
+.carrito-button a {
   display: inline-flex;
   width: 34px;
   height: 34px;
@@ -149,17 +233,21 @@ img { max-width: 100%; height: auto; }
   position: relative;
   transition: all var(--transition-speed) ease;
 }
-.login-button a img, .carrito-button a img {
+
+.login-button a img,
+.carrito-button a img {
   width: 18px;
   height: 18px;
 }
+
+/* Contador del Carrito */
 .carrito-button .cart-count {
   position: absolute;
   top: -5px;
   right: -5px;
   background: var(--color-primary);
   color: var(--color-white);
-  font-size: .7rem;
+  font-size: 0.7rem;
   font-weight: 600;
   padding: 2px 6px;
   border-radius: 50%;
@@ -170,17 +258,20 @@ img { max-width: 100%; height: auto; }
   align-items: center;
   justify-content: center;
 }
-.header-action a:hover, .header-action a:focus {
+
+.header-action a:hover,
+.header-action a:focus {
   border-color: var(--color-primary);
   transform: translateY(-1px);
 }
 
-/* ========== NAVEGACIÓN DE CATEGORÍAS ========== */
+/* Navegación de Categorías */
 .categorias-nav {
   background: var(--color-white);
   border-bottom: 1px solid var(--color-light-gray);
   margin-top: -15px;
 }
+
 .categorias-nav ul {
   list-style: none;
   display: flex;
@@ -189,7 +280,11 @@ img { max-width: 100%; height: auto; }
   flex-wrap: wrap;
   padding: 1px 10px;
 }
-.categorias-nav li { position: relative; }
+
+.categorias-nav li {
+  position: relative;
+}
+
 .categorias-nav .nav-link {
   font-weight: 500;
   color: var(--color-text-medium);
@@ -198,25 +293,26 @@ img { max-width: 100%; height: auto; }
   display: block;
   transition: color var(--transition-speed) ease;
 }
+
 .categorias-nav .nav-link:hover,
 .categorias-nav .nav-link:focus,
 .categorias-nav li.active > .nav-link {
   color: var(--color-primary);
 }
 
-/* ========== DROPDOWN MENU ========== */
+/* --- 4.3 Dropdown Menu --- */
 .dropdown-menu {
   position: absolute;
   top: 100%;
   left: 50%;
-  transform: translateX(-50%) translateY(8px) scale(.96);
+  transform: translateX(-50%) translateY(8px) scale(0.96);
   background: var(--color-white);
   border: 1px solid var(--color-medium-gray);
   border-radius: 8px;
   width: max-content;
   min-width: 140px;
   max-width: 250px;
-  box-shadow: 0 4px 12px rgba(0,0,0,.06);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   z-index: 100;
   padding: var(--space-xs) 0;
   list-style: none;
@@ -226,6 +322,7 @@ img { max-width: 100%; height: auto; }
   pointer-events: none;
   transition: all var(--transition-speed) ease;
 }
+
 .dropdown.show .dropdown-menu,
 .dropdown:hover .dropdown-menu,
 .dropdown:focus-within .dropdown-menu {
@@ -235,24 +332,32 @@ img { max-width: 100%; height: auto; }
   transform: translateX(-50%) translateY(0) scale(1);
   box-shadow: var(--shadow-strong);
 }
+
 .dropdown-menu li a {
   padding: 6px var(--space-md);
   color: var(--color-text-dark);
   font-size: var(--font-size-sm);
   display: block;
   text-align: center;
-  transition: color .2s ease;
+  transition: color 0.2s ease;
 }
-.dropdown-menu li a:hover, .dropdown-menu li a:focus {
+
+.dropdown-menu li a:hover,
+.dropdown-menu li a:focus {
   color: var(--color-primary);
 }
+
 .dropdown.show > .nav-link {
   background: var(--color-light-gray);
   border-radius: 8px;
   color: var(--color-primary);
 }
 
-/* ========== BANNER PRINCIPAL ========== */
+/* ====================================================
+   5. SECCIONES DE CONTENIDO
+   ==================================================== */
+
+/* --- 5.1 Banner Principal --- */
 .banner-principal {
   background: url('../img/celular-vertical.jpg') no-repeat center/cover;
   height: 350px;
@@ -263,6 +368,7 @@ img { max-width: 100%; height: auto; }
   text-align: center;
   overflow: hidden;
 }
+
 .banner-principal .overlay {
   background: var(--color-overlay);
   padding: var(--space-xxl) var(--space-xxxl);
@@ -270,12 +376,14 @@ img { max-width: 100%; height: auto; }
   color: var(--color-text-light);
   max-width: 90%;
 }
+
 .banner-principal h2 {
   font-size: var(--font-size-xxl);
   margin-bottom: var(--gap-content);
   line-height: 1.2;
   color: var(--color-white);
 }
+
 .banner-principal p {
   font-size: var(--font-size-base);
   margin-bottom: var(--gap-content);
@@ -284,16 +392,18 @@ img { max-width: 100%; height: auto; }
   color: #f5f5f5;
 }
 
-/* ========== BENEFICIOS ========== */
+/* --- 5.2 Beneficios --- */
 .benefits {
   padding: var(--gap-section) 0;
 }
+
 .benefits h2 {
   font-size: var(--font-size-xxl);
   color: var(--color-text-dark);
   text-align: center;
   margin-bottom: var(--gap-content);
 }
+
 .benefits-list {
   list-style: none;
   display: grid;
@@ -301,6 +411,7 @@ img { max-width: 100%; height: auto; }
   gap: var(--space-md);
   margin-bottom: var(--gap-content);
 }
+
 .benefit-item {
   border: 1px solid var(--color-medium-gray);
   border-radius: 10px;
@@ -311,12 +422,14 @@ img { max-width: 100%; height: auto; }
   grid-template-columns: auto 1fr;
   align-items: center;
   gap: var(--space-md);
-  transition: all .15s ease;
+  transition: all 0.15s ease;
 }
+
 .benefit-item:hover {
   border-color: var(--color-primary);
   box-shadow: var(--shadow-medium);
 }
+
 .benefit-icon {
   width: var(--benefit-icon-size);
   height: var(--benefit-icon-size);
@@ -325,23 +438,30 @@ img { max-width: 100%; height: auto; }
   place-items: center;
   overflow: hidden;
 }
+
 .benefit-icon img {
   width: 70%;
   height: 70%;
   object-fit: contain;
 }
+
 .benefit-title {
   font-weight: 400;
   font-size: var(--font-size-base);
   color: var(--color-text-dark);
 }
-.benefits-cta { display: flex; justify-content: center; }
 
-/* ========== SHELF (MODELOS DESTACADOS) ========== */
+.benefits-cta {
+  display: flex;
+  justify-content: center;
+}
+
+/* --- 5.3 Shelf (Productos Destacados) --- */
 .shelf {
   background: var(--color-white);
   padding: var(--gap-section) 0;
 }
+
 .shelf-head {
   display: flex;
   flex-direction: column;
@@ -351,6 +471,7 @@ img { max-width: 100%; height: auto; }
   margin-bottom: 0;
   position: relative;
 }
+
 .shelf-head h2 {
   font-size: var(--font-size-xxl);
   color: var(--color-text-dark);
@@ -358,6 +479,7 @@ img { max-width: 100%; height: auto; }
   width: 100%;
   margin: 0 auto;
 }
+
 .shelf-ver-todo {
   font-weight: 600;
   color: var(--color-primary);
@@ -366,7 +488,11 @@ img { max-width: 100%; height: auto; }
   margin-left: auto;
   margin-right: 0;
 }
-.shelf-ver-todo:hover { text-decoration: underline; }
+
+.shelf-ver-todo:hover {
+  text-decoration: underline;
+}
+
 .shelf-track {
   margin-top: var(--gap-content);
   display: grid;
@@ -378,9 +504,15 @@ img { max-width: 100%; height: auto; }
   scroll-snap-type: x proximity;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
+  -ms-touch-action: pan-x;
   touch-action: pan-x;
 }
-.shelf-track::-webkit-scrollbar { display: none; }
+
+.shelf-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Tarjetas de Productos */
 .shelf-card {
   scroll-snap-align: start;
   background: var(--color-white);
@@ -390,14 +522,16 @@ img { max-width: 100%; height: auto; }
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
   width: var(--shelf-card-width);
   max-width: var(--shelf-card-width);
 }
+
 .shelf-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-medium);
 }
+
 .shelf-card img {
   width: 100%;
   height: var(--shelf-img-height);
@@ -405,12 +539,14 @@ img { max-width: 100%; height: auto; }
   background: var(--color-white);
   padding: 6px;
 }
+
 .shelf-card .card-body {
   padding: 6px 8px 10px;
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
+
 .shelf-card .badge {
   align-self: flex-start;
   font-size: 0.7rem;
@@ -421,6 +557,7 @@ img { max-width: 100%; height: auto; }
   border-radius: 999px;
   margin-bottom: 4px;
 }
+
 .shelf-card h3 {
   font-size: 0.92rem;
   color: var(--color-text-dark);
@@ -430,18 +567,19 @@ img { max-width: 100%; height: auto; }
   text-overflow: ellipsis;
   margin-bottom: 2px;
 }
+
 .shelf-card .price {
   font-weight: 600;
   color: var(--color-text-dark);
   font-size: 0.85rem;
   margin-bottom: 2px;
 }
+
 .shelf-card .cta {
-  margin-top: 6px;
-  display: block;
-  width: 100%;
+  display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
   border: 1px solid var(--color-primary);
   color: var(--color-white);
   background: var(--color-primary);
@@ -449,18 +587,27 @@ img { max-width: 100%; height: auto; }
   padding: 8px 0;
   font-weight: 600;
   font-size: 0.9rem;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
   box-sizing: border-box;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-top: 6px;
+  text-align: center;
+  cursor: pointer;
 }
+
 .shelf-card .cta:hover {
   background: var(--color-primary-dark);
   border-color: var(--color-primary-dark);
 }
 
-/* ========== DESCRIPCIÓN SERVICIOS ========== */
+.shelf-card,
+.shelf-card * {
+  touch-action: pan-x;
+}
+
+/* --- 5.4 Descripción de Servicios --- */
 .descripcion-servicios {
   background: var(--color-white);
   max-width: 900px;
@@ -469,36 +616,51 @@ img { max-width: 100%; height: auto; }
   text-align: center;
   color: var(--color-text-dark);
 }
+
 .descripcion-servicios h2 {
   font-size: var(--font-size-xxl);
   text-align: center;
   margin-bottom: var(--gap-content);
 }
+
 .descripcion-servicios p {
   margin-bottom: var(--space-lg);
   font-size: var(--font-size-base);
   max-width: 700px;
   margin-inline: auto;
 }
-.descripcion-servicios p:last-child { margin-bottom: 0; }
-.descripcion-servicios p strong { color: var(--color-primary-dark); }
 
-/* ========== REVIEWS ========== */
+.descripcion-servicios p:last-child {
+  margin-bottom: 0;
+}
+
+.descripcion-servicios p strong {
+  color: var(--color-primary-dark);
+}
+
+/* --- 5.5 Reviews (Testimonios) --- */
 .reviews {
   background: var(--color-white);
   padding: var(--gap-section) 0;
 }
+
 .reviews h2 {
   font-size: var(--font-size-xxl);
   text-align: center;
   margin-bottom: var(--gap-content);
 }
-.reviews .container { position: relative; }
+
+.reviews .container {
+  position: relative;
+}
+
 .reviews-row {
   display: flex;
   align-items: center;
   gap: 14px;
 }
+
+/* Botones de Navegación Reviews */
 .reviews-btn {
   width: var(--reviews-nav-size);
   height: var(--reviews-nav-size);
@@ -508,46 +670,57 @@ img { max-width: 100%; height: auto; }
   justify-content: center;
   background: var(--color-white);
   border: 1px solid var(--color-medium-gray);
-  box-shadow: 0 6px 16px rgba(0,0,0,.08);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
   font-size: 18px;
   line-height: 1;
   cursor: pointer;
   user-select: none;
-  transition: all .15s ease;
+  transition: all 0.15s ease;
 }
-.reviews-btn:hover, .reviews-btn:focus {
+
+.reviews-btn:hover,
+.reviews-btn:focus {
   transform: scale(1.06);
   border-color: var(--color-primary);
   box-shadow: var(--shadow-strong);
   outline: none;
 }
+
 .reviews-btn.is-disabled {
-  opacity: .35;
+  opacity: 0.35;
   cursor: default;
   pointer-events: none;
 }
+
+/* Viewport de Reviews */
 .reviews-viewport {
   position: relative;
   flex: 1 1 auto;
   overflow: hidden;
   padding-inline: 6px;
 }
-.reviews-viewport::before, .reviews-viewport::after {
-  content: "";
+
+.reviews-viewport::before,
+.reviews-viewport::after {
+  content: '';
   position: absolute;
   top: 0;
   bottom: 0;
   width: 34px;
   pointer-events: none;
 }
+
 .reviews-viewport::before {
   left: 0;
-  background: linear-gradient(90deg, var(--color-white) 40%, rgba(255,255,255,0));
+  background: linear-gradient(90deg, var(--color-white) 40%, rgba(255, 255, 255, 0));
 }
+
 .reviews-viewport::after {
   right: 0;
-  background: linear-gradient(270deg, var(--color-white) 40%, rgba(255,255,255,0));
+  background: linear-gradient(270deg, var(--color-white) 40%, rgba(255, 255, 255, 0));
 }
+
+/* Track de Reviews */
 .reviews-track {
   display: grid;
   grid-auto-flow: column;
@@ -559,7 +732,12 @@ img { max-width: 100%; height: auto; }
   scrollbar-width: none;
   grid-auto-columns: minmax(220px, min(280px, calc((100% - 42px) / 4)));
 }
-.reviews-track::-webkit-scrollbar { display: none; }
+
+.reviews-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Tarjetas de Review */
 .review {
   scroll-snap-align: start;
   border: 1px solid var(--color-medium-gray);
@@ -568,24 +746,29 @@ img { max-width: 100%; height: auto; }
   background: var(--color-white);
   box-shadow: var(--shadow-light);
 }
+
 .review blockquote {
   margin: 0 0 6px;
-  font-size: .95rem;
+  font-size: 0.95rem;
   line-height: 1.45;
 }
+
 .review figcaption {
   color: var(--color-text-medium);
   font-weight: 600;
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
-/* ========== FOOTER ========== */
+/* ====================================================
+   6. FOOTER
+   ==================================================== */
 .main-footer {
   background: var(--color-black);
   color: var(--color-white);
   padding: var(--space-xxxl) var(--space-xl) var(--space-xl);
   font-size: 14px;
 }
+
 .footer-wrapper {
   max-width: 1200px;
   margin: 0 auto var(--space-xl);
@@ -594,29 +777,52 @@ img { max-width: 100%; height: auto; }
   justify-content: space-between;
   gap: var(--space-xxl);
 }
+
 .footer-column {
   flex: 1 1 220px;
   min-width: 180px;
 }
-.footer-column h2, .footer-column h3 {
+
+.footer-column h2,
+.footer-column h3 {
   color: var(--color-white);
   margin-bottom: var(--space-md);
   font-size: var(--font-size-lg);
 }
-.footer-column p, .footer-column ul li a {
+
+.footer-column p,
+.footer-column ul li a {
   color: var(--color-footer-text);
   line-height: 1.8;
 }
-.footer-column ul { list-style: none; padding: 0; }
-.footer-column ul li { margin-bottom: var(--space-sm); }
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: var(--space-sm);
+}
+
 .footer-column ul li a {
   transition: color var(--transition-speed) ease;
 }
-.footer-column ul li a:hover, .footer-column ul li a:focus {
+
+.footer-column ul li a:hover,
+.footer-column ul li a:focus {
   color: var(--color-primary);
 }
-.footer-column address { font-style: normal; }
-.redes-sociales { display: flex; gap: var(--space-lg); }
+
+.footer-column address {
+  font-style: normal;
+}
+
+.redes-sociales {
+  display: flex;
+  gap: var(--space-lg);
+}
+
 .footer-bottom {
   text-align: center;
   padding-top: var(--space-xl);
@@ -624,7 +830,9 @@ img { max-width: 100%; height: auto; }
   color: var(--color-footer-text);
 }
 
-/* ========== WHATSAPP FLOTANTE ========== */
+/* ====================================================
+   7. ELEMENTOS FLOTANTES
+   ==================================================== */
 .whatsapp-float {
   position: fixed;
   width: 60px;
@@ -633,27 +841,41 @@ img { max-width: 100%; height: auto; }
   right: var(--space-xxl);
   background: var(--color-accent-green);
   border-radius: 50%;
-  box-shadow: 2px 2px 5px rgba(0,0,0,.3);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   transition: all var(--transition-speed) ease;
   z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.whatsapp-float img { width: 35px; }
-.whatsapp-float:hover, .whatsapp-float:focus {
+
+.whatsapp-float img {
+  width: 35px;
+}
+
+.whatsapp-float:hover,
+.whatsapp-float:focus {
   background: var(--color-accent-green-dark);
   transform: scale(1.05);
   outline: none;
 }
 
-/* ========== RESPONSIVE - TABLET ========== */
+/* ====================================================
+   8. MEDIA QUERIES
+   ==================================================== */
+
+/* --- 8.1 Tablet (768px+) --- */
 @media (min-width: 768px) {
-  .banner-principal { height: 420px; }
-  .banner-principal h2 { font-size: var(--font-size-xxxl); }
+  .banner-principal {
+    height: 420px;
+  }
+  
+  .banner-principal h2 {
+    font-size: var(--font-size-xxxl);
+  }
 }
 
-/* ========== RESPONSIVE - DESKTOP ========== */
+/* --- 8.2 Desktop (992px+) --- */
 @media (min-width: 992px) {
   .shelf-track {
     display: grid;
@@ -662,37 +884,67 @@ img { max-width: 100%; height: auto; }
     grid-template-columns: repeat(4, minmax(220px, 1fr));
     justify-content: center;
   }
+  
   .shelf-card {
     width: auto;
     max-width: none;
   }
 }
+
+/* --- 8.3 Desktop Grande (1024px+) --- */
 @media (min-width: 1024px) {
-  .banner-principal { height: 500px; }
+  .banner-principal {
+    height: 500px;
+  }
 }
+
+/* --- 8.4 Desktop XL (1200px+) --- */
 @media (min-width: 1200px) {
   .shelf-track {
     grid-template-columns: repeat(5, minmax(220px, 1fr));
   }
 }
 
-/* ========== RESPONSIVE - MÓVIL (Carrusel Swappie y mejoras) ========== */
+/* --- 8.5 Móvil (max-767px) --- */
 @media (max-width: 767px) {
+  /* Header Móvil */
   .header-wrapper {
     flex-direction: column;
     gap: var(--space-lg);
     padding: var(--space-md) var(--space-lg);
   }
+  
   .header-actions {
     width: 100%;
     justify-content: center;
   }
-  .logo { margin-bottom: var(--space-sm); }
-  .categorias-nav { display: none; }
-  .banner-principal { height: 280px; }
-  .banner-principal .overlay { padding: var(--space-xl) var(--space-lg); }
-  .banner-principal h2 { font-size: 1.6rem; }
-  .banner-principal p { font-size: .9rem; }
+  
+  .logo {
+    margin-bottom: var(--space-sm);
+  }
+  
+  .categorias-nav {
+    display: none;
+  }
+  
+  /* Banner Móvil */
+  .banner-principal {
+    height: 280px;
+  }
+  
+  .banner-principal .overlay {
+    padding: var(--space-xl) var(--space-lg);
+  }
+  
+  .banner-principal h2 {
+    font-size: 1.6rem;
+  }
+  
+  .banner-principal p {
+    font-size: 0.9rem;
+  }
+  
+  /* Beneficios Móvil */
   .benefits {
     padding-top: var(--gap-section);
     padding-bottom: var(--space-lg);
@@ -700,16 +952,23 @@ img { max-width: 100%; height: auto; }
     padding-right: 0;
     margin-bottom: 0;
   }
+  
   .benefits h2 {
     font-size: 1.25rem;
     margin-bottom: var(--space-lg);
   }
-  .benefits-list { margin-bottom: var(--space-lg); }
+  
+  .benefits-list {
+    margin-bottom: var(--space-lg);
+  }
+  
   .benefits-cta {
     margin-top: 0;
     margin-bottom: 0;
     padding-bottom: 0;
   }
+  
+  /* Shelf Móvil - Carrusel Estilo Swappie */
   .shelf {
     padding-top: var(--space-lg);
     padding-bottom: var(--gap-section);
@@ -717,7 +976,11 @@ img { max-width: 100%; height: auto; }
     padding-right: 0;
     margin-top: 0;
   }
-  .shelf .container { padding: 0 !important; }
+  
+  .shelf .container {
+    padding: 0 !important;
+  }
+  
   .shelf-head {
     flex-direction: column;
     align-items: center;
@@ -726,12 +989,14 @@ img { max-width: 100%; height: auto; }
     margin: 0 0 var(--space-md) 0;
     position: static;
   }
+  
   .shelf-head h2 {
     font-size: 1.25rem;
     text-align: center;
     width: 100%;
     margin: 0 auto;
   }
+  
   .shelf-ver-todo {
     position: static;
     margin-top: 4px;
@@ -739,6 +1004,8 @@ img { max-width: 100%; height: auto; }
     margin-right: 0;
     font-size: 1rem;
   }
+  
+  /* Carrusel de Productos Móvil */
   .shelf-track {
     display: flex !important;
     flex-direction: row;
@@ -751,10 +1018,11 @@ img { max-width: 100%; height: auto; }
     padding-bottom: 16px;
     margin-top: 0;
   }
+  
   .shelf-card {
     flex: 0 0 60vw;
-    max-width: 30vw;
-    min-width: 10vw;
+    max-width: 60vw;
+    min-width: 60vw;
     background: #fff;
     margin: 0;
     scroll-snap-align: start;
@@ -762,12 +1030,13 @@ img { max-width: 100%; height: auto; }
     flex-direction: column;
     align-items: center;
     border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     min-height: 170px;
     max-height: 195px;
     justify-content: space-between;
     padding: 14px 8px 12px 8px;
   }
+  
   .shelf-card img {
     width: 90%;
     max-width: 180px;
@@ -777,69 +1046,58 @@ img { max-width: 100%; height: auto; }
     margin: 0 auto 8px auto;
     display: block;
   }
+  
   .shelf-card .card-body {
     padding: 4px 4px 8px 4px;
     gap: 3px;
   }
+  
   .shelf-card h3 {
     font-size: 0.7rem;
     margin-bottom: 2px;
   }
+  
   .shelf-card .price {
     font-size: 0.7rem;
     margin-bottom: 2px;
   }
+  
   .shelf-card .cta {
     font-size: 0.8rem;
     padding: 7px 0;
     width: 100%;
     margin-top: 4px;
   }
+  
+  /* Títulos y Contenido Móvil */
   .descripcion-servicios h2,
   .reviews h2 {
     font-size: 1.25rem;
     margin-bottom: var(--space-lg);
   }
-  .container { padding: 0 var(--space-lg); }
-  .reviews-btn { display: none; }
-  .reviews-track { grid-auto-columns: 85%; }
+  
+  .container {
+    padding: 0 var(--space-lg);
+  }
+  
+  /* Reviews Móvil */
+  .reviews-btn {
+    display: none;
+  }
+  
+  .reviews-track {
+    grid-auto-columns: 85%;
+  }
+  
+  /* WhatsApp Móvil */
   .whatsapp-float {
     width: 50px;
     height: 50px;
     bottom: var(--space-lg);
     right: var(--space-lg);
   }
-  .whatsapp-float img { width: 30px; }
-}
-.shelf-card .cta {
-  display: flex;               /* Flex para centrar el contenido */
-  justify-content: center;     /* Centrar horizontal */
-  align-items: center;         /* Centrar vertical */
-  width: 100%;
-  border: 1px solid var(--color-primary);
-  color: var(--color-white);
-  background: var(--color-primary);
-  border-radius: 900px;
-  padding: 7px 0;
-  font-weight: 600;
-  font-size: 0.8rem;
-  transition: all .2s ease;
-  box-sizing: border-box;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-top: 6px;
-  text-align: center;          /* Por si acaso */
-  cursor: pointer;
-}
-.shelf-track {
-  -ms-touch-action: pan-x;
-  touch-action: pan-x;
-  overflow-x: auto;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-}
-.shelf-card,
-.shelf-card * {
-  touch-action: pan-x;
+  
+  .whatsapp-float img {
+    width: 30px;
+  }
 }
