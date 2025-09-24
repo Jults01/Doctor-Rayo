@@ -832,3 +832,14 @@ img { max-width: 100%; height: auto; }
   text-align: center;          /* Por si acaso */
   cursor: pointer;
 }
+.shelf-track {
+  -ms-touch-action: pan-x;
+  touch-action: pan-x;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+.shelf-card,
+.shelf-card * {
+  touch-action: pan-x;
+}
