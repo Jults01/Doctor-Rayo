@@ -967,6 +967,11 @@ img {
     margin-bottom: 0;
     padding-bottom: 0;
   }
+  .benefit-item {
+    padding: 1px 1px;
+    gap:1px;
+    border-radius: 8px;
+  }
   
   /* Shelf Móvil - Carrusel Estilo Swappie */
   .shelf {
@@ -1101,18 +1106,3 @@ img {
     width: 30px;
   }
 }
-/* Hacer los recuadros de beneficios más pequeños */
-  .benefit-item {
-    padding: 1px 1px;           /* Reduce el espaciado interno */
-    gap: 5px;                    /* Reduce espacio entre icono y texto */
-    border-radius: 8px;          /* Esquinas menos redondeadas */
-  }
-  
-  .benefit-icon {
-    width: 32px;                 /* Icono más pequeño (era 44px) */
-    height: 32px;
-  }
-  
-  .benefit-title {
-    font-size: 0.82rem;          /* Texto más pequeño */
-  }
