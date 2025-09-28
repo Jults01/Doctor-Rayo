@@ -1017,9 +1017,9 @@ img {
     overflow-x: auto;
     gap: 12px;
     scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    padding-left: 8vw;
-    padding-right: 8vw;
+    -webkit-overflow-scrolling: touch !important;
+    padding-left: 20px;
+    padding-right: 20px;
     padding-bottom: 16px;
     margin-top: 0;
   }
