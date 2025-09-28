@@ -12,58 +12,40 @@
   <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
+  <!-- Header Principal -->
   <header class="main-header">
-    <div class="header-wrapper">
-      <div class="logo">
-        <a href="index.html" aria-label="Inicio Doctor Rayo">
-          <h1>Doctor Rayo</h1>
-        </a>
+    <div class="container">
+      <div class="header-wrapper">
+        <div class="logo">
+          <a href="index.html" aria-label="Inicio Doctor Rayo">
+            <h1>Doctor Rayo</h1>
+          </a>
+        </div>
+        <nav class="header-actions" aria-label="Acciones rápidas">
+          <div class="header-action renueva-button">
+            <a href="/renueva.html" class="button">
+              Renueva
+              <img src="img/renueva-icon.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+            </a>
+          </div>
+          <div class="header-action login-button">
+            <a href="/login.html" aria-label="Iniciar sesión">
+              <img src="img/login-icon.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+            </a>
+          </div>
+          <div class="header-action carrito-button">
+            <a href="/carrito.html" aria-label="Ver carrito de compras">
+              <img src="img/cart-icon.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+              <span class="cart-count visually-hidden">0</span>
+            </a>
+          </div>
+        </nav>
       </div>
-      <nav class="header-actions" aria-label="Acciones rápidas">
-        <div class="header-action renueva-button">
-          <a href="/renueva.html" class="button">
-            Renueva
-            <img src="img/renueva-icon.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
-          </a>
-        </div>
-        <div class="header-action login-button">
-          <a href="/login.html" aria-label="Iniciar sesión">
-            <img src="img/login-icon.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
-          </a>
-        </div>
-        <div class="header-action carrito-button">
-          <a href="/carrito.html" aria-label="Ver carrito de compras">
-            <img src="img/cart-icon.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
-            <span class="cart-count visually-hidden">0</span>
-          </a>
-        </div>
-      </nav>
     </div>
   </header>
 
-  <nav class="categorias-nav" aria-label="Categorías principales de productos">
-    <ul id="main-navigation">
-      <li class="dropdown">
-        <a href="categorias/celulares" class="nav-link" id="celularesDropdown" aria-haspopup="true" aria-expanded="false">Celulares</a>
-        <ul class="dropdown-menu" aria-labelledby="celularesDropdown">
-          <li><a href="categorias/celulares/iphone">iPhone</a></li>
-          <li><a href="categorias/celulares/samsung">Samsung</a></li>
-          <li><a href="categorias/celulares/xiaomi">Xiaomi</a></li>
-          <li><a href="categorias/celulares/motorola">Motorola</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="categorias/tablets" class="nav-link" id="tabletsDropdown" aria-haspopup="true" aria-expanded="false">Tablets</a>
-        <ul class="dropdown-menu" aria-labelledby="tabletsDropdown">
-          <li><a href="categorias/tablets/ipad">iPad</a></li>
-        </ul>
-      </li>
-      <li><a href="categorias/accesorios" class="nav-link">Accesorios</a></li>
-      <li><a href="ofertas" class="nav-link">Ofertas</a></li>
-    </ul>
-  </nav>
-
   <main>
+    <!-- Banner Principal -->
     <section class="banner-principal" role="banner">
       <div class="overlay">
         <h2>¡Compra, vende o repara tu celular!</h2>
@@ -71,6 +53,7 @@
       </div>
     </section>
 
+    <!-- Sección Beneficios -->
     <section class="benefits" aria-label="Reparación a domicilio">
       <div class="container">
         <h2>Reparamos tu celular sin salir de casa</h2>
@@ -106,6 +89,7 @@
       </div>
     </section>
 
+    <!-- Shelf de Productos -->
     <section class="shelf" aria-label="Modelos destacados">
       <div class="container">
         <div class="shelf-head">
@@ -116,170 +100,23 @@
       </div>
     </section>
 
-<!-- Reemplazar la sección "descripcion-servicios" con esto -->
-<section class="services-section">
-    <div class="tabs-container">
+    <!-- Sección Servicios con Tabs -->
+    <section class="services-section">
+      <div class="tabs-container">
         <h2>Lo que hacemos por ti</h2>
         <p class="subtitle">Simple, rápido y seguro</p>
         
         <div class="tabs-nav">
-            <button class="tab-button" onclick="openModal('vender', this)">Vender</button>
-            <button class="tab-button" onclick="openModal('comprar', this)">Comprar</button>
-            <button class="tab-button" onclick="openModal('reparar', this)">Reparar</button>
+          <button class="tab-button" onclick="openModal('vender', this)">Vender</button>
+          <button class="tab-button" onclick="openModal('comprar', this)">Comprar</button>
+          <button class="tab-button" onclick="openModal('reparar', this)">Reparar</button>
         </div>
         
         <p class="info-text">Haz clic en cualquier opción para ver más información</p>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- Modales - Agregar antes del cierre del body -->
-<div id="modal-vender" class="modal">
-    <div class="modal-content">
-        <button class="close-modal" onclick="closeModal('vender')">✕</button>
-        <div class="modal-icon">💰</div>
-        <h3>Vendemos tu celular al mejor precio</h3>
-        <p>Proceso rápido y transparente. Envíanos fotos por WhatsApp y en menos de 15 minutos tendrás nuestra mejor oferta con pago inmediato.</p>
-        
-        <div class="modal-benefits">
-            <div class="benefit-item">
-                <span class="check-icon">✓</span>
-                <span>Tasación justa en 15 minutos</span>
-            </div>
-            <div class="benefit-item">
-                <span class="check-icon">✓</span>
-                <span>Pago inmediato en efectivo o transferencia</span>
-            </div>
-            <div class="benefit-item">
-                <span class="check-icon">✓</span>
-                <span>Recogemos el equipo a domicilio sin costo</span>
-            </div>
-            <div class="benefit-item">
-                <span class="check-icon">✓</span>
-                <span>Proceso seguro y confidencial</span>
-            </div>
-        </div>
-        
-        <div class="modal-actions">
-            <a href="#vender" class="cta-button">Vender ahora</a>
-        </div>
-    </div>
-</div>
-
-<div id="modal-comprar" class="modal">
-    <div class="modal-content">
-        <button class="close-modal" onclick="closeModal('comprar')">✕</button>
-        <div class="modal-icon">📱</div>
-        <h3>Equipos certificados con garantía</h3>
-        <p>Todos nuestros celulares pasan por un riguroso proceso de certificación. Los mejores precios del mercado con garantía escrita.</p>
-        
-        <div class="modal-benefits">
-            <div class="benefit-item">
-                <span class="check-icon">✓</span>
-                <span>Certificación de 30 puntos de calidad</span>
-            </div>
-            <div class="benefit-item">
-                <span class="check-icon">✓</span>
-                <span>Garantía escrita de 90 días</span>
-            </div>
-            <div class="benefit-item">
-                <span class="check-icon">✓</span>
-                <span>Envío gratis en Bogotá</span>
-            </div>
-            <div class="benefit-item">
-                <span class="check-icon">✓</span>
-                <span>Opciones de pago flexibles</span>
-            </div>
-        </div>
-        
-        <div class="modal-actions">
-            <a href="#catalogo" class="cta-button">Ver catálogo</a>
-        </div>
-    </div>
-</div>
-
-<div id="modal-reparar" class="modal">
-    <div class="modal-content">
-        <button class="close-modal" onclick="closeModal('reparar')">✕</button>
-        <div class="modal-icon">🔧</div>
-        <h3>Reparación profesional a domicilio</h3>
-        <p>Técnicos certificados van hasta tu casa u oficina. Usamos repuestos de calidad con herramientas profesionales.</p>
-        
-        <div class="modal-benefits">
-            <div class="benefit-item">
-                <span class="check-icon">✓</span>
-                <span>Servicio a domicilio sin costo extra</span>
-            </div>
-            <div class="benefit-item">
-                <span class="check-icon">✓</span>
-                <span>Repuestos originales o de alta calidad</span>
-            </div>
-            <div class="benefit-item">
-                <span class="check-icon">✓</span>
-                <span>Garantía escrita de 90 días</span>
-            </div>
-            <div class="benefit-item">
-                <span class="check-icon">✓</span>
-                <span>Reparación en menos de 2 horas</span>
-            </div>
-        </div>
-        
-        <div class="modal-actions">
-            <a href="#reparacion" class="cta-button">Solicitar reparación</a>
-        </div>
-    </div>
-</div>
-
-<!-- JavaScript - Agregar antes del cierre del body -->
-<script>
-    let activeButton = null;
-    
-    function openModal(service, button) {
-        if (activeButton) {
-            activeButton.classList.remove('active');
-        }
-        
-        button.classList.add('active');
-        activeButton = button;
-        
-        document.getElementById('modal-' + service).classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-    
-    function closeModal(service) {
-        document.getElementById('modal-' + service).classList.remove('active');
-        document.body.style.overflow = 'auto';
-        
-        if (activeButton) {
-            activeButton.classList.remove('active');
-            activeButton = null;
-        }
-    }
-    
-    window.onclick = function(event) {
-        if (event.target.classList.contains('modal')) {
-            event.target.classList.remove('active');
-            document.body.style.overflow = 'auto';
-            if (activeButton) {
-                activeButton.classList.remove('active');
-                activeButton = null;
-            }
-        }
-    }
-    
-    document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape') {
-            document.querySelectorAll('.modal').forEach(modal => {
-                modal.classList.remove('active');
-            });
-            document.body.style.overflow = 'auto';
-            if (activeButton) {
-                activeButton.classList.remove('active');
-                activeButton = null;
-            }
-        }
-    });
-</script>
-
+    <!-- Sección Reviews -->
     <section class="reviews" aria-label="Opiniones de clientes">
       <div class="container">
         <h2>Clientes felices</h2>
@@ -315,6 +152,7 @@
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="main-footer" role="contentinfo">
     <div class="footer-wrapper container">
       <div class="footer-column">
@@ -351,37 +189,159 @@
     </div>
   </footer>
 
+  <!-- WhatsApp Flotante -->
   <a href="https://wa.me/573046486740" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp">
     <img src="whatsapp-icon.png" alt="WhatsApp" loading="lazy" decoding="async">
   </a>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Dropdowns nav
-      var dropdowns = document.querySelectorAll('.dropdown > .nav-link');
-      function closeAll() {
-        document.querySelectorAll('.dropdown.show').forEach(function(li) {
-          li.classList.remove('show');
-          var link = li.querySelector('.nav-link');
-          if (link) link.setAttribute('aria-expanded', 'false');
-        });
-      }
-      dropdowns.forEach(function(link) {
-        link.addEventListener('click', function(e) {
-          var li = link.parentElement;
-          var open = li.classList.toggle('show');
-          link.setAttribute('aria-expanded', String(open));
-          e.preventDefault();
-        });
-      });
-      document.addEventListener('click', function(e) {
-        if (!e.target.closest('.dropdown')) closeAll();
-      });
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') closeAll();
-      });
+  <!-- Modales de Servicios -->
+  <div id="modal-vender" class="modal">
+    <div class="modal-content">
+      <button class="close-modal" onclick="closeModal('vender')">✕</button>
+      <div class="modal-icon">💰</div>
+      <h3>Vendemos tu celular al mejor precio</h3>
+      <p>Proceso rápido y transparente. Envíanos fotos por WhatsApp y en menos de 15 minutos tendrás nuestra mejor oferta con pago inmediato.</p>
+      
+      <div class="modal-benefits">
+        <div class="modal-benefit-item">
+          <span class="check-icon">✓</span>
+          <span>Tasación justa en 15 minutos</span>
+        </div>
+        <div class="modal-benefit-item">
+          <span class="check-icon">✓</span>
+          <span>Pago inmediato en efectivo o transferencia</span>
+        </div>
+        <div class="modal-benefit-item">
+          <span class="check-icon">✓</span>
+          <span>Recogemos el equipo a domicilio sin costo</span>
+        </div>
+        <div class="modal-benefit-item">
+          <span class="check-icon">✓</span>
+          <span>Proceso seguro y confidencial</span>
+        </div>
+      </div>
+      
+      <div class="modal-actions">
+        <a href="#vender" class="cta-button">Vender ahora</a>
+      </div>
+    </div>
+  </div>
 
-      // Shelf cards data (optimizadas)
+  <div id="modal-comprar" class="modal">
+    <div class="modal-content">
+      <button class="close-modal" onclick="closeModal('comprar')">✕</button>
+      <div class="modal-icon">📱</div>
+      <h3>Equipos certificados con garantía</h3>
+      <p>Todos nuestros celulares pasan por un riguroso proceso de certificación. Los mejores precios del mercado con garantía escrita.</p>
+      
+      <div class="modal-benefits">
+        <div class="modal-benefit-item">
+          <span class="check-icon">✓</span>
+          <span>Certificación de 30 puntos de calidad</span>
+        </div>
+        <div class="modal-benefit-item">
+          <span class="check-icon">✓</span>
+          <span>Garantía escrita de 90 días</span>
+        </div>
+        <div class="modal-benefit-item">
+          <span class="check-icon">✓</span>
+          <span>Envío gratis en Bogotá</span>
+        </div>
+        <div class="modal-benefit-item">
+          <span class="check-icon">✓</span>
+          <span>Opciones de pago flexibles</span>
+        </div>
+      </div>
+      
+      <div class="modal-actions">
+        <a href="#catalogo" class="cta-button">Ver catálogo</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-reparar" class="modal">
+    <div class="modal-content">
+      <button class="close-modal" onclick="closeModal('reparar')">✕</button>
+      <div class="modal-icon">🔧</div>
+      <h3>Reparación profesional a domicilio</h3>
+      <p>Técnicos certificados van hasta tu casa u oficina. Usamos repuestos de calidad con herramientas profesionales.</p>
+      
+      <div class="modal-benefits">
+        <div class="modal-benefit-item">
+          <span class="check-icon">✓</span>
+          <span>Servicio a domicilio sin costo extra</span>
+        </div>
+        <div class="modal-benefit-item">
+          <span class="check-icon">✓</span>
+          <span>Repuestos originales o de alta calidad</span>
+        </div>
+        <div class="modal-benefit-item">
+          <span class="check-icon">✓</span>
+          <span>Garantía escrita de 90 días</span>
+        </div>
+        <div class="modal-benefit-item">
+          <span class="check-icon">✓</span>
+          <span>Reparación en menos de 2 horas</span>
+        </div>
+      </div>
+      
+      <div class="modal-actions">
+        <a href="#reparacion" class="cta-button">Solicitar reparación</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // Script para modales
+    let activeButton = null;
+    
+    function openModal(service, button) {
+      if (activeButton) {
+        activeButton.classList.remove('active');
+      }
+      button.classList.add('active');
+      activeButton = button;
+      document.getElementById('modal-' + service).classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeModal(service) {
+      document.getElementById('modal-' + service).classList.remove('active');
+      document.body.style.overflow = 'auto';
+      if (activeButton) {
+        activeButton.classList.remove('active');
+        activeButton = null;
+      }
+    }
+    
+    window.onclick = function(event) {
+      if (event.target.classList.contains('modal')) {
+        event.target.classList.remove('active');
+        document.body.style.overflow = 'auto';
+        if (activeButton) {
+          activeButton.classList.remove('active');
+          activeButton = null;
+        }
+      }
+    }
+    
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        document.querySelectorAll('.modal').forEach(modal => {
+          modal.classList.remove('active');
+        });
+        document.body.style.overflow = 'auto';
+        if (activeButton) {
+          activeButton.classList.remove('active');
+          activeButton = null;
+        }
+      }
+    });
+
+    // Script existente para shelf y reviews
+    document.addEventListener('DOMContentLoaded', function() {
+      // Datos del shelf
       var shelfData = [
         {name:'iPhone 12', price:'Desde $1.190.000', badge:'Mejor precio', img:'img/prod-iphone12.jpg', href:'categorias/celulares/iphone'},
         {name:'iPhone 13', price:'Desde $1.690.000', badge:'Top ventas', img:'img/prod-iphone13.jpg', href:'categorias/celulares/iphone'},
@@ -389,11 +349,12 @@
         {name:'Xiaomi 12', price:'Desde $980.000', badge:'Ahorra', img:'img/prod-xiaomi12.jpg', href:'categorias/celulares/xiaomi'},
         {name:'Motorola G', price:'Desde $620.000', badge:'Económico', img:'img/prod-moto-g.jpg', href:'categorias/celulares/motorola'}
       ];
+      
       var track = document.getElementById('shelf-track');
       if (track) {
         track.innerHTML = shelfData.map(function(p) {
           return '<article class="shelf-card">' +
-            '<img src="' + p.img + '" alt="' + p.name + '" width="180" height="70" loading="lazy" decoding="async">' +
+            '<img src="' + p.img + '" alt="' + p.name + '" loading="lazy" decoding="async">' +
             '<div class="card-body">' +
               '<span class="badge">' + p.badge + '</span>' +
               '<h3>' + p.name + '</h3>' +
@@ -404,11 +365,12 @@
         }).join('');
       }
 
-      // Reviews carrusel
+      // Script para reviews
       var reviewsTrack = document.getElementById('reviews-track');
       var prevBtn = document.querySelector('.reviews-prev');
       var nextBtn = document.querySelector('.reviews-next');
       var viewport = document.querySelector('.reviews-viewport');
+      
       if (reviewsTrack && prevBtn && nextBtn) {
         function getStep() {
           var first = reviewsTrack.querySelector('.review');
@@ -416,25 +378,30 @@
           var gap = parseInt(getComputedStyle(reviewsTrack).gap || '16', 10);
           return first.offsetWidth + gap;
         }
+
         function updateButtons() {
           var max = reviewsTrack.scrollWidth - reviewsTrack.clientWidth - 1;
           var atStart = reviewsTrack.scrollLeft <= 0;
           var atEnd = reviewsTrack.scrollLeft >= max;
+          
           prevBtn.classList.toggle('is-disabled', atStart);
           nextBtn.classList.toggle('is-disabled', atEnd);
           prevBtn.setAttribute('aria-disabled', atStart ? 'true' : 'false');
           nextBtn.setAttribute('aria-disabled', atEnd ? 'true' : 'false');
         }
+
         function scroll(direction) {
           var step = getStep();
           if (step) {
             reviewsTrack.scrollBy({ left: direction * step, behavior: 'smooth' });
           }
         }
+
         prevBtn.addEventListener('click', function() { scroll(-1); });
         nextBtn.addEventListener('click', function() { scroll(1); });
         reviewsTrack.addEventListener('scroll', updateButtons, { passive: true });
         window.addEventListener('resize', updateButtons);
+
         if (viewport) {
           viewport.addEventListener('keydown', function(e) {
             if (e.key === 'ArrowLeft') { 
@@ -447,9 +414,11 @@
             }
           });
         }
+
         updateButtons();
       }
-      // Año actual en footer
+
+      // Año actual
       var yearElement = document.getElementById('current-year');
       if (yearElement) {
         yearElement.textContent = new Date().getFullYear();

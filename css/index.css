@@ -1111,7 +1111,7 @@ img {
    ==================================================== */
 .services-section {
     padding: 50px 20px;
-    background: #f9f9f9;
+    background: #ffffff; /* Cambiado de #f9f9f9 a blanco */
 }
 
 .tabs-container {
@@ -1267,13 +1267,14 @@ img {
 }
 
 .modal-benefits {
-    background: #f9f9f9;
+    background: #ffffff; /* Cambiado de #f9f9f9 a blanco */
+    border: 1px solid #e0e0e0; /* Agregado borde para visibilidad */
     border-radius: 10px;
     padding: 20px;
     margin: 20px 0;
 }
 
-.benefit-item {
+.modal-benefit-item {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -1282,7 +1283,7 @@ img {
     color: #333;
 }
 
-.benefit-item:last-child {
+.modal-benefit-item:last-child {
     margin-bottom: 0;
 }
 
@@ -1367,7 +1368,8 @@ img {
     }
     
     .modal-actions .cta-button {
-        width: 100%;
+        width: auto; /* Cambiado de 100% a auto */
+        display: inline-block;
         text-align: center;
     }
 }
