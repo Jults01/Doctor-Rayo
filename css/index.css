@@ -1036,8 +1036,8 @@ img {
     align-items: center;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    min-height: 170px;
-    max-height: 195px;
+    min-height: 220px;
+    max-height: 250px;
     justify-content: space-between;
     padding: 14px 8px 12px 8px;
   }
@@ -1045,8 +1045,8 @@ img {
   .shelf-card img {
     width: 100%;
     max-width: none;
-    max-height: 90px;
-    min-height: 40px;
+    max-height: 120px;
+    min-height: 100px;
     object-fit: contain;
     margin: 0 auto 8px auto;
     display: block;
