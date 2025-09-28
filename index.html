@@ -116,15 +116,169 @@
       </div>
     </section>
 
-    <section class="descripcion-servicios">
-      <div class="container">
-        <h2>¿Cómo trabajamos?</h2>
-        <p>Doctor Rayo es el sitio ideal para comprar, vender o reparar tu celular. El proceso es rápido y seguro.</p>
-        <p>Para vender, envías fotos por WhatsApp y en menos de 15 minutos te damos una oferta clara y justa.</p>
-        <p>En reparaciones, contamos con servicio técnico a domicilio. Usamos repuestos de calidad y herramientas profesionales.</p>
-        <p>Cada reparación incluye garantía por escrito de hasta 90 días y soporte post-servicio.</p>
-      </div>
-    </section>
+<!-- Reemplazar la sección "descripcion-servicios" con esto -->
+<section class="services-section">
+    <div class="tabs-container">
+        <h2>Lo que hacemos por ti</h2>
+        <p class="subtitle">Simple, rápido y seguro</p>
+        
+        <div class="tabs-nav">
+            <button class="tab-button" onclick="openModal('vender', this)">Vender</button>
+            <button class="tab-button" onclick="openModal('comprar', this)">Comprar</button>
+            <button class="tab-button" onclick="openModal('reparar', this)">Reparar</button>
+        </div>
+        
+        <p class="info-text">Haz clic en cualquier opción para ver más información</p>
+    </div>
+</section>
+
+<!-- Modales - Agregar antes del cierre del body -->
+<div id="modal-vender" class="modal">
+    <div class="modal-content">
+        <button class="close-modal" onclick="closeModal('vender')">✕</button>
+        <div class="modal-icon">💰</div>
+        <h3>Vendemos tu celular al mejor precio</h3>
+        <p>Proceso rápido y transparente. Envíanos fotos por WhatsApp y en menos de 15 minutos tendrás nuestra mejor oferta con pago inmediato.</p>
+        
+        <div class="modal-benefits">
+            <div class="benefit-item">
+                <span class="check-icon">✓</span>
+                <span>Tasación justa en 15 minutos</span>
+            </div>
+            <div class="benefit-item">
+                <span class="check-icon">✓</span>
+                <span>Pago inmediato en efectivo o transferencia</span>
+            </div>
+            <div class="benefit-item">
+                <span class="check-icon">✓</span>
+                <span>Recogemos el equipo a domicilio sin costo</span>
+            </div>
+            <div class="benefit-item">
+                <span class="check-icon">✓</span>
+                <span>Proceso seguro y confidencial</span>
+            </div>
+        </div>
+        
+        <div class="modal-actions">
+            <a href="#vender" class="cta-button">Vender ahora</a>
+        </div>
+    </div>
+</div>
+
+<div id="modal-comprar" class="modal">
+    <div class="modal-content">
+        <button class="close-modal" onclick="closeModal('comprar')">✕</button>
+        <div class="modal-icon">📱</div>
+        <h3>Equipos certificados con garantía</h3>
+        <p>Todos nuestros celulares pasan por un riguroso proceso de certificación. Los mejores precios del mercado con garantía escrita.</p>
+        
+        <div class="modal-benefits">
+            <div class="benefit-item">
+                <span class="check-icon">✓</span>
+                <span>Certificación de 30 puntos de calidad</span>
+            </div>
+            <div class="benefit-item">
+                <span class="check-icon">✓</span>
+                <span>Garantía escrita de 90 días</span>
+            </div>
+            <div class="benefit-item">
+                <span class="check-icon">✓</span>
+                <span>Envío gratis en Bogotá</span>
+            </div>
+            <div class="benefit-item">
+                <span class="check-icon">✓</span>
+                <span>Opciones de pago flexibles</span>
+            </div>
+        </div>
+        
+        <div class="modal-actions">
+            <a href="#catalogo" class="cta-button">Ver catálogo</a>
+        </div>
+    </div>
+</div>
+
+<div id="modal-reparar" class="modal">
+    <div class="modal-content">
+        <button class="close-modal" onclick="closeModal('reparar')">✕</button>
+        <div class="modal-icon">🔧</div>
+        <h3>Reparación profesional a domicilio</h3>
+        <p>Técnicos certificados van hasta tu casa u oficina. Usamos repuestos de calidad con herramientas profesionales.</p>
+        
+        <div class="modal-benefits">
+            <div class="benefit-item">
+                <span class="check-icon">✓</span>
+                <span>Servicio a domicilio sin costo extra</span>
+            </div>
+            <div class="benefit-item">
+                <span class="check-icon">✓</span>
+                <span>Repuestos originales o de alta calidad</span>
+            </div>
+            <div class="benefit-item">
+                <span class="check-icon">✓</span>
+                <span>Garantía escrita de 90 días</span>
+            </div>
+            <div class="benefit-item">
+                <span class="check-icon">✓</span>
+                <span>Reparación en menos de 2 horas</span>
+            </div>
+        </div>
+        
+        <div class="modal-actions">
+            <a href="#reparacion" class="cta-button">Solicitar reparación</a>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript - Agregar antes del cierre del body -->
+<script>
+    let activeButton = null;
+    
+    function openModal(service, button) {
+        if (activeButton) {
+            activeButton.classList.remove('active');
+        }
+        
+        button.classList.add('active');
+        activeButton = button;
+        
+        document.getElementById('modal-' + service).classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function closeModal(service) {
+        document.getElementById('modal-' + service).classList.remove('active');
+        document.body.style.overflow = 'auto';
+        
+        if (activeButton) {
+            activeButton.classList.remove('active');
+            activeButton = null;
+        }
+    }
+    
+    window.onclick = function(event) {
+        if (event.target.classList.contains('modal')) {
+            event.target.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            if (activeButton) {
+                activeButton.classList.remove('active');
+                activeButton = null;
+            }
+        }
+    }
+    
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            document.querySelectorAll('.modal').forEach(modal => {
+                modal.classList.remove('active');
+            });
+            document.body.style.overflow = 'auto';
+            if (activeButton) {
+                activeButton.classList.remove('active');
+                activeButton = null;
+            }
+        }
+    });
+</script>
 
     <section class="reviews" aria-label="Opiniones de clientes">
       <div class="container">
