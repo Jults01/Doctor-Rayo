@@ -1025,9 +1025,9 @@ img {
   }
   
   .shelf-card {
-    flex: 0 0 60vw;
-    max-width: 30vw;
-    min-width: 10vw;
+    flex: 0 0 45vw;
+    max-width: 45vw;
+    min-width: 45vw;
     background: #fff;
     margin: 0;
     scroll-snap-align: start;
@@ -1043,9 +1043,9 @@ img {
   }
   
   .shelf-card img {
-    width: 90%;
-    max-width: 180px;
-    max-height: 70px;
+    width: 100%;
+    max-width: none;
+    max-height: 90px;
     min-height: 40px;
     object-fit: contain;
     margin: 0 auto 8px auto;
