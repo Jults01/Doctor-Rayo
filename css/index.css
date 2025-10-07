@@ -67,7 +67,7 @@
   --space-xxl: 30px;
   --space-xxxl: 40px;
   --gap-content: 24px;
-  --gap-section: 50px;
+  --gap-section: 25px;
 
   /* --- Tipografía --- */
   --font-size-sm: 0.9rem;
@@ -1089,7 +1089,7 @@ img {
 @media (max-width: 767px) {
   /* Variables móvil: espaciado reducido a la mitad */
   :root {
-    --gap-section: 25px; /* 50px / 2 */
+    --gap-section: 13px; /* 50px / 2 */
   }
 
   /* === HEADER MÓVIL === */
