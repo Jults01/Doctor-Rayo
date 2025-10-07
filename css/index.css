@@ -1188,7 +1188,7 @@ img {
   }
   
   .shelf .container {
-    padding: 0 !important;
+    padding: 0 10px !important;
   }
   
   .shelf-head {
@@ -1222,7 +1222,7 @@ img {
     gap: 12px;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    padding: 0 var(--space-lg) var(--space-md) var(--space-lg);
+    padding: 0 20px var(--space-md) 20px;
     margin-top: 0;
   }
   
