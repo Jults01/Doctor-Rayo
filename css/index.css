@@ -1,7 +1,7 @@
 /* ====================================================
    DOCTOR RAYO - HOJA DE ESTILOS PRINCIPAL
-   Versión: 1.0
-   Última actualización: Diciembre 2024
+   Versión: 1.1
+   Última actualización: Enero 2025
    ==================================================== */
 
 /* ====================================================
@@ -17,15 +17,16 @@
       5.1 Banner Principal
       5.2 Beneficios
       5.3 Shelf (Productos Destacados)
-      5.4 Descripción de Servicios
+      5.4 Servicios con Tabs
       5.5 Reviews (Testimonios)
    6. Footer
    7. Elementos Flotantes (WhatsApp)
    8. Media Queries
       8.1 Tablet (768px+)
       8.2 Desktop (992px+)
-      8.3 Desktop XL (1200px+)
-      8.4 Móvil (max-767px)
+      8.3 Desktop Grande (1024px+)
+      8.4 Desktop XL (1200px+)
+      8.5 Móvil (max-767px)
    ==================================================== */
 
 /* ====================================================
@@ -394,7 +395,7 @@ img {
 
 /* --- 5.2 Beneficios --- */
 .benefits {
-  padding: 8px;
+  padding: var(--gap-section) 0;
 }
 
 .benefits h2 {
@@ -459,7 +460,7 @@ img {
 /* --- 5.3 Shelf (Productos Destacados) --- */
 .shelf {
   background: var(--color-white);
-  padding: 8px;
+  padding: var(--gap-section) 0;
 }
 
 .shelf-head {
@@ -504,8 +505,6 @@ img {
   scroll-snap-type: x proximity;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  -ms-touch-action: pan-x;
-  touch-action: auto;
 }
 
 .shelf-track::-webkit-scrollbar {
@@ -602,51 +601,222 @@ img {
   border-color: var(--color-primary-dark);
 }
 
-.shelf-card,
-.shelf-card * {
-  pointer-events: none;
-}
-
-.shelf-card .cta {
-  pointer-events: auto;
-  touch-action: auto;
-}
-
-/* --- 5.4 Descripción de Servicios --- */
-.descripcion-servicios {
+/* --- 5.4 Servicios con Tabs y Modales --- */
+.services-section {
+  padding: var(--gap-section) var(--space-xl);
   background: var(--color-white);
-  max-width: 900px;
+}
+
+.tabs-container {
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 8px;
+}
+
+.tabs-container h2 {
   text-align: center;
+  font-size: 32px;
+  margin-bottom: 10px;
   color: var(--color-text-dark);
 }
 
-.descripcion-servicios h2 {
-  font-size: var(--font-size-xxl);
+.tabs-container .subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: var(--gap-content);
+  font-size: 18px;
+}
+
+.tabs-nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: var(--gap-content);
+}
+
+.tab-button {
+  padding: 15px 35px;
+  background: var(--color-white);
+  border: 2px solid var(--color-medium-gray);
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text-medium);
+  font-family: inherit;
+}
+
+.tab-button:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 15px rgba(230, 0, 0, 0.15);
+}
+
+.tab-button.active {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 15px rgba(230, 0, 0, 0.2);
+}
+
+.info-text {
+  text-align: center;
+  color: #999;
+  font-size: 14px;
+  margin-top: -10px;
+  margin-bottom: var(--gap-content);
+  font-style: italic;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: var(--color-white);
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.close-modal {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #f5f5f5;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-speed) ease;
+}
+
+.close-modal:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+  transform: rotate(90deg);
+}
+
+.modal-icon {
+  font-size: 60px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.modal-content h3 {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--color-text-dark);
+}
+
+.modal-content p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #666;
   text-align: center;
   margin-bottom: var(--gap-content);
 }
 
-.descripcion-servicios p {
-  margin-bottom: var(--space-lg);
-  font-size: var(--font-size-base);
-  max-width: 700px;
-  margin-inline: auto;
+.modal-benefits {
+  background: var(--color-white);
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
 }
 
-.descripcion-servicios p:last-child {
+.modal-benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-size: 15px;
+  color: var(--color-text-medium);
+}
+
+.modal-benefit-item:last-child {
   margin-bottom: 0;
 }
 
-.descripcion-servicios p strong {
-  color: var(--color-primary-dark);
+.check-icon {
+  color: var(--color-accent-green);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: var(--gap-content);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.modal-actions .cta-button {
+  padding: 14px 30px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all var(--transition-speed) ease;
+  border: 2px solid var(--color-primary);
+  cursor: pointer;
+  display: inline-block;
+}
+
+.modal-actions .cta-button:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(230, 0, 0, 0.3);
 }
 
 /* --- 5.5 Reviews (Testimonios) --- */
 .reviews {
   background: var(--color-white);
-  padding: 8px;
+  padding: var(--gap-section) 0;
 }
 
 .reviews h2 {
@@ -765,221 +935,6 @@ img {
 }
 
 /* ====================================================
-   SECCIÓN SERVICIOS - TABS CON POPUP
-   ==================================================== */
-.services-section {
-    padding: var(--gap-section) 20px;
-    background: #ffffff;
-}
-
-.tabs-container {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.tabs-container h2 {
-    text-align: center;
-    font-size: 32px;
-    margin-bottom: 10px;
-    color: #0b0b0b;
-}
-
-.tabs-container .subtitle {
-    text-align: center;
-    color: #666;
-    margin-bottom: var(--gap-content);
-    font-size: 18px;
-}
-
-.tabs-nav {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: var(--gap-content);
-}
-
-.tab-button {
-    padding: 15px 35px;
-    background: white;
-    border: 2px solid #ddd;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 16px;
-    font-weight: 600;
-    color: #333;
-    font-family: inherit;
-    position: relative;
-}
-
-.tab-button:hover {
-    border-color: #e60000;
-    box-shadow: 0 4px 15px rgba(230, 0, 0, 0.15);
-}
-
-.tab-button.active {
-    background: #e60000;
-    color: white;
-    border-color: #e60000;
-    box-shadow: 0 4px 15px rgba(230, 0, 0, 0.2);
-}
-
-.info-text {
-    text-align: center;
-    color: #999;
-    font-size: 14px;
-    margin-top: -10px;
-    margin-bottom: var(--gap-content);
-    font-style: italic;
-}
-
-/* Modal */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
-    animation: fadeIn 0.3s ease;
-}
-
-.modal.active {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.modal-content {
-    background: white;
-    border-radius: 20px;
-    padding: 40px;
-    max-width: 600px;
-    width: 90%;
-    max-height: 80vh;
-    overflow-y: auto;
-    position: relative;
-    animation: slideUp 0.3s ease;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes slideUp {
-    from { 
-        opacity: 0;
-        transform: translateY(30px) scale(0.95);
-    }
-    to { 
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-.close-modal {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    background: #f5f5f5;
-    border: none;
-    cursor: pointer;
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-}
-
-.close-modal:hover {
-    background: #e60000;
-    color: white;
-    transform: rotate(90deg);
-}
-
-.modal-icon {
-    font-size: 60px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.modal-content h3 {
-    font-size: 28px;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #0b0b0b;
-}
-
-.modal-content p {
-    font-size: 16px;
-    line-height: 1.7;
-    color: #666;
-    text-align: center;
-    margin-bottom: var(--gap-content);
-}
-
-.modal-benefits {
-    background: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px 0;
-}
-
-.modal-benefit-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 12px;
-    font-size: 15px;
-    color: #333;
-}
-
-.modal-benefit-item:last-child {
-    margin-bottom: 0;
-}
-
-.check-icon {
-    color: #25d366;
-    font-weight: bold;
-    font-size: 18px;
-}
-
-.modal-actions {
-    display: flex;
-    gap: 15px;
-    margin-top: var(--gap-content);
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.modal-actions .cta-button {
-    padding: 14px 30px;
-    background: #e60000;
-    color: white;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 15px;
-    transition: all 0.3s ease;
-    border: 2px solid #e60000;
-    cursor: pointer;
-    display: inline-block;
-}
-
-.modal-actions .cta-button:hover {
-    background: #c40000;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(230, 0, 0, 0.3);
-}
-
-/* ====================================================
    6. FOOTER
    ==================================================== */
 .main-footer {
@@ -1053,6 +1008,7 @@ img {
 /* ====================================================
    7. ELEMENTOS FLOTANTES
    ==================================================== */
+/* Botón flotante de WhatsApp */
 .whatsapp-float {
   position: fixed;
   width: 60px;
@@ -1086,6 +1042,7 @@ img {
 
 /* --- 8.1 Tablet (768px+) --- */
 @media (min-width: 768px) {
+  /* Banner más alto en tablet */
   .banner-principal {
     height: 420px;
   }
@@ -1097,6 +1054,7 @@ img {
 
 /* --- 8.2 Desktop (992px+) --- */
 @media (min-width: 992px) {
+  /* Shelf: cambiar de carrusel a grid */
   .shelf-track {
     display: grid;
     grid-auto-flow: initial;
@@ -1113,6 +1071,7 @@ img {
 
 /* --- 8.3 Desktop Grande (1024px+) --- */
 @media (min-width: 1024px) {
+  /* Banner aún más alto */
   .banner-principal {
     height: 500px;
   }
@@ -1120,6 +1079,7 @@ img {
 
 /* --- 8.4 Desktop XL (1200px+) --- */
 @media (min-width: 1200px) {
+  /* Shelf: 5 columnas en pantallas muy grandes */
   .shelf-track {
     grid-template-columns: repeat(5, minmax(220px, 1fr));
   }
@@ -1127,15 +1087,16 @@ img {
 
 /* --- 8.5 Móvil (max-767px) --- */
 @media (max-width: 767px) {
+  /* Variables móvil: espaciado reducido a la mitad */
   :root {
-    --gap-section: 40px;
+    --gap-section: 25px; /* 50px / 2 */
   }
 
-  /* Header Móvil */
+  /* === HEADER MÓVIL === */
   .header-wrapper {
     flex-direction: column;
-    gap: var(--space-lg);
-    padding: var(--space-md) var(--space-lg);
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-lg);
   }
   
   .header-actions {
@@ -1144,62 +1105,48 @@ img {
   }
   
   .logo {
-    margin-bottom: var(--space-sm);
+    margin-bottom: 0;
   }
   
+  /* Ocultar navegación de categorías en móvil */
   .categorias-nav {
     display: none;
   }
   
-  /* Banner Móvil */
+  /* === BANNER MÓVIL === */
   .banner-principal {
     height: 280px;
   }
   
   .banner-principal .overlay {
-    padding: var(--space-xl) var(--space-lg);
+    padding: var(--space-lg) var(--space-md);
   }
   
   .banner-principal h2 {
     font-size: 1.6rem;
+    margin-bottom: var(--space-md);
   }
   
   .banner-principal p {
     font-size: 0.9rem;
+    margin-bottom: var(--space-md);
   }
   
-/* Beneficios Móvil - Grilla 2x2 */
-@media (max-width: 767px) {
+  /* === BENEFICIOS MÓVIL: Grilla 2x2 === */
   .benefits {
-    padding-top: var(--gap-section);
-    padding-bottom: var(--space-lg);
-    padding-left: 0;
-    padding-right: 0;
-    margin-bottom: 0;
+    padding: var(--gap-section) 0 var(--space-md) 0;
   }
-  @media (max-width: 767px) {
-  .benefit-icon {
-    width: 39px;  /* Más pequeño para móvil */
-    height: 36px;
-  }
-}
   
   .benefits h2 {
     font-size: 1.25rem;
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-md);
   }
   
   .benefits-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 8px;
-    margin-bottom: var(--space-lg);
-  }
-  
-  .benefits-cta {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-bottom: 0;
+    margin-bottom: var(--space-md);
   }
   
   .benefit-item {
@@ -1214,23 +1161,30 @@ img {
     max-height: 65px;
   }
   
-  .benefit-item .benefit-icon {
-    margin-bottom: 4px;
+  .benefit-icon {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 2px;
   }
   
-  .benefit-item .benefit-title {
-    font-size: 0.85rem;
-    line-height: 1.2;
+  .benefit-icon img {
+    width: 100%;
+    height: 100%;
   }
-}
   
-  /* Shelf Móvil - Carrusel Estilo Swappie */
-  .shelf {
-    padding-top: var(--space-lg);
-    padding-bottom: var(--gap-section);
-    padding-left: 15px;
-    padding-right: 15px;
+  .benefit-title {
+    font-size: 0.75rem;
+    line-height: 1.1;
+  }
+  
+  .benefits-cta {
     margin-top: 0;
+    margin-bottom: 0;
+  }
+  
+  /* === SHELF MÓVIL: Carrusel horizontal === */
+  .shelf {
+    padding: var(--space-md) 0 var(--gap-section) 0;
   }
   
   .shelf .container {
@@ -1241,16 +1195,14 @@ img {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0 0 var(--space-lg) 0;
-    margin: 0 0 var(--space-md) 0;
+    padding: 0 var(--space-lg) var(--space-md) var(--space-lg);
+    margin: 0;
     position: static;
   }
   
   .shelf-head h2 {
     font-size: 1.25rem;
-    text-align: center;
-    width: 100%;
-    margin: 0 auto;
+    margin: 0;
   }
   
   .shelf-ver-todo {
@@ -1258,10 +1210,10 @@ img {
     margin-top: 4px;
     margin-left: auto;
     margin-right: 0;
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
   
-  /* Carrusel de Productos Móvil */
+  /* Carrusel de productos en móvil */
   .shelf-track {
     display: flex !important;
     flex-direction: row;
@@ -1270,9 +1222,7 @@ img {
     gap: 12px;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 16px;
+    padding: 0 var(--space-lg) var(--space-md) var(--space-lg);
     margin-top: 0;
   }
   
@@ -1280,7 +1230,7 @@ img {
     flex: 0 0 45vw;
     max-width: 45vw;
     min-width: 45vw;
-    background: #fff;
+    background: var(--color-white);
     margin: 0;
     scroll-snap-align: start;
     display: flex;
@@ -1292,6 +1242,16 @@ img {
     max-height: 250px;
     justify-content: space-between;
     padding: 14px 8px 12px 8px;
+  }
+  
+  /* Permitir scroll sobre las tarjetas en móvil */
+  .shelf-card,
+  .shelf-card * {
+    pointer-events: none;
+  }
+  
+  .shelf-card .cta {
+    pointer-events: auto;
   }
   
   .shelf-card img {
@@ -1331,18 +1291,19 @@ img {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   }
 
-  /* Servicios Móvil */
+  /* === SERVICIOS MÓVIL === */
   .services-section {
-    padding: var(--gap-section) 15px;
+    padding: var(--gap-section) var(--space-md);
   }
   
   .tabs-container h2 {
     font-size: 26px;
+    margin-bottom: 8px;
   }
   
   .tabs-container .subtitle {
     font-size: 16px;
-    margin-bottom: var(--gap-content);
+    margin-bottom: var(--space-md);
   }
   
   .tabs-nav {
@@ -1350,11 +1311,11 @@ img {
     gap: 8px;
     overflow-x: auto;
     padding-bottom: 5px;
-    margin-bottom: var(--gap-content);
+    margin-bottom: var(--space-md);
   }
   
   .tab-button {
-    padding: 12px 25px;
+    padding: 10px 20px;
     font-size: 14px;
     white-space: nowrap;
     min-width: fit-content;
@@ -1362,53 +1323,52 @@ img {
   
   .info-text {
     font-size: 12px;
-    margin-bottom: var(--gap-content);
+    margin-top: -8px;
+    margin-bottom: var(--space-md);
   }
   
   .modal-content {
-    padding: 30px 20px;
+    padding: 20px 15px;
     width: 95%;
   }
   
   .modal-content h3 {
-    font-size: 24px;
+    font-size: 22px;
+    margin-bottom: var(--space-md);
   }
   
   .modal-content p {
-    margin-bottom: var(--gap-content);
+    font-size: 14px;
+    margin-bottom: var(--space-md);
+  }
+  
+  .modal-benefits {
+    padding: 15px;
+    margin: 15px 0;
   }
   
   .modal-actions {
     flex-direction: column;
-    margin-top: var(--gap-content);
+    margin-top: var(--space-md);
+    gap: 10px;
   }
   
   .modal-actions .cta-button {
-    width: auto;
-    display: inline-block;
+    width: 100%;
     text-align: center;
   }
   
-  /* Títulos y Contenido Móvil */
-  .descripcion-servicios {
-    padding: var(--gap-section) var(--space-lg);
-  }
-  
-  .descripcion-servicios h2,
-  .reviews h2 {
-    font-size: 1.25rem;
-    margin-bottom: var(--space-lg);
-  }
-  
-  .container {
-    padding: 0 var(--space-lg);
-  }
-  
-  /* Reviews Móvil */
+  /* === REVIEWS MÓVIL === */
   .reviews {
     padding: var(--gap-section) 0;
   }
   
+  .reviews h2 {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-md);
+  }
+  
+  /* Ocultar botones de navegación en móvil */
   .reviews-btn {
     display: none;
   }
@@ -1417,7 +1377,12 @@ img {
     grid-auto-columns: 60%;
   }
   
-  /* WhatsApp Móvil */
+  /* === CONTAINER MÓVIL === */
+  .container {
+    padding: 0 var(--space-md);
+  }
+  
+  /* === WHATSAPP MÓVIL === */
   .whatsapp-float {
     width: 50px;
     height: 50px;
@@ -1426,6 +1391,6 @@ img {
   }
   
   .whatsapp-float img {
-    width: 30px;
+    width: 28px;
   }
 }
