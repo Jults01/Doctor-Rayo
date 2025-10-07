@@ -187,10 +187,8 @@ a {
 }
 
 /* Ocultar elementos del carrusel en desktop */
-.desliza-hint,
 .pasos-wrapper,
-.dots-container,
-.progress-bar {
+.dots-container {
   display: none;
 }
 
@@ -403,26 +401,9 @@ a {
   }
 
   /* Mostrar elementos del carrusel */
-  .desliza-hint,
   .pasos-wrapper,
-  .dots-container,
-  .progress-bar {
+  .dots-container {
     display: block;
-  }
-
-  /* Hint animado */
-  .desliza-hint {
-    text-align: center;
-    color: #e60000;
-    font-size: 0.85rem;
-    margin-bottom: 15px;
-    animation: pulse 2s infinite;
-    font-weight: 500;
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
   }
 
   /* Wrapper del carrusel */
@@ -447,9 +428,9 @@ a {
     display: none;
   }
 
-  /* Tarjetas del carrusel (85% ancho, centradas) */
+  /* Tarjetas del carrusel (90% ancho, centradas) */
   .paso-item {
-    flex: 0 0 85%;
+    flex: 0 0 90%;
     scroll-snap-align: center;
     transition: border-color 0.1s ease, box-shadow 0.1s ease;
   }
@@ -480,22 +461,5 @@ a {
     background: #e60000;
     width: 24px;
     border-radius: 5px;
-  }
-
-  /* Progress bar */
-  .progress-bar {
-    width: 100%;
-    height: 4px;
-    background: #eee;
-    border-radius: 2px;
-    margin-top: 15px;
-    overflow: hidden;
-  }
-
-  .progress-fill {
-    height: 100%;
-    background: #e60000;
-    width: 33.33%;
-    transition: width 0.3s ease;
   }
 }
