@@ -505,7 +505,7 @@ img {
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   -ms-touch-action: pan-x;
-  touch-action: pan-x;
+  touch-action: auto;
 }
 
 .shelf-track::-webkit-scrollbar {
@@ -604,7 +604,12 @@ img {
 
 .shelf-card,
 .shelf-card * {
-  touch-action: pan-x;
+  pointer-events: none;
+}
+
+.shelf-card .cta {
+  pointer-events: auto;
+  touch-action: auto;
 }
 
 /* --- 5.4 Descripción de Servicios --- */
