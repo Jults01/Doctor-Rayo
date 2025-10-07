@@ -11,7 +11,10 @@
   <link rel="stylesheet" href="css/renueva.css">
 </head>
 <body>
-  <!-- Header -->
+
+  <!-- ====================================================
+       HEADER
+       ==================================================== -->
   <header class="main-header">
     <div class="container">
       <div class="header-wrapper">
@@ -42,7 +45,9 @@
     </div>
   </header>
 
-  <!-- Hero -->
+  <!-- ====================================================
+       HERO
+       ==================================================== -->
   <section class="hero">
     <div class="hero-content">
       <h2>Renueva tu celular en 3 pasos</h2>
@@ -50,9 +55,15 @@
     </div>
   </section>
 
-  <!-- Pasos (3 en línea) -->
+  <!-- ====================================================
+       PASOS - Desktop: Grid 3 columnas / Móvil: Carrusel
+       ==================================================== -->
   <section class="pasos">
     <div class="container">
+      <!-- Hint de deslizar (solo móvil) -->
+      <div class="desliza-hint">👉 Desliza para ver los pasos →</div>
+      
+      <!-- Grid para desktop -->
       <div class="pasos-grid">
         <div class="paso-item">
           <div class="paso-numero">1</div>
@@ -70,10 +81,45 @@
           <p>Pago inmediato en efectivo</p>
         </div>
       </div>
+
+      <!-- Carrusel para móvil -->
+      <div class="pasos-wrapper">
+        <div class="pasos-track" id="pasosTrack">
+          <div class="paso-item active">
+            <div class="paso-numero">1</div>
+            <h3>Cuéntanos tu equipo</h3>
+            <p>Marca, modelo y estado</p>
+          </div>
+          <div class="paso-item">
+            <div class="paso-numero">2</div>
+            <h3>Te damos oferta</h3>
+            <p>En menos de 15 minutos</p>
+          </div>
+          <div class="paso-item">
+            <div class="paso-numero">3</div>
+            <h3>Recogemos gratis</h3>
+            <p>Pago inmediato en efectivo</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dots indicadores (solo móvil) -->
+      <div class="dots-container">
+        <div class="dot active" data-index="0"></div>
+        <div class="dot" data-index="1"></div>
+        <div class="dot" data-index="2"></div>
+      </div>
+
+      <!-- Barra de progreso (solo móvil) -->
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
     </div>
   </section>
 
-  <!-- Por qué vender con nosotros -->
+  <!-- ====================================================
+       BENEFICIOS
+       ==================================================== -->
   <section class="beneficios">
     <div class="container">
       <h2>¿Por qué vender con nosotros?</h2>
@@ -106,7 +152,9 @@
     </div>
   </section>
 
-  <!-- Testimonios -->
+  <!-- ====================================================
+       TESTIMONIOS
+       ==================================================== -->
   <section class="testimonios">
     <div class="container">
       <h2>Lo que dicen nuestros clientes</h2>
@@ -131,7 +179,9 @@
     </div>
   </section>
 
-  <!-- CTA Final -->
+  <!-- ====================================================
+       CTA FINAL
+       ==================================================== -->
   <section class="cta-final">
     <div class="container">
       <h2>¿Listo para vender tu celular?</h2>
@@ -141,5 +191,139 @@
       </a>
     </div>
   </section>
+
+  <!-- ====================================================
+       JAVASCRIPT - CARRUSEL MÓVIL
+       ==================================================== -->
+  <script>
+    /**
+     * CARRUSEL DE PASOS - MÓVIL
+     * Auto-scroll cada 5 segundos con navegación manual
+     * Solo se ejecuta en dispositivos móviles (≤767px)
+     */
+    
+    // Verificar si estamos en móvil
+    if (window.innerWidth <= 767) {
+      // Elementos del DOM
+      const track = document.getElementById('pasosTrack');
+      const dots = document.querySelectorAll('.dot');
+      const pasoItems = document.querySelectorAll('.paso-item');
+      const progressFill = document.getElementById('progressFill');
+      const hint = document.querySelector('.desliza-hint');
+      
+      // Variables de estado
+      let currentIndex = 0;
+      let autoScrollInterval;
+
+      /**
+       * Actualiza el carrusel a un índice específico
+       * @param {number} index - Índice del paso (0-2)
+       */
+      function updateCarousel(index) {
+        currentIndex = index;
+        
+        // Calcular scroll con tarjetas centradas (85% width + gap)
+        const itemWidth = pasoItems[index].offsetWidth;
+        const gap = 16;
+        const scrollAmount = (itemWidth + gap) * index;
+        
+        // Scroll suave a la posición
+        track.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+        
+        // Actualizar estado activo de las tarjetas
+        pasoItems.forEach((item, i) => {
+          item.classList.toggle('active', i === index);
+        });
+        
+        // Actualizar dots indicadores
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === index);
+        });
+        
+        // Actualizar barra de progreso
+        progressFill.style.width = ((index + 1) / pasoItems.length * 100) + '%';
+        
+        // Ocultar hint después de la primera interacción
+        if (index > 0) {
+          hint.style.display = 'none';
+        }
+      }
+
+      /**
+       * Inicia el auto-scroll del carrusel
+       * Avanza cada 5 segundos, vuelve al inicio al terminar
+       */
+      function startAutoScroll() {
+        autoScrollInterval = setInterval(() => {
+          if (currentIndex < pasoItems.length - 1) {
+            updateCarousel(currentIndex + 1);
+          } else {
+            updateCarousel(0);
+          }
+        }, 5000);
+      }
+
+      /**
+       * Reinicia el auto-scroll
+       * Útil después de interacciones manuales
+       */
+      function resetAutoScroll() {
+        clearInterval(autoScrollInterval);
+        startAutoScroll();
+      }
+
+      // Event Listeners para los dots
+      dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+          updateCarousel(parseInt(dot.dataset.index));
+          resetAutoScroll();
+        });
+      });
+
+      // Detectar scroll manual y actualizar estado
+      track.addEventListener('scroll', () => {
+        const scrollLeft = track.scrollLeft;
+        const itemWidth = pasoItems[0].offsetWidth;
+        const gap = 16;
+        const newIndex = Math.round(scrollLeft / (itemWidth + gap));
+        
+        // Solo actualizar si el índice cambió
+        if (newIndex !== currentIndex && newIndex >= 0 && newIndex < pasoItems.length) {
+          currentIndex = newIndex;
+          
+          // Actualizar todos los estados
+          pasoItems.forEach((item, i) => {
+            item.classList.toggle('active', i === newIndex);
+          });
+          
+          dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === newIndex);
+          });
+          
+          progressFill.style.width = ((newIndex + 1) / pasoItems.length * 100) + '%';
+          
+          if (newIndex > 0) {
+            hint.style.display = 'none';
+          }
+          
+          resetAutoScroll();
+        }
+      });
+
+      // Pausar auto-scroll al tocar
+      track.addEventListener('touchstart', () => {
+        clearInterval(autoScrollInterval);
+      });
+
+      // Reanudar auto-scroll al soltar
+      track.addEventListener('touchend', () => {
+        startAutoScroll();
+      });
+
+      // Iniciar auto-scroll
+      startAutoScroll();
+    }
+  </script>
+
 </body>
 </html>

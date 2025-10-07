@@ -1,7 +1,11 @@
 /* ====================================================
    RENUEVA - DOCTOR RAYO
+   Versión: 1.0
    ==================================================== */
 
+/* ====================================================
+   RESET Y BASE
+   ==================================================== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -57,6 +61,7 @@ a {
   align-items: center;
 }
 
+/* Botón Renueva */
 .renueva-button a {
   padding: 5px 12px;
   border-radius: 20px;
@@ -80,6 +85,7 @@ a {
   height: 16px;
 }
 
+/* Botones Login y Carrito */
 .login-button a,
 .carrito-button a {
   display: inline-flex;
@@ -128,7 +134,7 @@ a {
 }
 
 /* ====================================================
-   PASOS
+   PASOS - DESKTOP
    ==================================================== */
 .pasos {
   padding: 25px 0;
@@ -178,6 +184,14 @@ a {
 .paso-item p {
   font-size: 0.85rem;
   color: #666;
+}
+
+/* Ocultar elementos del carrusel en desktop */
+.desliza-hint,
+.pasos-wrapper,
+.dots-container,
+.progress-bar {
+  display: none;
 }
 
 /* ====================================================
@@ -324,9 +338,10 @@ a {
 }
 
 /* ====================================================
-   RESPONSIVE - DESKTOP
+   RESPONSIVE - DESKTOP (768px+)
    ==================================================== */
 @media (min-width: 768px) {
+  /* Hero más alto en desktop */
   .hero {
     height: 350px;
   }
@@ -339,21 +354,24 @@ a {
     font-size: 1.3rem;
   }
 
+  /* Beneficios en 4 columnas */
   .beneficios-grid {
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
     max-width: 900px;
   }
 
+  /* Testimonios más anchos */
   .testimonio-card {
     flex: 0 0 45%;
   }
 }
 
 /* ====================================================
-   RESPONSIVE - MÓVIL
+   RESPONSIVE - MÓVIL (max-767px)
    ==================================================== */
 @media (max-width: 767px) {
+  /* === HEADER MÓVIL === */
   .header-wrapper {
     flex-direction: column;
     gap: 12px;
@@ -365,6 +383,7 @@ a {
     justify-content: center;
   }
 
+  /* === HERO MÓVIL === */
   .hero {
     height: 220px;
   }
@@ -377,17 +396,106 @@ a {
     font-size: 0.95rem;
   }
 
+  /* === PASOS MÓVIL - CARRUSEL === */
+  /* Ocultar grid de desktop */
   .pasos-grid {
-    overflow-x: auto;
-    display: flex;
-    gap: 12px;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 10px;
+    display: none;
   }
 
+  /* Mostrar elementos del carrusel */
+  .desliza-hint,
+  .pasos-wrapper,
+  .dots-container,
+  .progress-bar {
+    display: block;
+  }
+
+  /* Hint animado */
+  .desliza-hint {
+    text-align: center;
+    color: #e60000;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+    animation: pulse 2s infinite;
+    font-weight: 500;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+
+  /* Wrapper del carrusel */
+  .pasos-wrapper {
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Track del carrusel */
+  .pasos-track {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 20px 15px;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+  }
+
+  .pasos-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Tarjetas del carrusel (85% ancho, centradas) */
   .paso-item {
-    flex: 0 0 70%;
-    scroll-snap-align: start;
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+    transition: border-color 0.1s ease, box-shadow 0.1s ease;
+  }
+
+  .paso-item.active {
+    border-color: #e60000;
+    box-shadow: 0 4px 12px rgba(230, 0, 0, 0.15);
+  }
+
+  /* Dots indicadores */
+  .dots-container {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ddd;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .dot.active {
+    background: #e60000;
+    width: 24px;
+    border-radius: 5px;
+  }
+
+  /* Progress bar */
+  .progress-bar {
+    width: 100%;
+    height: 4px;
+    background: #eee;
+    border-radius: 2px;
+    margin-top: 15px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: #e60000;
+    width: 33.33%;
+    transition: width 0.3s ease;
   }
 }
