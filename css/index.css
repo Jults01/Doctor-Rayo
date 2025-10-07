@@ -1260,10 +1260,12 @@ img {
   .shelf-track {
     display: flex !important;
     flex-direction: row;
-    overflow-x: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
     gap: 12px;
     scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch !important;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x pan-y;
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 16px;
@@ -1286,6 +1288,7 @@ img {
     max-height: 250px;
     justify-content: space-between;
     padding: 14px 8px 12px 8px;
+    touch-action: auto;
   }
   
   .shelf-card img {
