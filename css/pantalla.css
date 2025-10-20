@@ -1,287 +1,418 @@
-/* ==================== PANTALLA — estilos de la página pantalla.html ==================== */
+/* ========================================================================
+   PANTALLA.CSS — ESTILOS PARA LA PÁGINA DE PANTALLA
+   Doctor Rayo - Versión 1.1
+   ======================================================================== */
 
-/* —— Variables locales (ajusta ritmo y medidas rápido) —— */
-.screen-page{
-  --gap-title-content-screen: var(--gap-title-content);  /* Título → contenido */
-  --gap-section-screen:       var(--gap-section);        /* Entre secciones */
-  --scr-row-gap:              12px;                      /* Espacio entre los 3 bloques */
-  --scr-card-padding:         12px;                      /* Padding interno de cada bloque */
-  --scr-card-minh:            92px;                      /* Alto mínimo para igualar alturas */
-  --scr-dd-menu-maxh:         280px;                     /* Alto máx lista desplegable */
-}
+/* ====================================================
+   TABLA DE CONTENIDOS
+   1. Header y Navegación
+   2. Banner Principal
+   3. Formulario
+   4. Qué incluye
+   5. FAQ
+   6. Media Queries
+   ==================================================== */
 
-/* ==================== HERO (banner con imagen) ==================== */
-.screen-hero{
-  background:url('../img/pantalla-hero.jpg') center/cover no-repeat;
-  height:360px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  position:relative;
-  overflow:hidden;
-}
-.screen-hero .overlay{
-  background:var(--color-overlay);
-  padding:var(--space-xxl) var(--space-xxxl);
-  border-radius:10px;
-  color:#fff;
-  max-width:90%;
-}
-.screen-hero h1{
-  margin:0 0 var(--gap-title-content-screen);
-  font-size:clamp(1.8rem,2.2vw,2.4rem);
-}
-.screen-hero p{
-  margin:0;
-  max-width:640px;
-  margin-inline:auto;
-  font-size:var(--font-size-base);
+/* ====================================================
+   1. HEADER Y NAVEGACIÓN
+   ==================================================== */
+.main-header {
+  background: var(--color-white);
+  padding: var(--space-sm) 0;
 }
 
-/* ==================== SELECTOR COMPACTO (fila 1:1:1 + alturas iguales) ==================== */
-.scr{
-  margin:var(--gap-section-screen) 0;
-}
-.scr .container{
-  max-width:1100px;
-  margin:0 auto;
-  padding:0 var(--space-xl);
-}
-.scr h2{
-  text-align:center;
-  margin:0 0 var(--gap-title-content-screen);
-  font-size:var(--font-size-xxl-h2);
-  color:var(--color-text-dark);
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-xl);
 }
 
-/* Fila de 3 columnas iguales (desktop). En móvil pasa a columna. */
-.scr-row{
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:var(--scr-row-gap);
-  align-items:stretch;          /* ← estira todas a la misma altura (la mayor) */
+/* Logo */
+.logo h1,
+.logo a {
+  font-weight: 600;
+  color: var(--color-primary);
+  font-size: var(--font-size-xl);
 }
 
-/* Tarjeta base de cada bloque (Marca / Modelo / Estimado) */
-.scr-card{
-  border:1px solid var(--color-medium-gray);
-  border-radius:10px;
-  background:#fff;
-  box-shadow:0 2px 6px var(--color-shadow-light);
-  padding:var(--scr-card-padding);
-  min-height:var(--scr-card-minh);  /* ← asegura misma altura visible */
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-  position:relative;             /* para menús absolutos */
+.logo a:hover h1,
+.logo a:focus h1 {
+  color: var(--color-primary-dark);
 }
 
-/* ——— Dropdown tipo navbar (botón + menú) ——— */
-.scr-dd{
-  width:100%;
-}
-.scr-dd-btn{
-  width:100%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-  padding:10px 12px;
-  border:1px solid var(--color-medium-gray);
-  border-radius:8px;
-  background:#fff;
-  color:var(--color-text-dark);
-  cursor:pointer;
-  transition:border-color .15s ease, box-shadow .15s ease, transform .15s ease;
-}
-.scr-dd-btn:hover,
-.scr-dd-btn:focus{
-  border-color:var(--color-primary);
-  box-shadow:0 6px 16px var(--color-shadow-medium);
-  outline:none;
-}
-.scr-dd.is-disabled .scr-dd-btn{
-  opacity:.55;
-  cursor:not-allowed;
-  pointer-events:none;         /* no clics mientras está deshabilitado */
-}
-.scr-dd.open .scr-dd-btn{
-  border-color:var(--color-primary);
-}
-.scr-dd-btn .label{ font-weight:600; }
-.scr-dd-btn .value{
-  color:var(--color-text-medium);
-  margin-left:auto;
-  margin-right:8px;
-}
-.scr-dd-btn .chev{
-  font-size:12px;
-  transition: transform .15s ease;
-}
-.scr-dd.open .scr-dd-btn .chev{
-  transform: rotate(180deg);
+/* Acciones del Header */
+.header-actions {
+  display: flex;
+  gap: var(--space-lg);
+  align-items: center;
 }
 
-/* Menú desplegable */
-.scr-dd-menu{
-  position:absolute;
-  left:var(--scr-card-padding);
-  right:var(--scr-card-padding);
-  top:calc(100% + 8px);
-  background:#fff;
-  border:1px solid var(--color-medium-gray);
-  border-radius:10px;
-  box-shadow:0 12px 26px var(--color-shadow-strong);
-  list-style:none;
-  margin:0;
-  padding:6px;
-  max-height:var(--scr-dd-menu-maxh);
-  overflow:auto;
-  opacity:0;
-  visibility:hidden;
-  pointer-events:none;
-  transition:opacity .15s ease, transform .15s ease, visibility .15s ease;
-  transform:translateY(4px);
-  z-index:10;
-}
-.scr-dd.open .scr-dd-menu{
-  opacity:1;
-  visibility:visible;
-  pointer-events:auto;
-  transform:translateY(0);
-}
-.scr-dd-menu li{ margin:0; }
-.scr-dd-menu button{
-  width:100%;
-  text-align:left;
-  padding:8px 10px;
-  border:none;
-  background:#fff;
-  border-radius:8px;
-  cursor:pointer;
-  color:var(--color-text-dark);
-}
-.scr-dd-menu button:hover,
-.scr-dd-menu button:focus{
-  background:var(--color-light-gray);
+/* Botón Renueva */
+.renueva-button a {
+  padding: var(--space-xs) var(--space-md);
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--color-text-dark);
+  border: 1px solid var(--color-medium-gray);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
 }
 
-/* ——— Estimado ——— */
-.scr-estimado{
-  flex:1 1 auto;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-}
-.scr-estimado .txt{
-  display:flex;
-  flex-direction:column;
-  gap:4px;
-}
-.scr-estimado .monto{
-  font-weight:700;
-  font-size:1rem;
-  color:var(--color-text-dark);
-}
-.scr-estimado .nota{
-  font-size:.9rem;
-  color:var(--color-text-medium);
+.renueva-button a:hover,
+.renueva-button a:focus {
+  background: transparent;
+  border-color: var(--color-primary);
 }
 
-/* CTA centrado debajo de la fila */
-.scr-cta{
-  margin-top:var(--gap-title-content-screen);
-  display:flex;
-  justify-content:center;
-}
-.scr-cta .button[disabled]{
-  opacity:.5;
-  pointer-events:none;
+.renueva-button a img {
+  width: var(--space-lg);
+  height: var(--space-lg);
 }
 
-/* ==================== QUÉ INCLUYE (vertical sencillo) ==================== */
-.includes{
-  margin:var(--gap-section-screen) 0;
-}
-.includes .container{
-  max-width:900px;
-  margin:0 auto;
-  padding:0 var(--space-xl);
-}
-.includes h2{
-  text-align:center;
-  margin:0 0 var(--gap-title-content-screen);
-  font-size:var(--font-size-xxl-h2);
-}
-.includes .list{
-  display:grid;
-  gap:8px;
-  color:var(--color-text-medium);
-}
-.includes .list li{
-  list-style:none;
-  position:relative;
-  padding-left:24px;
-}
-.includes .list li::before{
-  content:"✓";
-  position:absolute;
-  left:0;
-  color:var(--color-primary);
-  font-weight:700;
+/* Botones Login y Carrito */
+.login-button a,
+.carrito-button a {
+  display: inline-flex;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--color-medium-gray);
+  position: relative;
+  transition: all var(--transition-speed) ease;
 }
 
-/* ==================== FAQ (mismo diseño que reparacion.css) ==================== */
-.screen-faq{
-  margin: var(--gap-section-screen) 0;                 /* separación arriba/abajo uniforme */
-}
-.screen-faq .container{
-  max-width:900px;
-  margin:0 auto;
-  padding:0 var(--space-xl);
-}
-.screen-faq h2{
-  text-align:center;
-  margin:0 0 var(--gap-title-content-screen);         /* Título → contenido (mismo ritmo) */
-  font-size:var(--font-size-xxl-h2);
-  color:var(--color-text-dark);
+.login-button a img,
+.carrito-button a img {
+  width: 18px;
+  height: 18px;
 }
 
-/* Tarjetas FAQ */
-.screen-faq details{
-  border:1px solid var(--color-medium-gray);
-  border-radius:10px;
-  background:#fff;
-  box-shadow:0 2px 6px var(--color-shadow-light);
-  padding:12px;
-  margin-bottom:10px;
-  transition:border-color .15s ease, box-shadow .15s ease;
-}
-.screen-faq summary{
-  list-style:none;
-  cursor:pointer;
-  font-weight:600;
-  color:var(--color-text-dark);
-}
-.screen-faq summary::-webkit-details-marker{ display:none; }
-.screen-faq details[open]{
-  border-color:var(--color-primary);
-  box-shadow:0 8px 18px var(--color-shadow-medium);
-}
-.screen-faq p{
-  margin-top:8px;
-  color:var(--color-text-medium);
+/* Contador del Carrito */
+.carrito-button .cart-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 50%;
+  min-width: 18px;
+  text-align: center;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* ==================== RESPONSIVE ==================== */
-@media (max-width:900px){
-  .scr-row{
-    grid-template-columns:1fr; /* apila los 3 bloques */
+.header-action a:hover,
+.header-action a:focus {
+  border-color: var(--color-primary);
+  transform: translateY(-1px);
+}
+/* ====================================================
+   2. BANNER PRINCIPAL
+   ==================================================== */
+.banner-pantalla {
+  background: url('../img/rota.png') no-repeat center/cover;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+.banner-content {
+  background: var(--color-overlay);
+  padding: var(--space-xxl) var(--space-xxxl);
+  border-radius: 10px;
+  color: var(--color-text-light);
+  max-width: 90%;
+}
+
+.banner-content h1 {
+  font-size: var(--font-size-xxl);
+  margin-bottom: var(--space-lg);
+  color: #fff;
+  line-height: 1.2;
+}
+
+.banner-content p {
+  font-size: var(--font-size-lg);
+  margin-bottom: 0;
+  max-width: 500px;
+  margin-inline: auto;
+  color: #f5f5f5;
+}
+
+/* ====================================================
+   3. FORMULARIO
+   ==================================================== */
+.formulario-section {
+  padding: var(--gap-section) 0;
+  background: #f8f9fa;
+}
+
+.form-container {
+  max-width: 500px;
+  margin: 0 auto;
+  background: var(--color-white);
+  padding: var(--space-xxl);
+  border-radius: 15px;
+  box-shadow: var(--shadow-medium);
+}
+
+.form-title {
+  text-align: center;
+  color: var(--color-text-dark);
+  margin-bottom: var(--gap-content);
+  font-size: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: var(--gap-content);
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: var(--space-sm);
+  font-weight: 600;
+  color: var(--color-text-dark);
+}
+
+.form-group select,
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: var(--space-lg);
+  border: 2px solid var(--color-medium-gray);
+  border-radius: 8px;
+  font-size: var(--font-size-base);
+  font-family: inherit;
+  transition: border-color var(--transition-speed);
+}
+
+.form-group select:focus,
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+}
+
+.submit-btn {
+  width: 100%;
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--space-lg) var(--space-xxl);
+  border: none;
+  border-radius: 8px;
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--transition-speed);
+}
+
+.submit-btn:hover {
+  background: var(--color-primary-dark);
+}
+
+/* ====================================================
+   4. QUÉ INCLUYE
+   ==================================================== */
+.incluye-section {
+  padding: var(--gap-section) 0;
+  background: var(--color-white);
+}
+
+.incluye-title {
+  text-align: center;
+  color: var(--color-text-dark);
+  margin-bottom: var(--gap-content);
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.incluye-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-lg);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.incluye-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  background: var(--color-white);
+  border-radius: 8px;
+  justify-content: center;
+}
+
+.check-icon {
+  width: 24px;
+  height: 24px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.incluye-item span {
+  font-weight: 500;
+  color: var(--color-text-dark);
+}
+
+/* ====================================================
+   5. FAQ
+   ==================================================== */
+.faq-section {
+  padding: var(--gap-section) 0;
+  background: #f8f9fa;
+}
+
+.faq-title {
+  text-align: center;
+  color: var(--color-text-dark);
+  margin-bottom: var(--gap-content);
+  font-size: var(--font-size-xxl);
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: var(--color-white);
+  border-radius: 10px;
+  margin-bottom: var(--space-lg);
+  box-shadow: var(--shadow-light);
+  overflow: hidden;
+}
+
+.faq-question {
+  padding: var(--space-lg);
+  background: var(--color-white);
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--color-text-dark);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-question:hover {
+  background: #f8f9fa;
+}
+
+.faq-answer {
+  padding: 0 var(--space-lg) var(--space-lg);
+  color: var(--color-text-medium);
+  line-height: 1.6;
+  display: none;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+/* ====================================================
+   6. MEDIA QUERIES
+   ==================================================== */
+
+/* Móvil */
+@media (max-width: 767px) {
+  /* Header móvil */
+  .header-wrapper {
+    flex-direction: column;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-lg);
   }
-  .scr-card{
-    min-height:72px; /* algo menos en móvil */
+  
+  .header-actions {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .logo {
+    margin-bottom: 0;
+  }
+
+  /* Banner móvil */
+  .banner-pantalla {
+    height: 250px;
+  }
+
+  .banner-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .banner-content p {
+    font-size: var(--font-size-base);
+  }
+
+  /* Formulario móvil */
+  .form-container {
+    padding: var(--space-xxl);
+    margin: 0 var(--space-lg);
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+/* Dentro del @media (max-width: 767px) */
+.incluye-grid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+}
+
+.incluye-item {
+  flex-direction: column;
+  text-align: center;
+  padding: var(--space-lg) var(--space-sm);
+}
+
+.incluye-item span {
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+  /* Contenedores móvil */
+  .container {
+    padding: 0 var(--space-lg);
   }
 }

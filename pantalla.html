@@ -2,27 +2,26 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Reparación de pantalla | Doctor Rayo</title>
-  <meta name="description" content="Cambia la pantalla de tu celular con repuestos de calidad, mano de obra incluida y garantía. Servicio a domicilio en Bogotá.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reparación de Pantalla - Doctor Rayo</title>
+  <meta name="description" content="Reparación de pantalla de celular a domicilio en Bogotá. Diagnóstico rápido y garantía de 90 días.">
   <link rel="canonical" href="https://www.doctorrayo.com/pantalla.html">
-
-  <!-- CSS global del sitio -->
-  <link rel="stylesheet" href="css/index.css">
-  <!-- CSS específico de esta página -->
   <link rel="stylesheet" href="css/pantalla.css">
+  <link rel="stylesheet" href="css/index.css">
 </head>
-<body class="screen-page">
+<body class="pantalla-page">
 
-  <!-- ======= HEADER (igual al sitio) ======= -->
+  <!-- ======= HEADER ======= -->
   <header class="main-header">
     <div class="header-wrapper">
-      <div class="logo"><a href="index.html"><h1>Doctor Rayo</h1></a></div>
+      <div class="logo">
+        <a href="index.html" aria-label="Inicio Doctor Rayo"><h1>Doctor Rayo</h1></a>
+      </div>
       <div class="header-actions">
         <div class="header-action renueva-button">
           <a href="/renueva.html">Renueva
             <img src="img/renueva-icon.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
-          </a>
+          </a>  
         </div>
         <div class="header-action login-button">
           <a href="/login.html" aria-label="Iniciar sesión">
@@ -39,127 +38,141 @@
     </div>
   </header>
 
-  <!-- ======= NAV (opcional: mismo del sitio) ======= -->
-  <nav class="categorias-nav" aria-label="Categorías principales de productos">
-    <ul id="main-navigation">
-      <li class="dropdown">
-        <a href="categorias/celulares" class="nav-link" aria-haspopup="true" aria-expanded="false">Celulares</a>
-        <ul class="dropdown-menu">
-          <li><a href="categorias/celulares/iphone">iPhone</a></li>
-          <li><a href="categorias/celulares/samsung">Samsung</a></li>
-          <li><a href="categorias/celulares/xiaomi">Xiaomi</a></li>
-          <li><a href="categorias/celulares/motorola">Motorola</a></li>
-        </ul>
-      </li>
-      <li><a href="categorias/tablets" class="nav-link">Tablets</a></li>
-      <li><a href="categorias/accesorios" class="nav-link">Accesorios</a></li>
-      <li><a href="ofertas" class="nav-link">Ofertas</a></li>
-    </ul>
-  </nav>
+  <!-- ======= MAIN ======= -->
+  <main>
 
-  <!-- ==================== HERO (banner con imagen) ==================== -->
-  <section class="screen-hero" role="banner">
-    <div class="overlay">
-      <h1>Reparación de pantalla</h1>
-      <p>Servicio a domicilio con mano de obra incluida y garantía por escrito. Selecciona tu marca y modelo para estimar el valor.</p>
-    </div>
-  </section>
+    <!-- Banner -->
+    <section class="banner-pantalla" role="banner">
+      <div class="banner-content">
+        <h1>Reparación de Pantalla</h1>
+        <p>Arreglamos tu pantalla rota, con manchas o líneas. Servicio a domicilio con garantía de 90 días.</p>
+      </div>
+    </section>
 
-  <!-- ==================== SELECTOR COMPACTO (fila 1:1:1) ==================== -->
-  <section class="scr" aria-label="Selecciona tu equipo">
-    <div class="container">
+    <!-- Formulario -->
+    <section class="formulario-section">
+      <div class="container">
+        <div class="form-container">
+          <h2 class="form-title">Cuéntanos sobre tu dispositivo</h2>
+          <form id="pantallaForm">
+            <div class="form-group">
+              <label for="marca">Marca del dispositivo</label>
+              <select id="marca" name="marca" required>
+                <option value="">Selecciona la marca</option>
+                <option value="iPhone">iPhone</option>
+                <option value="Samsung">Samsung</option>
+                <option value="Xiaomi">Xiaomi</option>
+                <option value="Huawei">Huawei</option>
+                <option value="Motorola">Motorola</option>
+                <option value="LG">LG</option>
+                <option value="Oppo">Oppo</option>
+                <option value="Realme">Realme</option>
+                <option value="Otra">Otra marca</option>
+              </select>
+            </div>
 
-      <h2>Elige tu equipo</h2>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="modelo">Modelo específico</label>
+                <input type="text" id="modelo" name="modelo" placeholder="Ej: iPhone 12, Galaxy S21" required>
+              </div>
+              <div class="form-group">
+                <label for="nombre">Tu nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required>
+              </div>
+            </div>
 
-      <!-- Fila 3 columnas: Marca / Modelo / Estimado (mismo ancho y alto) -->
-      <div class="scr-row">
+            <div class="form-group">
+              <label for="problema">Describe el problema de la pantalla</label>
+              <textarea id="problema" name="problema" placeholder="Ej: Se me cayó y ahora tiene líneas negras, o la pantalla está completamente negra..." required></textarea>
+            </div>
 
-        <!-- Marca -->
-        <div class="scr-card">
-          <div class="scr-dd" id="dd-marca">
-            <button type="button" class="scr-dd-btn" aria-haspopup="listbox" aria-expanded="false">
-              <span class="label">Marca</span>
-              <span class="value" data-placeholder="Selecciona">Selecciona</span>
-              <span class="chev">▼</span>
-            </button>
-            <ul class="scr-dd-menu" role="listbox" aria-label="Marcas">
-              <li><button type="button" data-value="Apple">Apple</button></li>
-              <li><button type="button" data-value="Samsung">Samsung</button></li>
-              <li><button type="button" data-value="Xiaomi">Xiaomi</button></li>
-              <li><button type="button" data-value="Motorola">Motorola</button></li>
-            </ul>
+            <button type="submit" class="submit-btn">Cotizar</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Qué incluye -->
+    <section class="incluye-section">
+      <div class="container">
+        <h2 class="incluye-title">¿Qué incluye nuestro servicio?</h2>
+        <div class="incluye-grid">
+          <div class="incluye-item">
+            <div class="check-icon">✓</div>
+            <span>Diagnóstico gratuito</span>
+          </div>
+          <div class="incluye-item">
+            <div class="check-icon">✓</div>
+            <span>Reparación a domicilio</span>
+          </div>
+          <div class="incluye-item">
+            <div class="check-icon">✓</div>
+            <span>Garantía de 90 días</span>
+          </div>
+          <div class="incluye-item">
+            <div class="check-icon">✓</div>
+            <span>Repuestos de calidad</span>
+          </div>
+          <div class="incluye-item">
+            <div class="check-icon">✓</div>
+            <span>Sin costos ocultos</span>
+          </div>
+          <div class="incluye-item">
+            <div class="check-icon">✓</div>
+            <span>Atención personalizada</span>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Modelo (bloqueado hasta elegir Marca) -->
-        <div class="scr-card">
-          <div class="scr-dd is-disabled" id="dd-modelo">
-            <button type="button" class="scr-dd-btn" aria-haspopup="listbox" aria-expanded="false" disabled>
-              <span class="label">Modelo</span>
-              <span class="value" data-placeholder="Selecciona">Selecciona</span>
-              <span class="chev">▼</span>
+    <!-- FAQ -->
+    <section class="faq-section">
+      <div class="container">
+        <h2 class="faq-title">Preguntas Frecuentes</h2>
+        <div class="faq-container">
+          <div class="faq-item">
+            <button class="faq-question">
+              ¿Qué tipos de daños de pantalla reparan?
             </button>
-            <ul class="scr-dd-menu" role="listbox" aria-label="Modelos"></ul>
+            <div class="faq-answer">
+              Reparamos pantallas rotas, con líneas, manchas, táctil que no funciona, pantalla completamente negra, y problemas de brillo.
+            </div>
           </div>
-        </div>
 
-        <!-- Estimado (texto dentro pero altura igual a las otras) -->
-        <div class="scr-card">
-          <div class="scr-estimado">
-            <div class="txt">
-              <div class="monto" id="estimado-monto" aria-live="polite">Estimado: —</div>
-              <div class="nota">Incluye mano de obra</div>
+          <div class="faq-item">
+            <button class="faq-question">
+              ¿Usan pantallas originales?
+            </button>
+            <div class="faq-answer">
+              Trabajamos con repuestos de alta calidad. Si hay disponibilidad de pantalla original, te informamos el precio de ambas opciones.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              ¿Cuánto cuesta la reparación?
+            </button>
+            <div class="faq-answer">
+              El precio depende del modelo y tipo de pantalla. Te damos una cotización exacta por WhatsApp después de evaluar tu dispositivo.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              ¿Vienen a cualquier parte de Bogotá?
+            </button>
+            <div class="faq-answer">
+              Sí, atendemos en toda Bogotá y municipios aledaños. Coordinamos la hora y lugar que mejor te convenga.
             </div>
           </div>
         </div>
-
-      </div><!-- /.scr-row -->
-
-      <!-- CTA centrado debajo de la fila -->
-      <div class="scr-cta">
-        <a id="cta-wa" class="button" href="#" target="_blank" rel="noopener" aria-disabled="true" disabled>Enviar a WhatsApp</a>
       </div>
+    </section>
 
-    </div>
-  </section>
+  </main>
 
-  <!-- ==================== QUÉ INCLUYE ==================== -->
-  <section class="includes" aria-label="Qué incluye la reparación">
-    <div class="container">
-      <h2>¿Qué incluye?</h2>
-      <ul class="list">
-        <li>Pantalla o vidrio según tu modelo</li>
-        <li>Mano de obra especializada</li>
-        <li>Pruebas de tactilidad y color</li>
-        <li>Limpieza y armado</li>
-        <li>Garantía por escrito de hasta 90 días</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ==================== PREGUNTAS FRECUENTES ==================== -->
-  <section class="screen-faq" aria-label="Preguntas frecuentes">
-    <div class="container">
-      <h2>Preguntas frecuentes</h2>
-
-      <details>
-        <summary>¿Cuánto tarda el cambio de pantalla?</summary>
-        <p>La mayoría entre 45 y 90 minutos, dependiendo del modelo y pruebas finales.</p>
-      </details>
-
-      <details>
-        <summary>¿La garantía cubre la pieza instalada?</summary>
-        <p>Sí, cubre el correcto funcionamiento de la pieza y la mano de obra.</p>
-      </details>
-
-      <details>
-        <summary>¿La reparación es a domicilio?</summary>
-        <p>Sí, atendemos a domicilio en Bogotá. También podemos coordinar en punto de encuentro.</p>
-      </details>
-    </div>
-  </section>
-
-  <!-- ======= FOOTER (igual al sitio) ======= -->
+  <!-- ======= FOOTER ======= -->
   <footer class="main-footer" role="contentinfo">
     <div class="footer-wrapper container">
       <div class="footer-column footer-about">
@@ -194,123 +207,53 @@
     </div>
   </footer>
 
-  <!-- ======= JS mínimo: dropdowns + estimado + habilitar CTA ======= -->
+  <!-- WhatsApp flotante -->
+  <a href="https://wa.me/573046486740" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp Doctor Rayo">
+    <img src="whatsapp-icon.png" alt="" loading="lazy" decoding="async">
+  </a>
+
   <script>
-  // Datos de ejemplo: estimados por modelo (puedes ampliar)
-  const PRICES = {
-    Apple:   { "iPhone 11": 280000, "iPhone 12": 360000, "iPhone 13": 420000 },
-    Samsung: { "Galaxy S20": 260000, "Galaxy S21": 320000, "Galaxy A54": 220000 },
-    Xiaomi:  { "Redmi Note 10": 180000, "Redmi Note 11": 200000 },
-    Motorola:{ "Moto G60": 180000, "Moto G Stylus": 210000 }
-  };
-
-  // Utilidades
-  const fmtCOP = v => v ? ("$" + v.toLocaleString('es-CO')) : "—";
-  const qs  = s => document.querySelector(s);
-  const qsa = s => [...document.querySelectorAll(s)];
-
-  // Estado
-  let marca = null, modelo = null;
-
-  // Controles
-  const ddMarca   = qs('#dd-marca');
-  const ddModelo  = qs('#dd-modelo');
-  const marcaBtn  = ddMarca.querySelector('.scr-dd-btn');
-  const modeloBtn = ddModelo.querySelector('.scr-dd-btn');
-  const modeloMenu= ddModelo.querySelector('.scr-dd-menu');
-  const estimadoEl= qs('#estimado-monto');
-  const ctaWA     = qs('#cta-wa');
-
-  // Abrir/cerrar dropdowns
-  qsa('.scr-dd-btn').forEach(btn => {
-    btn.addEventListener('click', e => {
-      const dd = e.currentTarget.closest('.scr-dd');
-      const open = !dd.classList.contains('open');
-      // cierra todos
-      qsa('.scr-dd.open').forEach(o => o.classList.remove('open'));
-      if (open) dd.classList.add('open');
-      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-  });
-  document.addEventListener('click', e => {
-    if(!e.target.closest('.scr-dd')) qsa('.scr-dd.open').forEach(o => o.classList.remove('open'));
-  });
-  document.addEventListener('keydown', e => { if(e.key==='Escape') qsa('.scr-dd.open').forEach(o => o.classList.remove('open')); });
-
-  // Selección de marca
-  ddMarca.querySelectorAll('.scr-dd-menu button').forEach(b => {
-    b.addEventListener('click', () => {
-      marca = b.dataset.value;
-      marcaBtn.querySelector('.value').textContent = marca;
-      ddMarca.classList.remove('open');
-
-      // Poblar modelos para la marca y habilitar
-      modelo = null;
-      modeloBtn.querySelector('.value').textContent = modeloBtn.querySelector('.value').dataset.placeholder;
-      modeloBtn.disabled = false;
-      ddModelo.classList.remove('is-disabled');
-
-      const models = Object.keys(PRICES[marca] || {});
-      modeloMenu.innerHTML = models.length
-        ? models.map(m => `<li><button type="button" data-value="${m}">${m}</button></li>`).join('')
-        : `<li><button type="button" data-value="Consulta">Consulta tu modelo</button></li>`;
-
-      // Re-bind de botones recién inyectados
-      modeloMenu.querySelectorAll('button').forEach(btn => {
-        btn.addEventListener('click', () => {
-          modelo = btn.dataset.value;
-          modeloBtn.querySelector('.value').textContent = modelo;
-          ddModelo.classList.remove('open');
-          actualizarEstimadoYCTA();
+    // FAQ Toggle
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.parentElement;
+        const isActive = item.classList.contains('active');
+        
+        // Cerrar todos los FAQ
+        document.querySelectorAll('.faq-item').forEach(faq => {
+          faq.classList.remove('active');
         });
-      });
-
-      actualizarEstimadoYCTA();
-    });
-  });
-
-  function actualizarEstimadoYCTA(){
-    const price = (PRICES[marca] || {})[modelo] || null;
-    estimadoEl.textContent = "Estimado: " + (price ? fmtCOP(price) : "—");
-
-    const listo = Boolean(marca && modelo);
-    if (listo) {
-      const msg = `Hola, quiero reparar la pantalla de ${marca} ${modelo}${price ? ` (estimado ${fmtCOP(price)})` : ""}. ¿Disponibilidad y agenda?`;
-      ctaWA.href = `https://wa.me/573046486740?text=${encodeURIComponent(msg)}`;
-      ctaWA.removeAttribute('disabled');
-      ctaWA.setAttribute('aria-disabled','false');
-      ctaWA.title = 'Abrir WhatsApp con tu solicitud';
-    } else {
-      ctaWA.setAttribute('disabled', 'true');
-      ctaWA.setAttribute('aria-disabled','true');
-      ctaWA.removeAttribute('title');
-      ctaWA.href = '#';
-    }
-  }
-
-  // ======= JS: Dropdown del menú (igual a index) =======
-  (() => {
-    document.querySelectorAll(".dropdown>.nav-link").forEach(link => {
-      link.addEventListener("click", e => {
-        const li = link.parentElement;
-        const open = li.classList.toggle("show");
-        link.setAttribute("aria-expanded", String(open));
-        e.preventDefault();
+        
+        // Abrir el clickeado si no estaba activo
+        if (!isActive) {
+          item.classList.add('active');
+        }
       });
     });
-    const closeAll = () => {
-      document.querySelectorAll(".dropdown.show").forEach(li => {
-        li.classList.remove("show");
-        const a = li.querySelector(".nav-link");
-        a && a.setAttribute("aria-expanded","false");
-      });
-    };
-    document.addEventListener("click", e => { if(!e.target.closest(".dropdown")) closeAll(); });
-    document.addEventListener("keydown", e => { if(e.key === "Escape") closeAll(); });
-  })();
 
-  // Año footer
-  (document.getElementById('current-year')||{}).textContent = new Date().getFullYear();
+    // Envío del formulario
+    document.getElementById('pantallaForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const marca = document.getElementById('marca').value;
+      const modelo = document.getElementById('modelo').value;
+      const nombre = document.getElementById('nombre').value;
+      const problema = document.getElementById('problema').value;
+      
+      const mensaje = `Hola! Necesito reparar la pantalla de mi ${marca} ${modelo}. 
+
+El problema es: ${problema}
+
+Mi nombre es ${nombre}.
+
+¿Podrían ayudarme con una cotización?`;
+      
+      const whatsappURL = `https://wa.me/573046486740?text=${encodeURIComponent(mensaje)}`;
+      window.open(whatsappURL, '_blank');
+    });
+
+    // Año dinámico
+    document.getElementById("current-year").textContent = (new Date).getFullYear();
   </script>
 </body>
 </html>
