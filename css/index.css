@@ -1073,7 +1073,7 @@ img {
 @media (min-width: 1024px) {
   /* Banner aún más alto */
   .banner-principal {
-    height: 500px;
+    height: 350px;
   }
 }
 
@@ -1115,7 +1115,7 @@ img {
   
   /* === BANNER MÓVIL === */
   .banner-principal {
-    height: 280px;
+    height: 250px;
   }
   
   .banner-principal .overlay {
