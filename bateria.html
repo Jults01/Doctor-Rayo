@@ -2,36 +2,35 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Cambio de batería | Doctor Rayo</title>
-  <meta name="description" content="Cambia la batería de tu celular con repuestos de calidad y garantía. Servicio a domicilio en Bogotá.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cambio de Batería - Doctor Rayo</title>
+  <meta name="description" content="Cambio de batería de celular a domicilio en Bogotá. Diagnóstico rápido y garantía de 90 días.">
   <link rel="canonical" href="https://www.doctorrayo.com/bateria.html">
-
-  <!-- CSS global -->
-  <link rel="stylesheet" href="css/index.css">
-  <!-- CSS específico -->
   <link rel="stylesheet" href="css/bateria.css">
+  <link rel="stylesheet" href="css/index.css">
 </head>
-<body class="battery-page" data-service="bateria">
+<body class="bateria-page">
 
   <!-- ======= HEADER ======= -->
   <header class="main-header">
     <div class="header-wrapper">
-      <div class="logo"><a href="index.html"><h1>Doctor Rayo</h1></a></div>
+      <div class="logo">
+        <a href="index.html" aria-label="Inicio Doctor Rayo"><h1>Doctor Rayo</h1></a>
+      </div>
       <div class="header-actions">
         <div class="header-action renueva-button">
           <a href="/renueva.html">Renueva
-            <img src="img/renueva-icon.svg" alt="" aria-hidden="true">
-          </a>
+            <img src="img/renueva-icon.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+          </a>  
         </div>
         <div class="header-action login-button">
           <a href="/login.html" aria-label="Iniciar sesión">
-            <img src="img/login-icon.svg" alt="" aria-hidden="true">
+            <img src="img/login-icon.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
           </a>
         </div>
         <div class="header-action carrito-button">
           <a href="/carrito.html" aria-label="Ver carrito">
-            <img src="img/cart-icon.svg" alt="" aria-hidden="true">
+            <img src="img/cart-icon.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
             <span class="cart-count visually-hidden">0</span>
           </a>
         </div>
@@ -39,109 +38,139 @@
     </div>
   </header>
 
-  <!-- ======= NAV ======= -->
-  <nav class="categorias-nav" aria-label="Categorías principales de productos">
-    <ul id="main-navigation">
-      <li class="dropdown">
-        <a href="categorias/celulares" class="nav-link">Celulares</a>
-        <ul class="dropdown-menu">
-          <li><a href="categorias/celulares/iphone">iPhone</a></li>
-          <li><a href="categorias/celulares/samsung">Samsung</a></li>
-          <li><a href="categorias/celulares/xiaomi">Xiaomi</a></li>
-          <li><a href="categorias/celulares/motorola">Motorola</a></li>
-        </ul>
-      </li>
-      <li><a href="categorias/tablets" class="nav-link">Tablets</a></li>
-      <li><a href="categorias/accesorios" class="nav-link">Accesorios</a></li>
-      <li><a href="ofertas" class="nav-link">Ofertas</a></li>
-    </ul>
-  </nav>
+  <!-- ======= MAIN ======= -->
+  <main>
 
-  <!-- ======= HERO ======= -->
-  <section class="battery-hero" role="banner">
-    <div class="overlay">
-      <h1>Cambio de batería</h1>
-      <p>Reemplazamos la batería con repuestos de calidad, mano de obra incluida y garantía.</p>
-    </div>
-  </section>
+    <!-- Banner -->
+    <section class="banner-bateria" role="banner">
+      <div class="banner-content">
+        <h1>Cambio de Batería</h1>
+        <p>Reemplazamos tu batería agotada o dañada. Servicio a domicilio con baterías de calidad y garantía de 90 días.</p>
+      </div>
+    </section>
 
-  <!-- ======= SELECTOR ======= -->
-  <section class="scr" aria-label="Selecciona tu equipo">
-    <div class="container">
-      <h2>Elige tu equipo</h2>
-      <div class="scr-row">
-        <!-- Marca -->
-        <div class="scr-card">
-          <div class="scr-dd" id="dd-marca">
-            <button type="button" class="scr-dd-btn" aria-haspopup="listbox" aria-expanded="false">
-              <span class="label">Marca</span>
-              <span class="value" data-placeholder="Selecciona">Selecciona</span>
-              <span class="chev">▼</span>
-            </button>
-            <ul class="scr-dd-menu" role="listbox" aria-label="Marcas"></ul>
+    <!-- Formulario -->
+    <section class="formulario-section">
+      <div class="container">
+        <div class="form-container">
+          <h2 class="form-title">Cuéntanos sobre tu dispositivo</h2>
+          <form id="bateriaForm">
+            <div class="form-group">
+              <label for="marca">Marca del dispositivo</label>
+              <select id="marca" name="marca" required>
+                <option value="">Selecciona la marca</option>
+                <option value="iPhone">iPhone</option>
+                <option value="Samsung">Samsung</option>
+                <option value="Xiaomi">Xiaomi</option>
+                <option value="Huawei">Huawei</option>
+                <option value="Motorola">Motorola</option>
+                <option value="LG">LG</option>
+                <option value="Oppo">Oppo</option>
+                <option value="Realme">Realme</option>
+                <option value="Otra">Otra marca</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="modelo">Modelo específico</label>
+                <input type="text" id="modelo" name="modelo" placeholder="Ej: iPhone 12, Galaxy S21" required>
+              </div>
+              <div class="form-group">
+                <label for="nombre">Tu nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="problema">Describe el problema de la batería</label>
+              <textarea id="problema" name="problema" placeholder="Ej: Se descarga muy rápido, no carga, se hinchó, o se apaga solo..." required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Cotizar</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Qué incluye -->
+    <section class="incluye-section">
+      <div class="container">
+        <h2 class="incluye-title">¿Qué incluye nuestro servicio?</h2>
+        <div class="incluye-grid">
+          <div class="incluye-item">
+            <div class="check-icon">✓</div>
+            <span>Diagnóstico gratuito</span>
+          </div>
+          <div class="incluye-item">
+            <div class="check-icon">✓</div>
+            <span>Cambio a domicilio</span>
+          </div>
+          <div class="incluye-item">
+            <div class="check-icon">✓</div>
+            <span>Garantía de 90 días</span>
+          </div>
+          <div class="incluye-item">
+            <div class="check-icon">✓</div>
+            <span>Baterías de calidad</span>
+          </div>
+          <div class="incluye-item">
+            <div class="check-icon">✓</div>
+            <span>Sin costos ocultos</span>
+          </div>
+          <div class="incluye-item">
+            <div class="check-icon">✓</div>
+            <span>Reciclaje de batería vieja</span>
           </div>
         </div>
-        <!-- Modelo -->
-        <div class="scr-card">
-          <div class="scr-dd is-disabled" id="dd-modelo">
-            <button type="button" class="scr-dd-btn" aria-haspopup="listbox" aria-expanded="false" disabled>
-              <span class="label">Modelo</span>
-              <span class="value" data-placeholder="Selecciona">Selecciona</span>
-              <span class="chev">▼</span>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+      <div class="container">
+        <h2 class="faq-title">Preguntas Frecuentes</h2>
+        <div class="faq-container">
+          <div class="faq-item">
+            <button class="faq-question">
+              ¿Cuándo necesito cambiar la batería?
             </button>
-            <ul class="scr-dd-menu" role="listbox" aria-label="Modelos"></ul>
+            <div class="faq-answer">
+              Cuando se descarga muy rápido, no carga correctamente, se hincha, el teléfono se apaga solo, o el porcentaje salta de manera irregular.
+            </div>
           </div>
-        </div>
-        <!-- Estimado -->
-        <div class="scr-card">
-          <div class="scr-estimado">
-            <div class="txt">
-              <div class="monto" id="estimado-monto">Estimado: —</div>
-              <div class="nota">Incluye mano de obra</div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              ¿Usan baterías originales?
+            </button>
+            <div class="faq-answer">
+              Usamos baterías de alta calidad compatibles. Si hay disponibilidad de batería original, te informamos el precio de ambas opciones.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              ¿Cuánto dura el cambio de batería?
+            </button>
+            <div class="faq-answer">
+              El cambio de batería toma entre 30-60 minutos dependiendo del modelo. Te avisamos el tiempo estimado al cotizar.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              ¿La nueva batería durará como la original?
+            </button>
+            <div class="faq-answer">
+              Sí, nuestras baterías de reemplazo tienen capacidad igual o superior a la original y vienen con garantía de 90 días.
             </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- CTA -->
-      <div class="scr-cta">
-        <a id="cta-wa" class="button" href="#" target="_blank" rel="noopener" disabled>Enviar a WhatsApp</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======= INCLUYE ======= -->
-  <section class="includes" aria-label="Qué incluye">
-    <div class="container">
-      <h2>¿Qué incluye?</h2>
-      <ul class="list">
-        <li>Batería nueva de alta calidad</li>
-        <li>Mano de obra especializada</li>
-        <li>Pruebas de carga y rendimiento</li>
-        <li>Revisión de conectores y limpieza</li>
-        <li>Garantía por escrito de hasta 90 días</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ======= FAQ ======= -->
-  <section class="svc-faq" aria-label="Preguntas frecuentes">
-    <div class="container">
-      <h2>Preguntas frecuentes</h2>
-      <details>
-        <summary>¿Cuánto tarda el cambio de batería?</summary>
-        <p>La mayoría entre 30 y 60 minutos, según modelo y disponibilidad.</p>
-      </details>
-      <details>
-        <summary>¿La batería es original?</summary>
-        <p>Trabajamos con repuestos de calidad premium y, en algunos casos, originales.</p>
-      </details>
-      <details>
-        <summary>¿Mantengo la garantía del fabricante?</summary>
-        <p>No, ya que el equipo es abierto. Pero tienes nuestra garantía por escrito.</p>
-      </details>
-    </div>
-  </section>
+  </main>
 
   <!-- ======= FOOTER ======= -->
   <footer class="main-footer" role="contentinfo">
@@ -178,11 +207,51 @@
     </div>
   </footer>
 
-  <!-- ======= JS ======= -->
-  <script src="js/service.js"></script>
+  <!-- WhatsApp flotante -->
+  <a href="https://wa.me/573046486740" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp Doctor Rayo">
+    <img src="whatsapp-icon.png" alt="" loading="lazy" decoding="async">
+  </a>
+
   <script>
-    // Año dinámico en footer
-    document.getElementById("current-year").textContent = new Date().getFullYear();
+    // FAQ Toggle
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.parentElement;
+        const isActive = item.classList.contains('active');
+        
+        document.querySelectorAll('.faq-item').forEach(faq => {
+          faq.classList.remove('active');
+        });
+        
+        if (!isActive) {
+          item.classList.add('active');
+        }
+      });
+    });
+
+    // Envío del formulario
+    document.getElementById('bateriaForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const marca = document.getElementById('marca').value;
+      const modelo = document.getElementById('modelo').value;
+      const nombre = document.getElementById('nombre').value;
+      const problema = document.getElementById('problema').value;
+      
+      const mensaje = `Hola! Necesito cambiar la batería de mi ${marca} ${modelo}. 
+
+El problema es: ${problema}
+
+Mi nombre es ${nombre}.
+
+¿Podrían ayudarme con una cotización?`;
+      
+      const whatsappURL = `https://wa.me/573046486740?text=${encodeURIComponent(mensaje)}`;
+      window.open(whatsappURL, '_blank');
+    });
+
+    // Año dinámico
+    document.getElementById("current-year").textContent = (new Date).getFullYear();
   </script>
 </body>
 </html>
