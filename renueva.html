@@ -45,9 +45,9 @@
        HERO
        ======================================== -->
   <section class="hero">
-    <div class="hero-content">
-      <h2>Vende tu celular en 3 pasos</h2>
-      <p>Recibe hasta $3,000,000 por tu equipo usado</p>
+    <div class="hero-overlay">
+      <h2>Convierte tu celular en efectivo</h2>
+      <p>Rápido, facil y sin complicaciones</p>
     </div>
   </section>
 
@@ -107,19 +107,25 @@
     </div>
   </section>
 
-  <!-- ========================================
+<!-- ========================================
        FORMULARIO DE COTIZACIÓN
        ======================================== -->
   <section class="cotizacion-form">
     <div class="container">
       <div class="form-header">
-        <h2>📱 Cotiza tu equipo ahora</h2>
+        <h2>📱 Vende tu celular</h2>
         <p>Completa el formulario y recibe una oferta en minutos</p>
       </div>
 
       <form id="cotizacionForm" class="form-cotizacion">
         <div class="form-grid">
           
+          <!-- Nombre (PRIMERO) -->
+          <div class="form-group full-width">
+            <label for="nombre">Tu nombre *</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
+          </div>
+
           <!-- Marca -->
           <div class="form-group">
             <label for="marca">Marca del celular *</label>
@@ -143,7 +149,7 @@
           </div>
 
           <!-- Estado -->
-          <div class="form-group">
+          <div class="form-group full-width">
             <label for="estado">Estado del equipo *</label>
             <select id="estado" name="estado" required>
               <option value="">Selecciona el estado</option>
@@ -154,23 +160,12 @@
             </select>
           </div>
 
-          <!-- Nombre -->
-          <div class="form-group">
-            <label for="nombre">Tu nombre *</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
-          </div>
         </div>
 
-        <!-- Upload de fotos -->
-        <div class="form-group full-width">
-          <label>Fotos del equipo (opcional - hasta 3)</label>
-          <div class="upload-area" id="uploadArea">
-            <div class="upload-icon">📸</div>
-            <p><strong>Haz clic o arrastra fotos aquí</strong></p>
-            <small>PNG, JPG - Toma fotos desde varios angulos</small>
-          </div>
-          <input type="file" id="fileInput" accept="image/*" multiple>
-          <div class="image-preview" id="imagePreview"></div>
+        <!-- Mensaje informativo sobre fotos -->
+        <div class="form-note">
+          <span class="note-icon">📸</span>
+          <p>Después de enviar, podrás compartir <strong>más de 5 fotos desde varios ángulos</strong> directamente por WhatsApp para que podamos darte la mejor oferta</p>
         </div>
 
         <!-- Botón submit -->
@@ -178,8 +173,32 @@
           <span>💬</span>
           Recibir oferta por WhatsApp
         </button>
+
+        <!-- Separador -->
+        <div class="form-separador"></div>
+
+        <!-- Expectativas realistas -->
+        <div class="expectativas-section">
+          <h3 class="expectativas-title">💡 Expectativas realistas</h3>
+          
+          <div class="expectativas-banner">
+            <p class="banner-text">Los celulares usados tienen un valor de reventa que normalmente está entre el <strong>30% y 50%</strong> del precio original.</p>
+            <div class="banner-items">
+              <span>Depende de:</span>
+              <span>Tiempo de uso</span>
+              <span class="separator">•</span>
+              <span>Estado físico</span>
+              <span class="separator">•</span>
+              <span>Capacidad</span>
+              <span class="separator">•</span>
+              <span>Demanda del modelo</span>
+            </div>
+          </div>
+        </div>
+
       </form>
     </div>
+  </section>
   </section>
 
   <!-- ========================================
@@ -245,19 +264,6 @@
   </section>
 
   <!-- ========================================
-       CTA FINAL
-       ======================================== -->
-  <section class="cta-final">
-    <div class="container">
-      <h2>Quiero vender mi celu</h2>
-      <a href="https://wa.me/573046486740" class="btn-whatsapp" target="_blank" rel="noopener">
-        <span>💬</span>
-        ¡Hablemos!
-      </a>
-    </div>
-  </section>
-
-  <!-- ========================================
        FOOTER
        ======================================== -->
   <footer class="main-footer" role="contentinfo">
@@ -307,17 +313,13 @@
   <script>
     /**
      * CARRUSEL DE PASOS - MÓVIL
-     * Solo navegación manual con dots y deslizar
-     * Sin auto-scroll
      */
-    
     if (window.innerWidth <= 767) {
       const track = document.getElementById('pasosTrack');
       const dots = document.querySelectorAll('.dot');
       const pasoItems = document.querySelectorAll('.paso-item');
       let currentIndex = 0;
 
-      // Actualizar carrusel
       function updateCarousel(index) {
         currentIndex = index;
         const itemWidth = pasoItems[index].offsetWidth;
@@ -335,14 +337,12 @@
         });
       }
 
-      // Dots click
       dots.forEach(dot => {
         dot.addEventListener('click', () => {
           updateCarousel(parseInt(dot.dataset.index));
         });
       });
 
-      // Detectar scroll manual
       track.addEventListener('scroll', () => {
         const scrollLeft = track.scrollLeft;
         const itemWidth = pasoItems[0].offsetWidth;
@@ -363,7 +363,9 @@
       });
     }
 
-    // Año actual en el footer
+    /**
+     * AÑO ACTUAL EN FOOTER
+     */
     document.addEventListener('DOMContentLoaded', function() {
       const yearElement = document.getElementById('current-year');
       if (yearElement) {
@@ -371,86 +373,27 @@
       }
     });
 
-    /* =====================================
-       FORMULARIO DE COTIZACIÓN
-       ===================================== */
-    const uploadArea = document.getElementById('uploadArea');
-    const fileInput = document.getElementById('fileInput');
-    const imagePreview = document.getElementById('imagePreview');
+    /**
+     * FORMULARIO DE COTIZACIÓN
+     */
     const form = document.getElementById('cotizacionForm');
-    let selectedFiles = [];
 
-    if (uploadArea && fileInput && form) {
-      // Click en el área de upload
-      uploadArea.addEventListener('click', () => fileInput.click());
-
-      // Drag and drop
-      uploadArea.addEventListener('dragover', (e) => {
-        e.preventDefault();
-        uploadArea.classList.add('dragover');
-      });
-
-      uploadArea.addEventListener('dragleave', () => {
-        uploadArea.classList.remove('dragover');
-      });
-
-      uploadArea.addEventListener('drop', (e) => {
-        e.preventDefault();
-        uploadArea.classList.remove('dragover');
-        handleFiles(e.dataTransfer.files);
-      });
-
-      // Selección de archivos
-      fileInput.addEventListener('change', (e) => {
-        handleFiles(e.target.files);
-      });
-
-      // Manejar archivos
-      function handleFiles(files) {
-        const newFiles = Array.from(files).slice(0, 3 - selectedFiles.length);
-        selectedFiles = [...selectedFiles, ...newFiles].slice(0, 3);
-        displayImages();
-      }
-
-      // Mostrar preview de imágenes
-      function displayImages() {
-        imagePreview.innerHTML = '';
-        selectedFiles.forEach((file, index) => {
-          const reader = new FileReader();
-          reader.onload = (e) => {
-            const div = document.createElement('div');
-            div.className = 'preview-item';
-            div.innerHTML = `
-              <img src="${e.target.result}" alt="Preview ${index + 1}">
-              <button type="button" class="remove-image" onclick="removeImage(${index})">×</button>
-            `;
-            imagePreview.appendChild(div);
-          };
-          reader.readAsDataURL(file);
-        });
-      }
-
-      // Eliminar imagen
-      window.removeImage = function(index) {
-        selectedFiles.splice(index, 1);
-        displayImages();
-      };
-
-      // Submit del formulario
+    if (form) {
       form.addEventListener('submit', (e) => {
         e.preventDefault();
         
+        const nombre = document.getElementById('nombre').value;
         const marca = document.getElementById('marca').value;
         const modelo = document.getElementById('modelo').value;
         const estado = document.getElementById('estado').value;
-        const nombre = document.getElementById('nombre').value;
 
         // Crear mensaje para WhatsApp
-        const mensaje = `Hola, quiero vender mi celular:\n\n` +
+        const mensaje = `Hola, me llamo ${nombre}.\n\n` +
+                       `Quiero vender mi celular:\n\n` +
                        `📱 Marca: ${marca}\n` +
                        `📱 Modelo: ${modelo}\n` +
-                       `⭐ Estado: ${estado}\n` +
-                       `👤 Nombre: ${nombre}\n`;
+                       `⭐ Estado: ${estado}\n\n` +
+                       `Enviaré las fotos a este chat (más de 5 desde varios ángulos para detallar el celular).`;
 
         const mensajeCodificado = encodeURIComponent(mensaje);
         const urlWhatsApp = `https://wa.me/573046486740?text=${mensajeCodificado}`;
@@ -459,7 +402,6 @@
         window.open(urlWhatsApp, '_blank');
       });
     }
-
   </script>
 
 </body>

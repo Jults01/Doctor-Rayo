@@ -150,16 +150,20 @@ img {
 }
 
 /* Logo */
-.logo h1,
-.logo a {
-  font-weight: 600;
-  color: var(--color-primary);
-  font-size: var(--font-size-xl);
+.logo h1 {
+  font-size: 32px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #e60000, #ff4444);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.3s ease;
+  text-shadow: 0 2px 4px rgba(230,0,0,0.1);
 }
 
-.logo a:hover h1,
-.logo a:focus h1 {
-  color: var(--color-primary-dark);
+.logo h1:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
 }
 
 /* Menú de Navegación */
