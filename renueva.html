@@ -3,74 +3,71 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Renueva tu Celular - Doctor Rayo</title>
+  <title>Vende tu Celular - Doctor Rayo</title>
   <meta name="description" content="Vende tu celular usado en Doctor Rayo. Pago inmediato, recogida gratis y sin trámites. Recibe hasta $3,000,000 por tu equipo.">
+  
+  <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- Estilos -->
   <link rel="stylesheet" href="css/renueva.css">
 </head>
 <body>
 
-  <!-- ====================================================
-       HEADER
-       ==================================================== -->
+  <!-- ========================================
+       HEADER PRINCIPAL
+       ======================================== -->
   <header class="main-header">
     <div class="container">
       <div class="header-wrapper">
+        <!-- Logo -->
         <div class="logo">
-          <a href="index.html">
+          <a href="index.html" aria-label="Inicio Doctor Rayo">
             <h1>Doctor Rayo</h1>
           </a>
         </div>
-        <nav class="header-actions">
-          <div class="header-action renueva-button">
-            <a href="renueva.html">
-              Renueva
-              <img src="img/renueva-icon.svg" alt="" aria-hidden="true">
-            </a>
-          </div>
-          <div class="header-action login-button">
-            <a href="login.html" aria-label="Iniciar sesión">
-              <img src="img/login-icon.svg" alt="" aria-hidden="true">
-            </a>
-          </div>
-          <div class="header-action carrito-button">
-            <a href="carrito.html" aria-label="Ver carrito">
-              <img src="img/cart-icon.svg" alt="" aria-hidden="true">
-            </a>
-          </div>
+        
+        <!-- Menú de Navegación -->
+        <nav class="header-nav" aria-label="Navegación principal">
+          <ul class="nav-menu">
+            <li><a href="renueva.html" class="nav-vender">Vender</a></li>
+            <li><a href="comprar.html">Comprar</a></li>
+            <li><a href="reparacion.html">Reparar</a></li>
+          </ul>
         </nav>
       </div>
     </div>
   </header>
 
-  <!-- ====================================================
+  <!-- ========================================
        HERO
-       ==================================================== -->
+       ======================================== -->
   <section class="hero">
     <div class="hero-content">
-      <h2>Renueva tu celular en 3 pasos</h2>
+      <h2>Vende tu celular en 3 pasos</h2>
       <p>Recibe hasta $3,000,000 por tu equipo usado</p>
     </div>
   </section>
 
-  <!-- ====================================================
-       PASOS - Desktop: Grid 3 columnas / Móvil: Carrusel
-       ==================================================== -->
+  <!-- ========================================
+       PASOS - Desktop: Grid / Móvil: Carrusel
+       ======================================== -->
   <section class="pasos">
     <div class="container">
+      
       <!-- Grid para desktop -->
       <div class="pasos-grid">
         <div class="paso-item">
           <div class="paso-numero">1</div>
-          <h3>Cuéntanos tu equipo</h3>
+          <h3>¿Qué celular tienes?</h3>
           <p>Marca, modelo y estado</p>
         </div>
         <div class="paso-item">
           <div class="paso-numero">2</div>
           <h3>Te damos oferta</h3>
-          <p>En menos de 15 minutos</p>
+          <p>En menos de 10 minutos</p>
         </div>
         <div class="paso-item">
           <div class="paso-numero">3</div>
@@ -84,13 +81,13 @@
         <div class="pasos-track" id="pasosTrack">
           <div class="paso-item active">
             <div class="paso-numero">1</div>
-            <h3>Cuéntanos tu equipo</h3>
+            <h3>¿Qué celular tienes?</h3>
             <p>Marca, modelo y estado</p>
           </div>
           <div class="paso-item">
             <div class="paso-numero">2</div>
             <h3>Te damos oferta</h3>
-            <p>En menos de 15 minutos</p>
+            <p>En menos de 10 minutos</p>
           </div>
           <div class="paso-item">
             <div class="paso-numero">3</div>
@@ -106,15 +103,91 @@
         <div class="dot" data-index="1"></div>
         <div class="dot" data-index="2"></div>
       </div>
+      
     </div>
   </section>
 
-  <!-- ====================================================
+  <!-- ========================================
+       FORMULARIO DE COTIZACIÓN
+       ======================================== -->
+  <section class="cotizacion-form">
+    <div class="container">
+      <div class="form-header">
+        <h2>📱 Cotiza tu equipo ahora</h2>
+        <p>Completa el formulario y recibe una oferta en minutos</p>
+      </div>
+
+      <form id="cotizacionForm" class="form-cotizacion">
+        <div class="form-grid">
+          
+          <!-- Marca -->
+          <div class="form-group">
+            <label for="marca">Marca del celular *</label>
+            <select id="marca" name="marca" required>
+              <option value="">Selecciona una marca</option>
+              <option value="iPhone">iPhone (Apple)</option>
+              <option value="Samsung">Samsung</option>
+              <option value="Xiaomi">Xiaomi</option>
+              <option value="Motorola">Motorola</option>
+              <option value="Huawei">Huawei</option>
+              <option value="Realme">Realme</option>
+              <option value="OPPO">OPPO</option>
+              <option value="Otra">Otra marca</option>
+            </select>
+          </div>
+
+          <!-- Modelo -->
+          <div class="form-group">
+            <label for="modelo">Modelo *</label>
+            <input type="text" id="modelo" name="modelo" placeholder="Ej: iPhone 13, Galaxy S21" required>
+          </div>
+
+          <!-- Estado -->
+          <div class="form-group">
+            <label for="estado">Estado del equipo *</label>
+            <select id="estado" name="estado" required>
+              <option value="">Selecciona el estado</option>
+              <option value="Excelente">Excelente - Como nuevo</option>
+              <option value="Bueno">Bueno - Funciona perfecto</option>
+              <option value="Regular">Regular - Detalles estéticos</option>
+              <option value="Repuestos">Para repuestos</option>
+            </select>
+          </div>
+
+          <!-- Nombre -->
+          <div class="form-group">
+            <label for="nombre">Tu nombre *</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
+          </div>
+        </div>
+
+        <!-- Upload de fotos -->
+        <div class="form-group full-width">
+          <label>Fotos del equipo (opcional - hasta 3)</label>
+          <div class="upload-area" id="uploadArea">
+            <div class="upload-icon">📸</div>
+            <p><strong>Haz clic o arrastra fotos aquí</strong></p>
+            <small>PNG, JPG - Toma fotos desde varios angulos</small>
+          </div>
+          <input type="file" id="fileInput" accept="image/*" multiple>
+          <div class="image-preview" id="imagePreview"></div>
+        </div>
+
+        <!-- Botón submit -->
+        <button type="submit" class="btn-submit">
+          <span>💬</span>
+          Recibir oferta por WhatsApp
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ========================================
        BENEFICIOS
-       ==================================================== -->
+       ======================================== -->
   <section class="beneficios">
     <div class="container">
-      <h2>¿Por qué vender con nosotros?</h2>
+      <h2>¿Por qué vendernos tu celular?</h2>
       <div class="beneficios-grid">
         <div class="beneficio-item">
           <div class="beneficio-icon">
@@ -144,9 +217,9 @@
     </div>
   </section>
 
-  <!-- ====================================================
+  <!-- ========================================
        TESTIMONIOS
-       ==================================================== -->
+       ======================================== -->
   <section class="testimonios">
     <div class="container">
       <h2>Lo que dicen nuestros clientes</h2>
@@ -171,22 +244,66 @@
     </div>
   </section>
 
-  <!-- ====================================================
+  <!-- ========================================
        CTA FINAL
-       ==================================================== -->
+       ======================================== -->
   <section class="cta-final">
     <div class="container">
-      <h2>¿Listo para vender tu celular?</h2>
+      <h2>Quiero vender mi celu</h2>
       <a href="https://wa.me/573046486740" class="btn-whatsapp" target="_blank" rel="noopener">
         <span>💬</span>
-        Cotiza ahora por WhatsApp
+        ¡Hablemos!
       </a>
     </div>
   </section>
 
-  <!-- ====================================================
-       JAVASCRIPT - CARRUSEL MÓVIL (Solo dots)
-       ==================================================== -->
+  <!-- ========================================
+       FOOTER
+       ======================================== -->
+  <footer class="main-footer" role="contentinfo">
+    <div class="footer-wrapper container">
+      <div class="footer-column">
+        <h2>Doctor Rayo</h2>
+        <p>Sitio ideal para comprar, vender o reparar tu celular.</p>
+      </div>
+      <div class="footer-column">
+        <h3>Servicios</h3>
+        <nav aria-label="Servicios">
+          <ul>
+            <li><a href="comprar.html">Comprar</a></li>
+            <li><a href="renueva.html">Vender</a></li>
+            <li><a href="reparacion.html">Reparar</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-column">
+        <h3>Contacto</h3>
+        <address>
+          <p>Email: <a href="mailto:contacto@doctorrayo.com">contacto@doctorrayo.com</a></p>
+          <p>Teléfono: <a href="tel:+573046486740">+57 304 6486740</a></p>
+          <p>Ciudad: Bogotá, Colombia</p>
+        </address>
+      </div>
+      <div class="footer-column">
+        <h3>Síguenos</h3>
+        <ul class="redes-sociales">
+          <li><a href="https://www.instagram.com/doctorrayo" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="current-year"></span> Doctor Rayo. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a href="https://wa.me/573046486740" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp">
+    <img src="whatsapp-icon.png" alt="WhatsApp" loading="lazy" decoding="async">
+  </a>
+
+  <!-- ========================================
+       JAVASCRIPT
+       ======================================== -->
   <script>
     /**
      * CARRUSEL DE PASOS - MÓVIL
@@ -245,6 +362,104 @@
         }
       });
     }
+
+    // Año actual en el footer
+    document.addEventListener('DOMContentLoaded', function() {
+      const yearElement = document.getElementById('current-year');
+      if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+      }
+    });
+
+    /* =====================================
+       FORMULARIO DE COTIZACIÓN
+       ===================================== */
+    const uploadArea = document.getElementById('uploadArea');
+    const fileInput = document.getElementById('fileInput');
+    const imagePreview = document.getElementById('imagePreview');
+    const form = document.getElementById('cotizacionForm');
+    let selectedFiles = [];
+
+    if (uploadArea && fileInput && form) {
+      // Click en el área de upload
+      uploadArea.addEventListener('click', () => fileInput.click());
+
+      // Drag and drop
+      uploadArea.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        uploadArea.classList.add('dragover');
+      });
+
+      uploadArea.addEventListener('dragleave', () => {
+        uploadArea.classList.remove('dragover');
+      });
+
+      uploadArea.addEventListener('drop', (e) => {
+        e.preventDefault();
+        uploadArea.classList.remove('dragover');
+        handleFiles(e.dataTransfer.files);
+      });
+
+      // Selección de archivos
+      fileInput.addEventListener('change', (e) => {
+        handleFiles(e.target.files);
+      });
+
+      // Manejar archivos
+      function handleFiles(files) {
+        const newFiles = Array.from(files).slice(0, 3 - selectedFiles.length);
+        selectedFiles = [...selectedFiles, ...newFiles].slice(0, 3);
+        displayImages();
+      }
+
+      // Mostrar preview de imágenes
+      function displayImages() {
+        imagePreview.innerHTML = '';
+        selectedFiles.forEach((file, index) => {
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            const div = document.createElement('div');
+            div.className = 'preview-item';
+            div.innerHTML = `
+              <img src="${e.target.result}" alt="Preview ${index + 1}">
+              <button type="button" class="remove-image" onclick="removeImage(${index})">×</button>
+            `;
+            imagePreview.appendChild(div);
+          };
+          reader.readAsDataURL(file);
+        });
+      }
+
+      // Eliminar imagen
+      window.removeImage = function(index) {
+        selectedFiles.splice(index, 1);
+        displayImages();
+      };
+
+      // Submit del formulario
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const marca = document.getElementById('marca').value;
+        const modelo = document.getElementById('modelo').value;
+        const estado = document.getElementById('estado').value;
+        const nombre = document.getElementById('nombre').value;
+
+        // Crear mensaje para WhatsApp
+        const mensaje = `Hola, quiero vender mi celular:\n\n` +
+                       `📱 Marca: ${marca}\n` +
+                       `📱 Modelo: ${modelo}\n` +
+                       `⭐ Estado: ${estado}\n` +
+                       `👤 Nombre: ${nombre}\n`;
+
+        const mensajeCodificado = encodeURIComponent(mensaje);
+        const urlWhatsApp = `https://wa.me/573046486740?text=${mensajeCodificado}`;
+
+        // Abrir WhatsApp
+        window.open(urlWhatsApp, '_blank');
+      });
+    }
+
   </script>
 
 </body>

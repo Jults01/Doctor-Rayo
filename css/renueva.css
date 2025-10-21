@@ -1,12 +1,47 @@
 /* ====================================================
-   RENUEVA - DOCTOR RAYO
-   Versión: 1.0
+   VENDER (RENUEVA) - DOCTOR RAYO
+   Versión: 2.0 - Header Rediseñado
+   Última actualización: Enero 2025
    ==================================================== */
+
+/* ====================================================
+   VARIABLES CSS
+   ==================================================== */
+:root {
+  /* Colores */
+  --color-primary: #e60000;
+  --color-primary-dark: #c40000;
+  --color-accent-green: #25d366;
+  --color-accent-green-dark: #1ebe57;
+  --color-text-dark: #0b0b0b;
+  --color-text-medium: #333;
+  --color-white: #fff;
+  --color-light-gray: #f9f9f9;
+  --color-medium-gray: #ddd;
+  --color-dark-gray: #444;
+  --color-black: #000;
+  --color-footer-text: #ccc;
+
+  /* Espaciado */
+  --gap-section: 25px;
+  --space-xs: 5px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 16px;
+  --space-xl: 20px;
+  --space-xxl: 30px;
+  --space-xxxl: 40px;
+
+  /* Transiciones */
+  --transition-speed: 0.3s;
+}
 
 /* ====================================================
    RESET Y BASE
    ==================================================== */
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -14,9 +49,11 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: #fff;
-  color: #0b0b0b;
+  background: var(--color-white);
+  color: var(--color-text-dark);
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -24,18 +61,24 @@ a {
   color: inherit;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 var(--space-xl);
 }
 
 /* ====================================================
-   HEADER
+   HEADER Y NAVEGACIÓN
    ==================================================== */
 .main-header {
-  background: #fff;
-  padding: 8px 0;
+  background: var(--color-white);
+  padding: var(--space-sm) 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .header-wrapper {
@@ -44,69 +87,56 @@ a {
   align-items: center;
 }
 
+/* Logo */
 .logo h1,
 .logo a {
   font-weight: 600;
-  color: #e60000;
+  color: var(--color-primary);
   font-size: 20px;
 }
 
-.logo a:hover h1 {
-  color: #c40000;
+.logo a:hover h1,
+.logo a:focus h1 {
+  color: var(--color-primary-dark);
 }
 
-.header-actions {
+/* Menú de Navegación */
+.header-nav {
+  margin-left: auto;
+}
+
+.nav-menu {
   display: flex;
-  gap: 16px;
+  gap: 0.5rem;
+  list-style: none;
   align-items: center;
 }
 
-/* Botón Renueva */
-.renueva-button a {
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-weight: 500;
-  font-size: 14px;
-  color: #0b0b0b;
-  border: 1px solid #ddd;
-  background: transparent;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: all 0.3s ease;
+.nav-menu li a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--color-text-medium);
+  transition: all var(--transition-speed) ease;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  display: inline-block;
 }
 
-.renueva-button a:hover {
-  border-color: #e60000;
+.nav-menu li a:hover {
+  color: var(--color-primary);
 }
 
-.renueva-button a img {
-  width: 16px;
-  height: 16px;
+/* Estilo especial para Vender */
+.nav-vender {
+  background: #f0f0f0;
 }
 
-/* Botones Login y Carrito */
-.login-button a,
-.carrito-button a {
-  display: inline-flex;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #ddd;
-  transition: all 0.3s ease;
-}
-
-.login-button a img,
-.carrito-button a img {
-  width: 18px;
-  height: 18px;
-}
-
-.header-action a:hover {
-  border-color: #e60000;
-  transform: translateY(-1px);
+.nav-vender:hover {
+  background: var(--color-primary) !important;
+  color: var(--color-white) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(230, 0, 0, 0.3);
 }
 
 /* ====================================================
@@ -120,12 +150,12 @@ a {
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: #fff;
+  color: var(--color-white);
 }
 
 .hero-content h2 {
   font-size: 1.8rem;
-  margin-bottom: 12px;
+  margin-bottom: var(--space-md);
 }
 
 .hero-content p {
@@ -137,48 +167,48 @@ a {
    PASOS - DESKTOP
    ==================================================== */
 .pasos {
-  padding: 25px 0;
+  padding: var(--gap-section) 0;
 }
 
 .pasos-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-top: 25px;
+  gap: var(--space-lg);
+  margin-top: var(--gap-section);
 }
 
 .paso-item {
-  background: #fff;
-  border: 1px solid #ddd;
+  background: var(--color-white);
+  border: 1px solid var(--color-medium-gray);
   border-radius: 12px;
-  padding: 20px;
+  padding: var(--space-xl);
   text-align: center;
-  transition: all 0.3s ease;
+  transition: all var(--transition-speed) ease;
 }
 
 .paso-item:hover {
-  border-color: #e60000;
+  border-color: var(--color-primary);
   box-shadow: 0 4px 12px rgba(230, 0, 0, 0.1);
 }
 
 .paso-numero {
   width: 50px;
   height: 50px;
-  background: #e60000;
-  color: #fff;
+  background: var(--color-primary);
+  color: var(--color-white);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
   font-weight: 600;
-  margin: 0 auto 12px;
+  margin: 0 auto var(--space-md);
 }
 
 .paso-item h3 {
   font-size: 1rem;
   margin-bottom: 6px;
-  color: #0b0b0b;
+  color: var(--color-text-dark);
 }
 
 .paso-item p {
@@ -186,7 +216,7 @@ a {
   color: #666;
 }
 
-/* Ocultar elementos del carrusel en desktop */
+/* Ocultar carrusel en desktop */
 .pasos-wrapper,
 .dots-container {
   display: none;
@@ -196,36 +226,36 @@ a {
    BENEFICIOS
    ==================================================== */
 .beneficios {
-  padding: 25px 0;
-  background: #f9f9f9;
+  padding: var(--gap-section) 0;
+  background: var(--color-light-gray);
 }
 
 .beneficios h2 {
   text-align: center;
   font-size: 1.5rem;
-  margin-bottom: 25px;
-  color: #0b0b0b;
+  margin-bottom: var(--gap-section);
+  color: var(--color-text-dark);
 }
 
 .beneficios-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
+  gap: var(--space-md);
   max-width: 600px;
   margin: 0 auto;
 }
 
 .beneficio-item {
-  background: #fff;
-  border: 1px solid #ddd;
+  background: var(--color-white);
+  border: 1px solid var(--color-medium-gray);
   border-radius: 10px;
-  padding: 16px;
+  padding: var(--space-lg);
   text-align: center;
-  transition: all 0.3s ease;
+  transition: all var(--transition-speed) ease;
 }
 
 .beneficio-item:hover {
-  border-color: #e60000;
+  border-color: var(--color-primary);
   box-shadow: 0 4px 12px rgba(230, 0, 0, 0.1);
 }
 
@@ -246,7 +276,7 @@ a {
 
 .beneficio-item h3 {
   font-size: 0.95rem;
-  color: #0b0b0b;
+  color: var(--color-text-dark);
   font-weight: 600;
 }
 
@@ -254,19 +284,19 @@ a {
    TESTIMONIOS
    ==================================================== */
 .testimonios {
-  padding: 25px 0;
+  padding: var(--gap-section) 0;
 }
 
 .testimonios h2 {
   text-align: center;
   font-size: 1.5rem;
-  margin-bottom: 25px;
-  color: #0b0b0b;
+  margin-bottom: var(--gap-section);
+  color: var(--color-text-dark);
 }
 
 .testimonios-track {
   display: flex;
-  gap: 16px;
+  gap: var(--space-lg);
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
@@ -280,23 +310,23 @@ a {
 
 .testimonio-card {
   flex: 0 0 80%;
-  background: #fff;
-  border: 1px solid #ddd;
+  background: var(--color-white);
+  border: 1px solid var(--color-medium-gray);
   border-radius: 12px;
-  padding: 20px;
+  padding: var(--space-xl);
   scroll-snap-align: start;
 }
 
 .testimonio-card p {
   font-size: 0.95rem;
   margin-bottom: 10px;
-  color: #333;
+  color: var(--color-text-medium);
   line-height: 1.5;
 }
 
 .testimonio-autor {
   font-weight: 600;
-  color: #e60000;
+  color: var(--color-primary);
   font-size: 0.9rem;
 }
 
@@ -304,15 +334,15 @@ a {
    CTA FINAL
    ==================================================== */
 .cta-final {
-  padding: 25px 0;
+  padding: var(--gap-section) 0;
   text-align: center;
-  background: #f9f9f9;
+  background: var(--color-light-gray);
 }
 
 .cta-final h2 {
   font-size: 1.5rem;
-  margin-bottom: 20px;
-  color: #0b0b0b;
+  margin-bottom: var(--space-xl);
+  color: var(--color-text-dark);
 }
 
 .btn-whatsapp {
@@ -320,26 +350,319 @@ a {
   align-items: center;
   gap: 10px;
   padding: 14px 40px;
-  background: #25d366;
-  color: #fff;
+  background: var(--color-accent-green);
+  color: var(--color-white);
   border-radius: 999px;
   text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;
-  transition: all 0.3s ease;
+  transition: all var(--transition-speed) ease;
 }
 
 .btn-whatsapp:hover {
-  background: #1ebe57;
+  background: var(--color-accent-green-dark);
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
 }
 
 /* ====================================================
-   RESPONSIVE - DESKTOP (768px+)
+   FOOTER
    ==================================================== */
+.main-footer {
+  background: var(--color-black);
+  color: var(--color-white);
+  padding: var(--space-xxxl) var(--space-xl) var(--space-xl);
+  font-size: 14px;
+}
+
+.footer-wrapper {
+  max-width: 1200px;
+  margin: 0 auto var(--space-xl);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-xxl);
+}
+
+.footer-column {
+  flex: 1 1 220px;
+  min-width: 180px;
+}
+
+.footer-column h2,
+.footer-column h3 {
+  color: var(--color-white);
+  margin-bottom: var(--space-md);
+  font-size: 20px;
+}
+
+.footer-column p,
+.footer-column ul li a {
+  color: var(--color-footer-text);
+  line-height: 1.8;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: var(--space-sm);
+}
+
+.footer-column ul li a {
+  transition: color var(--transition-speed) ease;
+}
+
+.footer-column ul li a:hover,
+.footer-column ul li a:focus {
+  color: var(--color-primary);
+}
+
+.footer-column address {
+  font-style: normal;
+}
+
+.redes-sociales {
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--color-dark-gray);
+  color: var(--color-footer-text);
+}
+
+/* ====================================================
+   WHATSAPP FLOTANTE
+   ==================================================== */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: var(--space-xxl);
+  right: var(--space-xxl);
+  background: var(--color-accent-green);
+  border-radius: 50%;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  transition: all var(--transition-speed) ease;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.whatsapp-float img {
+  width: 35px;
+}
+
+.whatsapp-float:hover,
+.whatsapp-float:focus {
+  background: var(--color-accent-green-dark);
+  transform: scale(1.05);
+  outline: none;
+}
+
+/* ====================================================
+   FORMULARIO DE COTIZACIÓN
+   ==================================================== */
+.cotizacion-form {
+  padding: var(--gap-section) 0;
+  background: var(--color-white);
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: var(--space-xxl);
+}
+
+.form-header h2 {
+  font-size: 1.8rem;
+  color: var(--color-text-dark);
+  margin-bottom: 10px;
+}
+
+.form-header p {
+  color: #666;
+  font-size: 1rem;
+}
+
+.form-cotizacion {
+  max-width: 700px;
+  margin: 0 auto;
+  background: var(--color-white);
+  padding: var(--space-xxxl);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--color-medium-gray);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  margin-bottom: var(--space-xl);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-text-dark);
+}
+
+.form-group input,
+.form-group select {
+  padding: 12px 16px;
+  border: 1px solid var(--color-medium-gray);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all var(--transition-speed) ease;
+  background: var(--color-white);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(230, 0, 0, 0.1);
+}
+
+/* Upload de fotos */
+.upload-area {
+  border: 2px dashed var(--color-medium-gray);
+  border-radius: 12px;
+  padding: var(--space-xxl);
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+  background: #fafafa;
+}
+
+.upload-area:hover {
+  border-color: var(--color-primary);
+  background: #fff5f5;
+}
+
+.upload-area.dragover {
+  border-color: var(--color-primary);
+  background: #fff5f5;
+}
+
+.upload-icon {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.upload-area p {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 5px;
+}
+
+.upload-area small {
+  color: #999;
+  font-size: 0.85rem;
+}
+
+#fileInput {
+  display: none;
+}
+
+/* Preview de imágenes */
+.image-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.preview-item {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 1;
+}
+
+.preview-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.remove-image {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-speed) ease;
+}
+
+.remove-image:hover {
+  background: var(--color-primary-dark);
+  transform: scale(1.1);
+}
+
+/* Botón submit */
+.btn-submit {
+  padding: 16px 40px;
+  background: var(--color-accent-green);
+  color: var(--color-white);
+  border: none;
+  border-radius: 999px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: var(--space-xl) auto 0;
+  width: 100%;
+  max-width: 400px;
+}
+
+.btn-submit:hover {
+  background: var(--color-accent-green-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+}
+
+.btn-submit:active {
+  transform: translateY(0);
+}
+
+/* ====================================================
+   MEDIA QUERIES
+   ==================================================== */
+
+/* Desktop (768px+) */
 @media (min-width: 768px) {
-  /* Hero más alto en desktop */
+  /* Hero más alto */
   .hero {
     height: 350px;
   }
@@ -355,7 +678,7 @@ a {
   /* Beneficios en 4 columnas */
   .beneficios-grid {
     grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
+    gap: var(--space-lg);
     max-width: 900px;
   }
 
@@ -365,23 +688,50 @@ a {
   }
 }
 
-/* ====================================================
-   RESPONSIVE - MÓVIL (max-767px)
-   ==================================================== */
+/* Móvil (max 767px) */
 @media (max-width: 767px) {
-  /* === HEADER MÓVIL === */
+  :root {
+    --gap-section: 13px;
+  }
+
+  /* ========================================
+     HEADER MÓVIL - Layout Vertical
+     ======================================== */
   .header-wrapper {
     flex-direction: column;
-    gap: 12px;
-    padding: 12px 16px;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md) var(--space-sm);
   }
-
-  .header-actions {
+  
+  .logo {
+    margin-bottom: 0;
+  }
+  
+  .logo h1 {
+    font-size: 1.3rem;
+  }
+  
+  /* Menú centrado debajo del logo */
+  .header-nav {
+    margin-left: 0;
     width: 100%;
+  }
+  
+  .nav-menu {
     justify-content: center;
+    gap: 0.4rem;
+    width: 100%;
+  }
+  
+  .nav-menu li a {
+    padding: 0.5rem 0.9rem;
+    font-size: 0.88rem;
   }
 
-  /* === HERO MÓVIL === */
+  /* ========================================
+     HERO MÓVIL
+     ======================================== */
   .hero {
     height: 220px;
   }
@@ -394,32 +744,32 @@ a {
     font-size: 0.95rem;
   }
 
-  /* === PASOS MÓVIL - CARRUSEL === */
+  /* ========================================
+     PASOS MÓVIL - CARRUSEL
+     ======================================== */
   /* Ocultar grid de desktop */
   .pasos-grid {
     display: none;
   }
 
-  /* Mostrar elementos del carrusel */
+  /* Mostrar carrusel */
   .pasos-wrapper,
   .dots-container {
     display: block;
   }
 
-  /* Wrapper del carrusel */
   .pasos-wrapper {
     overflow: hidden;
     position: relative;
   }
 
-  /* Track del carrusel */
   .pasos-track {
     display: flex;
-    gap: 16px;
+    gap: var(--space-lg);
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    padding: 0 20px 15px;
+    padding: 0 var(--space-xl) 15px;
     scrollbar-width: none;
     scroll-behavior: smooth;
   }
@@ -428,7 +778,6 @@ a {
     display: none;
   }
 
-  /* Tarjetas del carrusel (90% ancho, centradas) */
   .paso-item {
     flex: 0 0 90%;
     scroll-snap-align: center;
@@ -436,7 +785,7 @@ a {
   }
 
   .paso-item.active {
-    border-color: #e60000;
+    border-color: var(--color-primary);
     box-shadow: 0 4px 12px rgba(230, 0, 0, 0.15);
   }
 
@@ -444,22 +793,65 @@ a {
   .dots-container {
     display: flex;
     justify-content: center;
-    gap: 8px;
-    margin-top: 20px;
+    gap: var(--space-sm);
+    margin-top: var(--space-xl);
   }
 
   .dot {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: #ddd;
-    transition: all 0.3s ease;
+    background: var(--color-medium-gray);
+    transition: all var(--transition-speed) ease;
     cursor: pointer;
   }
 
   .dot.active {
-    background: #e60000;
+    background: var(--color-primary);
     width: 24px;
     border-radius: 5px;
+  }
+
+  /* ========================================
+     FORMULARIO MÓVIL
+     ======================================== */
+  .form-cotizacion {
+    padding: var(--space-xl) var(--space-lg);
+  }
+
+  .form-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .upload-area {
+    padding: var(--space-xl);
+  }
+
+  .upload-icon {
+    font-size: 2.5rem;
+  }
+
+  /* ========================================
+     FOOTER Y WHATSAPP MÓVIL
+     ======================================== */
+  .footer-wrapper {
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+    bottom: var(--space-lg);
+    right: var(--space-lg);
+  }
+
+  .whatsapp-float img {
+    width: 28px;
   }
 }

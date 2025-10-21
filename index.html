@@ -6,46 +6,48 @@
   <title>Doctor Rayo - Compra, vende o repara tu celular</title>
   <meta name="description" content="Doctor Rayo es tu sitio ideal para comprar, vender o reparar celulares en Bogotá. Servicio técnico a domicilio con garantía, compra y venta segura de móviles.">
   <link rel="canonical" href="https://www.doctorrayo.com/">
+  
+  <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+  
+  <!-- Estilos -->
   <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-  <!-- Header Principal -->
+
+  <!-- ========================================
+       HEADER PRINCIPAL
+       ======================================== -->
   <header class="main-header">
     <div class="container">
       <div class="header-wrapper">
+        <!-- Logo -->
         <div class="logo">
           <a href="index.html" aria-label="Inicio Doctor Rayo">
             <h1>Doctor Rayo</h1>
           </a>
         </div>
-        <nav class="header-actions" aria-label="Acciones rápidas">
-          <div class="header-action renueva-button">
-            <a href="/renueva.html" class="button">
-              Renueva
-              <img src="img/renueva-icon.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
-            </a>
-          </div>
-          <div class="header-action login-button">
-            <a href="/login.html" aria-label="Iniciar sesión">
-              <img src="img/login-icon.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
-            </a>
-          </div>
-          <div class="header-action carrito-button">
-            <a href="/carrito.html" aria-label="Ver carrito de compras">
-              <img src="img/cart-icon.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
-              <span class="cart-count visually-hidden">0</span>
-            </a>
-          </div>
+        
+        <!-- Menú de Navegación -->
+        <nav class="header-nav" aria-label="Navegación principal">
+          <ul class="nav-menu">
+            <li><a href="renueva.html" class="nav-vender">Vender</a></li>
+            <li><a href="comprar.html">Comprar</a></li>
+            <li><a href="reparacion.html">Reparar</a></li>
+          </ul>
         </nav>
       </div>
     </div>
   </header>
 
+  <!-- ========================================
+       CONTENIDO PRINCIPAL
+       ======================================== -->
   <main>
-    <!-- Banner Principal -->
+    
+    <!-- Banner Hero -->
     <section class="banner-principal" role="banner">
       <div class="overlay">
         <h2>¡Compra, vende o repara tu celular!</h2>
@@ -53,7 +55,7 @@
       </div>
     </section>
 
-    <!-- Sección Beneficios -->
+    <!-- Sección de Beneficios -->
     <section class="benefits" aria-label="Reparación a domicilio">
       <div class="container">
         <h2>Reparamos tu celular sin salir de casa</h2>
@@ -89,7 +91,7 @@
       </div>
     </section>
 
-    <!-- Shelf de Productos -->
+    <!-- Shelf de Productos Destacados -->
     <section class="shelf" aria-label="Modelos destacados">
       <div class="container">
         <div class="shelf-head">
@@ -100,7 +102,7 @@
       </div>
     </section>
 
-    <!-- Sección Servicios con Tabs -->
+    <!-- Sección de Servicios con Tabs -->
     <section class="services-section">
       <div class="tabs-container">
         <h2>Lo que hacemos por ti</h2>
@@ -116,7 +118,7 @@
       </div>
     </section>
 
-    <!-- Sección Reviews -->
+    <!-- Sección de Reviews -->
     <section class="reviews" aria-label="Opiniones de clientes">
       <div class="container">
         <h2>Clientes felices</h2>
@@ -150,9 +152,12 @@
         </div>
       </div>
     </section>
+
   </main>
 
-  <!-- Footer -->
+  <!-- ========================================
+       FOOTER
+       ======================================== -->
   <footer class="main-footer" role="contentinfo">
     <div class="footer-wrapper container">
       <div class="footer-column">
@@ -164,7 +169,7 @@
         <nav aria-label="Servicios">
           <ul>
             <li><a href="comprar.html">Comprar</a></li>
-            <li><a href="vender.html">Vender</a></li>
+            <li><a href="renueva.html">Vender</a></li>
             <li><a href="reparacion.html">Reparar</a></li>
           </ul>
         </nav>
@@ -189,12 +194,16 @@
     </div>
   </footer>
 
-  <!-- WhatsApp Flotante -->
+  <!-- Botón flotante de WhatsApp -->
   <a href="https://wa.me/573046486740" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp">
     <img src="whatsapp-icon.png" alt="WhatsApp" loading="lazy" decoding="async">
   </a>
 
-  <!-- Modales de Servicios -->
+  <!-- ========================================
+       MODALES DE SERVICIOS
+       ======================================== -->
+  
+  <!-- Modal: Vender -->
   <div id="modal-vender" class="modal">
     <div class="modal-content">
       <button class="close-modal" onclick="closeModal('vender')">✕</button>
@@ -222,11 +231,12 @@
       </div>
       
       <div class="modal-actions">
-        <a href="#vender" class="cta-button">Vender ahora</a>
+        <a href="renueva.html" class="cta-button">Vender ahora</a>
       </div>
     </div>
   </div>
 
+  <!-- Modal: Comprar -->
   <div id="modal-comprar" class="modal">
     <div class="modal-content">
       <button class="close-modal" onclick="closeModal('comprar')">✕</button>
@@ -254,11 +264,12 @@
       </div>
       
       <div class="modal-actions">
-        <a href="#catalogo" class="cta-button">Ver catálogo</a>
+        <a href="comprar.html" class="cta-button">Ver catálogo</a>
       </div>
     </div>
   </div>
 
+  <!-- Modal: Reparar -->
   <div id="modal-reparar" class="modal">
     <div class="modal-content">
       <button class="close-modal" onclick="closeModal('reparar')">✕</button>
@@ -286,14 +297,18 @@
       </div>
       
       <div class="modal-actions">
-        <a href="#reparacion" class="cta-button">Solicitar reparación</a>
+        <a href="reparacion.html" class="cta-button">Solicitar reparación</a>
       </div>
     </div>
   </div>
 
-  <!-- Scripts -->
+  <!-- ========================================
+       SCRIPTS
+       ======================================== -->
   <script>
-    // Script para modales
+    /* =====================================
+       MODALES
+       ===================================== */
     let activeButton = null;
     
     function openModal(service, button) {
@@ -315,6 +330,7 @@
       }
     }
     
+    // Cerrar modal al hacer clic fuera
     window.onclick = function(event) {
       if (event.target.classList.contains('modal')) {
         event.target.classList.remove('active');
@@ -326,6 +342,7 @@
       }
     }
     
+    // Cerrar modal con tecla ESC
     document.addEventListener('keydown', function(event) {
       if (event.key === 'Escape') {
         document.querySelectorAll('.modal').forEach(modal => {
@@ -339,17 +356,21 @@
       }
     });
 
-    // Script existente para shelf y reviews
+    /* =====================================
+       INICIALIZACIÓN AL CARGAR
+       ===================================== */
     document.addEventListener('DOMContentLoaded', function() {
-      // Datos del shelf
+      
+      // Datos del shelf de productos
       var shelfData = [
-        {name:'iPhone 15 pro', price:'Desde $2.890.000', badge:'Mas vendido', img:'img/iphone15pro.png', href:'categorias/celulares/iphone'},
+        {name:'iPhone 15 Pro', price:'Desde $2.890.000', badge:'Más vendido', img:'img/iphone15pro.png', href:'categorias/celulares/iphone'},
         {name:'iPhone 13', price:'Desde $1.690.000', badge:'Top ventas', img:'img/prod-iphone13.jpg', href:'categorias/celulares/iphone'},
         {name:'Samsung S21', price:'Desde $1.250.000', badge:'Recomendado', img:'img/prod-s21.jpg', href:'categorias/celulares/samsung'},
         {name:'Xiaomi 12', price:'Desde $980.000', badge:'Ahorra', img:'img/prod-xiaomi12.jpg', href:'categorias/celulares/xiaomi'},
         {name:'Motorola G', price:'Desde $620.000', badge:'Económico', img:'img/prod-moto-g.jpg', href:'categorias/celulares/motorola'}
       ];
       
+      // Renderizar productos en el shelf
       var track = document.getElementById('shelf-track');
       if (track) {
         track.innerHTML = shelfData.map(function(p) {
@@ -365,13 +386,17 @@
         }).join('');
       }
 
-      // Script para reviews
+      /* =====================================
+         CARRUSEL DE REVIEWS
+         ===================================== */
       var reviewsTrack = document.getElementById('reviews-track');
       var prevBtn = document.querySelector('.reviews-prev');
       var nextBtn = document.querySelector('.reviews-next');
       var viewport = document.querySelector('.reviews-viewport');
       
       if (reviewsTrack && prevBtn && nextBtn) {
+        
+        // Calcular el ancho de desplazamiento
         function getStep() {
           var first = reviewsTrack.querySelector('.review');
           if (!first) return 0;
@@ -379,6 +404,7 @@
           return first.offsetWidth + gap;
         }
 
+        // Actualizar estado de los botones
         function updateButtons() {
           var max = reviewsTrack.scrollWidth - reviewsTrack.clientWidth - 1;
           var atStart = reviewsTrack.scrollLeft <= 0;
@@ -390,6 +416,7 @@
           nextBtn.setAttribute('aria-disabled', atEnd ? 'true' : 'false');
         }
 
+        // Función de scroll
         function scroll(direction) {
           var step = getStep();
           if (step) {
@@ -397,11 +424,13 @@
           }
         }
 
+        // Event listeners
         prevBtn.addEventListener('click', function() { scroll(-1); });
         nextBtn.addEventListener('click', function() { scroll(1); });
         reviewsTrack.addEventListener('scroll', updateButtons, { passive: true });
         window.addEventListener('resize', updateButtons);
 
+        // Navegación con teclado
         if (viewport) {
           viewport.addEventListener('keydown', function(e) {
             if (e.key === 'ArrowLeft') { 
@@ -418,12 +447,13 @@
         updateButtons();
       }
 
-      // Año actual
+      // Año actual en el footer
       var yearElement = document.getElementById('current-year');
       if (yearElement) {
         yearElement.textContent = new Date().getFullYear();
       }
     });
   </script>
+
 </body>
 </html>
