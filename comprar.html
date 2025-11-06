@@ -2,14 +2,17 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Comprar | Doctor Rayo</title>
+  <meta name="description" content="Compra tu celular usado como nuevo, fácil y seguro con Doctor Rayo. Equipos certificados, garantía y entrega a domicilio en Bogotá y Colombia." />
+  <link rel="canonical" href="https://www.doctorrayo.com/comprar.html" />
   <link rel="stylesheet" href="css/comprar.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 </head>
 <body>
-
-  <!-- ========= HEADER PRINCIPAL ========= -->
+  <!-- ========================================
+       HEADER PRINCIPAL
+       ======================================== -->
   <header class="main-header">
     <div class="container">
       <div class="header-wrapper">
@@ -21,56 +24,53 @@
         <nav class="header-nav" aria-label="Navegación principal">
           <ul class="nav-menu">
             <li><a href="renueva.html" class="nav-vender">Vender</a></li>
-            <li><a href="comprar.html">Comprar</a></li>
+            <li><a href="comprar.html" aria-current="page">Comprar</a></li>
             <li><a href="reparacion.html">Reparar</a></li>
           </ul>
         </nav>
       </div>
     </div>
   </header>
-
   <main>
-    <!-- ========= HERO SECTION ========= -->
+    <!-- ========================================
+         HERO
+         ======================================== -->
     <section class="comprar-hero">
       <div class="comprar-overlay">
         <h1>Tu celular usado, como nuevo</h1>
         <p>Compra fácil, seguro y sin salir de casa con Doctor Rayo.</p>
       </div>
     </section>
-
-    <!-- ========= CELULARES DISPONIBLES ========= -->
+    <!-- ========================================
+         CELULARES DISPONIBLES
+         ======================================== -->
     <section class="dispositivos-disponibles">
       <h2>Celulares disponibles</h2>
       <div class="grid-dispositivos">
-        <!-- CARD: iPhone 14 Pro -->
         <div class="dispositivo-card" onclick="openModal('modal1')">
           <div class="dispositivo-imagen"></div>
           <h3>iPhone 14 Pro</h3>
           <span class="precio">$2,450,000</span>
           <span class="estado como-nuevo">Como nuevo</span>
         </div>
-        <!-- CARD: Samsung Galaxy S23 -->
         <div class="dispositivo-card" onclick="openModal('modal2')">
           <div class="dispositivo-imagen"></div>
           <h3>Samsung Galaxy S23</h3>
           <span class="precio">$1,850,000</span>
           <span class="estado excelente">Excelente</span>
         </div>
-        <!-- CARD: iPhone 13 -->
         <div class="dispositivo-card" onclick="openModal('modal3')">
           <div class="dispositivo-imagen"></div>
           <h3>iPhone 13</h3>
           <span class="precio">$1,650,000</span>
           <span class="estado muy-bueno">Muy bueno</span>
         </div>
-        <!-- CARD: Xiaomi Redmi Note 12 -->
         <div class="dispositivo-card" onclick="openModal('modal4')">
           <div class="dispositivo-imagen"></div>
           <h3>Xiaomi Redmi Note 12</h3>
           <span class="precio">$480,000</span>
           <span class="estado como-nuevo">Como nuevo</span>
         </div>
-        <!-- CARD: Motorola Edge 30 -->
         <div class="dispositivo-card" onclick="openModal('modal5')">
           <div class="dispositivo-imagen"></div>
           <h3>Motorola Edge 30</h3>
@@ -79,44 +79,48 @@
         </div>
       </div>
     </section>
-
-    <!-- ========= BENEFICIOS ========= -->
+    <!-- ========================================
+         BENEFICIOS
+         ======================================== -->
     <section class="beneficios">
-      <h2>Beneficios que te respaldan</h2>
-      <div class="grid-beneficios">
-        <div class="beneficio-card">
-          <img src="img/icon-garantia.svg" alt="Icono garantía">
-          <h3>Garantía</h3>
-          <p>Compra tu equipo sin preocupaciones, garantía de 12 meses.</p>
-        </div>
-        <div class="beneficio-card">
-          <img src="img/icon-envio.svg" alt="Icono envío">
-          <h3>Domicilio</h3>
-          <p>Entrega segura y rápida directamente en la puerta de tu casa.</p>
-        </div>
-        <div class="beneficio-card">
-          <img src="img/icon-calidad.svg" alt="Icono calidad">
-          <h3>Revisión</h3>
-          <p>Inspección experta para darte un equipo como nuevo.</p>
-        </div>
-        <div class="beneficio-card">
-          <img src="img/icon-pago.svg" alt="Icono pago">
-          <h3>Pago</h3>
-          <p>Tu método favorito y con total confianza, justo para ti.</p>
+      <div class="container">
+        <h2>Beneficios que te respaldan</h2>
+        <div class="grid-beneficios">
+          <div class="beneficio-card">
+            <img src="img/icon-garantia.svg" alt="Garantía">
+            <h3>Garantía</h3>
+            <p>Compra tu equipo sin preocupaciones, garantía de 12 meses.</p>
+          </div>
+          <div class="beneficio-card">
+            <img src="img/icon-envio.svg" alt="Envío">
+            <h3>Domicilio</h3>
+            <p>Entrega segura y rápida directamente en la puerta de tu casa.</p>
+          </div>
+          <div class="beneficio-card">
+            <img src="img/icon-calidad.svg" alt="Calidad">
+            <h3>Revisión</h3>
+            <p>Inspección experta para darte un equipo como nuevo.</p>
+          </div>
+          <div class="beneficio-card">
+            <img src="img/icon-pago.svg" alt="Pago">
+            <h3>Pago</h3>
+            <p>Tu método favorito y con total confianza.</p>
+          </div>
         </div>
       </div>
     </section>
-
-    <!-- ========= CTA WHATSAPP ========= -->
+    <!-- ========================================
+         CTA WHATSAPP
+         ======================================== -->
     <section class="cta-whatsapp">
       <h2>¿Listo para elegir tu celular con total confianza?</h2>
       <p class="cta-subtext">Te asesoramos sin compromiso. Resolvemos tus dudas por WhatsApp.</p>
-      <a class="cta-button" href="https://wa.me/573046486740" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Doctor Rayo">¡Hablemos ahora!</a>
+      <a class="cta-button" href="https://wa.me/573046486740" target="_blank" aria-label="WhatsApp Doctor Rayo">¡Hablemos ahora!</a>
     </section>
   </main>
-
-  <!-- ========= MODALES DE DISPOSITIVOS ========= -->
-  <!-- MODAL TEMPLATE -->
+  <!-- ========================================
+       MODALES DE DISPOSITIVOS
+       ======================================== -->
   <div id="modal1" class="modal" onclick="closeModal('modal1')">
     <div class="modal-content" onclick="event.stopPropagation()">
       <button class="modal-close" onclick="closeModal('modal1')" aria-label="Cerrar">&times;</button>
@@ -137,11 +141,10 @@
         <p><span class="highlight">Entrega:</span> Inmediata</p>
       </div>
       <div class="btn-container">
-        <a href="https://wa.me/573046486740?text=¡Hola! Me interesa el iPhone 14 Pro de $2,450,000. ¿Está disponible?" class="btn-whatsapp" target="_blank" rel="noopener noreferrer">¡Me interesa este celular!</a>
+        <a href="https://wa.me/573046486740?text=¡Hola! Me interesa el iPhone 14 Pro de $2,450,000. ¿Está disponible?" class="btn-whatsapp" target="_blank">¡Me interesa este celular!</a>
       </div>
     </div>
   </div>
-  <!-- MODAL Samsung Galaxy S23 -->
   <div id="modal2" class="modal" onclick="closeModal('modal2')">
     <div class="modal-content" onclick="event.stopPropagation()">
       <button class="modal-close" onclick="closeModal('modal2')" aria-label="Cerrar">&times;</button>
@@ -162,11 +165,10 @@
         <p><span class="highlight">Entrega:</span> Inmediata</p>
       </div>
       <div class="btn-container">
-        <a href="https://wa.me/573046486740?text=¡Hola! Me interesa el Samsung Galaxy S23 de $1,850,000. ¿Está disponible?" class="btn-whatsapp" target="_blank" rel="noopener noreferrer">¡Me interesa este celular!</a>
+        <a href="https://wa.me/573046486740?text=¡Hola! Me interesa el Samsung Galaxy S23 de $1,850,000. ¿Está disponible?" class="btn-whatsapp" target="_blank">¡Me interesa este celular!</a>
       </div>
     </div>
   </div>
-  <!-- MODAL iPhone 13 -->
   <div id="modal3" class="modal" onclick="closeModal('modal3')">
     <div class="modal-content" onclick="event.stopPropagation()">
       <button class="modal-close" onclick="closeModal('modal3')" aria-label="Cerrar">&times;</button>
@@ -187,11 +189,10 @@
         <p><span class="highlight">Entrega:</span> 2-3 días hábiles</p>
       </div>
       <div class="btn-container">
-        <a href="https://wa.me/573046486740?text=¡Hola! Me interesa el iPhone 13 de $1,650,000. ¿Está disponible?" class="btn-whatsapp" target="_blank" rel="noopener noreferrer">¡Me interesa este celular!</a>
+        <a href="https://wa.me/573046486740?text=¡Hola! Me interesa el iPhone 13 de $1,650,000. ¿Está disponible?" class="btn-whatsapp" target="_blank">¡Me interesa este celular!</a>
       </div>
     </div>
   </div>
-  <!-- MODAL Xiaomi Redmi Note 12 -->
   <div id="modal4" class="modal" onclick="closeModal('modal4')">
     <div class="modal-content" onclick="event.stopPropagation()">
       <button class="modal-close" onclick="closeModal('modal4')" aria-label="Cerrar">&times;</button>
@@ -212,11 +213,10 @@
         <p><span class="highlight">Entrega:</span> Inmediata</p>
       </div>
       <div class="btn-container">
-        <a href="https://wa.me/573046486740?text=¡Hola! Me interesa el Xiaomi Redmi Note 12 de $480,000. ¿Está disponible?" class="btn-whatsapp" target="_blank" rel="noopener noreferrer">¡Me interesa este celular!</a>
+        <a href="https://wa.me/573046486740?text=¡Hola! Me interesa el Xiaomi Redmi Note 12 de $480,000. ¿Está disponible?" class="btn-whatsapp" target="_blank">¡Me interesa este celular!</a>
       </div>
     </div>
   </div>
-  <!-- MODAL Motorola Edge 30 -->
   <div id="modal5" class="modal" onclick="closeModal('modal5')">
     <div class="modal-content" onclick="event.stopPropagation()">
       <button class="modal-close" onclick="closeModal('modal5')" aria-label="Cerrar">&times;</button>
@@ -237,62 +237,64 @@
         <p><span class="highlight">Entrega:</span> Inmediata</p>
       </div>
       <div class="btn-container">
-        <a href="https://wa.me/573046486740?text=¡Hola! Me interesa el Motorola Edge 30 de $750,000. ¿Está disponible?" class="btn-whatsapp" target="_blank" rel="noopener noreferrer">¡Me interesa este celular!</a>
+        <a href="https://wa.me/573046486740?text=¡Hola! Me interesa el Motorola Edge 30 de $750,000. ¿Está disponible?" class="btn-whatsapp" target="_blank">¡Me interesa este celular!</a>
       </div>
     </div>
   </div>
-
-  <!-- ========= FOOTER ========= -->
-  <footer>
-    <div class="footer-wrapper">
+  <!-- ====================================
+       FOOTER IGUAL A INDEX
+       ==================================== -->
+  <footer class="main-footer" role="contentinfo">
+    <div class="footer-wrapper container">
       <div class="footer-column">
         <h2>Doctor Rayo</h2>
         <p>Sitio ideal para comprar, vender o reparar tu celular.</p>
       </div>
       <div class="footer-column">
         <h3>Servicios</h3>
-        <ul>
-          <li><a href="comprar.html">Comprar</a></li>
-          <li><a href="vender.html">Vender</a></li>
-          <li><a href="reparar.html">Reparar</a></li>
-        </ul>
+        <nav aria-label="Servicios">
+          <ul>
+            <li><a href="comprar.html">Comprar</a></li>
+            <li><a href="renueva.html">Vender</a></li>
+            <li><a href="reparacion.html">Reparar</a></li>
+          </ul>
+        </nav>
       </div>
       <div class="footer-column">
         <h3>Contacto</h3>
-        <p>Email: contacto@doctorrayo.com</p>
-        <p>Teléfono: +57 304 6486740</p>
-        <p>Ciudad: Bogotá</p>
+        <address>
+          <p>Email: <a href="mailto:contacto@doctorrayo.com">contacto@doctorrayo.com</a></p>
+          <p>Teléfono: <a href="tel:+573046486740">+57 304 6486740</a></p>
+          <p>Ciudad: Bogotá, Colombia</p>
+        </address>
       </div>
       <div class="footer-column">
         <h3>Síguenos</h3>
         <ul class="redes-sociales">
-          <li><a href="#" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="https://www.instagram.com/doctorrayo" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 Doctor Rayo. Todos los derechos reservados.</p>
+      <p>&copy; <span id="current-year"></span> Doctor Rayo. Todos los derechos reservados.</p>
     </div>
   </footer>
-
-  <!-- ========= WHATSAPP FLOTANTE ========= -->
-  <a href="https://wa.me/573046486740" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Enviar mensaje por WhatsApp">
-    <img src="whatsapp-icon.png" alt="WhatsApp" />
+  <!-- Botón flotante WhatsApp -->
+  <a href="https://wa.me/573046486740" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp">
+    <img src="whatsapp-icon.png" alt="WhatsApp" loading="lazy" decoding="async">
   </a>
-
-  <!-- ========= JAVASCRIPT ========= -->
+  <!-- ========================================
+       JAVASCRIPT
+       ======================================== -->
   <script>
-    // Abrir modal
     function openModal(modalId) {
       document.getElementById(modalId).classList.add('show');
       document.body.style.overflow = 'hidden';
     }
-    // Cerrar modal
     function closeModal(modalId) {
       document.getElementById(modalId).classList.remove('show');
       document.body.style.overflow = 'auto';
     }
-    // Cerrar modal con Escape
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') {
         document.querySelectorAll('.modal.show').forEach(function(modal) {
@@ -301,7 +303,12 @@
         document.body.style.overflow = 'auto';
       }
     });
+    document.addEventListener('DOMContentLoaded', function() {
+      var yearElement = document.getElementById('current-year');
+      if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+      }
+    });
   </script>
-
 </body>
 </html>

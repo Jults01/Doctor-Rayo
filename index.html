@@ -6,31 +6,27 @@
   <title>Doctor Rayo - Compra, vende o repara tu celular</title>
   <meta name="description" content="Doctor Rayo es tu sitio ideal para comprar, vender o reparar celulares en Bogotá. Servicio técnico a domicilio con garantía, compra y venta segura de móviles.">
   <link rel="canonical" href="https://www.doctorrayo.com/">
-  
+
   <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
-  
+
   <!-- Estilos -->
   <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-
   <!-- ========================================
        HEADER PRINCIPAL
        ======================================== -->
   <header class="main-header">
     <div class="container">
       <div class="header-wrapper">
-        <!-- Logo -->
         <div class="logo">
           <a href="index.html" aria-label="Inicio Doctor Rayo">
             <h1>Doctor Rayo</h1>
           </a>
         </div>
-        
-        <!-- Menú de Navegación -->
         <nav class="header-nav" aria-label="Navegación principal">
           <ul class="nav-menu">
             <li><a href="renueva.html" class="nav-vender">Vender</a></li>
@@ -41,12 +37,10 @@
       </div>
     </div>
   </header>
-
   <!-- ========================================
        CONTENIDO PRINCIPAL
        ======================================== -->
   <main>
-    
     <!-- Banner Hero -->
     <section class="banner-principal" role="banner">
       <div class="overlay">
@@ -54,7 +48,6 @@
         <p>La mejor solución para tus dispositivos móviles.</p>
       </div>
     </section>
-
     <!-- Sección de Beneficios -->
     <section class="benefits" aria-label="Reparación a domicilio">
       <div class="container">
@@ -90,7 +83,6 @@
         </div>
       </div>
     </section>
-
     <!-- Shelf de Productos Destacados -->
     <section class="shelf" aria-label="Modelos destacados">
       <div class="container">
@@ -101,29 +93,24 @@
         <div class="shelf-track" id="shelf-track" aria-live="polite"></div>
       </div>
     </section>
-
     <!-- Sección de Servicios con Tabs -->
     <section class="services-section">
       <div class="tabs-container">
         <h2>Lo que hacemos por ti</h2>
         <p class="subtitle">Simple, rápido y seguro</p>
-        
         <div class="tabs-nav">
           <button class="tab-button" onclick="openModal('vender', this)">Vender</button>
           <button class="tab-button" onclick="openModal('comprar', this)">Comprar</button>
           <button class="tab-button" onclick="openModal('reparar', this)">Reparar</button>
         </div>
-        
         <p class="info-text">Haz clic en cualquier opción para ver más información</p>
       </div>
     </section>
-
     <!-- Sección de Reviews -->
     <section class="reviews" aria-label="Opiniones de clientes">
       <div class="container">
         <h2>Clientes felices</h2>
         <div class="reviews-row">
-          <button class="reviews-btn reviews-prev" type="button" aria-label="Anterior" aria-controls="reviews-track">‹</button>
           <div class="reviews-viewport" tabindex="0" aria-label="Carrusel de opiniones">
             <div class="reviews-track" id="reviews-track">
               <figure class="review">
@@ -148,13 +135,10 @@
               </figure>
             </div>
           </div>
-          <button class="reviews-btn reviews-next" type="button" aria-label="Siguiente" aria-controls="reviews-track">›</button>
         </div>
       </div>
     </section>
-
   </main>
-
   <!-- ========================================
        FOOTER
        ======================================== -->
@@ -193,16 +177,13 @@
       <p>&copy; <span id="current-year"></span> Doctor Rayo. Todos los derechos reservados.</p>
     </div>
   </footer>
-
   <!-- Botón flotante de WhatsApp -->
   <a href="https://wa.me/573046486740" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp">
     <img src="whatsapp-icon.png" alt="WhatsApp" loading="lazy" decoding="async">
   </a>
-
   <!-- ========================================
        MODALES DE SERVICIOS
        ======================================== -->
-  
   <!-- Modal: Vender -->
   <div id="modal-vender" class="modal">
     <div class="modal-content">
@@ -210,7 +191,6 @@
       <div class="modal-icon">💰</div>
       <h3>Vendemos tu celular al mejor precio</h3>
       <p>Proceso rápido y transparente. Envíanos fotos por WhatsApp y en menos de 15 minutos tendrás nuestra mejor oferta con pago inmediato.</p>
-      
       <div class="modal-benefits">
         <div class="modal-benefit-item">
           <span class="check-icon">✓</span>
@@ -229,13 +209,11 @@
           <span>Proceso seguro y confidencial</span>
         </div>
       </div>
-      
       <div class="modal-actions">
         <a href="renueva.html" class="cta-button">Vender ahora</a>
       </div>
     </div>
   </div>
-
   <!-- Modal: Comprar -->
   <div id="modal-comprar" class="modal">
     <div class="modal-content">
@@ -243,7 +221,6 @@
       <div class="modal-icon">📱</div>
       <h3>Equipos certificados con garantía</h3>
       <p>Todos nuestros celulares pasan por un riguroso proceso de certificación. Los mejores precios del mercado con garantía escrita.</p>
-      
       <div class="modal-benefits">
         <div class="modal-benefit-item">
           <span class="check-icon">✓</span>
@@ -262,13 +239,11 @@
           <span>Opciones de pago flexibles</span>
         </div>
       </div>
-      
       <div class="modal-actions">
         <a href="comprar.html" class="cta-button">Ver catálogo</a>
       </div>
     </div>
   </div>
-
   <!-- Modal: Reparar -->
   <div id="modal-reparar" class="modal">
     <div class="modal-content">
@@ -276,7 +251,6 @@
       <div class="modal-icon">🔧</div>
       <h3>Reparación profesional a domicilio</h3>
       <p>Técnicos certificados van hasta tu casa u oficina. Usamos repuestos de calidad con herramientas profesionales.</p>
-      
       <div class="modal-benefits">
         <div class="modal-benefit-item">
           <span class="check-icon">✓</span>
@@ -295,13 +269,11 @@
           <span>Reparación en menos de 2 horas</span>
         </div>
       </div>
-      
       <div class="modal-actions">
         <a href="reparacion.html" class="cta-button">Solicitar reparación</a>
       </div>
     </div>
   </div>
-
   <!-- ========================================
        SCRIPTS
        ======================================== -->
@@ -310,7 +282,6 @@
        MODALES
        ===================================== */
     let activeButton = null;
-    
     function openModal(service, button) {
       if (activeButton) {
         activeButton.classList.remove('active');
@@ -320,7 +291,6 @@
       document.getElementById('modal-' + service).classList.add('active');
       document.body.style.overflow = 'hidden';
     }
-    
     function closeModal(service) {
       document.getElementById('modal-' + service).classList.remove('active');
       document.body.style.overflow = 'auto';
@@ -329,8 +299,6 @@
         activeButton = null;
       }
     }
-    
-    // Cerrar modal al hacer clic fuera
     window.onclick = function(event) {
       if (event.target.classList.contains('modal')) {
         event.target.classList.remove('active');
@@ -341,8 +309,6 @@
         }
       }
     }
-    
-    // Cerrar modal con tecla ESC
     document.addEventListener('keydown', function(event) {
       if (event.key === 'Escape') {
         document.querySelectorAll('.modal').forEach(modal => {
@@ -355,12 +321,10 @@
         }
       }
     });
-
     /* =====================================
        INICIALIZACIÓN AL CARGAR
        ===================================== */
     document.addEventListener('DOMContentLoaded', function() {
-      
       // Datos del shelf de productos
       var shelfData = [
         {name:'iPhone 15 Pro', price:'Desde $2.890.000', badge:'Más vendido', img:'img/iphone15pro.png', href:'categorias/celulares/iphone'},
@@ -369,7 +333,6 @@
         {name:'Xiaomi 12', price:'Desde $980.000', badge:'Ahorra', img:'img/prod-xiaomi12.jpg', href:'categorias/celulares/xiaomi'},
         {name:'Motorola G', price:'Desde $620.000', badge:'Económico', img:'img/prod-moto-g.jpg', href:'categorias/celulares/motorola'}
       ];
-      
       // Renderizar productos en el shelf
       var track = document.getElementById('shelf-track');
       if (track) {
@@ -385,75 +348,28 @@
           '</article>';
         }).join('');
       }
-
       /* =====================================
          CARRUSEL DE REVIEWS
          ===================================== */
-      var reviewsTrack = document.getElementById('reviews-track');
-      var prevBtn = document.querySelector('.reviews-prev');
-      var nextBtn = document.querySelector('.reviews-next');
       var viewport = document.querySelector('.reviews-viewport');
-      
-      if (reviewsTrack && prevBtn && nextBtn) {
-        
-        // Calcular el ancho de desplazamiento
-        function getStep() {
-          var first = reviewsTrack.querySelector('.review');
-          if (!first) return 0;
-          var gap = parseInt(getComputedStyle(reviewsTrack).gap || '16', 10);
-          return first.offsetWidth + gap;
-        }
-
-        // Actualizar estado de los botones
-        function updateButtons() {
-          var max = reviewsTrack.scrollWidth - reviewsTrack.clientWidth - 1;
-          var atStart = reviewsTrack.scrollLeft <= 0;
-          var atEnd = reviewsTrack.scrollLeft >= max;
-          
-          prevBtn.classList.toggle('is-disabled', atStart);
-          nextBtn.classList.toggle('is-disabled', atEnd);
-          prevBtn.setAttribute('aria-disabled', atStart ? 'true' : 'false');
-          nextBtn.setAttribute('aria-disabled', atEnd ? 'true' : 'false');
-        }
-
-        // Función de scroll
-        function scroll(direction) {
-          var step = getStep();
-          if (step) {
-            reviewsTrack.scrollBy({ left: direction * step, behavior: 'smooth' });
+      var reviewsTrack = document.getElementById('reviews-track');
+      if (viewport && reviewsTrack) {
+        viewport.addEventListener('keydown', function(e) {
+          if (e.key === 'ArrowLeft') { 
+            e.preventDefault(); 
+            reviewsTrack.scrollBy({ left: -300, behavior: 'smooth' }); 
           }
-        }
-
-        // Event listeners
-        prevBtn.addEventListener('click', function() { scroll(-1); });
-        nextBtn.addEventListener('click', function() { scroll(1); });
-        reviewsTrack.addEventListener('scroll', updateButtons, { passive: true });
-        window.addEventListener('resize', updateButtons);
-
-        // Navegación con teclado
-        if (viewport) {
-          viewport.addEventListener('keydown', function(e) {
-            if (e.key === 'ArrowLeft') { 
-              e.preventDefault(); 
-              scroll(-1); 
-            }
-            if (e.key === 'ArrowRight') { 
-              e.preventDefault(); 
-              scroll(1); 
-            }
-          });
-        }
-
-        updateButtons();
+          if (e.key === 'ArrowRight') { 
+            e.preventDefault(); 
+            reviewsTrack.scrollBy({ left: 300, behavior: 'smooth' }); 
+          }
+        });
       }
-
-      // Año actual en el footer
       var yearElement = document.getElementById('current-year');
       if (yearElement) {
         yearElement.textContent = new Date().getFullYear();
       }
     });
   </script>
-
 </body>
 </html>

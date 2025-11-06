@@ -1,1168 +1,346 @@
 /* ====================================================
-   DOCTOR RAYO - HOJA DE ESTILOS PRINCIPAL
-   Versión: 2.0 - Header Rediseñado
-   Última actualización: Enero 2025
+   DOCTOR RAYO - HOJA DE ESTILOS PRINCIPAL (CODERO VERSION)
    ==================================================== */
 
-/* ====================================================
-   TABLA DE CONTENIDOS
-   1. Variables CSS
-   2. Reset y Base
-   3. Utilidades
-   4. Header y Navegación
-   5. Botones
-   6. Banner Principal
-   7. Beneficios
-   8. Shelf de Productos
-   9. Servicios con Tabs
-   10. Reviews
-   11. Footer
-   12. WhatsApp Flotante
-   13. Media Queries
-   ==================================================== */
-
-
-/* ====================================================
-   1. VARIABLES CSS
-   ==================================================== */
+/* =================== 1. VARIABLES CSS =================== */
 :root {
-  /* Colores */
-  --color-primary: #e60000;
-  --color-primary-dark: #c40000;
-  --color-accent-green: #25d366;
-  --color-accent-green-dark: #1ebe57;
-  --color-text-dark: #0b0b0b;
-  --color-text-medium: #333;
-  --color-text-light: #e6e6e6;
-  --color-white: #fff;
+  --color-primary: #e60000;      --color-primary-dark: #c40000;
+  --color-accent-green: #25d366; --color-accent-green-dark: #1ebe57;
+  --color-text-dark: #0b0b0b;    --color-text-medium: #333;
+  --color-text-light: #e6e6e6;   --color-white: #fff;
   --color-black: #000;
-  --color-light-gray: #eee;
-  --color-medium-gray: #ddd;
-  --color-dark-gray: #444;
-  --color-footer-text: #ccc;
-  --color-overlay: rgba(0, 0, 0, 0.65);
-
-  /* Sombras */
-  --shadow-light: 0 2px 6px rgba(0, 0, 0, 0.05);
-  --shadow-medium: 0 8px 18px rgba(0, 0, 0, 0.08);
-  --shadow-strong: 0 12px 26px rgba(0, 0, 0, 0.15);
-
-  /* Espaciado */
-  --space-xs: 5px;
-  --space-sm: 8px;
-  --space-md: 12px;
-  --space-lg: 16px;
-  --space-xl: 20px;
-  --space-xxl: 30px;
+  --color-light-gray: #eee;      --color-medium-gray: #ddd;
+  --color-dark-gray: #444;       --color-footer-text: #ccc;
+  --color-overlay: rgba(0,0,0,0.65);
+  --shadow-light: 0 2px 6px rgba(0,0,0,0.05);
+  --shadow-medium: 0 8px 18px rgba(0,0,0,0.08);
+  --shadow-strong: 0 12px 26px rgba(0,0,0,0.15);
+  --space-xs: 5px;   --space-sm: 8px;   --space-md: 12px;
+  --space-lg: 16px;  --space-xl: 20px;  --space-xxl: 30px;
   --space-xxxl: 40px;
-  --gap-content: 24px;
-  --gap-section: 25px;
-
-  /* Tipografía */
-  --font-size-sm: 0.9rem;
-  --font-size-base: 1rem;
-  --font-size-md: 15px;
-  --font-size-lg: 20px;
-  --font-size-xl: 20px;
-  --font-size-xxl: 2rem;
+  --gap-content: 24px;     --gap-section: 25px;
+  --font-size-sm: 0.9rem;  --font-size-base: 1rem; --font-size-md: 15px;
+  --font-size-lg: 20px;    --font-size-xl: 20px;   --font-size-xxl: 2rem;
   --font-size-xxxl: 2.5rem;
-
-  /* Componentes */
-  --shelf-card-width: 180px;
-  --shelf-img-height: 140px;
-  --benefit-card-min: 220px;
-  --benefit-icon-size: 44px;
+  --shelf-card-width: 180px;    --shelf-img-height: 140px;
+  --benefit-card-min: 220px;    --benefit-icon-size: 44px;
   --reviews-nav-size: 40px;
   --transition-speed: 0.3s;
 }
 
-
-/* ====================================================
-   2. RESET Y BASE
-   ==================================================== */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
+/* =================== 2. RESET Y BASE =================== */
+*,*::before,*::after {box-sizing: border-box; margin: 0; padding: 0;}
+html {scroll-behavior: smooth;}
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins',sans-serif;
   line-height: 1.6;
   background: var(--color-white);
   color: var(--color-text-dark);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+a {text-decoration: none; color: inherit;}
+img {max-width: 100%; height: auto;}
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-
-/* ====================================================
-   3. UTILIDADES
-   ==================================================== */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--space-xl);
-}
-
+/* =================== 3. UTILIDADES =================== */
+.container {max-width: 1200px; margin: 0 auto; padding: 0 var(--space-xl);}
 .visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-  white-space: nowrap;
+  position: absolute; width:1px; height:1px; margin:-1px; overflow:hidden;
+  clip: rect(0,0,0,0); border:0; white-space:nowrap;
 }
 
-
-/* ====================================================
-   4. HEADER Y NAVEGACIÓN
-   ==================================================== */
-.main-header {
-  background: var(--color-white);
-  padding: var(--space-sm) 0;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-}
-
-.header-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Logo */
+/* =================== 4. HEADER Y NAV =================== */
+.main-header {background: var(--color-white); padding: var(--space-sm) 0; box-shadow: 0 1px 3px rgba(0,0,0,.05);}
+.header-wrapper {display: flex; justify-content: space-between; align-items: center;}
 .logo h1 {
-  font-size: 32px;
-  font-weight: 700;
-  background: linear-gradient(135deg, #e60000, #ff4444);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  transition: all 0.3s ease;
-  text-shadow: 0 2px 4px rgba(230,0,0,0.1);
+  font-size: 32px; font-weight: 700;
+  background: linear-gradient(135deg,#e60000,#ff4444);
+  -webkit-background-clip: text;  -webkit-text-fill-color: transparent;
+  background-clip:text;   transition: all .3s ease;
+  text-shadow: 0 2px 4px rgba(230,0,0,.1);
 }
-
-.logo h1:hover {
-  transform: scale(1.05);
-  filter: brightness(1.1);
-}
-
-/* Menú de Navegación */
-.header-nav {
-  margin-left: auto;
-}
-
-.nav-menu {
-  display: flex;
-  gap: 0.5rem;
-  list-style: none;
-  align-items: center;
-}
-
+.logo h1:hover {transform: scale(1.05); filter: brightness(1.1);}
+.header-nav {margin-left: auto;}
+.nav-menu {display: flex; gap: .5rem; list-style: none; align-items: center;}
 .nav-menu li a {
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-  color: var(--color-text-medium);
-  transition: all var(--transition-speed) ease;
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px;
-  display: inline-block;
+  font-weight:600; font-size:1rem; color:var(--color-text-medium);
+  padding: .6rem 1.2rem; border-radius:6px; display:inline-block;
+  transition: color var(--transition-speed);
 }
+.nav-menu li a:hover {color: var(--color-primary);}
+.nav-vender {background: #f0f0f0;}
+.nav-vender:hover {background: var(--color-primary)!important; color: var(--color-white)!important;
+  transform: translateY(-2px); box-shadow: 0 4px 12px rgba(230,0,0,0.3);}
 
-.nav-menu li a:hover {
-  color: var(--color-primary);
-}
-
-/* Estilo especial para Vender */
-.nav-vender {
-  background: #f0f0f0;
-}
-
-.nav-vender:hover {
-  background: var(--color-primary) !important;
-  color: var(--color-white) !important;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(230, 0, 0, 0.3);
-}
-
-
-/* ====================================================
-   5. BOTONES
-   ==================================================== */
+/* =================== 5. BOTONES =================== */
 .button {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  padding: var(--space-md) var(--space-xxl);
-  border-radius: 999px;
-  font-weight: 600;
-  border: 1px solid var(--color-primary);
-  background: var(--color-primary);
-  color: var(--color-white);
-  cursor: pointer;
-  transition: all var(--transition-speed) ease;
+  display: inline-flex; align-items: center; gap: var(--space-sm);
+  padding: var(--space-md) var(--space-xxl); border-radius: 999px;
+  font-weight:600; border: 1px solid var(--color-primary);
+  background: var(--color-primary); color: var(--color-white); cursor:pointer;
+  transition: all var(--transition-speed);
 }
-
-.button:hover,
-.button:focus {
-  transform: translateY(-2px);
-  outline: none;
-  background: var(--color-primary-dark);
-  border-color: var(--color-primary-dark);
+.button:hover,.button:focus {
+  transform:translateY(-2px); background:var(--color-primary-dark); border-color:var(--color-primary-dark);
+  outline:none;
 }
-
-
-/* ====================================================
-   6. BANNER PRINCIPAL
-   ==================================================== */
-.banner-principal {
-  background: url('../img/celular-vertical.jpg') no-repeat center/cover;
-  height: 350px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  text-align: center;
-  overflow: hidden;
+.cta-button {
+  padding: 14px 30px; background: var(--color-primary); color: var(--color-white);
+  border-radius: 30px; text-decoration: none; font-weight: 600;
+  font-size: 15px; border: 2px solid var(--color-primary); cursor: pointer; display: inline-block;
+  transition: background var(--transition-speed), box-shadow var(--transition-speed), transform var(--transition-speed);
 }
-
-.banner-principal .overlay {
-  background: var(--color-overlay);
-  padding: var(--space-xxl) var(--space-xxxl);
-  border-radius: 10px;
-  color: var(--color-text-light);
-  max-width: 90%;
-}
-
-.banner-principal h2 {
-  font-size: var(--font-size-xxl);
-  margin-bottom: var(--gap-content);
-  line-height: 1.2;
-  color: var(--color-white);
-}
-
-.banner-principal p {
-  font-size: var(--font-size-base);
-  margin-bottom: var(--gap-content);
-  max-width: 500px;
-  margin-inline: auto;
-  color: #f5f5f5;
-}
-
-
-/* ====================================================
-   7. BENEFICIOS
-   ==================================================== */
-.benefits {
-  padding: var(--gap-section) 0;
-}
-
-.benefits h2 {
-  font-size: var(--font-size-xxl);
-  color: var(--color-text-dark);
-  text-align: center;
-  margin-bottom: var(--gap-content);
-}
-
-.benefits-list {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(var(--benefit-card-min), 1fr));
-  gap: var(--space-md);
-  margin-bottom: var(--gap-content);
-}
-
-.benefit-item {
-  border: 1px solid var(--color-medium-gray);
-  border-radius: 10px;
-  background: var(--color-white);
-  box-shadow: var(--shadow-light);
-  padding: var(--space-lg);
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: center;
-  gap: var(--space-md);
-  transition: all 0.15s ease;
-}
-
-.benefit-item:hover {
-  border-color: var(--color-primary);
-  box-shadow: var(--shadow-medium);
-}
-
-.benefit-icon {
-  width: var(--benefit-icon-size);
-  height: var(--benefit-icon-size);
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-}
-
-.benefit-icon img {
-  width: 80%;
-  height: 80%;
-  object-fit: contain;
-}
-
-.benefit-title {
-  font-weight: 400;
-  font-size: var(--font-size-base);
-  color: var(--color-text-dark);
-}
-
-.benefits-cta {
-  display: flex;
-  justify-content: center;
-}
-
-
-/* ====================================================
-   8. SHELF DE PRODUCTOS
-   ==================================================== */
-.shelf {
-  background: var(--color-white);
-  padding: var(--gap-section) 0;
-}
-
-.shelf-head {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: var(--space-lg) 0 var(--space-xl) 0;
-  margin-bottom: 0;
-  position: relative;
-}
-
-.shelf-head h2 {
-  font-size: var(--font-size-xxl);
-  color: var(--color-text-dark);
-  text-align: center;
-  width: 100%;
-  margin: 0 auto;
-}
-
-.shelf-ver-todo {
-  font-weight: 600;
-  color: var(--color-primary);
-  text-align: right;
-  margin-top: 6px;
-  margin-left: auto;
-  margin-right: 0;
-}
-
-.shelf-ver-todo:hover {
-  text-decoration: underline;
-}
-
-.shelf-track {
-  margin-top: var(--gap-content);
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: var(--shelf-card-width);
-  gap: var(--space-md);
-  overflow-x: auto;
-  padding-bottom: 6px;
-  scroll-snap-type: x proximity;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-}
-
-.shelf-track::-webkit-scrollbar {
-  display: none;
-}
-
-/* Tarjetas de Productos */
-.shelf-card {
-  scroll-snap-align: start;
-  background: var(--color-white);
-  border: 1px solid var(--color-medium-gray);
-  border-radius: 10px;
-  box-shadow: var(--shadow-light);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  transition: all 0.2s ease;
-  width: var(--shelf-card-width);
-  max-width: var(--shelf-card-width);
-}
-
-.shelf-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-medium);
-}
-
-.shelf-card img {
-  width: 100%;
-  height: var(--shelf-img-height);
-  object-fit: contain;
-  background: var(--color-white);
-  padding: 6px;
-}
-
-.shelf-card .card-body {
-  padding: 6px 8px 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.shelf-card .badge {
-  align-self: flex-start;
-  font-size: 0.7rem;
-  font-weight: 600;
-  color: var(--color-white);
-  background: var(--color-primary);
-  padding: 2px 7px;
-  border-radius: 999px;
-  margin-bottom: 4px;
-}
-
-.shelf-card h3 {
-  font-size: 0.92rem;
-  color: var(--color-text-dark);
-  line-height: 1.2;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-bottom: 2px;
-}
-
-.shelf-card .price {
-  font-weight: 600;
-  color: var(--color-text-dark);
-  font-size: 0.85rem;
-  margin-bottom: 2px;
-}
-
-.shelf-card .cta {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  border: 1px solid var(--color-primary);
-  color: var(--color-white);
-  background: var(--color-primary);
-  border-radius: 999px;
-  padding: 8px 0;
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: all 0.2s ease;
-  margin-top: 6px;
-  text-align: center;
-  cursor: pointer;
-}
-
-.shelf-card .cta:hover {
-  background: var(--color-primary-dark);
-  border-color: var(--color-primary-dark);
-}
-
-
-/* ====================================================
-   9. SERVICIOS CON TABS Y MODALES
-   ==================================================== */
-.services-section {
-  padding: var(--gap-section) var(--space-xl);
-  background: var(--color-white);
-}
-
-.tabs-container {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.tabs-container h2 {
-  text-align: center;
-  font-size: 32px;
-  margin-bottom: 10px;
-  color: var(--color-text-dark);
-}
-
-.tabs-container .subtitle {
-  text-align: center;
-  color: #666;
-  margin-bottom: var(--gap-content);
-  font-size: 18px;
-}
-
-.tabs-nav {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: var(--gap-content);
-}
-
-.tab-button {
-  padding: 15px 35px;
-  background: var(--color-white);
-  border: 2px solid var(--color-medium-gray);
-  border-radius: 30px;
-  cursor: pointer;
-  transition: all var(--transition-speed) ease;
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--color-text-medium);
-  font-family: inherit;
-}
-
-.tab-button:hover {
-  border-color: var(--color-primary);
-  box-shadow: 0 4px 15px rgba(230, 0, 0, 0.15);
-}
-
-.tab-button.active {
-  background: var(--color-primary);
-  color: var(--color-white);
-  border-color: var(--color-primary);
-  box-shadow: 0 4px 15px rgba(230, 0, 0, 0.2);
-}
-
-.info-text {
-  text-align: center;
-  color: #999;
-  font-size: 14px;
-  margin-top: -10px;
-  margin-bottom: var(--gap-content);
-  font-style: italic;
-}
-
-/* Modales */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  animation: fadeIn 0.3s ease;
-}
-
-.modal.active {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.modal-content {
-  background: var(--color-white);
-  border-radius: 20px;
-  padding: 40px;
-  max-width: 600px;
-  width: 90%;
-  max-height: 80vh;
-  overflow-y: auto;
-  position: relative;
-  animation: slideUp 0.3s ease;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes slideUp {
-  from { 
-    opacity: 0;
-    transform: translateY(30px) scale(0.95);
-  }
-  to { 
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-.close-modal {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  background: #f5f5f5;
-  border: none;
-  cursor: pointer;
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all var(--transition-speed) ease;
-}
-
-.close-modal:hover {
-  background: var(--color-primary);
-  color: var(--color-white);
-  transform: rotate(90deg);
-}
-
-.modal-icon {
-  font-size: 60px;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.modal-content h3 {
-  font-size: 28px;
-  text-align: center;
-  margin-bottom: 20px;
-  color: var(--color-text-dark);
-}
-
-.modal-content p {
-  font-size: 16px;
-  line-height: 1.7;
-  color: #666;
-  text-align: center;
-  margin-bottom: var(--gap-content);
-}
-
-.modal-benefits {
-  background: var(--color-white);
-  border: 1px solid #e0e0e0;
-  border-radius: 10px;
-  padding: 20px;
-  margin: 20px 0;
-}
-
-.modal-benefit-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 12px;
-  font-size: 15px;
-  color: var(--color-text-medium);
-}
-
-.modal-benefit-item:last-child {
-  margin-bottom: 0;
-}
-
-.check-icon {
-  color: var(--color-accent-green);
-  font-weight: bold;
-  font-size: 18px;
-}
-
-.modal-actions {
-  display: flex;
-  gap: 15px;
-  margin-top: var(--gap-content);
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.modal-actions .cta-button {
-  padding: 14px 30px;
-  background: var(--color-primary);
-  color: var(--color-white);
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 15px;
-  transition: all var(--transition-speed) ease;
-  border: 2px solid var(--color-primary);
-  cursor: pointer;
-  display: inline-block;
-}
-
-.modal-actions .cta-button:hover {
+.cta-button:hover {
   background: var(--color-primary-dark);
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(230, 0, 0, 0.3);
 }
 
-
-/* ====================================================
-   10. REVIEWS (TESTIMONIOS)
-   ==================================================== */
-.reviews {
-  background: var(--color-white);
-  padding: var(--gap-section) 0;
+/* =================== 6. BANNER PRINCIPAL =================== */
+.banner-principal {
+  background: url('../img/celular-vertical.jpg') no-repeat center/cover;
+  height: 350px; display: flex; align-items: center; justify-content: center;
+  position: relative; text-align: center; overflow: hidden;
+}
+.banner-principal .overlay {
+  background:var(--color-overlay); padding:var(--space-xxl) var(--space-xxxl);
+  border-radius:10px; color:var(--color-text-light); max-width:90%;
+}
+.banner-principal h2 {
+  font-size:var(--font-size-xxl); margin-bottom:var(--gap-content);
+  line-height:1.2; color:var(--color-white);
+}
+.banner-principal p {
+  font-size:var(--font-size-base); margin-bottom:var(--gap-content);
+  max-width:500px; margin-inline:auto; color:#f5f5f5;
 }
 
-.reviews h2 {
-  font-size: var(--font-size-xxl);
-  text-align: center;
-  margin-bottom: var(--gap-content);
+/* =================== 7. BENEFICIOS =================== */
+.benefits {padding: var(--gap-section) 0;}
+.benefits h2 {
+  font-size:var(--font-size-xxl); color:var(--color-text-dark);
+  text-align:center; margin-bottom:var(--gap-content);
 }
-
-.reviews .container {
-  position: relative;
+.benefits-list {
+  list-style:none; display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(var(--benefit-card-min),1fr));
+  gap:var(--space-md); margin-bottom:var(--gap-content);
 }
-
-.reviews-row {
-  display: flex;
-  align-items: center;
-  gap: 14px;
+.benefit-item {
+  border:1px solid var(--color-medium-gray); border-radius:10px;
+  background:var(--color-white); box-shadow:var(--shadow-light);
+  padding:var(--space-lg);
+  display:grid; grid-template-columns:auto 1fr; align-items:center; gap:var(--space-md);
+  transition: border-color .15s, box-shadow .15s;
 }
-
-/* Botones de Navegación */
-.reviews-btn {
-  width: var(--reviews-nav-size);
-  height: var(--reviews-nav-size);
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--color-white);
-  border: 1px solid var(--color-medium-gray);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-  font-size: 18px;
-  line-height: 1;
-  cursor: pointer;
-  user-select: none;
-  transition: all 0.15s ease;
+.benefit-item:hover {border-color:var(--color-primary); box-shadow:var(--shadow-medium);}
+.benefit-icon {
+  width:var(--benefit-icon-size); height:var(--benefit-icon-size);
+  border-radius:50%; display:grid; place-items:center; overflow:hidden;
 }
-
-.reviews-btn:hover,
-.reviews-btn:focus {
-  transform: scale(1.06);
-  border-color: var(--color-primary);
-  box-shadow: var(--shadow-strong);
-  outline: none;
+.benefit-icon img {width:80%; height:80%; object-fit:contain;}
+.benefit-title {
+  font-weight:400; font-size:var(--font-size-base); color:var(--color-text-dark);
 }
+.benefits-cta {display: flex; justify-content: center;}
 
-.reviews-btn.is-disabled {
-  opacity: 0.35;
-  cursor: default;
-  pointer-events: none;
+/* =================== 8. SHELF DE PRODUCTOS =================== */
+.shelf {background:var(--color-white); padding:var(--gap-section) 0;}
+.shelf-head {
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  padding:var(--space-lg) 0 var(--space-xl) 0; margin-bottom:0; position:relative;
 }
-
-/* Viewport de Reviews */
-.reviews-viewport {
-  position: relative;
-  flex: 1 1 auto;
-  overflow: hidden;
-  padding-inline: 6px;
+.shelf-head h2 {
+  font-size:var(--font-size-xxl); color:var(--color-text-dark); text-align:center; width:100%; margin:0 auto;
 }
-
-.reviews-viewport::before,
-.reviews-viewport::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 34px;
-  pointer-events: none;
+.shelf-ver-todo {
+  font-weight:600; color: var(--color-primary); text-align:right;
+  margin-top:6px; margin-left:auto; margin-right:0;
 }
-
-.reviews-viewport::before {
-  left: 0;
-  background: linear-gradient(90deg, var(--color-white) 40%, rgba(255, 255, 255, 0));
+.shelf-ver-todo:hover {text-decoration: underline;}
+.shelf-track {
+  margin-top:var(--gap-content); display:grid; grid-auto-flow:column;
+  grid-auto-columns:var(--shelf-card-width); gap:var(--space-md);
+  overflow-x:auto; padding-bottom:6px; scroll-snap-type:x proximity;
+  -webkit-overflow-scrolling:touch; scrollbar-width:none;
 }
-
-.reviews-viewport::after {
-  right: 0;
-  background: linear-gradient(270deg, var(--color-white) 40%, rgba(255, 255, 255, 0));
+.shelf-track::-webkit-scrollbar {display:none;}
+.shelf-card {
+  scroll-snap-align:start; background:var(--color-white); border:1px solid var(--color-medium-gray);
+  border-radius:10px; box-shadow:var(--shadow-light); display:flex; flex-direction:column; overflow:hidden;
+  transition: box-shadow .2s, transform .2s;
+  width:var(--shelf-card-width); max-width:var(--shelf-card-width);
 }
+.shelf-card:hover {transform:translateY(-4px); box-shadow:var(--shadow-medium);}
+.shelf-card img {width:100%; height:var(--shelf-img-height); object-fit:contain; background:var(--color-white); padding:6px;}
+.shelf-card .card-body {padding:6px 8px 10px; display:flex; flex-direction:column; gap:4px;}
+.shelf-card .badge {
+  align-self:flex-start; font-size:.7rem; font-weight:600; color:var(--color-white);
+  background:var(--color-primary); padding:2px 7px; border-radius:999px; margin-bottom:4px;
+}
+.shelf-card h3 {
+  font-size:.92rem; color:var(--color-text-dark); line-height:1.2;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis; margin-bottom:2px;
+}
+.shelf-card .price {font-weight:600; color:var(--color-text-dark); font-size:.85rem; margin-bottom:2px;}
+.shelf-card .cta {
+  display:flex; justify-content:center; align-items:center; width:100%;
+  border:1px solid var(--color-primary); color:var(--color-white);
+  background:var(--color-primary); border-radius:999px; padding:8px 0; font-weight:600; font-size:.9rem;
+  transition: background .2s, border-color .2s; margin-top:6px; text-align:center; cursor:pointer;
+}
+.shelf-card .cta:hover {background:var(--color-primary-dark); border-color:var(--color-primary-dark);}
 
-/* Track de Reviews */
+/* =================== 9. SERVICIOS CON TABS Y MODALES =================== */
+.services-section {padding:var(--gap-section) var(--space-xl); background:var(--color-white);}
+.tabs-container {max-width: 1000px; margin: 0 auto;}
+.tabs-container h2 {text-align: center; font-size: 32px; margin-bottom: 10px; color:var(--color-text-dark);}
+.tabs-container .subtitle {text-align: center; color: #666; margin-bottom: var(--gap-content); font-size: 18px;}
+.tabs-nav {display: flex; justify-content: center; gap: 15px; margin-bottom: var(--gap-content);}
+.tab-button {
+  padding:15px 35px; background:var(--color-white); border:2px solid var(--color-medium-gray);
+  border-radius:30px; cursor:pointer; transition:all var(--transition-speed); font-size:16px;
+  font-weight:600; color:var(--color-text-medium); font-family:inherit;
+}
+.tab-button:hover {border-color:var(--color-primary); box-shadow: 0 4px 15px rgba(230,0,0,0.15);}
+.tab-button.active {
+  background:var(--color-primary); color:var(--color-white); border-color:var(--color-primary);
+  box-shadow: 0 4px 15px rgba(230,0,0,0.2);
+}
+.info-text {text-align:center; color:#999; font-size:14px; margin-top:-10px; margin-bottom:var(--gap-content); font-style:italic;}
+.modal {
+  display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%;
+  background-color:rgba(0,0,0,0.5); animation:fadeIn .3s;
+}
+.modal.active {display:flex; align-items:center; justify-content:center;}
+.modal-content {
+  background:var(--color-white); border-radius:20px; padding:40px; max-width:600px; width:90%; max-height:80vh;
+  overflow-y:auto; position:relative; animation:slideUp .3s;
+}
+@keyframes fadeIn {from{opacity:0;} to{opacity:1;}}
+@keyframes slideUp {from{opacity:0;transform:translateY(30px) scale(.95);} to{opacity:1;transform:translateY(0) scale(1);}}
+.close-modal {
+  position:absolute; right:20px; top:20px; width:35px; height:35px; border-radius:50%;
+  background:#f5f5f5; border:none; cursor:pointer; font-size:20px; display:flex; align-items:center; justify-content:center;
+  transition:background var(--transition-speed), color var(--transition-speed), transform var(--transition-speed);
+}
+.close-modal:hover {background:var(--color-primary); color:var(--color-white); transform:rotate(90deg);}
+.modal-icon {font-size:60px; text-align:center; margin-bottom:20px;}
+.modal-content h3 {font-size:28px; text-align:center; margin-bottom:20px; color:var(--color-text-dark);}
+.modal-content p {font-size:16px; line-height:1.7; color:#666; text-align:center; margin-bottom:var(--gap-content);}
+.modal-benefits {background:var(--color-white); border:1px solid #e0e0e0; border-radius:10px; padding:20px; margin:20px 0;}
+.modal-benefit-item {display:flex; align-items:center; gap:10px; margin-bottom:12px; font-size:15px; color:var(--color-text-medium);}
+.modal-benefit-item:last-child {margin-bottom:0;}
+.check-icon {color:var(--color-accent-green); font-weight:bold; font-size:18px;}
+.modal-actions {display: flex; gap: 15px; margin-top: var(--gap-content); justify-content: center; flex-wrap: wrap;}
+.modal-actions .cta-button {
+  padding:14px 30px; background:var(--color-primary); color:var(--color-white); border-radius:30px;
+  text-decoration:none; font-weight:600; font-size:15px; border:2px solid var(--color-primary); cursor:pointer; display:inline-block;
+  transition:background var(--transition-speed), box-shadow var(--transition-speed), transform var(--transition-speed);
+}
+.modal-actions .cta-button:hover {background:var(--color-primary-dark); transform:translateY(-2px); box-shadow:0 6px 20px rgba(230, 0, 0, 0.3);}
+
+/* =================== 10. REVIEWS =================== */
+.reviews {background:var(--color-white); padding:var(--gap-section) 0;}
+.reviews h2 {font-size:var(--font-size-xxl); text-align:center; margin-bottom:var(--gap-content);}
+.reviews .container {position: relative;}
+.reviews-row {display: flex; align-items: center;}
+.reviews-viewport {position:relative; flex:1 1 auto; overflow:hidden; padding-inline:6px;}
+.reviews-viewport::before,.reviews-viewport::after {content:''; position:absolute; top:0; bottom:0; width:34px; pointer-events:none;}
+.reviews-viewport::before {left:0; background: linear-gradient(90deg, var(--color-white) 40%, rgba(255,255,255,0));}
+.reviews-viewport::after {right:0; background: linear-gradient(270deg, var(--color-white) 40%, rgba(255,255,255,0));}
 .reviews-track {
-  display: grid;
-  grid-auto-flow: column;
-  gap: 14px;
-  overflow-x: auto;
-  scroll-snap-type: x proximity;
-  -webkit-overflow-scrolling: touch;
-  padding: 6px 0;
-  scrollbar-width: none;
-  grid-auto-columns: minmax(220px, min(280px, calc((100% - 42px) / 4)));
+  display:grid; grid-auto-flow:column; gap:14px; overflow-x:auto;
+  scroll-snap-type:x proximity; -webkit-overflow-scrolling:touch; padding:6px 0;
+  scrollbar-width:none; grid-auto-columns:minmax(220px,min(280px,calc((100% - 42px)/4)));
 }
-
-.reviews-track::-webkit-scrollbar {
-  display: none;
-}
-
-/* Tarjetas de Review */
+.reviews-track::-webkit-scrollbar {display:none;}
 .review {
-  scroll-snap-align: start;
-  border: 1px solid var(--color-medium-gray);
-  border-radius: 10px;
-  padding: var(--space-md);
-  background: var(--color-white);
-  box-shadow: var(--shadow-light);
+  scroll-snap-align:start; border:1px solid var(--color-medium-gray); border-radius:10px;
+  padding:var(--space-md); background:var(--color-white); box-shadow:var(--shadow-light);
 }
+.review blockquote {margin:0 0 6px; font-size:.95rem; line-height:1.45;}
+.review figcaption {color:var(--color-text-medium); font-weight:600; font-size:.9rem;}
 
-.review blockquote {
-  margin: 0 0 6px;
-  font-size: 0.95rem;
-  line-height: 1.45;
-}
-
-.review figcaption {
-  color: var(--color-text-medium);
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-
-/* ====================================================
-   11. FOOTER
-   ==================================================== */
+/* =================== 11. FOOTER =================== */
 .main-footer {
-  background: var(--color-black);
-  color: var(--color-white);
-  padding: var(--space-xxxl) var(--space-xl) var(--space-xl);
-  font-size: 14px;
+  background:var(--color-black); color:var(--color-white);
+  padding:var(--space-xxxl) var(--space-xl) var(--space-xl); font-size:14px;
 }
-
 .footer-wrapper {
-  max-width: 1200px;
-  margin: 0 auto var(--space-xl);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: var(--space-xxl);
+  max-width:1200px; margin:0 auto var(--space-xl);
+  display:flex; flex-wrap:wrap; justify-content:space-between; gap:var(--space-xxl);
 }
+.footer-column {flex:1 1 220px; min-width:180px;}
+.footer-column h2,.footer-column h3 {color:var(--color-white); margin-bottom:var(--space-md); font-size:var(--font-size-lg);}
+.footer-column p,.footer-column ul li a {color:var(--color-footer-text); line-height:1.8;}
+.footer-column ul {list-style:none; padding:0;}
+.footer-column ul li {margin-bottom:var(--space-sm);}
+.footer-column ul li a {transition: color var(--transition-speed);}
+.footer-column ul li a:hover,.footer-column ul li a:focus {color:var(--color-primary);}
+.footer-column address {font-style:normal;}
+.redes-sociales {display:flex; gap:var(--space-lg);}
+.footer-bottom {text-align:center; padding-top:var(--space-xl); border-top:1px solid var(--color-dark-gray); color:var(--color-footer-text);}
 
-.footer-column {
-  flex: 1 1 220px;
-  min-width: 180px;
-}
-
-.footer-column h2,
-.footer-column h3 {
-  color: var(--color-white);
-  margin-bottom: var(--space-md);
-  font-size: var(--font-size-lg);
-}
-
-.footer-column p,
-.footer-column ul li a {
-  color: var(--color-footer-text);
-  line-height: 1.8;
-}
-
-.footer-column ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-column ul li {
-  margin-bottom: var(--space-sm);
-}
-
-.footer-column ul li a {
-  transition: color var(--transition-speed) ease;
-}
-
-.footer-column ul li a:hover,
-.footer-column ul li a:focus {
-  color: var(--color-primary);
-}
-
-.footer-column address {
-  font-style: normal;
-}
-
-.redes-sociales {
-  display: flex;
-  gap: var(--space-lg);
-}
-
-.footer-bottom {
-  text-align: center;
-  padding-top: var(--space-xl);
-  border-top: 1px solid var(--color-dark-gray);
-  color: var(--color-footer-text);
-}
-
-
-/* ====================================================
-   12. WHATSAPP FLOTANTE
-   ==================================================== */
+/* =================== 12. WHATSAPP FLOTANTE =================== */
 .whatsapp-float {
-  position: fixed;
-  width: 60px;
-  height: 60px;
-  bottom: var(--space-xxl);
-  right: var(--space-xxl);
-  background: var(--color-accent-green);
-  border-radius: 50%;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  transition: all var(--transition-speed) ease;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position:fixed; width:60px; height:60px; bottom:var(--space-xxl); right:var(--space-xxl);
+  background:var(--color-accent-green); border-radius:50%; box-shadow:2px 2px 5px rgba(0,0,0,0.3);
+  transition:background var(--transition-speed), transform var(--transition-speed); z-index:1000;
+  display:flex; align-items:center; justify-content:center;
+}
+.whatsapp-float img {width:35px;}
+.whatsapp-float:hover,.whatsapp-float:focus {
+  background:var(--color-accent-green-dark); transform:scale(1.05); outline:none;
 }
 
-.whatsapp-float img {
-  width: 35px;
-}
-
-.whatsapp-float:hover,
-.whatsapp-float:focus {
-  background: var(--color-accent-green-dark);
-  transform: scale(1.05);
-  outline: none;
-}
-
-
-/* ====================================================
-   13. MEDIA QUERIES
-   ==================================================== */
-
-/* Tablet (768px+) */
+/* =================== 13. MEDIA QUERIES =================== */
 @media (min-width: 768px) {
-  .banner-principal {
-    height: 420px;
-  }
-  
-  .banner-principal h2 {
-    font-size: var(--font-size-xxxl);
-  }
+  .banner-principal {height:420px;}
+  .banner-principal h2 {font-size: var(--font-size-xxxl);}
 }
-
-/* Desktop (992px+) */
 @media (min-width: 992px) {
-  /* Shelf: Grid en lugar de carrusel */
-  .shelf-track {
-    display: grid;
-    grid-auto-flow: initial;
-    overflow: visible;
-    grid-template-columns: repeat(4, minmax(220px, 1fr));
-    justify-content: center;
-  }
-  
-  .shelf-card {
-    width: auto;
-    max-width: none;
-  }
+  .shelf-track {display:grid; grid-auto-flow:initial; overflow:visible; grid-template-columns:repeat(4,minmax(220px,1fr)); justify-content:center;}
+  .shelf-card {width:auto; max-width:none;}
 }
-
-/* Desktop Grande (1024px+) */
-@media (min-width: 1024px) {
-  .banner-principal {
-    height: 350px;
-  }
-}
-
-/* Desktop XL (1200px+) */
-@media (min-width: 1200px) {
-  .shelf-track {
-    grid-template-columns: repeat(5, minmax(220px, 1fr));
-  }
-}
-
-/* Móvil (max 767px) */
+@media (min-width: 1024px) {.banner-principal {height:350px;}}
+@media (min-width: 1200px) {.shelf-track {grid-template-columns:repeat(5,minmax(220px,1fr));}}
 @media (max-width: 767px) {
-  :root {
-    --gap-section: 13px;
-  }
-
-  /* ========================================
-     HEADER MÓVIL - Layout Vertical
-     ======================================== */
-  .header-wrapper {
-    flex-direction: column;  /* Cambio de row a column */
-    align-items: center;     /* Centrar elementos */
-    gap: var(--space-md);    /* Espacio entre logo y menú */
-    padding: var(--space-md) var(--space-sm);
-  }
-  
-  .logo {
-    margin-bottom: 0;
-  }
-  
-  .logo h1 {
-    font-size: 1.3rem;       /* Logo un poco más pequeño en móvil */
-  }
-  
-  /* Menú centrado debajo del logo */
-  .header-nav {
-    margin-left: 0;          /* Quitar margin-left: auto */
-    width: 100%;
-  }
-  
-  .nav-menu {
-    justify-content: center;  /* Centrar menú */
-    gap: 0.4rem;
-    width: 100%;
-  }
-  
-  .nav-menu li a {
-    padding: 0.5rem 0.9rem;
-    font-size: 0.88rem;
-  }
-  
-  /* Ajustar el botón Vender para móvil */
-  .nav-vender {
-    background: #f0f0f0;
-  }
-  
-  .nav-vender:hover {
-    background: var(--color-primary) !important;
-    color: var(--color-white) !important;
-  }
-
-  /* Banner Móvil */
-  .banner-principal {
-    height: 250px;
-  }
-  
-  .banner-principal .overlay {
-    padding: var(--space-lg) var(--space-md);
-  }
-  
-  .banner-principal h2 {
-    font-size: 1.6rem;
-    margin-bottom: var(--space-md);
-  }
-  
-  .banner-principal p {
-    font-size: 0.9rem;
-    margin-bottom: var(--space-md);
-  }
-
-  /* Beneficios Móvil: Grid 2x2 */
-  .benefits {
-    padding: var(--gap-section) 0 var(--space-md) 0;
-  }
-  
-  .benefits h2 {
-    font-size: 1.25rem;
-    margin-bottom: var(--space-md);
-  }
-  
-  .benefits-list {
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    margin-bottom: var(--space-md);
-  }
-  
-  .benefit-item {
-    padding: 8px 6px;
-    gap: 6px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .benefit-icon {
-    width: 36px;
-    height: 36px;
-  }
-  
-  .benefit-title {
-    font-size: 0.75rem;
-    line-height: 1.1;
-  }
-
-  /* Shelf Móvil: Carrusel */
-  .shelf {
-    padding: var(--space-md) 0 var(--gap-section) 0;
-  }
-  
-  .shelf .container {
-    padding: 0 10px !important;
-  }
-  
-  .shelf-head {
-    padding: 0 var(--space-lg) var(--space-md) var(--space-lg);
-  }
-  
-  .shelf-head h2 {
-    font-size: 1.25rem;
-  }
-  
-  .shelf-ver-todo {
-    font-size: 0.9rem;
-  }
-  
-  .shelf-track {
-    display: flex !important;
-    overflow-x: scroll;
-    gap: 12px;
-    scroll-snap-type: x mandatory;
-    padding: 0 20px var(--space-md) 20px;
-  }
-  
-  .shelf-card {
-    flex: 0 0 45vw;
-    max-width: 45vw;
-    min-width: 45vw;
-  }
-
-  /* Servicios Móvil */
-  .services-section {
-    padding: var(--gap-section) var(--space-md);
-  }
-  
-  .tabs-container h2 {
-    font-size: 26px;
-  }
-  
-  .tabs-container .subtitle {
-    font-size: 16px;
-  }
-  
-  .tabs-nav {
-    gap: 8px;
-    overflow-x: auto;
-  }
-  
-  .tab-button {
-    padding: 10px 20px;
-    font-size: 14px;
-    white-space: nowrap;
-  }
-  
-  .modal-content {
-    padding: 20px 15px;
-    width: 95%;
-  }
-
-  /* Reviews Móvil */
-  .reviews {
-    padding: var(--gap-section) 0;
-  }
-  
-  .reviews h2 {
-    font-size: 1.25rem;
-  }
-  
-  .reviews-btn {
-    display: none;
-  }
-  
-  .reviews-track {
-    grid-auto-columns: 60%;
-  }
-
-  /* WhatsApp Móvil */
-  .whatsapp-float {
-    width: 50px;
-    height: 50px;
-    bottom: var(--space-lg);
-    right: var(--space-lg);
-  }
-  
-  .whatsapp-float img {
-    width: 28px;
-  }
+  :root {--gap-section:13px;}
+  .header-wrapper {flex-direction:column; align-items:center; gap:var(--space-md); padding:var(--space-md) var(--space-sm);}
+  .logo {margin-bottom:0;}
+  .logo h1 {font-size:1.3rem;}
+  .header-nav {margin-left:0;width:100%;}
+  .nav-menu {justify-content:center; gap:0.4rem; width:100%;}
+  .nav-menu li a {padding:0.5rem 0.9rem; font-size:0.88rem;}
+  .nav-vender {background:#f0f0f0;}
+  .nav-vender:hover {background:var(--color-primary)!important; color:var(--color-white)!important;}
+  .banner-principal {height:250px;}
+  .banner-principal .overlay {padding:var(--space-lg) var(--space-md);}
+  .banner-principal h2 {font-size:1.6rem; margin-bottom:var(--space-md);}
+  .banner-principal p {font-size:0.9rem; margin-bottom:var(--space-md);}
+  .benefits {padding:var(--gap-section) 0 var(--space-md) 0;}
+  .benefits h2 {font-size:1.25rem; margin-bottom:var(--space-md);}
+  .benefits-list {grid-template-columns:1fr 1fr; gap:8px; margin-bottom:var(--space-md);}
+  .benefit-item {padding:8px 6px; gap:6px; display:flex; flex-direction:column; align-items:center; text-align:center;}
+  .benefit-icon {width:36px; height:36px;}
+  .benefit-title {font-size:0.75rem; line-height:1.1;}
+  .shelf {padding:var(--space-md) 0 var(--gap-section) 0;}
+  .shelf .container {padding:0 10px !important;}
+  .shelf-head {padding:0 var(--space-lg) var(--space-md) var(--space-lg);}
+  .shelf-head h2 {font-size:1.25rem;}
+  .shelf-ver-todo {font-size:0.9rem;}
+  .shelf-track {display:flex !important; overflow-x:scroll; gap:12px; scroll-snap-type:x mandatory; padding:0 20px var(--space-md) 20px;}
+  .shelf-card {flex:0 0 45vw; max-width:45vw; min-width:45vw;}
+  .services-section {padding:var(--gap-section) var(--space-md);}
+  .tabs-container h2 {font-size:26px;}
+  .tabs-container .subtitle {font-size:16px;}
+  .tabs-nav {gap:8px; overflow-x:auto;}
+  .tab-button {padding:10px 20px; font-size:14px; white-space:nowrap;}
+  .modal-content {padding:20px 15px; width:95%;}
+  .reviews {padding:var(--gap-section) 0;}
+  .reviews h2 {font-size:1.25rem;}
+  .reviews-track {grid-auto-columns:60%;}
+  .whatsapp-float {width:50px; height:50px; bottom:var(--space-lg); right:var(--space-lg);}
+  .whatsapp-float img {width:28px;}
 }
