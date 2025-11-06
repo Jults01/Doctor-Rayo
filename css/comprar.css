@@ -152,7 +152,7 @@ img { max-width: 100%; height: auto; }
 .btn-whatsapp:hover { background: #16a34a !important; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);}
   
 /* ========= BENEFICIOS ========= */
-.beneficios { padding: var(--gap-section) 0; background: var(--color-white);}
+.beneficios { padding: var(--gap-section) 0; background: var(--color-white); text-align: center;}
 .beneficios .container { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-xl);}
 .beneficios h2 {
   font-size: var(--font-size-xxl); font-weight: 700; margin-bottom: var(--gap-content); color: var(--color-text-dark); line-height: 1.2;
