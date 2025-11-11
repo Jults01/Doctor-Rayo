@@ -48,31 +48,31 @@
       <h2>Celulares disponibles</h2>
       <div class="grid-dispositivos">
         <div class="dispositivo-card" onclick="openModal('modal1')">
-          <div class="dispositivo-imagen"></div>
-          <h3>iPhone 14 Pro</h3>
+          <img src="img/iphone15promax-card.jpg" alt="iPhone 15 pro max" class="dispositivo-foto">
+          <h3>iPhone 15 pro max</h3>
           <span class="precio">$2,450,000</span>
           <span class="estado como-nuevo">Como nuevo</span>
         </div>
         <div class="dispositivo-card" onclick="openModal('modal2')">
-          <div class="dispositivo-imagen"></div>
+          <img src="img/samsung-s23-card.jpg" alt="Samsung Galaxy S23" class="dispositivo-foto">
           <h3>Samsung Galaxy S23</h3>
           <span class="precio">$1,850,000</span>
           <span class="estado excelente">Excelente</span>
         </div>
         <div class="dispositivo-card" onclick="openModal('modal3')">
-          <div class="dispositivo-imagen"></div>
+          <img src="img/iphone13-card.jpg" alt="iPhone 13" class="dispositivo-foto">
           <h3>iPhone 13</h3>
           <span class="precio">$1,650,000</span>
           <span class="estado muy-bueno">Muy bueno</span>
         </div>
         <div class="dispositivo-card" onclick="openModal('modal4')">
-          <div class="dispositivo-imagen"></div>
+          <img src="img/xiaomi-redmi-card.jpg" alt="Xiaomi Redmi Note 12" class="dispositivo-foto">
           <h3>Xiaomi Redmi Note 12</h3>
           <span class="precio">$480,000</span>
           <span class="estado como-nuevo">Como nuevo</span>
         </div>
         <div class="dispositivo-card" onclick="openModal('modal5')">
-          <div class="dispositivo-imagen"></div>
+          <img src="img/motorola-edge-card.jpg" alt="Motorola Edge 30" class="dispositivo-foto">
           <h3>Motorola Edge 30</h3>
           <span class="precio">$750,000</span>
           <span class="estado excelente">Excelente</span>
@@ -124,9 +124,20 @@
   <div id="modal1" class="modal" onclick="closeModal('modal1')">
     <div class="modal-content" onclick="event.stopPropagation()">
       <button class="modal-close" onclick="closeModal('modal1')" aria-label="Cerrar">&times;</button>
-      <h3>iPhone 14 Pro</h3>
-      <span class="precio">$2,450,000</span>
-      <span class="estado como-nuevo">Como nuevo</span>
+      
+      <!-- Galería de fotos -->
+      <div class="foto-galeria">
+        <div class="foto-principal">
+          <img src="img/iphone15promax-card.jpg" alt="iPhone 14 Pro vista principal" id="foto-main-1" onclick="openZoom(this.src, this.alt)">
+        </div>
+        <div class="fotos-thumbnails">
+          <img src="img/iphone15promax-1.jpg" alt="Vista trasera" onclick="cambiarFoto('foto-main-1', this.src)">
+          <img src="img/iphone15promax-2.jpg" alt="Vista trasera" onclick="cambiarFoto('foto-main-1', this.src)">
+          <img src="img/iphone15promax-3.jpg" alt="Vista lateral" onclick="cambiarFoto('foto-main-1', this.src)">
+          <img src="img/iphone15promax-4.jpg" alt="Accesorios" onclick="cambiarFoto('foto-main-1', this.src)">
+        </div>
+      </div>
+      
       <div class="separador-modal"></div>
       <ul class="caracteristicas">
         <li>128GB - Space Black</li>
@@ -145,12 +156,24 @@
       </div>
     </div>
   </div>
+
   <div id="modal2" class="modal" onclick="closeModal('modal2')">
     <div class="modal-content" onclick="event.stopPropagation()">
       <button class="modal-close" onclick="closeModal('modal2')" aria-label="Cerrar">&times;</button>
-      <h3>Samsung Galaxy S23</h3>
-      <span class="precio">$1,850,000</span>
-      <span class="estado excelente">Excelente</span>
+      
+      <!-- Galería de fotos -->
+      <div class="foto-galeria">
+        <div class="foto-principal">
+          <img src="img/samsung-s23-1.jpg" alt="Samsung Galaxy S23 vista principal" id="foto-main-2" onclick="openZoom(this.src, this.alt)">
+        </div>
+        <div class="fotos-thumbnails">
+          <img src="img/samsung-s23-1.jpg" alt="Vista frontal" onclick="cambiarFoto('foto-main-2', this.src)">
+          <img src="img/samsung-s23-2.jpg" alt="Vista trasera" onclick="cambiarFoto('foto-main-2', this.src)">
+          <img src="img/samsung-s23-3.jpg" alt="Vista lateral" onclick="cambiarFoto('foto-main-2', this.src)">
+          <img src="img/samsung-s23-4.jpg" alt="Accesorios" onclick="cambiarFoto('foto-main-2', this.src)">
+        </div>
+      </div>
+      
       <div class="separador-modal"></div>
       <ul class="caracteristicas">
         <li>256GB - Phantom Black</li>
@@ -169,12 +192,23 @@
       </div>
     </div>
   </div>
+
   <div id="modal3" class="modal" onclick="closeModal('modal3')">
     <div class="modal-content" onclick="event.stopPropagation()">
       <button class="modal-close" onclick="closeModal('modal3')" aria-label="Cerrar">&times;</button>
-      <h3>iPhone 13</h3>
-      <span class="precio">$1,650,000</span>
-      <span class="estado muy-bueno">Muy bueno</span>
+      
+      <!-- Galería de fotos -->
+      <div class="foto-galeria">
+        <div class="foto-principal">
+          <img src="img/iphone13-1.jpg" alt="iPhone 13 vista principal" id="foto-main-3" onclick="openZoom(this.src, this.alt)">
+        </div>
+        <div class="fotos-thumbnails">
+          <img src="img/iphone13-1.jpg" alt="Vista frontal" onclick="cambiarFoto('foto-main-3', this.src)">
+          <img src="img/iphone13-2.jpg" alt="Vista trasera" onclick="cambiarFoto('foto-main-3', this.src)">
+          <img src="img/iphone13-3.jpg" alt="Vista lateral" onclick="cambiarFoto('foto-main-3', this.src)">
+        </div>
+      </div>
+      
       <div class="separador-modal"></div>
       <ul class="caracteristicas">
         <li>128GB - Blue</li>
@@ -193,12 +227,24 @@
       </div>
     </div>
   </div>
+
   <div id="modal4" class="modal" onclick="closeModal('modal4')">
     <div class="modal-content" onclick="event.stopPropagation()">
       <button class="modal-close" onclick="closeModal('modal4')" aria-label="Cerrar">&times;</button>
-      <h3>Xiaomi Redmi Note 12</h3>
-      <span class="precio">$480,000</span>
-      <span class="estado como-nuevo">Como nuevo</span>
+      
+      <!-- Galería de fotos -->
+      <div class="foto-galeria">
+        <div class="foto-principal">
+          <img src="img/xiaomi-redmi-1.jpg" alt="Xiaomi Redmi Note 12 vista principal" id="foto-main-4">
+        </div>
+        <div class="fotos-thumbnails">
+          <img src="img/xiaomi-redmi-1.jpg" alt="Vista frontal" onclick="cambiarFoto('foto-main-4', this.src)">
+          <img src="img/xiaomi-redmi-2.jpg" alt="Vista trasera" onclick="cambiarFoto('foto-main-4', this.src)">
+          <img src="img/xiaomi-redmi-3.jpg" alt="Vista lateral" onclick="cambiarFoto('foto-main-4', this.src)">
+          <img src="img/xiaomi-redmi-4.jpg" alt="Accesorios" onclick="cambiarFoto('foto-main-4', this.src)">
+        </div>
+      </div>
+      
       <div class="separador-modal"></div>
       <ul class="caracteristicas">
         <li>128GB - Graphite Gray</li>
@@ -217,12 +263,24 @@
       </div>
     </div>
   </div>
+
   <div id="modal5" class="modal" onclick="closeModal('modal5')">
     <div class="modal-content" onclick="event.stopPropagation()">
       <button class="modal-close" onclick="closeModal('modal5')" aria-label="Cerrar">&times;</button>
-      <h3>Motorola Edge 30</h3>
-      <span class="precio">$750,000</span>
-      <span class="estado excelente">Excelente</span>
+      
+      <!-- Galería de fotos -->
+      <div class="foto-galeria">
+        <div class="foto-principal">
+          <img src="img/motorola-edge-1.jpg" alt="Motorola Edge 30 vista principal" id="foto-main-5">
+        </div>
+        <div class="fotos-thumbnails">
+          <img src="img/motorola-edge-1.jpg" alt="Vista frontal" onclick="cambiarFoto('foto-main-5', this.src)">
+          <img src="img/motorola-edge-2.jpg" alt="Vista trasera" onclick="cambiarFoto('foto-main-5', this.src)">
+          <img src="img/motorola-edge-3.jpg" alt="Vista lateral" onclick="cambiarFoto('foto-main-5', this.src)">
+          <img src="img/motorola-edge-4.jpg" alt="Accesorios" onclick="cambiarFoto('foto-main-5', this.src)">
+        </div>
+      </div>
+      
       <div class="separador-modal"></div>
       <ul class="caracteristicas">
         <li>256GB - Meteor Gray</li>
@@ -241,6 +299,15 @@
       </div>
     </div>
   </div>
+
+  <!-- ZOOM MODAL -->
+  <div id="zoomModal" class="zoom-modal" onclick="closeZoom()">
+    <div class="zoom-content" onclick="event.stopPropagation()">
+      <button class="zoom-close" onclick="closeZoom()">&times;</button>
+      <img id="zoomImage" src="" alt="">
+    </div>
+  </div>
+
   <!-- ====================================
        FOOTER IGUAL A INDEX
        ==================================== -->
@@ -295,11 +362,38 @@
       document.getElementById(modalId).classList.remove('show');
       document.body.style.overflow = 'auto';
     }
+    function cambiarFoto(mainId, newSrc) {
+      const mainImg = document.getElementById(mainId);
+      mainImg.src = newSrc;
+      // Actualizar el onclick para el zoom con la nueva imagen
+      mainImg.onclick = function() {
+        openZoom(newSrc, this.alt);
+      };
+    }
+    function openZoom(imageSrc, imageAlt) {
+      const zoomModal = document.getElementById('zoomModal');
+      const zoomImage = document.getElementById('zoomImage');
+      zoomImage.src = imageSrc;
+      zoomImage.alt = imageAlt;
+      zoomModal.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeZoom() {
+      const zoomModal = document.getElementById('zoomModal');
+      zoomModal.classList.remove('show');
+      document.body.style.overflow = 'auto';
+    }
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') {
+        // Cerrar modales de dispositivos
         document.querySelectorAll('.modal.show').forEach(function(modal) {
           modal.classList.remove('show');
         });
+        // Cerrar zoom modal
+        const zoomModal = document.getElementById('zoomModal');
+        if (zoomModal.classList.contains('show')) {
+          zoomModal.classList.remove('show');
+        }
         document.body.style.overflow = 'auto';
       }
     });
