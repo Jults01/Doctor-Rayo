@@ -73,10 +73,7 @@ img {
 .header-wrapper { 
   display: flex; 
   justify-content: space-between; 
-  align-items: center; 
-  max-width: 1200px; 
-  margin: 0 auto; 
-  padding: 0 var(--space-xl); 
+  align-items: center;
 }
 
 .logo h1 {
@@ -225,8 +222,8 @@ img {
   box-shadow: var(--shadow-light);
   position: relative; 
   overflow: hidden; 
-  flex: 0 0 200px; 
-  height: 250px;
+  flex: 0 0 200px;
+  height: 230px; 
   scroll-snap-align: start; 
   cursor: pointer; 
   text-align: center;
@@ -242,7 +239,7 @@ img {
   width: 100px;
   height: 100px;
   object-fit: contain;
-  margin: 0 auto 10px;
+  margin: 0 10px;
   border-radius: 12px;
   background: transparent;
   padding: 0;
@@ -760,10 +757,13 @@ img {
     --gap-section: 13px; 
   }
   
+  .container {
+    padding: 0 var(--space-md);
+  }
+  
   .header-wrapper { 
     flex-direction: column; 
-    gap: var(--space-sm); 
-    padding: var(--space-sm) var(--space-lg);
+    gap: var(--space-sm);
   }
   
   .header-nav { 
