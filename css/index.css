@@ -177,7 +177,7 @@ img {max-width: 100%; height: auto;}
 /* =================== 7. TRES RECTÁNGULOS BENEFICIOS =================== */
 .rectangles-benefits {
   padding: var(--gap-section) 0;
-  background: var(--color-light-gray);
+  background: transparent;
 }
 
 .rectangles-grid {
@@ -472,7 +472,7 @@ img {max-width: 100%; height: auto;}
 }
 
 .toggle-btn {
-  background: var(--color-black);
+  background: black;
   border: none;
   padding: 8px 16px;
   font-size: 0.9rem;
@@ -486,8 +486,8 @@ img {max-width: 100%; height: auto;}
 }
 
 .toggle-btn.active {
-  background: var(--color-black);
-  color: var(--color-white);
+  background: transparent;
+  color: var(--color-black);
 }
 
 .toggle-btn:hover {
@@ -508,7 +508,7 @@ img {max-width: 100%; height: auto;}
 }
 
 .process-cta {
-  color: #2563eb;
+  color: var(--color-primary);
   font-weight: 600;
   font-size: 1rem;
   text-decoration: none;
@@ -520,7 +520,6 @@ img {max-width: 100%; height: auto;}
 
 .process-cta:hover {
   transform: translateX(5px);
-  text-decoration: underline;
 }
 
 .steps-grid {
