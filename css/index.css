@@ -728,7 +728,7 @@ img {max-width: 100%; height: auto;}
   .rectangles-grid {
     display:flex !important; 
     overflow-x:scroll; 
-    gap:15px; 
+    gap:20px; 
     scroll-snap-type:x mandatory; 
     padding:0 20px var(--space-md) 20px;
     scrollbar-width:none;
@@ -737,7 +737,7 @@ img {max-width: 100%; height: auto;}
   .rectangle-card {
     flex:0 0 80vw; 
     max-width:80vw; 
-    min-width:80vw;
+    min-width:85vw;
     scroll-snap-align:start;
   }
   
