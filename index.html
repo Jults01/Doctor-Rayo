@@ -127,7 +127,7 @@
       <div class="container">
         <div class="shelf-head">
           <h2>Celulares disponibles</h2>
-          <a class="shelf-ver-todo" href="categorias/celulares">Ver todos</a>
+          <a class="shelf-ver-todo" href="comprar.html">Ver todos</a>
         </div>
         <div class="shelf-track" id="shelf-track" aria-live="polite"></div>
       </div>
@@ -376,25 +376,92 @@
        INICIALIZACIÓN AL CARGAR
        ===================================== */
     document.addEventListener('DOMContentLoaded', function() {
-      // Datos del shelf de productos
+      // Datos del shelf de productos con estructura Kavak
       var shelfData = [
-        {name:'iPhone 15 Pro', price:'Desde $2.890.000', badge:'Más vendido', img:'img/iphone15pro.png', href:'categorias/celulares/iphone'},
-        {name:'iPhone 13', price:'Desde $1.690.000', badge:'Top ventas', img:'img/prod-iphone13.jpg', href:'categorias/celulares/iphone'},
-        {name:'Samsung S21', price:'Desde $1.250.000', badge:'Recomendado', img:'img/prod-s21.jpg', href:'categorias/celulares/samsung'},
-        {name:'Xiaomi 12', price:'Desde $980.000', badge:'Ahorra', img:'img/prod-xiaomi12.jpg', href:'categorias/celulares/xiaomi'},
-        {name:'Motorola G', price:'Desde $620.000', badge:'Económico', img:'img/prod-moto-g.jpg', href:'categorias/celulares/motorola'}
+        {
+          name: 'iPhone 15 Pro',
+          specs: '256GB • Titanio Natural',
+          priceFrom: '$3.290.000',
+          price: '$2.890.000',
+          monthly: '$4.600 / mes*',
+          badge: 'Más vendido',
+          badgeClass: 'mas-vendido',
+          img: 'img/iphone15pro.png',
+          href: 'comprar.html',
+          estado: 'Como nuevo',
+          estadoClass: 'como-nuevo'
+        },
+        {
+          name: 'iPhone 13',
+          specs: '128GB • Azul',
+          priceFrom: '$1.890.000',
+          price: '$1.690.000',
+          monthly: '$2.700 / mes*',
+          badge: 'Top ventas',
+          badgeClass: 'top-ventas',
+          img: 'img/prod-iphone13.jpg',
+          href: 'comprar.html',
+          estado: 'Excelente',
+          estadoClass: 'excelente'
+        },
+        {
+          name: 'Samsung Galaxy S21',
+          specs: '128GB • Negro',
+          price: '$1.250.000',
+          monthly: '$1.990 / mes*',
+          badge: 'Recomendado',
+          badgeClass: 'recomendado',
+          img: 'img/prod-s21.jpg',
+          href: 'comprar.html',
+          estado: 'Muy bueno',
+          estadoClass: 'muy-bueno'
+        },
+        {
+          name: 'Xiaomi Redmi Note 12',
+          specs: '64GB • Negro',
+          price: '$480.000',
+          monthly: '$760 / mes*',
+          badge: 'Ahorra',
+          badgeClass: 'ahorra',
+          img: 'img/prod-xiaomi12.jpg',
+          href: 'comprar.html',
+          estado: 'Como nuevo',
+          estadoClass: 'como-nuevo'
+        },
+        {
+          name: 'Motorola Edge 30',
+          specs: '256GB • Verde',
+          priceFrom: '$950.000',
+          price: '$750.000',
+          monthly: '$1.200 / mes*',
+          badge: 'Oferta',
+          badgeClass: 'oferta',
+          img: 'img/prod-moto-g.jpg',
+          href: 'comprar.html',
+          estado: 'Excelente',
+          estadoClass: 'excelente'
+        }
       ];
 
-      // Renderizar productos en el shelf
+      // Renderizar productos en el shelf con estructura Kavak
       var track = document.getElementById('shelf-track');
       if (track) {
         track.innerHTML = shelfData.map(function(p) {
+          var priceFromHtml = p.priceFrom ? '<span class="precio-desde">' + p.priceFrom + '</span>' : '';
           return '<article class="shelf-card">' +
-            '<img src="' + p.img + '" alt="' + p.name + '" loading="lazy" decoding="async">' +
-            '<div class="card-body">' +
-              '<span class="badge">' + p.badge + '</span>' +
+            '<div class="card-badge ' + p.badgeClass + '">' + p.badge + '</div>' +
+            '<div class="producto-imagen-container">' +
+              '<img src="' + p.img + '" alt="' + p.name + '" loading="lazy" decoding="async">' +
+            '</div>' +
+            '<div class="producto-info">' +
               '<h3>' + p.name + '</h3>' +
-              '<div class="price">' + p.price + '</div>' +
+              '<p class="producto-specs">' + p.specs + '</p>' +
+              '<div class="precio-container">' +
+                priceFromHtml +
+                '<span class="precio-actual">' + p.price + '</span>' +
+                '<span class="precio-mensual">' + p.monthly + '</span>' +
+              '</div>' +
+              '<span class="estado ' + p.estadoClass + '">' + p.estado + '</span>' +
               '<a class="cta" href="' + p.href + '">Ver más</a>' +
             '</div>' +
           '</article>';

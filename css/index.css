@@ -1,5 +1,5 @@
 /* ====================================================
-   DOCTOR RAYO - HOJA DE ESTILOS PRINCIPAL (FINAL VERSION)
+   DOCTOR RAYO - HOJA DE ESTILOS PRINCIPAL (KAVAK CAROUSEL VERSION)
    ==================================================== */
 
 /* =================== 1. VARIABLES CSS =================== */
@@ -22,7 +22,7 @@
   --font-size-sm: 0.9rem;  --font-size-base: 1rem; --font-size-md: 15px;
   --font-size-lg: 20px;    --font-size-xl: 20px;   --font-size-xxl: 2rem;
   --font-size-xxxl: 2.5rem;
-  --shelf-card-width: 180px;    --shelf-img-height: 140px;
+  --shelf-card-width: 280px;    --shelf-img-height: 200px;
   --benefit-card-min: 220px;    --benefit-icon-size: 44px;
   --reviews-nav-size: 40px;
   --transition-speed: 0.3s;
@@ -281,52 +281,204 @@ img {max-width: 100%; height: auto;}
   line-height: 1.6;
 }
 
-/* =================== 9. SHELF DE PRODUCTOS =================== */
+/* =================== 9. SHELF DE PRODUCTOS ESTILO KAVAK CARRUSEL =================== */
 .shelf {background:var(--color-white); padding:var(--gap-section) 0;}
+
 .shelf-head {
   display:flex; flex-direction:column; align-items:center; justify-content:center;
   padding:var(--space-lg) 0 var(--space-xl) 0; margin-bottom:0; position:relative;
 }
+
 .shelf-head h2 {
   font-size:var(--font-size-xxl); color:var(--color-text-dark); text-align:center; width:100%; margin:0 auto;
 }
+
 .shelf-ver-todo {
   font-weight:600; color: var(--color-primary); text-align:right;
   margin-top:6px; margin-left:auto; margin-right:0;
 }
+
 .shelf-ver-todo:hover {text-decoration: underline;}
+
+/* CARRUSEL KAVAK - SIEMPRE SCROLL HORIZONTAL */
 .shelf-track {
-  margin-top:var(--gap-content); display:grid; grid-auto-flow:column;
-  grid-auto-columns:var(--shelf-card-width); gap:var(--space-md);
-  overflow-x:auto; padding-bottom:6px; scroll-snap-type:x proximity;
-  -webkit-overflow-scrolling:touch; scrollbar-width:none;
+  margin-top: var(--gap-content);
+  display: flex; /* SIEMPRE CARRUSEL */
+  overflow-x: auto;
+  gap: 20px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 0 20px 20px 20px;
 }
-.shelf-track::-webkit-scrollbar {display:none;}
+
+.shelf-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* TARJETAS ESTILO KAVAK PARA CARRUSEL */
 .shelf-card {
-  scroll-snap-align:start; background:var(--color-white); border:1px solid var(--color-medium-gray);
-  border-radius:10px; box-shadow:var(--shadow-light); display:flex; flex-direction:column; overflow:hidden;
-  transition: box-shadow .2s, transform .2s;
-  width:var(--shelf-card-width); max-width:var(--shelf-card-width);
+  flex: 0 0 var(--shelf-card-width);
+  min-width: var(--shelf-card-width);
+  scroll-snap-align: start;
+  background: var(--color-white);
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all var(--transition-speed) ease;
+  position: relative;
+  height: 420px;
 }
-.shelf-card:hover {transform:translateY(-4px); box-shadow:var(--shadow-medium);}
-.shelf-card img {width:100%; height:var(--shelf-img-height); object-fit:contain; background:var(--color-white); padding:6px;}
-.shelf-card .card-body {padding:6px 8px 10px; display:flex; flex-direction:column; gap:4px;}
-.shelf-card .badge {
-  align-self:flex-start; font-size:.7rem; font-weight:600; color:var(--color-white);
-  background:var(--color-primary); padding:2px 7px; border-radius:999px; margin-bottom:4px;
+
+.shelf-card:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  border-color: var(--color-primary);
 }
+
+/* BADGES ESTILO KAVAK */
+.card-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  z-index: 2;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.card-badge.mas-vendido { background: #e60000; }
+.card-badge.top-ventas { background: #ff6b35; }
+.card-badge.recomendado { background: #2563eb; }
+.card-badge.ahorra { background: #16a34a; }
+.card-badge.oferta { background: #dc2626; }
+
+/* CONTENEDOR DE IMAGEN ESTILO KAVAK */
+.producto-imagen-container {
+  height: var(--shelf-img-height);
+  background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f4 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px 16px 0 0;
+}
+
+.producto-imagen-container img {
+  width: 140px;
+  height: 180px;
+  object-fit: contain;
+  padding: 15px;
+  transition: transform var(--transition-speed) ease;
+}
+
+.shelf-card:hover .producto-imagen-container img {
+  transform: scale(1.05);
+}
+
+/* INFO DEL PRODUCTO ESTILO KAVAK */
+.producto-info {
+  padding: 20px 16px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  text-align: left;
+}
+
 .shelf-card h3 {
-  font-size:.92rem; color:var(--color-text-dark); line-height:1.2;
-  white-space:nowrap; overflow:hidden; text-overflow:ellipsis; margin-bottom:2px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  line-height: 1.2;
+  margin-bottom: 4px;
 }
-.shelf-card .price {font-weight:600; color:var(--color-text-dark); font-size:.85rem; margin-bottom:2px;}
+
+.producto-specs {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 12px;
+  font-weight: 400;
+}
+
+/* CONTENEDOR DE PRECIOS ESTILO KAVAK */
+.precio-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-bottom: 12px;
+}
+
+.precio-desde {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  text-decoration: line-through;
+  font-weight: 400;
+}
+
+.precio-actual {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  line-height: 1;
+}
+
+.precio-mensual {
+  font-size: 0.85rem;
+  color: #6b7280;
+  font-weight: 400;
+}
+
+/* ESTADO DEL PRODUCTO */
+.estado {
+  color: white;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: inline-block;
+  align-self: flex-start;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.estado.como-nuevo { background: #16a34a; }
+.estado.excelente { background: var(--color-accent-green); }
+.estado.muy-bueno { background: #eab308; }
+
+/* CTA BUTTON */
 .shelf-card .cta {
-  display:flex; justify-content:center; align-items:center; width:100%;
-  border:1px solid var(--color-primary); color:var(--color-white);
-  background:var(--color-primary); border-radius:999px; padding:8px 0; font-weight:600; font-size:.9rem;
-  transition: background .2s, border-color .2s; margin-top:6px; text-align:center; cursor:pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border: 1px solid var(--color-primary);
+  color: var(--color-white);
+  background: var(--color-primary);
+  border-radius: 25px;
+  padding: 10px 0;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all var(--transition-speed) ease;
+  margin-top: auto;
+  text-align: center;
+  cursor: pointer;
 }
-.shelf-card .cta:hover {background:var(--color-primary-dark); border-color:var(--color-primary-dark);}
+
+.shelf-card .cta:hover {
+  background: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  transform: translateY(-1px);
+}
 
 /* =================== 10. SECCIÓN REPARACIÓN DEDICADA =================== */
 .repair-section {
@@ -680,17 +832,39 @@ img {max-width: 100%; height: auto;}
   .hero-title {font-size: 3.5rem;}
 }
 
+/* MANTENER CARRUSEL SIEMPRE - NO CONVERTIR A GRID EN DESKTOP */
 @media (min-width: 992px) {
-  .shelf-track {display:grid; grid-auto-flow:initial; overflow:visible; grid-template-columns:repeat(4,minmax(220px,1fr)); justify-content:center;}
-  .shelf-card {width:auto; max-width:none;}
+  .shelf-track {
+    /* MANTIENE CARRUSEL - ELIMINADO EL GRID CONVERSION */
+    gap: 24px;
+    padding: 0 30px 20px 30px;
+  }
+  
+  .shelf-card {
+    flex: 0 0 300px;
+    min-width: 300px;
+    height: 440px;
+  }
+
+  .producto-imagen-container {
+    height: 220px;
+  }
+
+  .producto-imagen-container img {
+    width: 150px;
+    height: 200px;
+  }
 }
 
 @media (min-width: 1200px) {
-  .shelf-track {grid-template-columns:repeat(5,minmax(220px,1fr));}
+  .shelf-track {
+    gap: 28px;
+    padding: 0 40px 20px 40px;
+  }
 }
 
 @media (max-width: 767px) {
-  :root {--gap-section:13px;}
+  :root {--gap-section:13px; --shelf-card-width: 240px; --shelf-img-height: 180px;}
   
   .header-wrapper {
     flex-direction:column; 
@@ -807,40 +981,45 @@ img {max-width: 100%; height: auto;}
     padding:var(--space-md);
   }
   
-  /* Video testimonials responsive - estilo Kavak carrusel */
-  .video-testimonials {padding:var(--space-md) 0;}
-  .video-testimonials h2 {font-size:1.25rem; margin-bottom:var(--space-lg);}
-  .testimonials-grid {
-    display:flex !important; 
-    overflow-x:scroll; 
-    gap:15px; 
-    scroll-snap-type:x mandatory; 
-    padding:0 20px var(--space-md) 20px;
-    scrollbar-width:none;
-  }
-  .testimonials-grid::-webkit-scrollbar {display:none;}
-  .video-testimonial {
-    flex:0 0 75vw; 
-    max-width:75vw; 
-    min-width:75vw;
-    scroll-snap-align:start;
-    height:auto;
-  }
-  .video-testimonial video {
-    height:180px;
-    border-radius:10px;
-  }
-  .testimonial-info {
-    padding:var(--space-md);
-  }
-  
+  /* Shelf responsive - CARRUSEL MÓVIL MEJORADO */
   .shelf {padding:var(--space-md) 0 var(--gap-section) 0;}
   .shelf .container {padding:0 10px !important;}
   .shelf-head {padding:0 var(--space-lg) var(--space-md) var(--space-lg);}
   .shelf-head h2 {font-size:1.25rem;}
   .shelf-ver-todo {font-size:0.9rem;}
-  .shelf-track {display:flex !important; overflow-x:scroll; gap:12px; scroll-snap-type:x mandatory; padding:0 20px var(--space-md) 20px;}
-  .shelf-card {flex:0 0 45vw; max-width:45vw; min-width:45vw;}
+  
+  .shelf-track {
+    gap: 15px;
+    padding: 0 20px var(--space-md) 20px;
+  }
+  
+  .shelf-card {
+    flex: 0 0 70vw;
+    min-width: 70vw;
+    height: 400px;
+  }
+
+  .producto-imagen-container {
+    height: 160px;
+  }
+
+  .producto-imagen-container img {
+    width: 120px;
+    height: 150px;
+  }
+
+  .producto-info {
+    padding: 16px 14px 14px 14px;
+    gap: 5px;
+  }
+
+  .shelf-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .precio-actual {
+    font-size: 1.3rem;
+  }
   
   .reviews {padding:var(--gap-section) 0;}
   .reviews h2 {font-size:1.25rem;}
