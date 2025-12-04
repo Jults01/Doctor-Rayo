@@ -48,11 +48,13 @@
         <p>Compra fácil, seguro y sin salir de casa con Doctor Rayo.</p>
       </div>
     </section>
+
     <!-- ========================================
-         CELULARES DISPONIBLES
+         CELULARES DISPONIBLES - PRIMERA SECCIÓN
          ======================================== -->
     <section class="dispositivos-disponibles">
       <h2>Celulares disponibles</h2>
+      <p class="results-count">2,456 Resultados</p>
       <div class="grid-dispositivos">
         <div class="dispositivo-card" onclick="openModal('modal1')">
           <img src="img/iphone15promax-card.jpg" alt="iPhone 15 pro max" class="dispositivo-foto">
@@ -84,38 +86,114 @@
           <span class="precio">$750,000</span>
           <span class="estado excelente">Excelente</span>
         </div>
+        <div class="dispositivo-card" onclick="openModal('modal6')">
+          <img src="img/iphone14-card.jpg" alt="iPhone 14" class="dispositivo-foto">
+          <h3>iPhone 14</h3>
+          <span class="precio">$2,180,000</span>
+          <span class="estado como-nuevo">Como nuevo</span>
+        </div>
+        <div class="dispositivo-card" onclick="openModal('modal7')">
+          <img src="img/pixel7-card.jpg" alt="Google Pixel 7" class="dispositivo-foto">
+          <h3>Google Pixel 7</h3>
+          <span class="precio">$980,000</span>
+          <span class="estado excelente">Excelente</span>
+        </div>
+        <div class="dispositivo-card" onclick="openModal('modal8')">
+          <img src="img/oneplus11-card.jpg" alt="OnePlus 11" class="dispositivo-foto">
+          <h3>OnePlus 11</h3>
+          <span class="precio">$1,350,000</span>
+          <span class="estado muy-bueno">Muy bueno</span>
+        </div>
       </div>
     </section>
+
     <!-- ========================================
-         BENEFICIOS
+         BENEFICIOS - SEGUNDA SECCIÓN
          ======================================== -->
     <section class="beneficios">
       <div class="container">
-        <h2>Beneficios que te respaldan</h2>
+        <h2>Beneficios</h2>
         <div class="grid-beneficios">
           <div class="beneficio-card">
             <img src="img/icon-garantia.svg" alt="Garantía">
-            <h3>Garantía</h3>
-            <p>Compra tu equipo sin preocupaciones, garantía de 12 meses.</p>
+            <h3>Garantía 12 meses</h3>
+            <p>Respaldo total en todos nuestros equipos</p>
           </div>
           <div class="beneficio-card">
             <img src="img/icon-envio.svg" alt="Envío">
-            <h3>Domicilio</h3>
-            <p>Entrega segura y rápida directamente en la puerta de tu casa.</p>
+            <h3>Evaluación 15 minutos</h3>
+            <p>Cotización rápida por WhatsApp</p>
           </div>
           <div class="beneficio-card">
             <img src="img/icon-calidad.svg" alt="Calidad">
-            <h3>Revisión</h3>
-            <p>Inspección experta para darte un equipo como nuevo.</p>
-          </div>
-          <div class="beneficio-card">
-            <img src="img/icon-pago.svg" alt="Pago">
-            <h3>Pago</h3>
-            <p>Tu método favorito y con total confianza.</p>
+            <h3>Servicio a domicilio</h3>
+            <p>Llegamos hasta tu casa u oficina</p>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- ========================================
+         FAQ - TERCERA SECCIÓN
+         ======================================== -->
+    <section class="faq-section">
+      <div class="container">
+        <h2>Preguntas frecuentes</h2>
+        
+        <div class="faq-container">
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <h3>¿Cuánto tiempo de garantía tienen los celulares?</h3>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>Todos nuestros celulares incluyen garantía de 12 meses que cubre defectos de fabricación y funcionamiento. La garantía no aplica para daños físicos o por mal uso.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <h3>¿Los celulares son originales?</h3>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>Sí, todos nuestros equipos son 100% originales. Cada celular pasa por un proceso de certificación de 30 puntos para garantizar su autenticidad y calidad.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <h3>¿Hacen envíos a toda Colombia?</h3>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>Actualmente realizamos envíos gratuitos en Bogotá. Para otras ciudades, el costo de envío varía según la ubicación. Contáctanos para conocer las tarifas específicas.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <h3>¿Puedo ver el celular antes de comprarlo?</h3>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>Por supuesto. Puedes agendar una cita para revisar el equipo en nuestras instalaciones o solicitar el servicio a domicilio donde podrás inspeccionar el celular antes de confirmar la compra.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <h3>¿Qué métodos de pago aceptan?</h3>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>Aceptamos efectivo, transferencias bancarias, tarjetas de crédito y débito. También manejamos planes de financiamiento sin intereses hasta por 12 meses.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ========================================
          CTA WHATSAPP
          ======================================== -->
@@ -125,8 +203,9 @@
       <a class="cta-button" href="https://wa.me/573046486740" target="_blank" aria-label="WhatsApp Doctor Rayo">¡Hablemos ahora!</a>
     </section>
   </main>
+
   <!-- ========================================
-       MODALES DE DISPOSITIVOS
+       MODALES DE DISPOSITIVOS (MANTENER TODOS)
        ======================================== -->
   <div id="modal1" class="modal" onclick="closeModal('modal1')">
     <div class="modal-content" onclick="event.stopPropagation()">
@@ -165,6 +244,7 @@
     </div>
   </div>
 
+  <!-- Resto de modales mantener igual... -->
   <div id="modal2" class="modal" onclick="closeModal('modal2')">
     <div class="modal-content" onclick="event.stopPropagation()">
       <button class="modal-close" onclick="closeModal('modal2')" aria-label="Cerrar">&times;</button>
@@ -308,6 +388,114 @@
     </div>
   </div>
 
+  <div id="modal6" class="modal" onclick="closeModal('modal6')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal('modal6')" aria-label="Cerrar">&times;</button>
+      
+      <!-- Galería de fotos -->
+      <div class="foto-galeria">
+        <div class="foto-principal">
+          <img src="img/iphone14-1.jpg" alt="iPhone 14 vista principal" id="foto-main-6" onclick="openZoom(this.src, this.alt)">
+        </div>
+        <div class="fotos-thumbnails">
+          <img src="img/iphone14-1.jpg" alt="Vista frontal" onclick="cambiarFoto('foto-main-6', this.src, this.alt)">
+          <img src="img/iphone14-2.jpg" alt="Vista trasera" onclick="cambiarFoto('foto-main-6', this.src, this.alt)">
+          <img src="img/iphone14-3.jpg" alt="Vista lateral" onclick="cambiarFoto('foto-main-6', this.src, this.alt)">
+          <img src="img/iphone14-4.jpg" alt="Accesorios" onclick="cambiarFoto('foto-main-6', this.src, this.alt)">
+        </div>
+      </div>
+      
+      <div class="separador-modal"></div>
+      <ul class="caracteristicas">
+        <li>256GB - Purple</li>
+        <li>Batería al 94%</li>
+        <li>Como nuevo</li>
+        <li>Caja y accesorios originales</li>
+        <li>Face ID funcionando perfectamente</li>
+        <li>Cámaras en perfecto estado</li>
+      </ul>
+      <div class="info-adicional">
+        <p><span class="highlight">Garantía:</span> 12 meses</p>
+        <p><span class="highlight">Entrega:</span> Inmediata</p>
+      </div>
+      <div class="btn-container">
+        <a href="https://wa.me/573046486740?text=¡Hola! Me interesa el iPhone 14 de $2,180,000. ¿Está disponible?" class="btn-whatsapp" target="_blank">¡Me interesa este celular!</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal7" class="modal" onclick="closeModal('modal7')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal('modal7')" aria-label="Cerrar">&times;</button>
+      
+      <!-- Galería de fotos -->
+      <div class="foto-galeria">
+        <div class="foto-principal">
+          <img src="img/pixel7-1.jpg" alt="Google Pixel 7 vista principal" id="foto-main-7" onclick="openZoom(this.src, this.alt)">
+        </div>
+        <div class="fotos-thumbnails">
+          <img src="img/pixel7-1.jpg" alt="Vista frontal" onclick="cambiarFoto('foto-main-7', this.src, this.alt)">
+          <img src="img/pixel7-2.jpg" alt="Vista trasera" onclick="cambiarFoto('foto-main-7', this.src, this.alt)">
+          <img src="img/pixel7-3.jpg" alt="Vista lateral" onclick="cambiarFoto('foto-main-7', this.src, this.alt)">
+          <img src="img/pixel7-4.jpg" alt="Accesorios" onclick="cambiarFoto('foto-main-7', this.src, this.alt)">
+        </div>
+      </div>
+      
+      <div class="separador-modal"></div>
+      <ul class="caracteristicas">
+        <li>128GB - Snow White</li>
+        <li>Batería al 91%</li>
+        <li>Excelente estado</li>
+        <li>Cargador incluido</li>
+        <li>Cámaras Google AI</li>
+        <li>Android puro</li>
+      </ul>
+      <div class="info-adicional">
+        <p><span class="highlight">Garantía:</span> 12 meses</p>
+        <p><span class="highlight">Entrega:</span> Inmediata</p>
+      </div>
+      <div class="btn-container">
+        <a href="https://wa.me/573046486740?text=¡Hola! Me interesa el Google Pixel 7 de $980,000. ¿Está disponible?" class="btn-whatsapp" target="_blank">¡Me interesa este celular!</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal8" class="modal" onclick="closeModal('modal8')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal('modal8')" aria-label="Cerrar">&times;</button>
+      
+      <!-- Galería de fotos -->
+      <div class="foto-galeria">
+        <div class="foto-principal">
+          <img src="img/oneplus11-1.jpg" alt="OnePlus 11 vista principal" id="foto-main-8" onclick="openZoom(this.src, this.alt)">
+        </div>
+        <div class="fotos-thumbnails">
+          <img src="img/oneplus11-1.jpg" alt="Vista frontal" onclick="cambiarFoto('foto-main-8', this.src, this.alt)">
+          <img src="img/oneplus11-2.jpg" alt="Vista trasera" onclick="cambiarFoto('foto-main-8', this.src, this.alt)">
+          <img src="img/oneplus11-3.jpg" alt="Vista lateral" onclick="cambiarFoto('foto-main-8', this.src, this.alt)">
+          <img src="img/oneplus11-4.jpg" alt="Accesorios" onclick="cambiarFoto('foto-main-8', this.src, this.alt)">
+        </div>
+      </div>
+      
+      <div class="separador-modal"></div>
+      <ul class="caracteristicas">
+        <li>256GB - Titan Black</li>
+        <li>Batería al 89%</li>
+        <li>Muy bueno estado</li>
+        <li>Carga rápida 100W</li>
+        <li>Pantalla AMOLED 120Hz</li>
+        <li>Cámaras Hasselblad</li>
+      </ul>
+      <div class="info-adicional">
+        <p><span class="highlight">Garantía:</span> 12 meses</p>
+        <p><span class="highlight">Entrega:</span> 2-3 días hábiles</p>
+      </div>
+      <div class="btn-container">
+        <a href="https://wa.me/573046486740?text=¡Hola! Me interesa el OnePlus 11 de $1,350,000. ¿Está disponible?" class="btn-whatsapp" target="_blank">¡Me interesa este celular!</a>
+      </div>
+    </div>
+  </div>
+
   <!-- ZOOM MODAL -->
   <div id="zoomModal" class="zoom-modal" onclick="closeZoom()">
     <div class="zoom-content" onclick="event.stopPropagation()">
@@ -358,14 +546,31 @@
   <a href="https://wa.me/573046486740" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp">
     <img src="whatsapp-icon.png" alt="WhatsApp" loading="lazy" decoding="async">
   </a>
+
   <!-- ========================================
-       JAVASCRIPT CON NAVEGACIÓN POR TECLADO
+       JAVASCRIPT CON FAQ Y NAVEGACIÓN
        ======================================== -->
   <script>
     // Variable global para trackear el modal activo
     let currentModalId = null;
     let currentImageIndex = 0;
     let currentThumbnails = [];
+
+    // FAQ Functionality
+    function toggleFAQ(element) {
+      const faqItem = element.parentElement;
+      const isActive = faqItem.classList.contains('active');
+      
+      // Cerrar todos los FAQs
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+      });
+      
+      // Abrir el clickeado si no estaba activo
+      if (!isActive) {
+        faqItem.classList.add('active');
+      }
+    }
 
     function openModal(modalId) {
       document.getElementById(modalId).classList.add('show');
