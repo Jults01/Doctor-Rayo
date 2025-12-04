@@ -174,7 +174,7 @@ img {
   line-height: 1.5;
 }
 
-/* ========= CELULARES DISPONIBLES - ESTILO KAVAK ========= */
+/* ========= CELULARES DISPONIBLES - ESTILO KAVAK MEJORADO ========= */
 .dispositivos-disponibles {
   padding: var(--space-xxl) 2rem; 
   background: var(--color-light-gray); 
@@ -197,88 +197,159 @@ img {
   text-align: center;
 }
 
-/* GRID 4 PRODUCTOS POR FILA - ESTILO KAVAK */
+/* GRID 4 PRODUCTOS POR FILA - ESTILO KAVAK MEJORADO */
 .grid-dispositivos {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 24px;
   max-width: 1200px; 
   margin: 0 auto; 
   padding: 0 2rem;
 }
 
+/* TARJETAS ESTILO KAVAK - DISEÑO PROFESIONAL */
 .dispositivo-card {
   background: var(--color-white); 
-  border: 1px solid var(--color-medium-gray); 
+  border: 1px solid #e5e7eb; 
   border-radius: 16px; 
-  padding: 14px;
-  transition: box-shadow var(--transition-speed) ease; 
+  padding: 0;
+  transition: all var(--transition-speed) ease; 
   color: var(--color-text-dark); 
-  box-shadow: var(--shadow-light);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
   position: relative; 
   overflow: hidden; 
-  height: 380px;
+  height: 450px;
   cursor: pointer; 
-  text-align: center;
   display: flex;
   flex-direction: column;
 }
 
 .dispositivo-card:hover { 
-  box-shadow: var(--shadow-medium); 
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12); 
   border-color: var(--color-primary);
+  transform: translateY(-2px);
 }
 
-/* FOTO REAL EN TARJETAS - IMAGEN PROTAGONISTA */
+/* BADGES ESTILO KAVAK */
+.card-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  z-index: 2;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.card-badge.mas-vendido { background: #e60000; }
+.card-badge.excelente-badge { background: #16a34a; }
+.card-badge.top-ventas { background: #ff6b35; }
+.card-badge.como-nuevo-badge { background: #16a34a; }
+.card-badge.oferta { background: #dc2626; }
+.card-badge.recomendado { background: #2563eb; }
+.card-badge.popular { background: #7c3aed; }
+
+/* CONTENEDOR DE IMAGEN ESTILO KAVAK */
+.dispositivo-imagen-container {
+  height: 240px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f4 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px 16px 0 0;
+}
+
 .dispositivo-foto {
-  width: 120px;
-  height: 180px;
+  width: 150px;
+  height: 210px;
   object-fit: contain;
-  margin: 0 auto 15px auto;
-  border-radius: 12px;
-  background: transparent;
-  padding: 0;
+  padding: 20px;
+  transition: transform var(--transition-speed) ease;
+}
+
+.dispositivo-card:hover .dispositivo-foto {
+  transform: scale(1.05);
+}
+
+/* INFO DEL PRODUCTO ESTILO KAVAK */
+.dispositivo-info {
+  padding: 24px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  text-align: left;
 }
 
 .dispositivo-card h3 { 
-  font-size: 1.1rem; 
+  font-size: 1.3rem; 
   font-weight: 600; 
-  margin-bottom: 8px; 
   color: var(--color-text-dark); 
   line-height: 1.2;
+  margin-bottom: 6px;
 }
 
-.precio { 
-  font-size: 1.4rem; 
+.dispositivo-specs {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 16px;
+  font-weight: 400;
+}
+
+/* CONTENEDOR DE PRECIOS ESTILO KAVAK */
+.precio-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.precio-desde {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  text-decoration: line-through;
+  font-weight: 400;
+}
+
+.precio-actual { 
+  font-size: 1.6rem; 
   font-weight: 700; 
-  color: var(--color-primary); 
-  margin-bottom: 8px; 
-  display: block;
+  color: var(--color-text-dark); 
+  line-height: 1;
 }
 
+.precio-mensual {
+  font-size: 0.9rem;
+  color: #6b7280;
+  font-weight: 400;
+}
+
+/* ESTADO DEL PRODUCTO */
 .estado { 
   color: white; 
-  padding: 4px 8px; 
-  border-radius: 15px; 
-  font-size: 0.7rem; 
+  padding: 8px 14px; 
+  border-radius: 20px; 
+  font-size: 0.75rem; 
   font-weight: 600; 
   display: inline-block;
+  align-self: flex-start;
   margin-top: auto;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-.estado.como-nuevo { 
-  background: #16a34a; 
-}
+.estado.como-nuevo { background: #16a34a; }
+.estado.excelente { background: var(--color-accent-green); }
+.estado.muy-bueno { background: #eab308; }
 
-.estado.excelente { 
-  background: var(--color-accent-green);
-}
-
-.estado.muy-bueno { 
-  background: #eab308; 
-}
-
-/* ========= MODAL ========= */
+/* ========= MODAL (MANTENER IGUAL) ========= */
 .modal { 
   display: none; 
   position: fixed; 
@@ -336,7 +407,7 @@ img {
   color: var(--color-primary); 
 }
 
-/* ========= GALERÍA DE FOTOS EN MODAL - FORMATO VERTICAL ========= */
+/* ========= GALERÍA DE FOTOS EN MODAL ========= */
 .foto-galeria {
   margin-bottom: 1.5rem;
 }
@@ -363,7 +434,7 @@ img {
   transform: scale(1.02);
 }
 
-/* ========= ZOOM MODAL - MUESTRA IMAGEN COMPLETA ========= */
+/* ========= ZOOM MODAL ========= */
 .zoom-modal {
   display: none;
   position: fixed;
@@ -832,11 +903,24 @@ img {
   outline: none; 
 }
 
-/* ========= RESPONSIVE ========= */
+/* ========= RESPONSIVE CON CARRUSELES ========= */
 @media (max-width: 1024px) {
   .grid-dispositivos {
     grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
+    gap: 18px;
+  }
+
+  .dispositivo-card {
+    height: 420px;
+  }
+
+  .dispositivo-imagen-container {
+    height: 220px;
+  }
+
+  .dispositivo-foto {
+    width: 130px;
+    height: 190px;
   }
 }
 
@@ -892,34 +976,51 @@ img {
     margin-bottom: var(--space-md);
   }
 
+  /* ========= CARRUSEL MÓVIL PRODUCTOS ========= */
   .grid-dispositivos {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    padding: 0 1rem;
+    display: flex !important;
+    overflow-x: scroll;
+    gap: 15px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 20px var(--space-md) 20px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .grid-dispositivos::-webkit-scrollbar {
+    display: none;
   }
   
   .dispositivo-card { 
-    height: 360px;
-    padding: var(--space-lg);
+    flex: 0 0 75vw;
+    max-width: 75vw;
+    min-width: 75vw;
+    height: 440px;
+    scroll-snap-align: start;
   }
   
   .dispositivos-disponibles h2 { 
     font-size: 1.15rem !important; 
     margin-bottom: var(--space-md);
   }
+
+  .dispositivo-imagen-container {
+    height: 220px;
+  }
   
   .dispositivo-foto { 
-    width: 100px; 
-    height: 120px;
+    width: 130px; 
+    height: 190px;
   }
   
   .dispositivo-card h3 { 
-    font-size: 1.05rem; 
+    font-size: 1.2rem; 
     margin-bottom: var(--space-sm);
   }
   
-  .precio { 
-    font-size: 1.2rem;
+  .precio-actual { 
+    font-size: 1.4rem;
   }
   
   .estado {
@@ -943,6 +1044,7 @@ img {
     height: 65px;
   }
   
+  /* ========= CARRUSEL MÓVIL BENEFICIOS ========= */
   .beneficios { 
     padding: var(--gap-section) 0 var(--space-md) 0;
   }
@@ -957,26 +1059,39 @@ img {
   }
   
   .grid-beneficios { 
-    grid-template-columns: 1fr; 
-    gap: 14px; 
+    display: flex !important;
+    overflow-x: scroll;
+    gap: 15px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 20px var(--space-md) 20px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
     margin-bottom: var(--space-md);
+  }
+
+  .grid-beneficios::-webkit-scrollbar {
+    display: none;
   }
   
   .beneficio-card { 
-    padding: 12px 8px; 
-    margin: 6px 0; 
+    flex: 0 0 80vw;
+    max-width: 80vw;
+    min-width: 80vw;
+    scroll-snap-align: start;
+    padding: 20px 15px; 
     border-radius: 12px; 
     box-sizing: border-box; 
-    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
   }
   
   .beneficio-card h3 { 
-    font-size: 0.98rem !important; 
-    margin-bottom: 4px;
+    font-size: 1rem !important; 
+    margin-bottom: 8px;
   }
   
   .beneficio-card p { 
-    font-size: 0.93rem;
+    font-size: 0.9rem;
   }
 
   .faq-section {
@@ -1031,13 +1146,15 @@ img {
 }
 
 @media (max-width: 480px) {
-  .grid-dispositivos {
-    grid-template-columns: 1fr;
-    gap: 15px;
+  .dispositivo-card {
+    flex: 0 0 85vw;
+    max-width: 85vw;
+    min-width: 85vw;
   }
 
-  .dispositivo-card {
-    max-width: 280px;
-    margin: 0 auto;
+  .beneficio-card {
+    flex: 0 0 90vw;
+    max-width: 90vw;
+    min-width: 90vw;
   }
 }
