@@ -3,29 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Compra, vende o repara tu celular</title>
+  <title>Compra, vende o repara tu celular | Doctor Rayo</title>
   <meta name="description" content="Doctor Rayo es tu sitio ideal para comprar, vender o reparar celulares en Bogotá. Servicio técnico a domicilio con garantía, compra y venta segura de celulares.">
   <link rel="canonical" href="https://www.doctorrayo.com/">
 
- <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+ <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
   
-  <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
 
-  <!-- Estilos -->
   <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-  <!-- ========================================
-       HEADER PRINCIPAL
-       ======================================== -->
   <header class="main-header">
     <div class="container">
       <div class="header-wrapper">
@@ -45,11 +39,7 @@
     </div>
   </header>
 
-  <!-- ========================================
-       CONTENIDO PRINCIPAL
-       ======================================== -->
   <main>
-    <!-- Hero Kavak Style -->
     <section class="hero-kavak" role="banner">
       <div class="hero-content">
         <h2 class="hero-title">Compra, vende o repara tu celular</h2>
@@ -63,7 +53,6 @@
       </div>
     </section>
 
-    <!-- Tres Rectángulos Beneficios -->
     <section class="rectangles-benefits">
       <div class="container">
         <div class="rectangles-grid">
@@ -92,7 +81,6 @@
       </div>
     </section>
 
-    <!-- Por Qué Doctor Rayo -->
     <section class="why-doctor-rayo">
       <div class="container">
         <h2>¿Por qué Doctor Rayo?</h2>
@@ -122,7 +110,6 @@
       </div>
     </section>
 
-    <!-- Shelf de Productos Destacados -->
     <section class="shelf" aria-label="Modelos destacados">
       <div class="container">
         <div class="shelf-head">
@@ -133,7 +120,6 @@
       </div>
     </section>
 
-    <!-- Sección de Reparación Dedicada -->
     <section class="repair-section">
       <div class="container">
         <div class="repair-content">
@@ -157,7 +143,6 @@
       </div>
     </section>
 
-    <!-- Videos Testimonios -->
     <section class="video-testimonials">
       <div class="container">
         <h2>Lo que dicen nuestros clientes</h2>
@@ -196,7 +181,6 @@
       </div>
     </section>
 
-    <!-- Sección Compra/Vende con Toggle -->
     <section class="toggle-process-section">
       <div class="container">
         <div class="toggle-buttons">
@@ -205,7 +189,6 @@
         </div>
         
         <div class="process-content">
-          <!-- Contenido Comprar -->
           <div class="process-section-content active" id="comprar-content">
             <div class="process-info">
               <h2>El celular que quieres, más cerca de lo que imaginas</h2>
@@ -230,7 +213,6 @@
             </div>
           </div>
 
-          <!-- Contenido Vender -->
           <div class="process-section-content" id="vender-content">
             <div class="process-info">
               <h2>Descubre cuánto vale tu celular y elige el mejor momento para vender</h2>
@@ -258,7 +240,6 @@
       </div>
     </section>
 
-    <!-- Testimonios Google My Business -->
     <section class="reviews" aria-label="Opiniones de clientes">
       <div class="container">
         <h2>Testimonios reales de Google</h2>
@@ -302,9 +283,6 @@
     </section>
   </main>
 
-  <!-- ========================================
-       FOOTER
-       ======================================== -->
   <footer class="main-footer" role="contentinfo">
     <div class="footer-wrapper container">
       <div class="footer-column">
@@ -341,14 +319,52 @@
     </div>
   </footer>
 
-  <!-- Botón flotante de WhatsApp -->
   <a href="https://wa.me/573046486740" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp">
     <img src="whatsapp-icon.png" alt="WhatsApp" loading="lazy" decoding="async">
   </a>
 
-  <!-- ========================================
-       SCRIPTS
-       ======================================== -->
+  <div id="product-modal" class="modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <div class="modal-body">
+        <div class="modal-img-container">
+          <img id="modal-img" src="" alt="Producto">
+        </div>
+        <h3 id="modal-title" class="modal-title"></h3>
+        <p id="modal-price" class="modal-price"></p>
+        
+        <div class="tech-specs-grid">
+          <div class="tech-item">
+            <h4>Batería</h4>
+            <p id="modal-battery"></p>
+          </div>
+          <div class="tech-item">
+            <h4>Estado Físico</h4>
+            <p id="modal-condition"></p>
+          </div>
+          <div class="tech-item">
+            <h4>Reparaciones</h4>
+            <p id="modal-repair"></p>
+          </div>
+          <div class="tech-item">
+            <h4>Pantalla</h4>
+            <p id="modal-screen"></p>
+          </div>
+        </div>
+
+        <p class="modal-disclaimer">
+          *Imágenes de referencia. El estado estético real se valida vía WhatsApp.
+        </p>
+
+        <div class="modal-actions">
+          <a id="modal-wpp-btn" href="#" target="_blank" class="btn-modal-wpp">
+            Pedir por WhatsApp ⚡
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script>
     /* =====================================
        TOGGLE PROCESS FUNCTIONALITY
@@ -360,12 +376,8 @@
       toggleButtons.forEach(button => {
         button.addEventListener('click', function() {
           const targetSection = this.dataset.section;
-          
-          // Remove active class from all buttons and contents
           toggleButtons.forEach(btn => btn.classList.remove('active'));
           processContents.forEach(content => content.classList.remove('active'));
-          
-          // Add active class to clicked button and corresponding content
           this.classList.add('active');
           document.getElementById(targetSection + '-content').classList.add('active');
         });
@@ -373,81 +385,122 @@
     });
 
     /* =====================================
-       INICIALIZACIÓN AL CARGAR
+       DATA & SHELF LOGIC
        ===================================== */
-    document.addEventListener('DOMContentLoaded', function() {
-      // Datos del shelf de productos con estructura Kavak
-      var shelfData = [
-        {
-          name: 'iPhone 15 Pro',
-          specs: '256GB • Titanio Natural',
-          priceFrom: '$3.290.000',
-          price: '$2.890.000',
-          monthly: '$4.600 / mes*',
-          badge: 'Más vendido',
-          badgeClass: 'mas-vendido',
-          img: 'img/iphone15pro.png',
-          href: 'comprar.html',
-          estado: 'Como nuevo',
-          estadoClass: 'como-nuevo'
-        },
-        {
-          name: 'iPhone 13',
-          specs: '128GB • Azul',
-          priceFrom: '$1.890.000',
-          price: '$1.690.000',
-          monthly: '$2.700 / mes*',
-          badge: 'Top ventas',
-          badgeClass: 'top-ventas',
-          img: 'img/prod-iphone13.jpg',
-          href: 'comprar.html',
-          estado: 'Excelente',
-          estadoClass: 'excelente'
-        },
-        {
-          name: 'Samsung Galaxy S21',
-          specs: '128GB • Negro',
-          price: '$1.250.000',
-          monthly: '$1.990 / mes*',
-          badge: 'Recomendado',
-          badgeClass: 'recomendado',
-          img: 'img/prod-s21.jpg',
-          href: 'comprar.html',
-          estado: 'Muy bueno',
-          estadoClass: 'muy-bueno'
-        },
-        {
-          name: 'Xiaomi Redmi Note 12',
-          specs: '64GB • Negro',
-          price: '$480.000',
-          monthly: '$760 / mes*',
-          badge: 'Ahorra',
-          badgeClass: 'ahorra',
-          img: 'img/prod-xiaomi12.jpg',
-          href: 'comprar.html',
-          estado: 'Como nuevo',
-          estadoClass: 'como-nuevo'
-        },
-        {
-          name: 'Motorola Edge 30',
-          specs: '256GB • Verde',
-          priceFrom: '$950.000',
-          price: '$750.000',
-          monthly: '$1.200 / mes*',
-          badge: 'Oferta',
-          badgeClass: 'oferta',
-          img: 'img/prod-moto-g.jpg',
-          href: 'comprar.html',
-          estado: 'Excelente',
-          estadoClass: 'excelente'
+    // Datos globales para poder acceder desde el modal
+    var shelfData = [
+      {
+        id: 1,
+        name: 'iPhone 15 Pro',
+        specs: '256GB • Titanio Natural',
+        priceFrom: '$3.290.000',
+        price: '$2.890.000',
+        monthly: '$4.600 / mes*',
+        badge: 'Más vendido',
+        badgeClass: 'mas-vendido',
+        img: 'img/iphone15pro.png',
+        href: 'comprar.html',
+        estado: 'Como nuevo',
+        estadoClass: 'como-nuevo',
+        detalles: {
+          bateria: '100% (Nueva)',
+          reparado: 'No',
+          fisico: '10/10',
+          pantalla: 'Original s/rayones'
         }
-      ];
+      },
+      {
+        id: 2,
+        name: 'iPhone 13',
+        specs: '128GB • Azul',
+        priceFrom: '$1.890.000',
+        price: '$1.690.000',
+        monthly: '$2.700 / mes*',
+        badge: 'Top ventas',
+        badgeClass: 'top-ventas',
+        img: 'img/prod-iphone13.jpg',
+        href: 'comprar.html',
+        estado: 'Excelente',
+        estadoClass: 'excelente',
+        detalles: {
+          bateria: '89%',
+          reparado: 'No',
+          fisico: '9/10 (Marcas de uso leves)',
+          pantalla: 'Original'
+        }
+      },
+      {
+        id: 3,
+        name: 'Samsung Galaxy S21',
+        specs: '128GB • Negro',
+        price: '$1.250.000',
+        monthly: '$1.990 / mes*',
+        badge: 'Recomendado',
+        badgeClass: 'recomendado',
+        img: 'img/prod-s21.jpg',
+        href: 'comprar.html',
+        estado: 'Muy bueno',
+        estadoClass: 'muy-bueno',
+        detalles: {
+          bateria: 'Óptima',
+          reparado: 'Cambio batería',
+          fisico: '8.5/10',
+          pantalla: 'Sin rayones profundos'
+        }
+      },
+      {
+        id: 4,
+        name: 'Xiaomi Redmi Note 12',
+        specs: '64GB • Negro',
+        price: '$480.000',
+        monthly: '$760 / mes*',
+        badge: 'Ahorra',
+        badgeClass: 'ahorra',
+        img: 'img/prod-xiaomi12.jpg',
+        href: 'comprar.html',
+        estado: 'Como nuevo',
+        estadoClass: 'como-nuevo',
+        detalles: {
+          bateria: '98%',
+          reparado: 'No',
+          fisico: '10/10',
+          pantalla: 'Original'
+        }
+      },
+      {
+        id: 5,
+        name: 'Motorola Edge 30',
+        specs: '256GB • Verde',
+        priceFrom: '$950.000',
+        price: '$750.000',
+        monthly: '$1.200 / mes*',
+        badge: 'Oferta',
+        badgeClass: 'oferta',
+        img: 'img/prod-moto-g.jpg',
+        href: 'comprar.html',
+        estado: 'Excelente',
+        estadoClass: 'excelente',
+        detalles: {
+          bateria: '90%',
+          reparado: 'No',
+          fisico: '9.5/10',
+          pantalla: 'Original'
+        }
+      }
+    ];
 
-      // Renderizar productos en el shelf con estructura Kavak
+    document.addEventListener('DOMContentLoaded', function() {
+      // Renderizar productos
       var track = document.getElementById('shelf-track');
       if (track) {
         track.innerHTML = shelfData.map(function(p) {
+          
           var priceFromHtml = p.priceFrom ? '<span class="precio-desde">' + p.priceFrom + '</span>' : '';
+          
+          // Link WhatsApp directo
+          var mensajeWpp = encodeURIComponent("Hola Doctor Rayo, estoy interesado en comprar el " + p.name + " de " + p.price + ". ¿Sigue disponible?");
+          var linkWpp = "https://wa.me/573046486740?text=" + mensajeWpp;
+
           return '<article class="shelf-card">' +
             '<div class="card-badge ' + p.badgeClass + '">' + p.badge + '</div>' +
             '<div class="producto-imagen-container">' +
@@ -462,15 +515,20 @@
                 '<span class="precio-mensual">' + p.monthly + '</span>' +
               '</div>' +
               '<span class="estado ' + p.estadoClass + '">' + p.estado + '</span>' +
-              '<a class="cta" href="' + p.href + '">Ver más</a>' +
+              
+              /* BOTONES DE ACCIÓN */
+              '<div class="buttons-container">' +
+                  // Botón Info abre MODAL (pasamos el ID)
+                  '<button class="shelf-btn btn-outline" onclick="openProductModal(' + p.id + ')">Ver info</button>' +
+                  '<a class="shelf-btn btn-solid" href="' + linkWpp + '" target="_blank">Pedir ⚡</a>' +
+              '</div>' +
+              
             '</div>' +
           '</article>';
         }).join('');
       }
 
-      /* =====================================
-         CARRUSEL DE REVIEWS
-         ===================================== */
+      // Carrusel Reviews
       var viewport = document.querySelector('.reviews-viewport');
       var reviewsTrack = document.getElementById('reviews-track');
       if (viewport && reviewsTrack) {
@@ -489,6 +547,48 @@
       var yearElement = document.getElementById('current-year');
       if (yearElement) {
         yearElement.textContent = new Date().getFullYear();
+      }
+    });
+
+    /* =====================================
+       MODAL LOGIC
+       ===================================== */
+    function openProductModal(id) {
+      // 1. Encontrar producto
+      var product = shelfData.find(p => p.id === id);
+      if (!product) return;
+
+      // 2. Rellenar datos en el modal
+      document.getElementById('modal-img').src = product.img;
+      document.getElementById('modal-title').textContent = product.name;
+      document.getElementById('modal-price').textContent = product.price;
+      
+      // Detalles técnicos
+      if (product.detalles) {
+        document.getElementById('modal-battery').textContent = product.detalles.bateria || 'N/A';
+        document.getElementById('modal-condition').textContent = product.detalles.fisico || 'N/A';
+        document.getElementById('modal-repair').textContent = product.detalles.reparado || 'N/A';
+        document.getElementById('modal-screen').textContent = product.detalles.pantalla || 'N/A';
+      }
+
+      // Actualizar botón WhatsApp del modal
+      var mensajeWpp = encodeURIComponent("Hola Doctor Rayo, vi los detalles del " + product.name + " (" + product.price + ") y quiero pedirlo.");
+      document.getElementById('modal-wpp-btn').href = "https://wa.me/573046486740?text=" + mensajeWpp;
+
+      // 3. Mostrar Modal
+      document.getElementById('product-modal').classList.add('active');
+      document.body.classList.add('modal-open'); // Bloquear scroll del body
+    }
+
+    function closeModal() {
+      document.getElementById('product-modal').classList.remove('active');
+      document.body.classList.remove('modal-open'); // Desbloquear scroll
+    }
+
+    // Cerrar si se hace clic afuera del contenido
+    document.getElementById('product-modal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeModal();
       }
     });
   </script>

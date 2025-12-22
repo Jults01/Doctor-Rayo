@@ -1,5 +1,6 @@
 /* ====================================================
-   DOCTOR RAYO - HOJA DE ESTILOS PRINCIPAL (KAVAK CAROUSEL VERSION)
+   DOCTOR RAYO - HOJA DE ESTILOS PRINCIPAL
+   Versión: 2.6 - Popup Info & Center Badge
    ==================================================== */
 
 /* =================== 1. VARIABLES CSS =================== */
@@ -48,6 +49,8 @@ img {max-width: 100%; height: auto;}
   position: absolute; width:1px; height:1px; margin:-1px; overflow:hidden;
   clip: rect(0,0,0,0); border:0; white-space:nowrap;
 }
+/* Utility helper to lock scroll when modal is open */
+body.modal-open { overflow: hidden; }
 
 /* =================== 4. HEADER Y NAV =================== */
 .main-header {background: var(--color-white); padding: var(--space-sm) 0; box-shadow: 0 1px 3px rgba(0,0,0,.05); position: relative;}
@@ -72,11 +75,10 @@ img {max-width: 100%; height: auto;}
 .nav-vender:hover {background: var(--color-primary)!important; color: var(--color-white)!important;
   transform: translateY(-2px); box-shadow: 0 4px 12px rgba(230,0,0,0.3);}
 
-/* Menú hamburguesa oculto en desktop */
 .mobile-menu-toggle {display: none;}
 .mobile-menu {display: none;}
 
-/* =================== 5. BOTONES =================== */
+/* =================== 5. BOTONES GENÉRICOS =================== */
 .button {
   display: inline-flex; align-items: center; gap: var(--space-sm);
   padding: var(--space-md) var(--space-xxl); border-radius: 999px;
@@ -281,7 +283,7 @@ img {max-width: 100%; height: auto;}
   line-height: 1.6;
 }
 
-/* =================== 9. SHELF DE PRODUCTOS ESTILO KAVAK CARRUSEL =================== */
+/* =================== 9. SHELF DE PRODUCTOS =================== */
 .shelf {background:var(--color-white); padding:var(--gap-section) 0;}
 
 .shelf-head {
@@ -300,10 +302,10 @@ img {max-width: 100%; height: auto;}
 
 .shelf-ver-todo:hover {text-decoration: underline;}
 
-/* CARRUSEL KAVAK - SIEMPRE SCROLL HORIZONTAL */
+/* CARRUSEL KAVAK */
 .shelf-track {
   margin-top: var(--gap-content);
-  display: flex; /* SIEMPRE CARRUSEL */
+  display: flex;
   overflow-x: auto;
   gap: 20px;
   scroll-snap-type: x mandatory;
@@ -316,7 +318,7 @@ img {max-width: 100%; height: auto;}
   display: none;
 }
 
-/* TARJETAS ESTILO KAVAK PARA CARRUSEL */
+/* TARJETAS ESTILO KAVAK */
 .shelf-card {
   flex: 0 0 var(--shelf-card-width);
   min-width: var(--shelf-card-width);
@@ -338,45 +340,28 @@ img {max-width: 100%; height: auto;}
   border-color: var(--color-primary);
 }
 
-/* BADGES ESTILO KAVAK */
+/* BADGES */
 .card-badge {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  color: white;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  z-index: 2;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  position: absolute; top: 12px; left: 12px; color: white; padding: 6px 12px;
+  border-radius: 20px; font-size: 0.75rem; font-weight: 600; z-index: 2;
+  text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
-
 .card-badge.mas-vendido { background: #e60000; }
 .card-badge.top-ventas { background: #ff6b35; }
 .card-badge.recomendado { background: #2563eb; }
 .card-badge.ahorra { background: #16a34a; }
 .card-badge.oferta { background: #dc2626; }
 
-/* CONTENEDOR DE IMAGEN ESTILO KAVAK */
+/* CONTENEDOR DE IMAGEN */
 .producto-imagen-container {
   height: var(--shelf-img-height);
   background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f4 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-  border-radius: 16px 16px 0 0;
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden; border-radius: 16px 16px 0 0;
 }
 
 .producto-imagen-container img {
-  width: 140px;
-  height: 180px;
-  object-fit: contain;
-  padding: 15px;
+  width: 140px; height: 180px; object-fit: contain; padding: 15px;
   transition: transform var(--transition-speed) ease;
 }
 
@@ -384,425 +369,142 @@ img {max-width: 100%; height: auto;}
   transform: scale(1.05);
 }
 
-/* INFO DEL PRODUCTO ESTILO KAVAK */
+/* INFO DEL PRODUCTO */
 .producto-info {
   padding: 20px 16px 16px 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  flex: 1;
-  text-align: left;
+  display: flex; flex-direction: column; gap: 6px; flex: 1; text-align: left;
 }
 
 .shelf-card h3 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--color-text-dark);
-  line-height: 1.2;
-  margin-bottom: 4px;
+  font-size: 1.2rem; font-weight: 600; color: var(--color-text-dark);
+  line-height: 1.2; margin-bottom: 4px;
 }
 
 .producto-specs {
-  font-size: 0.9rem;
-  color: #6b7280;
-  margin-bottom: 12px;
-  font-weight: 400;
+  font-size: 0.9rem; color: #6b7280; margin-bottom: 12px; font-weight: 400;
 }
 
-/* CONTENEDOR DE PRECIOS ESTILO KAVAK */
+/* CONTENEDOR DE PRECIOS */
 .precio-container {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  margin-bottom: 12px;
+  display: flex; flex-direction: column; gap: 3px; margin-bottom: 12px;
 }
 
 .precio-desde {
-  font-size: 0.8rem;
-  color: #9ca3af;
-  text-decoration: line-through;
-  font-weight: 400;
+  font-size: 0.8rem; color: #9ca3af; text-decoration: line-through; font-weight: 400;
 }
 
 .precio-actual {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--color-text-dark);
-  line-height: 1;
+  font-size: 1.4rem; font-weight: 700; color: var(--color-text-dark); line-height: 1;
 }
 
 .precio-mensual {
-  font-size: 0.85rem;
-  color: #6b7280;
-  font-weight: 400;
+  font-size: 0.85rem; color: #6b7280; font-weight: 400;
 }
 
-/* ESTADO DEL PRODUCTO */
+/* ESTADO DEL PRODUCTO (CENTRADO AHORA) */
 .estado {
-  color: white;
-  padding: 6px 12px;
-  border-radius: 16px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  display: inline-block;
-  align-self: flex-start;
-  margin-bottom: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  color: white; padding: 6px 12px; border-radius: 16px; font-size: 0.75rem;
+  font-weight: 600; 
+  /* --- CAMBIO: CENTRADO --- */
+  display: inline-block; 
+  align-self: center; /* Antes era flex-start */
+  /* ------------------------ */
+  margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px;
 }
-
 .estado.como-nuevo { background: #16a34a; }
 .estado.excelente { background: var(--color-accent-green); }
 .estado.muy-bueno { background: #eab308; }
 
-/* CTA BUTTON */
-.shelf-card .cta {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  border: 1px solid var(--color-primary);
-  color: var(--color-white);
-  background: var(--color-primary);
-  border-radius: 25px;
-  padding: 10px 0;
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: all var(--transition-speed) ease;
-  margin-top: auto;
-  text-align: center;
-  cursor: pointer;
+/* BOTONERA DOBLE */
+.shelf-card .buttons-container {
+  display: flex; gap: 10px; margin-top: auto; width: 100%;
 }
-
-.shelf-card .cta:hover {
-  background: var(--color-primary-dark);
-  border-color: var(--color-primary-dark);
-  transform: translateY(-1px);
+.shelf-btn {
+  flex: 1; padding: 10px 5px; font-size: 0.85rem; font-weight: 600;
+  border-radius: 25px; text-align: center; cursor: pointer;
+  transition: all 0.2s ease; display: flex; align-items: center; justify-content: center;
+  text-decoration: none;
+}
+.btn-outline {
+  background: transparent; border: 1px solid var(--color-primary); color: var(--color-primary);
+}
+.btn-outline:hover {background: #fff0f0; transform: translateY(-2px);}
+.btn-solid {
+  background: var(--color-accent-green); border: 1px solid var(--color-accent-green); color: white;
+}
+.btn-solid:hover {
+  background: var(--color-accent-green-dark); border-color: var(--color-accent-green-dark);
+  box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3); transform: translateY(-2px);
 }
 
 /* =================== 10. SECCIÓN REPARACIÓN DEDICADA =================== */
-.repair-section {
-  padding: var(--gap-section) 0;
-  background: var(--color-light-gray);
-}
-
-.repair-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-xxxl);
-  align-items: center;
-}
-
-.repair-text h2 {
-  font-size: var(--font-size-xxl);
-  color: var(--color-text-dark);
-  margin-bottom: var(--space-lg);
-}
-
-.repair-text p {
-  color: var(--color-text-medium);
-  margin-bottom: var(--space-xl);
-  line-height: 1.6;
-}
-
-.repair-benefits {
-  list-style: none;
-  margin-bottom: var(--space-xl);
-}
-
-.repair-benefits li {
-  display: flex;
-  align-items: center;
-  gap: var(--space-md);
-  margin-bottom: var(--space-sm);
-  font-weight: 500;
-  color: var(--color-text-dark);
-}
-
-.check-icon {
-  color: var(--color-accent-green);
-  font-weight: 700;
-  font-size: 1.1rem;
-}
-
-.repair-visual img {
-  width: 100%;
-  height: auto;
-  border-radius: 15px;
-  box-shadow: var(--shadow-medium);
-}
+.repair-section {padding: var(--gap-section) 0; background: var(--color-light-gray);}
+.repair-content {display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xxxl); align-items: center;}
+.repair-text h2 {font-size: var(--font-size-xxl); color: var(--color-text-dark); margin-bottom: var(--space-lg);}
+.repair-text p {color: var(--color-text-medium); margin-bottom: var(--space-xl); line-height: 1.6;}
+.repair-benefits {list-style: none; margin-bottom: var(--space-xl);}
+.repair-benefits li {display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-sm); font-weight: 500; color: var(--color-text-dark);}
+.check-icon {color: var(--color-accent-green); font-weight: 700; font-size: 1.1rem;}
+.repair-visual img {width: 100%; height: auto; border-radius: 15px; box-shadow: var(--shadow-medium);}
 
 /* =================== 11. VIDEO TESTIMONIALS =================== */
-.video-testimonials {
-  padding: var(--gap-section) 0;
-  background: var(--color-white);
-}
+.video-testimonials {padding: var(--gap-section) 0; background: var(--color-white);}
+.video-testimonials h2 {text-align: center; font-size: var(--font-size-xxl); color: var(--color-text-dark); margin-bottom: var(--gap-content);}
+.testimonials-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-xl);}
+.video-testimonial {background: var(--color-white); border-radius: 15px; overflow: hidden; box-shadow: var(--shadow-medium); transition: transform 0.3s ease;}
+.video-testimonial:hover {transform: translateY(-5px);}
+.video-testimonial video {width: 100%; height: 200px; object-fit: cover;}
+.testimonial-info {padding: var(--space-lg); text-align: center;}
+.testimonial-info h4 {font-size: 1.1rem; font-weight: 600; color: var(--color-text-dark); margin-bottom: var(--space-xs);}
+.testimonial-info p {color: var(--color-text-medium); font-size: 0.9rem;}
 
-.video-testimonials h2 {
-  text-align: center;
-  font-size: var(--font-size-xxl);
-  color: var(--color-text-dark);
-  margin-bottom: var(--gap-content);
-}
-
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--space-xl);
-}
-
-.video-testimonial {
-  background: var(--color-white);
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: var(--shadow-medium);
-  transition: transform 0.3s ease;
-}
-
-.video-testimonial:hover {
-  transform: translateY(-5px);
-}
-
-.video-testimonial video {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.testimonial-info {
-  padding: var(--space-lg);
-  text-align: center;
-}
-
-.testimonial-info h4 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--color-text-dark);
-  margin-bottom: var(--space-xs);
-}
-
-.testimonial-info p {
-  color: var(--color-text-medium);
-  font-size: 0.9rem;
-}
-
-/* =================== 12. TOGGLE PROCESS SECTION (KAVAK STYLE FINAL) =================== */
-.toggle-process-section {
-  padding: 40px 0 60px 0;
-  background: var(--color-white);
-}
-
-.process-content {
-  position: relative;
-}
-
-.process-section-content {
-  display: none;
-  animation: fadeIn 0.3s ease-in-out;
-}
-
-.process-section-content.active {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 60px;
-  align-items: start;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.toggle-buttons {
-  display: flex;
-  gap: 0;
-  margin-bottom: 20px;
-  background: var(--color-light-gray);
-  border-radius: 8px;
-  padding: 4px;
-  width: fit-content;
-}
-
-.toggle-btn {
-  background: black;
-  border: none;
-  padding: 8px 16px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--color-white);
-  cursor: pointer;
-  border-radius: 6px;
-  transition: color 0.2s ease;
-  font-family: inherit;
-  min-width: 70px;
-}
-
-.toggle-btn.active {
-  background: transparent;
-  color: var(--color-black);
-}
-
-.toggle-btn:hover {
-  color: var(--color-primary);
-}
-
-.process-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.process-info h2 {
-  font-size: 2.2rem;
-  color: var(--color-text-dark);
-  margin-bottom: 15px;
-  line-height: 1.2;
-  font-weight: 600;
-}
-
-.process-cta {
-  color: var(--color-primary);
-  font-weight: 600;
-  font-size: 1rem;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  transition: all 0.3s ease;
-}
-
-.process-cta:hover {
-  transform: translateX(5px);
-}
-
-.steps-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  margin-top: 0;
-}
-
-.step-card {
-  background: transparent;
-  padding: 0;
-  border-radius: 0;
-  box-shadow: none;
-  transition: none;
-}
-
-.step-card:hover {
-  transform: none;
-  box-shadow: none;
-}
-
-.step-number {
-  width: 24px;
-  height: 24px;
-  background: transparent;
-  color: #b0b0b0;
-  border-radius: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.3rem;
-  font-weight: 300;
-  margin-bottom: 12px;
-  font-family: 'Arial', sans-serif;
-}
-
-.step-card h3 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--color-text-dark);
-  margin-bottom: 8px;
-  line-height: 1.3;
-}
-
-.step-card p {
-  color: var(--color-text-medium);
-  line-height: 1.4;
-  font-size: 0.9rem;
-}
+/* =================== 12. TOGGLE PROCESS SECTION =================== */
+.toggle-process-section {padding: 40px 0 60px 0; background: var(--color-white);}
+.process-content {position: relative;}
+.process-section-content {display: none; animation: fadeIn 0.3s ease-in-out;}
+.process-section-content.active {display: grid; grid-template-columns: 1fr 2fr; gap: 60px; align-items: start;}
+@keyframes fadeIn {from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); }}
+.toggle-buttons {display: flex; gap: 0; margin-bottom: 20px; background: var(--color-light-gray); border-radius: 8px; padding: 4px; width: fit-content;}
+.toggle-btn {background: black; border: none; padding: 8px 16px; font-size: 0.9rem; font-weight: 500; color: var(--color-white); cursor: pointer; border-radius: 6px; transition: color 0.2s ease; font-family: inherit; min-width: 70px;}
+.toggle-btn.active {background: transparent; color: var(--color-black);}
+.toggle-btn:hover {color: var(--color-primary);}
+.process-info {display: flex; flex-direction: column;}
+.process-info h2 {font-size: 2.2rem; color: var(--color-text-dark); margin-bottom: 15px; line-height: 1.2; font-weight: 600;}
+.process-cta {color: var(--color-primary); font-weight: 600; font-size: 1rem; text-decoration: none; display: inline-flex; align-items: center; gap: 5px; transition: all 0.3s ease;}
+.process-cta:hover {transform: translateX(5px);}
+.steps-grid {display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 0;}
+.step-card {background: transparent; padding: 0; border-radius: 0; box-shadow: none; transition: none;}
+.step-card:hover {transform: none; box-shadow: none;}
+.step-number {width: 24px; height: 24px; background: transparent; color: #b0b0b0; border-radius: 0; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; font-weight: 300; margin-bottom: 12px; font-family: 'Arial', sans-serif;}
+.step-card h3 {font-size: 1.1rem; font-weight: 600; color: var(--color-text-dark); margin-bottom: 8px; line-height: 1.3;}
+.step-card p {color: var(--color-text-medium); line-height: 1.4; font-size: 0.9rem;}
 
 /* =================== 13. REVIEWS =================== */
 .reviews {background:var(--color-white); padding:var(--gap-section) 0;}
 .reviews h2 {font-size:var(--font-size-xxl); text-align:center; margin-bottom:var(--gap-content);}
 .reviews .container {position: relative;}
-
-.google-rating {
-  text-align: center;
-  margin-bottom: var(--space-xl);
-}
-
-.stars {
-  font-size: 2rem;
-  color: #ffd700;
-  margin-bottom: var(--space-sm);
-}
-
-.google-rating span {
-  display: block;
-  font-size: 1.1rem;
-  color: var(--color-text-medium);
-  margin-bottom: var(--space-lg);
-}
-
-.google-actions {
-  display: flex;
-  justify-content: center;
-  gap: var(--space-lg);
-  flex-wrap: wrap;
-}
-
-.google-btn {
-  padding: 12px 25px;
-  background: var(--color-primary);
-  color: var(--color-white);
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.google-btn:hover {
-  background: var(--color-primary-dark);
-  transform: translateY(-2px);
-}
-
-.write-review {
-  background: var(--color-accent-green);
-}
-
-.write-review:hover {
-  background: var(--color-accent-green-dark);
-}
-
+.google-rating {text-align: center; margin-bottom: var(--space-xl);}
+.stars {font-size: 2rem; color: #ffd700; margin-bottom: var(--space-sm);}
+.google-rating span {display: block; font-size: 1.1rem; color: var(--color-text-medium); margin-bottom: var(--space-lg);}
+.google-actions {display: flex; justify-content: center; gap: var(--space-lg); flex-wrap: wrap;}
+.google-btn {padding: 12px 25px; background: var(--color-primary); color: var(--color-white); border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;}
+.google-btn:hover {background: var(--color-primary-dark); transform: translateY(-2px);}
+.write-review {background: var(--color-accent-green);}
+.write-review:hover {background: var(--color-accent-green-dark);}
 .reviews-row {display: flex; align-items: center;}
 .reviews-viewport {position:relative; flex:1 1 auto; overflow:hidden; padding-inline:6px;}
 .reviews-viewport::before,.reviews-viewport::after {content:''; position:absolute; top:0; bottom:0; width:34px; pointer-events:none;}
 .reviews-viewport::before {left:0; background: linear-gradient(90deg, var(--color-white) 40%, rgba(255,255,255,0));}
 .reviews-viewport::after {right:0; background: linear-gradient(270deg, var(--color-white) 40%, rgba(255,255,255,0));}
-.reviews-track {
-  display:grid; grid-auto-flow:column; gap:14px; overflow-x:auto;
-  scroll-snap-type:x proximity; -webkit-overflow-scrolling:touch; padding:6px 0;
-  scrollbar-width:none; grid-auto-columns:minmax(220px,min(280px,calc((100% - 42px)/4)));
-}
+.reviews-track {display:grid; grid-auto-flow:column; gap:14px; overflow-x:auto; scroll-snap-type:x proximity; -webkit-overflow-scrolling:touch; padding:6px 0; scrollbar-width:none; grid-auto-columns:minmax(220px,min(280px,calc((100% - 42px)/4)));}
 .reviews-track::-webkit-scrollbar {display:none;}
-.review {
-  scroll-snap-align:start; border:1px solid var(--color-medium-gray); border-radius:10px;
-  padding:var(--space-md); background:var(--color-white); box-shadow:var(--shadow-light);
-}
+.review {scroll-snap-align:start; border:1px solid var(--color-medium-gray); border-radius:10px; padding:var(--space-md); background:var(--color-white); box-shadow:var(--shadow-light);}
 .review blockquote {margin:0 0 6px; font-size:.95rem; line-height:1.45;}
 .review figcaption {color:var(--color-text-medium); font-weight:600; font-size:.9rem;}
 
 /* =================== 14. FOOTER =================== */
-.main-footer {
-  background:var(--color-black); color:var(--color-white);
-  padding:var(--space-xxxl) var(--space-xl) var(--space-xl); font-size:14px;
-}
-.footer-wrapper {
-  max-width:1200px; margin:0 auto var(--space-xl);
-  display:flex; flex-wrap:wrap; justify-content:space-between; gap:var(--space-xxl);
-}
+.main-footer {background:var(--color-black); color:var(--color-white); padding:var(--space-xxxl) var(--space-xl) var(--space-xl); font-size:14px;}
+.footer-wrapper {max-width:1200px; margin:0 auto var(--space-xl); display:flex; flex-wrap:wrap; justify-content:space-between; gap:var(--space-xxl);}
 .footer-column {flex:1 1 220px; min-width:180px;}
 .footer-column h2,.footer-column h3 {color:var(--color-white); margin-bottom:var(--space-md); font-size:var(--font-size-lg);}
 .footer-column p,.footer-column ul li a {color:var(--color-footer-text); line-height:1.8;}
@@ -815,218 +517,119 @@ img {max-width: 100%; height: auto;}
 .footer-bottom {text-align:center; padding-top:var(--space-xl); border-top:1px solid var(--color-dark-gray); color:var(--color-footer-text);}
 
 /* =================== 15. WHATSAPP FLOTANTE =================== */
-.whatsapp-float {
-  position:fixed; width:60px; height:60px; bottom:var(--space-xxl); right:var(--space-xxl);
-  background:var(--color-accent-green); border-radius:50%; box-shadow:2px 2px 5px rgba(0,0,0,0.3);
-  transition:background var(--transition-speed), transform var(--transition-speed); z-index:1000;
-  display:flex; align-items:center; justify-content:center;
-}
+.whatsapp-float {position:fixed; width:60px; height:60px; bottom:var(--space-xxl); right:var(--space-xxl); background:var(--color-accent-green); border-radius:50%; box-shadow:2px 2px 5px rgba(0,0,0,0.3); transition:background var(--transition-speed), transform var(--transition-speed); z-index:1000; display:flex; align-items:center; justify-content:center;}
 .whatsapp-float img {width:35px;}
-.whatsapp-float:hover,.whatsapp-float:focus {
-  background:var(--color-accent-green-dark); transform:scale(1.05); outline:none;
+.whatsapp-float:hover,.whatsapp-float:focus {background:var(--color-accent-green-dark); transform:scale(1.05); outline:none;}
+
+/* =========================================================
+   16. MODAL (POPUP) ESTILOS
+   ========================================================= */
+.modal-overlay {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7); z-index: 2000;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden; transition: all 0.3s ease;
+  padding: 20px;
+}
+.modal-overlay.active {opacity: 1; visibility: visible;}
+
+.modal-content {
+  background: white; width: 100%; max-width: 500px;
+  border-radius: 16px; position: relative;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  transform: translateY(20px); transition: all 0.3s ease;
+  overflow: hidden; max-height: 90vh; overflow-y: auto;
+}
+.modal-overlay.active .modal-content {transform: translateY(0);}
+
+.modal-close {
+  position: absolute; top: 15px; right: 15px;
+  background: rgba(0,0,0,0.05); border: none;
+  width: 36px; height: 36px; border-radius: 50%;
+  font-size: 24px; line-height: 1; color: #333;
+  cursor: pointer; z-index: 10; display: grid; place-items: center;
+}
+.modal-close:hover {background: rgba(0,0,0,0.1);}
+
+.modal-body {padding: 30px;}
+
+.modal-disclaimer {
+  font-size: 0.8rem;       /* Letra pequeña */
+  color: #888;             /* Color gris (no negro fuerte) */
+  text-align: center;      /* Centrado */
+  margin-top: -10px;       /* Un poco pegado a las specs */
+  margin-bottom: 20px;     /* Espacio antes del botón */
+  font-style: italic;      /* Cursiva para que parezca nota */
 }
 
-/* =================== 16. MEDIA QUERIES =================== */
-@media (min-width: 768px) {
-  .hero-kavak {height: 100vh;}
-  .hero-title {font-size: 3.5rem;}
+/* Estructura interna del modal */
+.modal-img-container {
+  text-align: center; margin-bottom: 20px;
+  background: #f8f9fa; border-radius: 12px; padding: 20px;
 }
+.modal-img-container img {height: 200px; object-fit: contain;}
 
-/* MANTENER CARRUSEL SIEMPRE - NO CONVERTIR A GRID EN DESKTOP */
+.modal-title {font-size: 1.8rem; font-weight: 700; margin-bottom: 5px; line-height: 1.2;}
+.modal-price {font-size: 1.6rem; color: var(--color-primary); font-weight: 700; margin-bottom: 20px;}
+
+.tech-specs-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 15px;
+  background: #f9f9f9; padding: 20px; border-radius: 12px; margin-bottom: 25px;
+}
+.tech-item h4 {font-size: 0.8rem; color: #666; text-transform: uppercase; margin-bottom: 4px;}
+.tech-item p {font-size: 1rem; font-weight: 600; color: #000;}
+
+.modal-actions {display: flex; gap: 10px;}
+.btn-modal-wpp {
+  flex: 1; background: var(--color-accent-green); color: white;
+  padding: 15px; border-radius: 12px; text-align: center;
+  font-weight: 600; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.btn-modal-wpp:hover {background: var(--color-accent-green-dark);}
+
+/* =================== 17. MEDIA QUERIES =================== */
+@media (min-width: 768px) { .hero-kavak {height: 100vh;} .hero-title {font-size: 3.5rem;} }
 @media (min-width: 992px) {
-  .shelf-track {
-    /* MANTIENE CARRUSEL - ELIMINADO EL GRID CONVERSION */
-    gap: 24px;
-    padding: 0 30px 20px 30px;
-  }
-  
-  .shelf-card {
-    flex: 0 0 300px;
-    min-width: 300px;
-    height: 440px;
-  }
-
-  .producto-imagen-container {
-    height: 220px;
-  }
-
-  .producto-imagen-container img {
-    width: 150px;
-    height: 200px;
-  }
+  .shelf-track {gap: 24px; padding: 0 30px 20px 30px;}
+  .shelf-card {flex: 0 0 300px; min-width: 300px; height: 440px;}
+  .producto-imagen-container {height: 220px;}
+  .producto-imagen-container img {width: 150px; height: 200px;}
 }
-
-@media (min-width: 1200px) {
-  .shelf-track {
-    gap: 28px;
-    padding: 0 40px 20px 40px;
-  }
-}
-
+@media (min-width: 1200px) { .shelf-track {gap: 28px; padding: 0 40px 20px 40px;} }
 @media (max-width: 767px) {
   :root {--gap-section:13px; --shelf-card-width: 240px; --shelf-img-height: 180px;}
-  
-  .header-wrapper {
-    flex-direction:column; 
-    align-items:center; 
-    gap:0; 
-    padding:var(--space-md) var(--space-sm);
-    justify-content:center;
-  }
-  .logo {margin-bottom:0;}
-  .logo h1 {font-size:1.3rem;}
-  .header-nav {display:none;} /* Ocultar navegación completamente en móvil */
-  
-  /* Hero responsive - imagen completa sin distorsión */
-  .hero-kavak {
-    height: 35vh; 
-    background-size: 100% auto;
-    background-position: center center;
-    background-repeat: no-repeat;
-  }
-  .hero-title {font-size: 1.8rem; margin-bottom: var(--space-md);}
-  .hero-subtitle {font-size: 0.9rem; margin-bottom: 1.5rem;}
-  .hero-buttons {
-    display: flex; /* Botones solo en hero */
-    gap: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .hero-button {
-    padding: 10px 20px; 
-    font-size: 0.85rem;
-  }
-  
-  /* Rectangles responsive - carrusel como shelf */
+  .header-wrapper {flex-direction:column; align-items:center; gap:0; padding:var(--space-md) var(--space-sm); justify-content:center;}
+  .logo {margin-bottom:0;} .logo h1 {font-size:1.3rem;} .header-nav {display:none;}
+  .hero-kavak {height: 35vh; background-size: 100% auto; background-position: center center; background-repeat: no-repeat;}
+  .hero-title {font-size: 1.8rem; margin-bottom: var(--space-md);} .hero-subtitle {font-size: 0.9rem; margin-bottom: 1.5rem;}
+  .hero-buttons {display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;}
+  .hero-button {padding: 10px 20px; font-size: 0.85rem;}
   .rectangles-benefits {padding:var(--space-md) 0;}
-  .rectangles-grid {
-    display:flex !important; 
-    overflow-x:scroll; 
-    gap:20px; 
-    scroll-snap-type:x mandatory; 
-    padding:0 20px var(--space-md) 20px;
-    scrollbar-width:none;
-  }
+  .rectangles-grid {display:flex !important; overflow-x:scroll; gap:20px; scroll-snap-type:x mandatory; padding:0 20px var(--space-md) 20px; scrollbar-width:none;}
   .rectangles-grid::-webkit-scrollbar {display:none;}
-  .rectangle-card {
-    flex:0 0 80vw; 
-    max-width:80vw; 
-    min-width:85vw;
-    scroll-snap-align:start;
-  }
-  
-  /* Why Doctor Rayo responsive */
+  .rectangle-card {flex:0 0 80vw; max-width:80vw; min-width:85vw; scroll-snap-align:start;}
   .why-grid {grid-template-columns: 1fr; gap: var(--space-lg);}
-  
-  /* Repair section responsive */
+  .why-icon, .beneficio-icon {width: 60px; height: 60px;} /* Fix Iconos */
   .repair-content {grid-template-columns: 1fr; gap: var(--space-xl);}
-  
-  /* Process steps responsive */
-  .toggle-process-section {
-    padding: 30px 0 40px 0;
-  }
-  .process-section-content.active {
-    display: block !important;
-    grid-template-columns: none !important;
-    gap: 20px;
-  }
-  .toggle-buttons {
-    width: fit-content;
-    margin: 0 auto 20px auto;
-  }
-  .toggle-btn {
-    padding: 6px 14px;
-    font-size: 0.85rem;
-    min-width: 65px;
-  }
-  .process-info h2 {
-    font-size: 1.6rem;
-    max-width: 100%;
-    text-align: center;
-  }
-  .process-cta {
-    font-size: 0.9rem;
-    justify-content: center;
-  }
-  .steps-grid {
-    grid-template-columns: 1fr !important;
-    gap: 25px;
-    margin-top: 20px;
-  }
-  
-  /* Video testimonials responsive - estilo Kavak carrusel */
-  .video-testimonials {padding:var(--space-md) 0;}
-  .video-testimonials h2 {font-size:1.25rem; margin-bottom:var(--space-lg);}
-  .testimonials-grid {
-    display:flex !important; 
-    overflow-x:scroll; 
-    gap:15px; 
-    scroll-snap-type:x mandatory; 
-    padding:0 20px var(--space-md) 20px;
-    scrollbar-width:none;
-  }
+  .toggle-process-section {padding: 30px 0 40px 0;}
+  .process-section-content.active {display: block !important; grid-template-columns: none !important; gap: 20px;}
+  .toggle-buttons {width: fit-content; margin: 0 auto 20px auto;}
+  .toggle-btn {padding: 6px 14px; font-size: 0.85rem; min-width: 65px;}
+  .process-info h2 {font-size: 1.6rem; max-width: 100%; text-align: center;}
+  .process-cta {font-size: 0.9rem; justify-content: center;}
+  .steps-grid {grid-template-columns: 1fr !important; gap: 25px; margin-top: 20px;}
+  .video-testimonials {padding:var(--space-md) 0;} .video-testimonials h2 {font-size:1.25rem; margin-bottom:var(--space-lg);}
+  .testimonials-grid {display:flex !important; overflow-x:scroll; gap:15px; scroll-snap-type:x mandatory; padding:0 20px var(--space-md) 20px; scrollbar-width:none;}
   .testimonials-grid::-webkit-scrollbar {display:none;}
-  .video-testimonial {
-    flex:0 0 75vw; 
-    max-width:75vw; 
-    min-width:75vw;
-    scroll-snap-align:start;
-    height:auto;
-  }
-  .video-testimonial video {
-    height:180px;
-    border-radius:10px;
-  }
-  .testimonial-info {
-    padding:var(--space-md);
-  }
-  
-  /* Shelf responsive - CARRUSEL MÓVIL MEJORADO */
-  .shelf {padding:var(--space-md) 0 var(--gap-section) 0;}
-  .shelf .container {padding:0 10px !important;}
-  .shelf-head {padding:0 var(--space-lg) var(--space-md) var(--space-lg);}
-  .shelf-head h2 {font-size:1.25rem;}
-  .shelf-ver-todo {font-size:0.9rem;}
-  
-  .shelf-track {
-    gap: 15px;
-    padding: 0 20px var(--space-md) 20px;
-  }
-  
-  .shelf-card {
-    flex: 0 0 70vw;
-    min-width: 70vw;
-    height: 400px;
-  }
-
-  .producto-imagen-container {
-    height: 160px;
-  }
-
-  .producto-imagen-container img {
-    width: 120px;
-    height: 150px;
-  }
-
-  .producto-info {
-    padding: 16px 14px 14px 14px;
-    gap: 5px;
-  }
-
-  .shelf-card h3 {
-    font-size: 1.1rem;
-  }
-
-  .precio-actual {
-    font-size: 1.3rem;
-  }
-  
-  .reviews {padding:var(--gap-section) 0;}
-  .reviews h2 {font-size:1.25rem;}
-  .reviews-track {grid-auto-columns:60%;}
-  
+  .video-testimonial {flex:0 0 75vw; max-width:75vw; min-width:75vw; scroll-snap-align:start; height:auto;}
+  .video-testimonial video {height:180px; border-radius:10px;} .testimonial-info {padding:var(--space-md);}
+  .shelf {padding:var(--space-md) 0 var(--gap-section) 0;} .shelf .container {padding:0 10px !important;} .shelf-head {padding:0 var(--space-lg) var(--space-md) var(--space-lg);} .shelf-head h2 {font-size:1.25rem;} .shelf-ver-todo {font-size:0.9rem;}
+  .shelf-track {gap: 15px; padding: 0 20px var(--space-md) 20px;}
+  .shelf-card {flex: 0 0 70vw; min-width: 70vw; height: 400px;}
+  .producto-imagen-container {height: 160px;} .producto-imagen-container img {width: 120px; height: 150px;}
+  .producto-info {padding: 16px 14px 14px 14px; gap: 5px;}
+  .shelf-card h3 {font-size: 1.1rem;} .precio-actual {font-size: 1.3rem;}
+  .reviews {padding:var(--gap-section) 0;} .reviews h2 {font-size:1.25rem;} .reviews-track {grid-auto-columns:60%;}
   .google-actions {flex-direction: column; align-items: center;}
-  
-  .whatsapp-float {width:50px; height:50px; bottom:var(--space-lg); right:var(--space-lg);}
-  .whatsapp-float img {width:28px;}
+  .whatsapp-float {width:50px; height:50px; bottom:var(--space-lg); right:var(--space-lg);} .whatsapp-float img {width:28px;}
 }
