@@ -1,6 +1,6 @@
 /* ====================================================
    VENDER (RENUEVA) - DOCTOR RAYO
-   Versión: 2.2 - Formulario con Expectativas Integradas
+   Versión: 2.3 - Corrección Iconos Pixelados Móvil
    Última actualización: Enero 2025
    ==================================================== */
 
@@ -467,7 +467,7 @@ img {
 }
 
 .beneficio-icon {
-  width: 44px;
+  width: 44px; /* Tamaño por defecto en escritorio */
   height: 44px;
   margin: 0 auto 10px;
   display: grid;
@@ -842,6 +842,21 @@ img {
 
   .banner-items span.separator {
     display: none;
+  }
+
+  /* ========================================
+     CORRECCIÓN ICONOS PIXELADOS (AQUÍ ESTÁ EL ARREGLO)
+     ======================================== */
+  .beneficios-grid {
+    /* Mantenemos las 2 columnas pero aseguramos el espacio */
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .beneficio-icon {
+    /* AUMENTAMOS TAMAÑO SOLO EN MÓVIL */
+    width: 60px; 
+    height: 60px;
+    /* Esto da espacio para que una imagen HD respire */
   }
 
   /* ========================================
