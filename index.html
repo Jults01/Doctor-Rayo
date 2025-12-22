@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
 
-  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/index.css?v=2.1">
 </head>
 <body>
   <header class="main-header">
@@ -336,7 +336,7 @@
         <div class="tech-specs-grid">
           <div class="tech-item">
             <h4>Batería</h4>
-            <p id="modal-battery"></p>
+            <p id="modal-battery"></p> 
           </div>
           <div class="tech-item">
             <h4>Estado Físico</h4>
@@ -367,7 +367,7 @@
 
   <script>
     /* =====================================
-       TOGGLE PROCESS FUNCTIONALITY
+       1. FUNCIONALIDAD TOGGLE (COMPRA/VENDE)
        ===================================== */
     document.addEventListener('DOMContentLoaded', function() {
       const toggleButtons = document.querySelectorAll('.toggle-btn');
@@ -385,32 +385,30 @@
     });
 
     /* =====================================
-       DATA & SHELF LOGIC
+       2. DATOS DE PRODUCTOS (IDs ÚNICOS)
        ===================================== */
-    // Datos globales
     var shelfData = [
       {
-        id: 1, // Nuevo item (ID 1)
+        id: 101,
         name: 'iPhone 17 Pro Max',
         specs: '256GB • Silver',
         priceFrom: '$6.100.000',
         price: '$5.790.000',
-        badge: 'Más vendido',
+        badge: 'Lanzamiento',
         badgeClass: 'mas-vendido',
         img: 'img/iphone17promax.png',
         href: 'comprar.html',
         estado: 'Nuevo',
-        estadoClass: 'nuevo', /* IMPORTANTE: minúscula para que funcione el CSS */
+        estadoClass: 'nuevo',
         detalles: {
-          bateria: '100%',
-          condicion: 'Nuevo (Sellado)',
-          reparado: 'No',
-          fisico: '10/10',
+          bateria: '100% (Sellado)',
+          fisico: 'Nuevo 10/10',
+          reparado: 'Ninguna',
           pantalla: 'Original'
         }
       },
       {
-        id: 2, // Antes ID 1
+        id: 102,
         name: 'iPhone 15 Pro',
         specs: '256GB • Titanio Natural',
         priceFrom: '$3.290.000',
@@ -424,13 +422,13 @@
         estadoClass: 'como-nuevo',
         detalles: {
           bateria: '100% (Nueva)',
+          fisico: '10/10 Impecable',
           reparado: 'No',
-          fisico: '10/10',
-          pantalla: 'Original s/rayones'
+          pantalla: 'Original'
         }
       },
       {
-        id: 3, // Antes ID 2
+        id: 103,
         name: 'iPhone 13',
         specs: '128GB • Azul',
         priceFrom: '$1.890.000',
@@ -444,13 +442,13 @@
         estadoClass: 'excelente',
         detalles: {
           bateria: '89%',
+          fisico: '9/10 (Marcas leves)',
           reparado: 'No',
-          fisico: '9/10 (Marcas de uso leves)',
           pantalla: 'Original'
         }
       },
       {
-        id: 4, // Antes ID 3
+        id: 104,
         name: 'iPhone 11',
         specs: '128GB • Negro',
         price: '$650.000',
@@ -463,14 +461,14 @@
         estado: 'Muy bueno',
         estadoClass: 'muy-bueno',
         detalles: {
-          bateria: 'Óptima',
-          reparado: 'Cambio batería',
-          fisico: '8.5/10',
+          bateria: '85%',
+          fisico: '10/10',
+          reparado: 'No',
           pantalla: 'Sin rayones profundos'
         }
       },
       {
-        id: 5, // Antes ID 4
+        id: 105,
         name: 'Xiaomi Redmi Note 12',
         specs: '64GB • Negro',
         price: '$480.000',
@@ -483,16 +481,15 @@
         estadoClass: 'como-nuevo',
         detalles: {
           bateria: '98%',
-          reparado: 'No',
           fisico: '10/10',
+          reparado: 'No',
           pantalla: 'Original'
         }
       },
       {
-        id: 6, // Antes ID 5
+        id: 106,
         name: 'Motorola Edge 30',
         specs: '256GB • Verde',
-        priceFrom: '$950.000',
         price: '$750.000',
         monthly: '$1.200 / mes*',
         badge: 'Oferta',
@@ -503,29 +500,29 @@
         estadoClass: 'excelente',
         detalles: {
           bateria: '90%',
-          reparado: 'No',
           fisico: '9.5/10',
+          reparado: 'No',
           pantalla: 'Original'
         }
       }
     ];
 
+    /* =====================================
+       3. RENDERIZADO DE TARJETAS
+       ===================================== */
     document.addEventListener('DOMContentLoaded', function() {
-      // Renderizar productos
       var track = document.getElementById('shelf-track');
       if (track) {
         track.innerHTML = shelfData.map(function(p) {
           
           var priceFromHtml = p.priceFrom ? '<span class="precio-desde">' + p.priceFrom + '</span>' : '';
-          
-          // Link WhatsApp directo
-          var mensajeWpp = encodeURIComponent("Hola Doctor Rayo, estoy interesado en comprar el " + p.name + " de " + p.price + ". ¿Sigue disponible?");
+          var mensajeWpp = encodeURIComponent("Hola Doctor Rayo, me interesa el " + p.name + ". ¿Está disponible?");
           var linkWpp = "https://wa.me/573046486740?text=" + mensajeWpp;
 
           return '<article class="shelf-card">' +
             '<div class="card-badge ' + p.badgeClass + '">' + p.badge + '</div>' +
             '<div class="producto-imagen-container">' +
-              '<img src="' + p.img + '" alt="' + p.name + '" loading="lazy" decoding="async">' +
+              '<img src="' + p.img + '" alt="' + p.name + '" loading="lazy">' +
             '</div>' +
             '<div class="producto-info">' +
               '<h3>' + p.name + '</h3>' +
@@ -537,80 +534,70 @@
               '</div>' +
               '<span class="estado ' + p.estadoClass + '">' + p.estado + '</span>' +
               
-              /* BOTONES DE ACCIÓN */
               '<div class="buttons-container">' +
-                  // Botón Info abre MODAL (pasamos el ID)
+                  // IMPORTANTE: Aquí se llama a la función pasando el ID único
                   '<button class="shelf-btn btn-outline" onclick="openProductModal(' + p.id + ')">Ver info</button>' +
                   '<a class="shelf-btn btn-solid" href="' + linkWpp + '" target="_blank">Comprar ⚡</a>' +
               '</div>' +
-              
             '</div>' +
           '</article>';
         }).join('');
       }
 
-      // Carrusel Reviews
+      // Inicializar reviews
       var viewport = document.querySelector('.reviews-viewport');
       var reviewsTrack = document.getElementById('reviews-track');
       if (viewport && reviewsTrack) {
         viewport.addEventListener('keydown', function(e) {
-          if (e.key === 'ArrowLeft') { 
-            e.preventDefault(); 
-            reviewsTrack.scrollBy({ left: -300, behavior: 'smooth' }); 
-          }
-          if (e.key === 'ArrowRight') { 
-            e.preventDefault(); 
-            reviewsTrack.scrollBy({ left: 300, behavior: 'smooth' }); 
-          }
+          if (e.key === 'ArrowLeft') { e.preventDefault(); reviewsTrack.scrollBy({ left: -300, behavior: 'smooth' }); }
+          if (e.key === 'ArrowRight') { e.preventDefault(); reviewsTrack.scrollBy({ left: 300, behavior: 'smooth' }); }
         });
       }
-
+      
+      // Año footer
       var yearElement = document.getElementById('current-year');
-      if (yearElement) {
-        yearElement.textContent = new Date().getFullYear();
-      }
+      if (yearElement) yearElement.textContent = new Date().getFullYear();
     });
 
     /* =====================================
-       MODAL LOGIC
+       4. LÓGICA DEL MODAL (CORREGIDA)
        ===================================== */
     function openProductModal(id) {
-      // 1. Encontrar producto
-      var product = shelfData.find(p => p.id === id);
+      // Buscar el producto en la lista usando el ID
+      var product = shelfData.find(function(p) { return p.id === id; });
+      
       if (!product) return;
 
-      // 2. Rellenar datos en el modal
+      // Llenar los datos en el HTML
       document.getElementById('modal-img').src = product.img;
       document.getElementById('modal-title').textContent = product.name;
       document.getElementById('modal-price').textContent = product.price;
-      
-      // Detalles técnicos
+
+      // Llenar detalles técnicos (asegurando que existan)
       if (product.detalles) {
-        document.getElementById('modal-battery').textContent = product.detalles.bateria || 'N/A';
-        document.getElementById('modal-condition').textContent = product.detalles.fisico || 'N/A';
-        document.getElementById('modal-repair').textContent = product.detalles.reparado || 'N/A';
-        document.getElementById('modal-screen').textContent = product.detalles.pantalla || 'N/A';
+        document.getElementById('modal-battery').textContent = product.detalles.bateria || '-';
+        document.getElementById('modal-condition').textContent = product.detalles.fisico || '-';
+        document.getElementById('modal-repair').textContent = product.detalles.reparado || '-';
+        document.getElementById('modal-screen').textContent = product.detalles.pantalla || '-';
       }
 
-      // Actualizar botón WhatsApp del modal
-      var mensajeWpp = encodeURIComponent("Hola Doctor Rayo, vi los detalles del " + product.name + " (" + product.price + ") y quiero pedirlo.");
+      // Actualizar botón de WhatsApp del modal
+      var mensajeWpp = encodeURIComponent("Hola Doctor Rayo, vi los detalles del " + product.name + " (" + product.price + ") y quiero comprarlo.");
       document.getElementById('modal-wpp-btn').href = "https://wa.me/573046486740?text=" + mensajeWpp;
 
-      // 3. Mostrar Modal
+      // Mostrar el modal
       document.getElementById('product-modal').classList.add('active');
-      document.body.classList.add('modal-open'); // Bloquear scroll del body
+      document.body.classList.add('modal-open');
     }
 
     function closeModal() {
       document.getElementById('product-modal').classList.remove('active');
-      document.body.classList.remove('modal-open'); // Desbloquear scroll
+      document.body.classList.remove('modal-open');
     }
 
-    // Cerrar si se hace clic afuera del contenido
+    // Cerrar al dar clic afuera
     document.getElementById('product-modal').addEventListener('click', function(e) {
-      if (e.target === this) {
-        closeModal();
-      }
+      if (e.target === this) closeModal();
     });
   </script>
 </body>
