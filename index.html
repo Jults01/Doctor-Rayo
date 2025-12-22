@@ -358,7 +358,7 @@
 
         <div class="modal-actions">
           <a id="modal-wpp-btn" href="#" target="_blank" class="btn-modal-wpp">
-            Pedir por WhatsApp ⚡
+            Comprar ahora ⚡
           </a>
         </div>
       </div>
@@ -387,10 +387,30 @@
     /* =====================================
        DATA & SHELF LOGIC
        ===================================== */
-    // Datos globales para poder acceder desde el modal
+    // Datos globales
     var shelfData = [
       {
-        id: 1,
+        id: 1, // Nuevo item (ID 1)
+        name: 'iPhone 17 Pro Max',
+        specs: '256GB • Silver',
+        priceFrom: '$6.100.000',
+        price: '$5.790.000',
+        badge: 'Más vendido',
+        badgeClass: 'mas-vendido',
+        img: 'img/iphone17promax.png',
+        href: 'comprar.html',
+        estado: 'Nuevo',
+        estadoClass: 'nuevo', /* IMPORTANTE: minúscula para que funcione el CSS */
+        detalles: {
+          bateria: '100%',
+          condicion: 'Nuevo (Sellado)',
+          reparado: 'No',
+          fisico: '10/10',
+          pantalla: 'Original'
+        }
+      },
+      {
+        id: 2, // Antes ID 1
         name: 'iPhone 15 Pro',
         specs: '256GB • Titanio Natural',
         priceFrom: '$3.290.000',
@@ -410,7 +430,7 @@
         }
       },
       {
-        id: 2,
+        id: 3, // Antes ID 2
         name: 'iPhone 13',
         specs: '128GB • Azul',
         priceFrom: '$1.890.000',
@@ -418,7 +438,7 @@
         monthly: '$2.700 / mes*',
         badge: 'Top ventas',
         badgeClass: 'top-ventas',
-        img: 'img/prod-iphone13.jpg',
+        img: 'img/iphone13.png',
         href: 'comprar.html',
         estado: 'Excelente',
         estadoClass: 'excelente',
@@ -430,14 +450,15 @@
         }
       },
       {
-        id: 3,
-        name: 'Samsung Galaxy S21',
+        id: 4, // Antes ID 3
+        name: 'iPhone 11',
         specs: '128GB • Negro',
-        price: '$1.250.000',
+        price: '$650.000',
+        priceFrom: '$790.000',
         monthly: '$1.990 / mes*',
         badge: 'Recomendado',
         badgeClass: 'recomendado',
-        img: 'img/prod-s21.jpg',
+        img: 'img/iphone11.png',
         href: 'comprar.html',
         estado: 'Muy bueno',
         estadoClass: 'muy-bueno',
@@ -449,7 +470,7 @@
         }
       },
       {
-        id: 4,
+        id: 5, // Antes ID 4
         name: 'Xiaomi Redmi Note 12',
         specs: '64GB • Negro',
         price: '$480.000',
@@ -468,7 +489,7 @@
         }
       },
       {
-        id: 5,
+        id: 6, // Antes ID 5
         name: 'Motorola Edge 30',
         specs: '256GB • Verde',
         priceFrom: '$950.000',
@@ -512,7 +533,7 @@
               '<div class="precio-container">' +
                 priceFromHtml +
                 '<span class="precio-actual">' + p.price + '</span>' +
-                '<span class="precio-mensual">' + p.monthly + '</span>' +
+                (p.monthly ? '<span class="precio-mensual">' + p.monthly + '</span>' : '') +
               '</div>' +
               '<span class="estado ' + p.estadoClass + '">' + p.estado + '</span>' +
               
@@ -520,7 +541,7 @@
               '<div class="buttons-container">' +
                   // Botón Info abre MODAL (pasamos el ID)
                   '<button class="shelf-btn btn-outline" onclick="openProductModal(' + p.id + ')">Ver info</button>' +
-                  '<a class="shelf-btn btn-solid" href="' + linkWpp + '" target="_blank">Pedir ⚡</a>' +
+                  '<a class="shelf-btn btn-solid" href="' + linkWpp + '" target="_blank">Comprar ⚡</a>' +
               '</div>' +
               
             '</div>' +

@@ -1,6 +1,6 @@
 /* ====================================================
    DOCTOR RAYO - HOJA DE ESTILOS PRINCIPAL
-   Versión: 2.6 - Popup Info & Center Badge
+   Versión: 2.7 - Nuevo Estado, Mobile Fix & Popup
    ==================================================== */
 
 /* =================== 1. VARIABLES CSS =================== */
@@ -401,19 +401,20 @@ body.modal-open { overflow: hidden; }
   font-size: 0.85rem; color: #6b7280; font-weight: 400;
 }
 
-/* ESTADO DEL PRODUCTO (CENTRADO AHORA) */
+/* ESTADO DEL PRODUCTO (CENTRADO) */
 .estado {
   color: white; padding: 6px 12px; border-radius: 16px; font-size: 0.75rem;
   font-weight: 600; 
-  /* --- CAMBIO: CENTRADO --- */
   display: inline-block; 
-  align-self: center; /* Antes era flex-start */
-  /* ------------------------ */
+  align-self: center; /* Centrado */
   margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px;
 }
 .estado.como-nuevo { background: #16a34a; }
 .estado.excelente { background: var(--color-accent-green); }
 .estado.muy-bueno { background: #eab308; }
+/* --- NUEVA CLASE PARA EL ESTADO NUEVO --- */
+.estado.nuevo { background: #000000; } /* Negro para Nuevo */
+/* ---------------------------------------- */
 
 /* BOTONERA DOBLE */
 .shelf-card .buttons-container {
@@ -553,15 +554,6 @@ body.modal-open { overflow: hidden; }
 
 .modal-body {padding: 30px;}
 
-.modal-disclaimer {
-  font-size: 0.8rem;       /* Letra pequeña */
-  color: #888;             /* Color gris (no negro fuerte) */
-  text-align: center;      /* Centrado */
-  margin-top: -10px;       /* Un poco pegado a las specs */
-  margin-bottom: 20px;     /* Espacio antes del botón */
-  font-style: italic;      /* Cursiva para que parezca nota */
-}
-
 /* Estructura interna del modal */
 .modal-img-container {
   text-align: center; margin-bottom: 20px;
@@ -578,6 +570,12 @@ body.modal-open { overflow: hidden; }
 }
 .tech-item h4 {font-size: 0.8rem; color: #666; text-transform: uppercase; margin-bottom: 4px;}
 .tech-item p {font-size: 1rem; font-weight: 600; color: #000;}
+
+/* DISCLAIMER TEXTO LEGAL */
+.modal-disclaimer {
+  font-size: 0.8rem; color: #888; text-align: center;
+  margin-top: -10px; margin-bottom: 20px; font-style: italic;
+}
 
 .modal-actions {display: flex; gap: 10px;}
 .btn-modal-wpp {
