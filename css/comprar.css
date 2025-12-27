@@ -1,3 +1,9 @@
+/* ====================================================
+   DOCTOR RAYO - HOJA DE ESTILOS: COMPRAR
+   Versión: Final Definitiva - Imagen Modal Centrada
+   ==================================================== */
+
+/* --- 1. VARIABLES --- */
 :root {
   --color-primary: #e60000;
   --color-primary-dark: #c40000;
@@ -10,1151 +16,256 @@
   --color-black: #000;
   --color-light-gray: #f9f9f9;
   --color-medium-gray: #ddd;
-  --color-dark-gray: #444;
   --color-footer-text: #ccc;
-  --color-overlay: rgba(0, 0, 0, 0.65);
-  --gap-section: 25px;
-  --gap-content: 24px;
-  --space-xs: 5px;
-  --space-sm: 8px;
-  --space-md: 12px;
-  --space-lg: 16px;
+  --color-overlay: rgba(0, 0, 0, 0.40);
+  
   --space-xl: 20px;
-  --space-xxl: 30px;
-  --space-xxxl: 40px;
-  --font-size-base: 1rem;
-  --font-size-lg: 20px;
-  --font-size-xxl: 2rem;
-  --font-size-xxxl: 2.5rem;
-  --transition-speed: 0.3s;
-  --shadow-light: 0 2px 6px rgba(0,0,0,0.05);
-  --shadow-medium: 0 8px 18px rgba(0,0,0,0.08);
-  --shadow-strong: 0 12px 26px rgba(0,0,0,0.15);
 }
 
-*, *::before, *::after { 
-  box-sizing: border-box; 
-  margin: 0; 
-  padding: 0; 
-}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Poppins', sans-serif; background: var(--color-light-gray); color: var(--color-text-dark); line-height: 1.6; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; height: auto; display: block; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-xl); }
+body.modal-open { overflow: hidden; }
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background: var(--color-white);
-  color: var(--color-text-dark);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+/* --- 2. HEADER --- */
+.main-header { background: var(--color-white); padding: 10px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+.header-wrapper { display: flex; justify-content: space-between; align-items: center; }
 
-a { 
-  text-decoration: none; 
-  color: inherit; 
-}
-
-img { 
-  max-width: 100%; 
-  height: auto; 
-}
-
-.container { 
-  max-width: 1200px; 
-  margin: 0 auto; 
-  padding: 0 var(--space-xl); 
-}
-
-/* ========= HEADER Y NAVEGACIÓN ========= */
-.main-header { 
-  background: var(--color-white); 
-  padding: var(--space-sm) 0; 
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-}
-
-.header-wrapper { 
-  display: flex; 
-  justify-content: space-between; 
-  align-items: center;
-}
-
-.logo h1 {
+.logo h1 { 
   font-weight: 700; 
-  background: linear-gradient(135deg, #e60000, #ff4444);
-  -webkit-background-clip: text; 
-  -webkit-text-fill-color: transparent; 
-  background-clip: text;
+  background: linear-gradient(135deg, #e60000, #ff4444); 
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; 
   font-size: 32px; 
-  transition: all 0.3s ease; 
-  text-shadow: 0 2px 4px rgba(230,0,0,0.1);
 }
 
-.logo h1:hover { 
-  transform: scale(1.05); 
-  filter: brightness(1.1);
-}
+.header-nav { margin-left: auto; }
+.nav-menu { display: flex; gap: .5rem; list-style: none; align-items: center; }
+.nav-menu li a { font-weight: 600; font-size: 1rem; color: var(--color-text-medium); padding: .6rem 1.2rem; border-radius: 6px; transition: 0.3s; }
+.nav-menu li a:hover { color: var(--color-primary); }
+.nav-vender { background: #f0f0f0; }
+.nav-vender:hover { background: var(--color-primary)!important; color: white!important; transform: translateY(-2px); }
 
-.header-nav { 
-  margin-left: auto;
-}
-
-.nav-menu { 
-  display: flex; 
-  gap: .5rem; 
-  list-style: none; 
-  align-items: center;
-}
-
-.nav-menu li a {
-  text-decoration: none; 
-  font-weight: 600; 
-  font-size: 1rem; 
-  color: var(--color-text-medium);
-  transition: all var(--transition-speed) ease; 
-  padding: .6rem 1.2rem; 
-  border-radius: 6px; 
-  display: inline-block;
-}
-
-.nav-menu li a:hover { 
-  color: var(--color-primary);
-}
-
-.nav-vender { 
-  background: #f0f0f0;
-}
-
-.nav-vender:hover {
-  background: var(--color-primary)!important; 
-  color: var(--color-white)!important; 
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(230, 0, 0, 0.3);
-}
-
-/* ========= HERO ========= */
-.comprar-hero {
-  background: url('../img/comprar-hero.jpg') no-repeat center/cover; 
+/* --- 3. HERO (PC) --- */
+.comprar-hero { 
+  background-image: url('../img/comprar-hero.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   height: 350px; 
-  display: flex;
-  align-items: center; 
-  justify-content: center; 
-  position: relative; 
-  text-align: center; 
-  overflow: hidden;
+  display: flex; align-items: center; justify-content: center; 
+  position: relative; text-align: center; 
 }
+.comprar-hero::before { content: ""; position: absolute; inset: 0; background: var(--color-overlay); z-index: 1; }
+.comprar-overlay { position: relative; z-index: 2; background: rgba(0,0,0,0.6); padding: 30px 40px; border-radius: 10px; color: var(--color-text-light); max-width: 90%; }
+.comprar-overlay h1 { font-size: 3.5rem; margin-bottom: 24px; font-weight: 700; line-height: 1.2; }
+.comprar-overlay p { font-size: 1.1rem; margin-bottom: 24px; max-width: 600px; margin-inline: auto; color: #f5f5f5; }
 
-.comprar-hero::before {
-  content: ""; 
-  position: absolute; 
-  inset: 0; 
-  background: var(--color-overlay);
-}
+/* --- 4. GRID PRODUCTOS --- */
+.dispositivos-disponibles { padding: 40px 0; background: var(--color-light-gray); text-align: center; }
+.dispositivos-disponibles h2 { font-size: 2rem; font-weight: 700; margin-bottom: 16px; color: var(--color-text-dark); }
+.results-count { color: #666; margin-bottom: 30px; font-size: 1rem; }
 
-.comprar-overlay {
-  position: relative; 
-  z-index: 2; 
-  background: rgba(0,0,0,0.6); 
-  padding: var(--space-xxl) var(--space-xxxl);
-  border-radius: 10px; 
-  color: var(--color-text-light); 
-  max-width: 90%;
-}
-
-.comprar-overlay h1 {
-  font-size: var(--font-size-xxl); 
-  margin-bottom: var(--gap-content); 
-  font-weight: 700; 
-  line-height: 1.2;
-}
-
-.comprar-overlay p {
-  font-size: var(--font-size-base); 
-  margin-bottom: var(--gap-content); 
-  max-width: 500px; 
-  margin-inline: auto;
-  color: #f5f5f5; 
-  line-height: 1.5;
-}
-
-/* ========= CELULARES DISPONIBLES - ESTILO KAVAK MEJORADO ========= */
-.dispositivos-disponibles {
-  padding: var(--space-xxl) 2rem; 
-  background: var(--color-light-gray); 
-  text-align: center;
-}
-
-.dispositivos-disponibles h2 {
-  font-size: var(--font-size-xxl); 
-  font-weight: 700; 
-  margin-bottom: var(--space-lg); 
-  color: var(--color-text-dark); 
-  line-height: 1.2;
-  text-align: center;
-}
-
-.results-count {
-  color: #666;
-  margin-bottom: var(--space-xxl);
-  font-size: 1rem;
-  text-align: center;
-}
-
-/* GRID 4 PRODUCTOS POR FILA - ESTILO KAVAK MEJORADO */
+/* Escritorio */
 .grid-dispositivos {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex; 
+  overflow-x: auto; 
   gap: 24px;
-  max-width: 1200px; 
-  margin: 0 auto; 
-  padding: 0 2rem;
-}
-
-/* TARJETAS ESTILO KAVAK - DISEÑO PROFESIONAL */
-.dispositivo-card {
-  background: var(--color-white); 
-  border: 1px solid #e5e7eb; 
-  border-radius: 16px; 
-  padding: 0;
-  transition: all var(--transition-speed) ease; 
-  color: var(--color-text-dark); 
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-  position: relative; 
-  overflow: hidden; 
-  height: 450px;
-  cursor: pointer; 
-  display: flex;
-  flex-direction: column;
-}
-
-.dispositivo-card:hover { 
-  box-shadow: 0 8px 32px rgba(0,0,0,0.12); 
-  border-color: var(--color-primary);
-  transform: translateY(-2px);
-}
-
-/* BADGES ESTILO KAVAK */
-.card-badge {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  color: white;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  z-index: 2;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-}
-
-.card-badge.mas-vendido { background: #e60000; }
-.card-badge.excelente-badge { background: #16a34a; }
-.card-badge.top-ventas { background: #ff6b35; }
-.card-badge.como-nuevo-badge { background: #16a34a; }
-.card-badge.oferta { background: #dc2626; }
-.card-badge.recomendado { background: #2563eb; }
-.card-badge.popular { background: #7c3aed; }
-
-/* CONTENEDOR DE IMAGEN ESTILO KAVAK */
-.dispositivo-imagen-container {
-  height: 240px;
-  background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f4 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-  border-radius: 16px 16px 0 0;
-}
-
-.dispositivo-foto {
-  width: 150px;
-  height: 210px;
-  object-fit: contain;
   padding: 20px;
-  transition: transform var(--transition-speed) ease;
+  max-width: 1200px; margin: 0 auto;
+  scroll-snap-type: x mandatory; scrollbar-width: none;
 }
+.grid-dispositivos::-webkit-scrollbar { display: none; }
 
-.dispositivo-card:hover .dispositivo-foto {
-  transform: scale(1.05);
+.dispositivo-card {
+  background: var(--color-white);
+  border: 1px solid #e5e7eb; border-radius: 16px; padding: 0;
+  transition: all 0.3s ease; color: var(--color-text-dark);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  position: relative; overflow: hidden;
+  min-width: 300px; flex: 0 0 300px; height: 440px;
+  scroll-snap-align: start; display: flex; flex-direction: column; cursor: pointer;
 }
+.dispositivo-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.12); border-color: var(--color-primary); transform: translateY(-5px); }
 
-/* INFO DEL PRODUCTO ESTILO KAVAK */
-.dispositivo-info {
-  padding: 24px 20px 20px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  flex: 1;
-  text-align: left;
+.dispositivo-imagen-container {
+  height: 220px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f4 100%);
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden; border-radius: 16px 16px 0 0;
 }
+.dispositivo-foto { width: 140px; height: 180px; object-fit: contain; padding: 15px; transition: transform 0.3s ease; }
+.dispositivo-card:hover .dispositivo-foto { transform: scale(1.05); }
 
-.dispositivo-card h3 { 
-  font-size: 1.3rem; 
-  font-weight: 600; 
-  color: var(--color-text-dark); 
-  line-height: 1.2;
-  margin-bottom: 6px;
+.dispositivo-info { padding: 15px 16px; display: flex; flex-direction: column; gap: 4px; flex: 1; text-align: left; }
+.dispositivo-info h3 { font-size: 1.2rem; font-weight: 600; color: var(--color-text-dark); margin-bottom: 2px; }
+.dispositivo-specs { font-size: 0.85rem; color: #6b7280; margin-bottom: 8px; font-weight: 400; }
+
+.precio-container { display: flex; flex-direction: column; gap: 2px; margin-bottom: 8px; }
+.precio-desde { font-size: 0.8rem; color: #9ca3af; text-decoration: line-through; }
+.precio-actual { font-size: 1.4rem; font-weight: 700; color: var(--color-text-dark); }
+.precio-mensual { font-size: 0.8rem; color: #6b7280; }
+
+.estado {
+  display: inline-block; padding: 4px 10px; border-radius: 12px;
+  font-size: 0.7rem; font-weight: 600; color: white;
+  text-transform: uppercase; margin-bottom: 10px; align-self: flex-start;
 }
-
-.dispositivo-specs {
-  font-size: 0.9rem;
-  color: #6b7280;
-  margin-bottom: 16px;
-  font-weight: 400;
-}
-
-/* CONTENEDOR DE PRECIOS ESTILO KAVAK */
-.precio-container {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  margin-bottom: 16px;
-}
-
-.precio-desde {
-  font-size: 0.85rem;
-  color: #9ca3af;
-  text-decoration: line-through;
-  font-weight: 400;
-}
-
-.precio-actual { 
-  font-size: 1.6rem; 
-  font-weight: 700; 
-  color: var(--color-text-dark); 
-  line-height: 1;
-}
-
-.precio-mensual {
-  font-size: 0.9rem;
-  color: #6b7280;
-  font-weight: 400;
-}
-
-/* ESTADO DEL PRODUCTO */
-.estado { 
-  color: white; 
-  padding: 8px 14px; 
-  border-radius: 20px; 
-  font-size: 0.75rem; 
-  font-weight: 600; 
-  display: inline-block;
-  align-self: flex-start;
-  margin-top: auto;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
 .estado.como-nuevo { background: #16a34a; }
 .estado.excelente { background: var(--color-accent-green); }
 .estado.muy-bueno { background: #eab308; }
+.estado.nuevo { background: #000; }
 
-/* ========= MODAL (MANTENER IGUAL) ========= */
-.modal { 
-  display: none; 
-  position: fixed; 
-  top: 0; 
-  left: 0; 
-  width: 100%; 
-  height: 100%; 
-  background: rgba(0,0,0,0.5); 
-  z-index: 9999; 
-  animation: fadeIn 0.3s ease;
+.buttons-container { display: flex; gap: 8px; margin-top: auto; width: 100%; }
+.dispositivo-btn {
+  flex: 1; padding: 8px 0; font-size: 0.85rem; font-weight: 600;
+  border-radius: 25px; text-align: center; cursor: pointer;
+  transition: all 0.2s ease; display: flex; align-items: center; justify-content: center;
+  text-decoration: none; height: 36px;
 }
+.btn-outline { background: transparent; border: 1px solid var(--color-primary); color: var(--color-primary); }
+.btn-outline:hover { background: #fff0f0; transform: translateY(-2px); }
+.btn-solid { background: var(--color-accent-green); border: 1px solid var(--color-accent-green); color: white; }
+.btn-solid:hover { background: var(--color-accent-green-dark); transform: translateY(-2px); }
 
-.modal.show { 
-  display: flex; 
-  align-items: center; 
-  justify-content: center;
-}
+/* Badges */
+.card-badge { position: absolute; top: 12px; left: 12px; color: white; padding: 6px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; z-index: 2; text-transform: uppercase; }
+.card-badge.mas-vendido { background: #e60000; }
+.card-badge.excelente-badge { background: #16a34a; }
+.card-badge.top-ventas { background: #ff6b35; }
+.card-badge.oferta { background: #dc2626; }
+.card-badge.recomendado { background: #2563eb; }
+.card-badge.popular { background: #7c3aed; }
+.card-badge.como-nuevo-badge { background: #16a34a; }
 
-.modal-content {
-  background: white; 
-  border-radius: 20px; 
-  padding: 2rem; 
-  max-width: 600px; 
-  width: 90%; 
-  max-height: 80vh;
-  overflow-y: auto; 
-  position: relative; 
-  animation: slideIn 0.3s ease; 
-  text-align: center;
-}
-
-@keyframes fadeIn { 
-  from { opacity: 0;} 
-  to { opacity: 1; } 
-}
-
-@keyframes slideIn { 
-  from { transform: translateY(-50px); opacity: 0;} 
-  to { transform: translateY(0); opacity: 1;} 
-}
-
-.modal-close {
-  position: absolute; 
-  top: 15px; 
-  right: 20px; 
-  background: none; 
-  border: none; 
-  font-size: 1.5rem; 
-  cursor: pointer;
-  color: #666; 
-  transition: color var(--transition-speed);
-}
-
-.modal-close:hover { 
-  color: var(--color-primary); 
-}
-
-/* ========= GALERÍA DE FOTOS EN MODAL ========= */
-.foto-galeria {
-  margin-bottom: 1.5rem;
-}
-
-.foto-principal {
-  margin-bottom: 1rem;
-}
-
-.foto-principal img {
-  width: 100%;
-  max-width: 300px;
-  height: 450px;
-  object-fit: cover;
-  border-radius: 12px;
-  background: none;
-  padding: 8px;
-  border: 2px solid #eee;
-  cursor: pointer;
-  transition: all var(--transition-speed) ease;
-}
-
-.foto-principal img:hover {
-  border-color: var(--color-primary);
-  transform: scale(1.02);
-}
-
-/* ========= ZOOM MODAL ========= */
-.zoom-modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.95);
-  z-index: 10000;
-  justify-content: center;
-  align-items: center;
-  animation: fadeIn 0.3s ease;
-  overflow: auto;
-  padding: 20px;
-}
-
-.zoom-modal.show {
-  display: flex;
-}
-
-.zoom-content {
-  position: relative;
-  width: auto;
-  height: auto;
-  max-width: 95%;
-  max-height: 95vh;
-  margin: auto;
-  animation: zoomIn 0.3s ease;
-}
-
-.zoom-content img {
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: 90vh;
-  object-fit: contain;
-  border-radius: 8px;
-  display: block;
-}
-
-.zoom-close {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: rgba(255, 255, 255, 0.9);
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  color: #333;
-  transition: all var(--transition-speed) ease;
-  z-index: 10001;
-}
-
-.zoom-close:hover {
-  background: var(--color-primary);
-  color: white;
-  transform: scale(1.1);
-}
-
-@keyframes zoomIn {
-  from {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.fotos-thumbnails {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.fotos-thumbnails img {
-  width: 60px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 8px;
-  background: #f8f9fa;
-  padding: 4px;
-  border: 2px solid #ddd;
-  cursor: pointer;
-  transition: all var(--transition-speed) ease;
-}
-
-.fotos-thumbnails img:hover {
-  border-color: var(--color-primary);
-  transform: scale(1.05);
-}
-
-.separador-modal { 
-  height: 1px; 
-  background: linear-gradient(90deg, transparent, #ddd 20%, #ddd 80%, transparent); 
-  margin: 1.5rem 0; 
-}
-
-.caracteristicas { 
-  text-align: left; 
-  margin: var(--space-lg) 0; 
-  padding-top: var(--space-lg); 
-  border-top: 1px solid #eee;
-}
-
-.caracteristicas li {
-  list-style: none; 
-  padding: 6px 0; 
-  font-size: 0.95rem; 
-  color: var(--color-text-medium); 
-  position: relative; 
-  padding-left: 20px;
-}
-
-.caracteristicas li::before { 
-  content: "✓"; 
-  position: absolute; 
-  left: 0; 
-  color: var(--color-accent-green); 
-  font-weight: bold;
-}
-
-.info-adicional { 
-  background: #f8f9fa; 
-  border-radius: 12px; 
-  padding: 1rem; 
-  margin: 1rem 0; 
-  border-left: 4px solid var(--color-accent-green);
-}
-
-.info-adicional p { 
-  margin: 0.3rem 0; 
-  font-size: 0.9rem; 
-  color: var(--color-text-medium);
-}
-
-.info-adicional .highlight { 
-  color: var(--color-accent-green); 
-  font-weight: 600;
-}
-
-.btn-container { 
-  display: flex !important; 
-  justify-content: center !important; 
-  align-items: center !important; 
-  width: 100% !important; 
-  margin-top: var(--space-lg) !important;
-}
-
-.btn-whatsapp {
-  background: var(--color-accent-green) !important; 
-  color: white !important; 
-  padding: 12px 20px !important; 
-  border-radius: 25px !important;
-  font-weight: 600 !important; 
-  text-decoration: none !important; 
-  font-size: 1rem !important; 
-  width: 280px !important; 
-  height: 48px !important; 
-  display: flex !important;
-  align-items: center !important; 
-  justify-content: center !important; 
-  text-align: center !important; 
-  box-sizing: border-box !important; 
-  margin: 0 !important;
-  font-family: 'Poppins', sans-serif !important; 
-  line-height: 1 !important; 
-  white-space: nowrap !important;
-}
-
-.btn-whatsapp:hover { 
-  background: #16a34a !important; 
-  transform: translateY(-2px); 
-  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
-}
-  
-/* ========= BENEFICIOS - 3 COLUMNAS ========= */
-.beneficios { 
-  padding: var(--gap-section) 0; 
-  background: var(--color-white); 
-  text-align: center;
-}
-
-.beneficios .container { 
-  max-width: 1200px; 
-  margin: 0 auto; 
-  padding: 0 var(--space-xl);
-}
-
-.beneficios h2 {
-  font-size: var(--font-size-xxl); 
-  font-weight: 700; 
-  margin-bottom: var(--gap-content); 
-  color: var(--color-text-dark); 
-  line-height: 1.2;
-  text-align: center;
-}
-
-.grid-beneficios { 
-  display: grid; 
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 20px; 
-  max-width: 800px; 
-  margin: 0 auto;
-}
-
+/* --- 5. BENEFICIOS --- */
+.beneficios { padding: 40px 0; background: var(--color-white); text-align: center; }
+.beneficios h2 { font-size: 2rem; font-weight: 700; margin-bottom: 24px; color: var(--color-text-dark); }
+.grid-beneficios { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 800px; margin: 0 auto; }
 .beneficio-card { 
-  border: 1px solid var(--color-medium-gray); 
-  border-radius: 12px; 
-  background: #f8f9fa; 
-  box-shadow: var(--shadow-light);
-  padding: 25px 20px; 
-  text-align: center; 
-  transition: box-shadow var(--transition-speed) ease;
+  border: 1px solid var(--color-medium-gray); border-radius: 12px; background: #f8f9fa; padding: 25px 20px; text-align: center; 
+  display: flex; flex-direction: column; align-items: center;
 }
+.beneficio-card img { width: 60px; height: 60px; object-fit: contain; margin-bottom: 12px; }
+.beneficio-card h3 { margin: 0.5rem 0; font-weight: 700; font-size: 1.1rem; color: var(--color-primary); }
+.beneficio-card p { margin: 0; color: var(--color-text-medium); font-size: 0.95rem; }
 
-.beneficio-card:hover { 
-  border-color: var(--color-primary); 
-  box-shadow: var(--shadow-medium); 
-}
+/* --- 6. FAQ --- */
+.faq-section { padding: 40px 0; background: var(--color-light-gray); }
+.faq-section h2 { font-size: 2rem; font-weight: 700; text-align: center; margin-bottom: 40px; color: var(--color-text-dark); }
+.faq-container { max-width: 800px; margin: 0 auto; }
+.faq-item { background: white; border-radius: 12px; margin-bottom: 15px; overflow: hidden; box-shadow: var(--shadow-light); }
+.faq-question { padding: 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+.faq-question h3 { font-size: 1.1rem; font-weight: 600; margin: 0; }
+.faq-toggle { font-size: 1.5rem; color: var(--color-primary); font-weight: bold; }
+.faq-item.active .faq-toggle { transform: rotate(45deg); }
+.faq-answer { padding: 0 20px; max-height: 0; overflow: hidden; transition: 0.3s; }
+.faq-item.active .faq-answer { max-height: 200px; padding-bottom: 20px; }
 
-.beneficio-card img { 
-  width: 60px; 
-  height: 60px; 
-  object-fit: contain; 
-  margin-bottom: var(--space-md);
-}
-
-.beneficio-card h3 { 
-  margin: 0.5rem 0; 
-  font-weight: 700; 
-  font-size: 1.1rem; 
-  color: var(--color-primary); 
-  line-height: 1.3;
-}
-
-.beneficio-card p { 
-  margin: 0; 
-  color: var(--color-text-medium); 
-  font-size: 0.95rem; 
-  line-height: 1.5;
-}
-
-/* ========= FAQ SECTION ========= */
-.faq-section {
-  padding: var(--gap-section) 0;
-  background: var(--color-light-gray);
-}
-
-.faq-section h2 {
-  font-size: var(--font-size-xxl);
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: var(--space-xxxl);
-  color: var(--color-text-dark);
-}
-
-.faq-container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.faq-item {
-  background: white;
-  border-radius: 12px;
-  margin-bottom: 15px;
-  overflow: hidden;
-  box-shadow: var(--shadow-light);
-  transition: box-shadow var(--transition-speed) ease;
-}
-
-.faq-item:hover {
-  box-shadow: var(--shadow-medium);
-}
-
-.faq-question {
-  padding: 20px;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: background-color var(--transition-speed) ease;
-}
-
-.faq-question:hover {
-  background-color: #f8f9fa;
-}
-
-.faq-question h3 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--color-text-medium);
-  margin: 0;
-  flex: 1;
-}
-
-.faq-toggle {
-  font-size: 1.5rem;
-  color: var(--color-primary);
-  font-weight: bold;
-  transition: transform var(--transition-speed) ease;
-}
-
-.faq-item.active .faq-toggle {
-  transform: rotate(45deg);
-}
-
-.faq-answer {
-  padding: 0 20px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height var(--transition-speed) ease, padding var(--transition-speed) ease;
-}
-
-.faq-item.active .faq-answer {
-  max-height: 200px;
-  padding: 0 20px 20px 20px;
-}
-
-.faq-answer p {
-  color: #666;
-  line-height: 1.6;
-  margin: 0;
-}
-
-/* ========= CTA WHATSAPP ========= */
-.cta-whatsapp { 
-  padding: var(--gap-section) 0; 
-  background: var(--color-light-gray); 
-  text-align: center;
-}
-
-.cta-whatsapp h2 { 
-  font-size: var(--font-size-xxl); 
-  margin-bottom: var(--space-lg); 
-  font-weight: 700; 
-  color: var(--color-text-dark); 
-  line-height: 1.2; 
-}
-
-.cta-whatsapp .cta-subtext { 
-  max-width: 600px; 
-  margin: 0 auto var(--space-xl); 
-  font-size: var(--font-size-base); 
-  color: var(--color-text-medium); 
-  line-height: 1.5;
-}
-
-.cta-button { 
-  background-color: var(--color-primary); 
-  color: var(--color-white); 
-  padding: 14px 30px; 
-  border-radius: 50px; 
-  font-weight: 600;
-  text-decoration: none; 
-  display: inline-block; 
-  transition: all var(--transition-speed) ease; 
-  font-size: 1.1rem;
-}
-
-.cta-button:hover {
-  background-color: var(--color-primary-dark); 
-  transform: translateY(-2px); 
-  box-shadow: 0 6px 20px rgba(230, 0, 0, 0.3);
-}
-
-/* ========= FOOTER ========= */
-.main-footer {
-  background: var(--color-black); 
-  color: var(--color-white);
-  padding: var(--space-xxxl) var(--space-xl) var(--space-xl); 
-  font-size: 14px;
-}
-
-.footer-wrapper {
-  max-width: 1200px; 
-  margin: 0 auto var(--space-xl);
-  display: flex; 
-  flex-wrap: wrap; 
+/* --- 7. FOOTER --- */
+.main-footer { background: var(--color-black); color: var(--color-white); padding: 40px 20px 20px; font-size: 14px; }
+.footer-wrapper { 
+  max-width: 1200px; margin: 0 auto 20px; 
+  display: flex; flex-wrap: wrap; 
   justify-content: space-between; 
-  gap: var(--space-xxl);
+  gap: 30px; 
 }
+.footer-column { flex: 1 1 180px; min-width: 180px; }
+.footer-column h3 { color: var(--color-white); margin-bottom: 12px; font-size: 1.25rem; }
+.footer-column p, .footer-column ul li a { color: var(--color-footer-text); line-height: 1.8; }
+.footer-column ul { list-style: none; padding: 0; }
+.footer-column a:hover { color: var(--color-primary); }
+.footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid var(--color-dark-gray); color: var(--color-footer-text); }
 
-.footer-column {
-  flex: 1 1 220px; 
-  min-width: 180px;
+/* --- 8. MODAL (CORREGIDO: IMAGEN CENTRADA) --- */
+.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 2000; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: 0.3s; padding: 20px; }
+.modal-overlay.active { opacity: 1; visibility: visible; }
+.modal-content { background: white; width: 100%; max-width: 500px; border-radius: 16px; overflow: hidden; transform: translateY(20px); transition: 0.3s; box-shadow: 0 10px 40px rgba(0,0,0,0.2); max-height: 90vh; overflow-y: auto; }
+.modal-overlay.active .modal-content { transform: translateY(0); }
+.modal-close { position: absolute; top: 15px; right: 15px; background: rgba(0,0,0,0.05); border: none; width: 36px; height: 36px; border-radius: 50%; font-size: 24px; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10; }
+.modal-body { padding: 30px; }
+
+/* AQUÍ ESTÁ EL CAMBIO DE LA IMAGEN CENTRADA */
+.modal-img-container { 
+  text-align: center; margin-bottom: 20px; background: #f8f9fa; border-radius: 12px; padding: 20px; 
+  display: flex; justify-content: center; align-items: center; /* <-- FIX */
 }
+.modal-img-container img { height: 200px; object-fit: contain; }
 
-.footer-column h2,
-.footer-column h3 {
-  color: var(--color-white); 
-  margin-bottom: var(--space-md); 
-  font-size: var(--font-size-lg);
-}
+.modal-title { font-size: 1.8rem; font-weight: 700; margin-bottom: 5px; line-height: 1.2; }
+.modal-price { font-size: 1.6rem; color: var(--color-primary); font-weight: 700; margin-bottom: 20px; }
+.tech-specs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; background: #f9f9f9; padding: 20px; border-radius: 12px; margin-bottom: 25px; }
+.tech-item h4 { font-size: 0.8rem; color: #666; text-transform: uppercase; margin-bottom: 4px; }
+.tech-item p { font-size: 1rem; font-weight: 600; color: #000; }
+.modal-disclaimer { font-size: 0.8rem; text-align: center; color: #888; margin-top: -10px; margin-bottom: 20px; font-style: italic; }
+.btn-modal-wpp { display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--color-accent-green); color: white; padding: 15px; border-radius: 12px; text-align: center; font-weight: 600; font-size: 1.1rem; }
 
-.footer-column p,
-.footer-column ul li a {
-  color: var(--color-footer-text); 
-  line-height: 1.8;
-}
+/* 9. EXTRAS */
+.cta-whatsapp { padding: 40px 0; background: var(--color-light-gray); text-align: center; }
+.cta-whatsapp h2 { font-size: 2rem; margin-bottom: 16px; font-weight: 700; }
+.cta-subtext { margin-bottom: 20px; font-size: 1rem; }
+.cta-button { background-color: var(--color-primary); color: var(--color-white); padding: 14px 30px; border-radius: 50px; font-weight: 600; display: inline-block; }
+.whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px; background: var(--color-accent-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; }
+.whatsapp-float img { width: 35px; }
 
-.footer-column ul {
-  list-style: none; 
-  padding: 0;
-}
-
-.footer-column ul li {
-  margin-bottom: var(--space-sm);
-}
-
-.footer-column ul li a {
-  transition: color var(--transition-speed);
-}
-
-.footer-column ul li a:hover,
-.footer-column ul li a:focus {
-  color: var(--color-primary);
-}
-
-.footer-column address {
-  font-style: normal;
-}
-
-.redes-sociales {
-  display: flex; 
-  gap: var(--space-lg);
-}
-
-.footer-bottom {
-  text-align: center; 
-  padding-top: var(--space-xl); 
-  border-top: 1px solid var(--color-dark-gray); 
-  color: var(--color-footer-text);
-}
-
-.whatsapp-float { 
-  position: fixed; 
-  width: 60px; 
-  height: 60px; 
-  bottom: var(--space-xxl); 
-  right: var(--space-xxl);
-  background: var(--color-accent-green); 
-  border-radius: 50%; 
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  transition: all var(--transition-speed) ease; 
-  z-index: 1000; 
-  display: flex; 
-  align-items: center; 
-  justify-content: center;
-}
-
-.whatsapp-float img { 
-  width: 35px;
-}
-
-.whatsapp-float:hover, 
-.whatsapp-float:focus { 
-  background: var(--color-accent-green-dark); 
-  transform: scale(1.05); 
-  outline: none; 
-}
-
-/* ========= RESPONSIVE CON CARRUSELES ========= */
+/* =========================================
+   10. RESPONSIVE DESIGN (MÓVIL)
+   ========================================= */
 @media (max-width: 1024px) {
-  .grid-dispositivos {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-  }
-
-  .dispositivo-card {
-    height: 420px;
-  }
-
-  .dispositivo-imagen-container {
-    height: 220px;
-  }
-
-  .dispositivo-foto {
-    width: 130px;
-    height: 190px;
-  }
+  .grid-dispositivos { grid-template-columns: repeat(3, 1fr); gap: 18px; }
 }
 
 @media (max-width: 767px) {
-  :root { 
-    --gap-section: 13px; 
-  }
-  
-  .container {
-    padding: 0 var(--space-md);
-  }
-  
-  .header-wrapper { 
-    flex-direction: column; 
-    gap: var(--space-sm);
-  }
-  
-  .header-nav { 
-    margin-left: 0; 
-    width: 100%;
-  }
-  
-  .nav-menu { 
-    justify-content: center; 
-    gap: 0.4rem; 
-    width: 100%;
-  }
-  
-  .nav-menu li a { 
-    padding: 0.5rem 0.9rem; 
-    font-size: 0.88rem;
-  }
-  
-  .logo h1 { 
-    font-size: 1.3rem;
-  }
-  
+  /* HEADER */
+  .header-wrapper { flex-direction: column; gap: 0; padding: 5px 10px; }
+  .logo h1 { font-size: 1.3rem; margin: 0; } 
+  .header-nav { display: none; }
+
+  /* HERO */
   .comprar-hero { 
-    height: 210px;
+    height: 35vh; 
+    min-height: 280px;
+    background-size: cover;
+    background-position: center bottom; /* Imagen abajo, texto arriba */
   }
+  .comprar-overlay { padding: 15px; max-width: 95%; }
+  .comprar-overlay h1 { font-size: 1.8rem; margin-bottom: 10px; }
   
-  .comprar-overlay { 
-    padding: var(--space-lg) var(--space-md);
-  }
-  
-  .comprar-overlay h1 { 
-    font-size: 1.15rem !important; 
-    margin-bottom: var(--space-md);
-  }
-  
-  .comprar-overlay p { 
-    font-size: 0.95rem; 
-    margin-bottom: var(--space-md);
+  /* TITULOS */
+  .dispositivos-disponibles h2, .beneficios h2, .faq-section h2, .cta-whatsapp h2 {
+    font-size: 1.25rem;
   }
 
-  /* ========= CARRUSEL MÓVIL PRODUCTOS ========= */
+  /* CARRUSEL PRODUCTOS */
   .grid-dispositivos {
-    display: flex !important;
-    overflow-x: scroll;
-    gap: 15px;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    padding: 0 20px var(--space-md) 20px;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    display: flex; overflow-x: auto; gap: 15px; 
+    padding: 0 30px 30px 30px !important; /* Espacio lateral forzado */
+    width: 100%; box-sizing: border-box;
+    scroll-snap-type: x mandatory; scrollbar-width: none;
   }
-
-  .grid-dispositivos::-webkit-scrollbar {
-    display: none;
-  }
-  
-  .dispositivo-card { 
-    flex: 0 0 75vw;
-    max-width: 75vw;
-    min-width: 75vw;
-    height: 440px;
-    scroll-snap-align: start;
-  }
-  
-  .dispositivos-disponibles h2 { 
-    font-size: 1.15rem !important; 
-    margin-bottom: var(--space-md);
-  }
-
-  .dispositivo-imagen-container {
-    height: 220px;
-  }
-  
-  .dispositivo-foto { 
-    width: 130px; 
-    height: 190px;
-  }
-  
-  .dispositivo-card h3 { 
-    font-size: 1.2rem; 
-    margin-bottom: var(--space-sm);
-  }
-  
-  .precio-actual { 
-    font-size: 1.4rem;
-  }
-  
-  .estado {
-    font-size: 0.7rem;
-  }
-  
-  .modal-content { 
-    padding: 1.5rem; 
-    margin: 1rem; 
-    max-width: 95%;
-  }
-  
-  /* Galería móvil - Formato vertical */
-  .foto-principal img { 
-    max-width: 250px; 
-    height: 375px;
-  }
-  
-  .fotos-thumbnails img { 
-    width: 50px; 
-    height: 65px;
-  }
-  
-  /* ========= CARRUSEL MÓVIL BENEFICIOS ========= */
-  .beneficios { 
-    padding: var(--gap-section) 0 var(--space-md) 0;
-  }
-  
-  .beneficios .container { 
-    padding: 0 13px !important; 
-  }
-  
-  .beneficios h2 { 
-    font-size: 1.15rem !important; 
-    margin-bottom: var(--space-md);
-  }
-  
-  .grid-beneficios { 
-    display: flex !important;
-    overflow-x: scroll;
-    gap: 15px;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    padding: 0 20px var(--space-md) 20px;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    margin-bottom: var(--space-md);
-  }
-
-  .grid-beneficios::-webkit-scrollbar {
-    display: none;
-  }
-  
-  .beneficio-card { 
-    flex: 0 0 80vw;
-    max-width: 80vw;
-    min-width: 80vw;
-    scroll-snap-align: start;
-    padding: 20px 15px; 
-    border-radius: 12px; 
-    box-sizing: border-box; 
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-  }
-  
-  .beneficio-card h3 { 
-    font-size: 1rem !important; 
-    margin-bottom: 8px;
-  }
-  
-  .beneficio-card p { 
-    font-size: 0.9rem;
-  }
-
-  .faq-section {
-    padding: var(--gap-section) 0;
-  }
-
-  .faq-section h2 {
-    font-size: 1.15rem !important;
-    margin-bottom: var(--space-md);
-  }
-
-  .faq-question {
-    padding: 15px;
-  }
-
-  .faq-question h3 {
-    font-size: 1rem;
-  }
-
-  .faq-answer {
-    padding: 0 15px;
-  }
-
-  .faq-item.active .faq-answer {
-    padding: 0 15px 15px 15px;
-  }
-  
-  .cta-whatsapp { 
-    padding: var(--gap-section) 0 var(--space-md) 0;
-  }
-  
-  .cta-whatsapp h2 { 
-    font-size: 1.11rem !important; 
-    margin-bottom: var(--space-md);
-  }
-  
-  .cta-whatsapp .cta-subtext { 
-    font-size: 0.95rem; 
-    margin-bottom: var(--space-md);
-  }
-  
-  .whatsapp-float { 
-    width: 50px; 
-    height: 50px; 
-    bottom: var(--space-lg); 
-    right: var(--space-lg);
-  }
-  
-  .whatsapp-float img { 
-    width: 28px;
-  }
-}
-
-@media (max-width: 480px) {
   .dispositivo-card {
-    flex: 0 0 85vw;
-    max-width: 85vw;
-    min-width: 85vw;
+    min-width: 70vw; flex: 0 0 70vw; height: 400px;
+    scroll-snap-align: start;
+  }
+  .dispositivo-imagen-container { height: 160px; }
+  .dispositivo-foto { width: 120px; height: 150px; }
+  .dispositivo-info { padding: 16px 14px 14px 14px; gap: 5px; }
+  .dispositivo-card h3 { font-size: 1.1rem; margin-bottom: 2px; }
+  .precio-actual { font-size: 1.3rem; }
+  
+  /* CARRUSEL BENEFICIOS */
+  .grid-beneficios { 
+    display: flex; overflow-x: auto; gap: 15px; 
+    padding: 0 30px 20px 30px !important; /* Igual que productos */
+    scroll-snap-type: x mandatory; 
+  }
+  .beneficio-card { 
+    min-width: 80vw; flex: 0 0 80vw; scroll-snap-align: start; 
   }
 
-  .beneficio-card {
-    flex: 0 0 90vw;
-    max-width: 90vw;
-    min-width: 90vw;
-  }
+  /* FOOTER */
+  .footer-wrapper { gap: 30px; }
+  .whatsapp-float { width: 50px; height: 50px; bottom: 20px; right: 20px; }
+  .whatsapp-float img { width: 28px; }
 }

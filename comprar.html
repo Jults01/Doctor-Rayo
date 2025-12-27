@@ -4,31 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Comprar | Doctor Rayo</title>
-  <meta name="description" content="Compra tu celular usado como nuevo, fácil y seguro con Doctor Rayo. Equipos certificados, garantía y entrega a domicilio en Bogotá y Colombia." />
+  <meta name="description" content="Compra tu celular usado como nuevo, fácil y seguro con Doctor Rayo." />
   <link rel="canonical" href="https://www.doctorrayo.com/comprar.html" />
- <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
-  
   <link rel="stylesheet" href="css/comprar.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <!-- ========================================
-       HEADER PRINCIPAL
-       ======================================== -->
+
   <header class="main-header">
     <div class="container">
       <div class="header-wrapper">
         <div class="logo">
-          <a href="index.html" aria-label="Inicio Doctor Rayo">
-            <h1>Doctor Rayo</h1>
-          </a>
+          <a href="index.html"><h1>Doctor Rayo</h1></a>
         </div>
-        <nav class="header-nav" aria-label="Navegación principal">
+        <nav class="header-nav">
           <ul class="nav-menu">
             <li><a href="renueva.html" class="nav-vender">Vender</a></li>
             <li><a href="comprar.html" aria-current="page">Comprar</a></li>
@@ -38,10 +28,8 @@
       </div>
     </div>
   </header>
+
   <main>
-    <!-- ========================================
-         HERO
-         ======================================== -->
     <section class="comprar-hero">
       <div class="comprar-overlay">
         <h1>Tu celular usado, como nuevo</h1>
@@ -49,168 +37,28 @@
       </div>
     </section>
 
-    <!-- ========================================
-         CELULARES DISPONIBLES - PRIMERA SECCIÓN
-         ======================================== -->
     <section class="dispositivos-disponibles">
       <h2>Celulares disponibles</h2>
-      <p class="results-count">2,456 Resultados</p>
-      <div class="grid-dispositivos">
-        <div class="dispositivo-card" onclick="openModal('modal1')">
-          <div class="card-badge mas-vendido">Más vendido</div>
-          <div class="dispositivo-imagen-container">
-            <img src="img/iphone15promax-card.jpg" alt="iPhone 15 pro max" class="dispositivo-foto">
-          </div>
-          <div class="dispositivo-info">
-            <h3>iPhone 15 pro max</h3>
-            <p class="dispositivo-specs">256GB • Titanio Natural</p>
-            <div class="precio-container">
-              <span class="precio-desde">$2,890,000</span>
-              <span class="precio-actual">$2,450,000</span>
-              <span class="precio-mensual">$3,900 / mes*</span>
-            </div>
-            <span class="estado como-nuevo">Como nuevo</span>
-          </div>
-        </div>
-
-        <div class="dispositivo-card" onclick="openModal('modal2')">
-          <div class="card-badge excelente-badge">Excelente</div>
-          <div class="dispositivo-imagen-container">
-            <img src="img/samsung-s23-card.jpg" alt="Samsung Galaxy S23" class="dispositivo-foto">
-          </div>
-          <div class="dispositivo-info">
-            <h3>Samsung Galaxy S23</h3>
-            <p class="dispositivo-specs">128GB • Negro</p>
-            <div class="precio-container">
-              <span class="precio-desde">$1,890,000</span>
-              <span class="precio-actual">$1,850,000</span>
-              <span class="precio-mensual">$2,950 / mes*</span>
-            </div>
-            <span class="estado excelente">Excelente</span>
-          </div>
-        </div>
-
-        <div class="dispositivo-card" onclick="openModal('modal3')">
-          <div class="card-badge top-ventas">Top ventas</div>
-          <div class="dispositivo-imagen-container">
-            <img src="img/iphone13-card.jpg" alt="iPhone 13" class="dispositivo-foto">
-          </div>
-          <div class="dispositivo-info">
-            <h3>iPhone 13</h3>
-            <p class="dispositivo-specs">128GB • Azul</p>
-            <div class="precio-container">
-              <span class="precio-desde">$1,790,000</span>
-              <span class="precio-actual">$1,650,000</span>
-              <span class="precio-mensual">$2,630 / mes*</span>
-            </div>
-            <span class="estado muy-bueno">Muy bueno</span>
-          </div>
-        </div>
-
-        <div class="dispositivo-card" onclick="openModal('modal4')">
-          <div class="card-badge como-nuevo-badge">Como nuevo</div>
-          <div class="dispositivo-imagen-container">
-            <img src="img/xiaomi-redmi-card.jpg" alt="Xiaomi Redmi Note 12" class="dispositivo-foto">
-          </div>
-          <div class="dispositivo-info">
-            <h3>Xiaomi Redmi Note 12</h3>
-            <p class="dispositivo-specs">64GB • Negro</p>
-            <div class="precio-container">
-              <span class="precio-actual">$480,000</span>
-              <span class="precio-mensual">$760 / mes*</span>
-            </div>
-            <span class="estado como-nuevo">Como nuevo</span>
-          </div>
-        </div>
-
-        <div class="dispositivo-card" onclick="openModal('modal5')">
-          <div class="card-badge oferta">Oferta</div>
-          <div class="dispositivo-imagen-container">
-            <img src="img/motorola-edge-card.jpg" alt="Motorola Edge 30" class="dispositivo-foto">
-          </div>
-          <div class="dispositivo-info">
-            <h3>Motorola Edge 30</h3>
-            <p class="dispositivo-specs">256GB • Verde</p>
-            <div class="precio-container">
-              <span class="precio-desde">$950,000</span>
-              <span class="precio-actual">$750,000</span>
-              <span class="precio-mensual">$1,200 / mes*</span>
-            </div>
-            <span class="estado excelente">Excelente</span>
-          </div>
-        </div>
-
-        <div class="dispositivo-card" onclick="openModal('modal6')">
-          <div class="card-badge recomendado">Como nuevo</div>
-          <div class="dispositivo-imagen-container">
-            <img src="img/iphone14-card.jpg" alt="iPhone 14" class="dispositivo-foto">
-          </div>
-          <div class="dispositivo-info">
-            <h3>iPhone 14</h3>
-            <p class="dispositivo-specs">256GB • Morado</p>
-            <div class="precio-container">
-              <span class="precio-desde">$2,390,000</span>
-              <span class="precio-actual">$2,180,000</span>
-              <span class="precio-mensual">$3,480 / mes*</span>
-            </div>
-            <span class="estado como-nuevo">Como nuevo</span>
-          </div>
-        </div>
-
-        <div class="dispositivo-card" onclick="openModal('modal7')">
-          <div class="card-badge oferta">Recomendado</div>
-          <div class="dispositivo-imagen-container">
-            <img src="img/pixel7-card.jpg" alt="Google Pixel 7" class="dispositivo-foto">
-          </div>
-          <div class="dispositivo-info">
-            <h3>Google Pixel 7</h3>
-            <p class="dispositivo-specs">128GB • Blanco</p>
-            <div class="precio-container">
-              <span class="precio-desde">$1,200,000</span>
-              <span class="precio-actual">$980,000</span>
-              <span class="precio-mensual">$1,560 / mes*</span>
-            </div>
-            <span class="estado excelente">Excelente</span>
-          </div>
-        </div>
-
-        <div class="dispositivo-card" onclick="openModal('modal8')">
-          <div class="card-badge popular">Popular</div>
-          <div class="dispositivo-imagen-container">
-            <img src="img/oneplus11-card.jpg" alt="OnePlus 11" class="dispositivo-foto">
-          </div>
-          <div class="dispositivo-info">
-            <h3>OnePlus 11</h3>
-            <p class="dispositivo-specs">256GB • Negro</p>
-            <div class="precio-container">
-              <span class="precio-actual">$1,350,000</span>
-              <span class="precio-mensual">$2,150 / mes*</span>
-            </div>
-            <span class="estado muy-bueno">Muy bueno</span>
-          </div>
-        </div>
-      </div>
+      <p class="results-count">Encuentra el equipo perfecto para ti</p>
+      <div class="grid-dispositivos" id="grid-track"></div>
     </section>
 
-    <!-- ========================================
-         BENEFICIOS - SEGUNDA SECCIÓN
-         ======================================== -->
     <section class="beneficios">
       <div class="container">
         <h2>Beneficios</h2>
         <div class="grid-beneficios">
           <div class="beneficio-card">
-            <img src="img/icon-garantia.svg" alt="Garantía">
+            <img src="img/icon-garantia.svg" alt="Garantía" onerror="this.style.display='none'">
             <h3>Garantía 12 meses</h3>
             <p>Respaldo total en todos nuestros equipos</p>
           </div>
           <div class="beneficio-card">
-            <img src="img/icon-envio.svg" alt="Envío">
+            <img src="img/icon-envio.svg" alt="Envío" onerror="this.style.display='none'">
             <h3>Evaluación 15 minutos</h3>
             <p>Cotización rápida por WhatsApp</p>
           </div>
           <div class="beneficio-card">
-            <img src="img/icon-calidad.svg" alt="Calidad">
+            <img src="img/icon-calidad.svg" alt="Calidad" onerror="this.style.display='none'">
             <h3>Servicio a domicilio</h3>
             <p>Llegamos hasta tu casa u oficina</p>
           </div>
@@ -218,562 +66,171 @@
       </div>
     </section>
 
-    <!-- ========================================
-         FAQ - TERCERA SECCIÓN
-         ======================================== -->
     <section class="faq-section">
       <div class="container">
         <h2>Preguntas frecuentes</h2>
-        
         <div class="faq-container">
           <div class="faq-item">
             <div class="faq-question" onclick="toggleFAQ(this)">
-              <h3>¿Cuánto tiempo de garantía tienen los celulares?</h3>
-              <span class="faq-toggle">+</span>
+              <h3>¿Cuánto tiempo de garantía tienen los celulares?</h3><span class="faq-toggle">+</span>
             </div>
-            <div class="faq-answer">
-              <p>Todos nuestros celulares incluyen garantía de 12 meses que cubre defectos de fabricación y funcionamiento. La garantía no aplica para daños físicos o por mal uso.</p>
-            </div>
+            <div class="faq-answer"><p>Todos nuestros celulares incluyen garantía de 12 meses.</p></div>
           </div>
-
           <div class="faq-item">
             <div class="faq-question" onclick="toggleFAQ(this)">
-              <h3>¿Los celulares son originales?</h3>
-              <span class="faq-toggle">+</span>
+              <h3>¿Los celulares son originales?</h3><span class="faq-toggle">+</span>
             </div>
-            <div class="faq-answer">
-              <p>Sí, todos nuestros equipos son 100% originales. Cada celular pasa por un proceso de certificación de 30 puntos para garantizar su autenticidad y calidad.</p>
-            </div>
+            <div class="faq-answer"><p>Sí, 100% originales. Sin réplicas.</p></div>
           </div>
-
           <div class="faq-item">
             <div class="faq-question" onclick="toggleFAQ(this)">
-              <h3>¿Hacen envíos a toda Colombia?</h3>
-              <span class="faq-toggle">+</span>
+              <h3>¿Hacen envíos a toda Colombia?</h3><span class="faq-toggle">+</span>
             </div>
-            <div class="faq-answer">
-              <p>Actualmente realizamos envíos gratuitos en Bogotá. Para otras ciudades, el costo de envío varía según la ubicación. Contáctanos para conocer las tarifas específicas.</p>
-            </div>
+            <div class="faq-answer"><p>Sí, hacemos envíos asegurados a todo el país.</p></div>
           </div>
-
           <div class="faq-item">
             <div class="faq-question" onclick="toggleFAQ(this)">
-              <h3>¿Puedo ver el celular antes de comprarlo?</h3>
-              <span class="faq-toggle">+</span>
+              <h3>¿Qué métodos de pago aceptan?</h3><span class="faq-toggle">+</span>
             </div>
-            <div class="faq-answer">
-              <p>Por supuesto. Puedes agendar una cita para revisar el equipo en nuestras instalaciones o solicitar el servicio a domicilio donde podrás inspeccionar el celular antes de confirmar la compra.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <div class="faq-question" onclick="toggleFAQ(this)">
-              <h3>¿Qué métodos de pago aceptan?</h3>
-              <span class="faq-toggle">+</span>
-            </div>
-            <div class="faq-answer">
-              <p>Aceptamos efectivo, transferencias bancarias, tarjetas de crédito y débito. También manejamos planes de financiamiento sin intereses hasta por 12 meses.</p>
-            </div>
+            <div class="faq-answer"><p>Aceptamos efectivo, transferencias bancarias, Nequi y Daviplata.</p></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ========================================
-         CTA WHATSAPP
-         ======================================== -->
     <section class="cta-whatsapp">
-      <h2>¿Listo para elegir tu celular con total confianza?</h2>
-      <p class="cta-subtext">Te asesoramos sin compromiso. Resolvemos tus dudas por WhatsApp.</p>
-      <a class="cta-button" href="https://wa.me/573046486740" target="_blank" aria-label="WhatsApp Doctor Rayo">¡Hablemos ahora!</a>
+      <h2>¿Listo para elegir tu celular?</h2>
+      <p class="cta-subtext">Te asesoramos sin compromiso.</p>
+      <a class="cta-button" href="https://wa.me/573046486740" target="_blank">¡Hablemos ahora!</a>
     </section>
   </main>
 
-  <!-- ========================================
-       MODALES DE DISPOSITIVOS (MANTENER TODOS)
-       ======================================== -->
-  <div id="modal1" class="modal" onclick="closeModal('modal1')">
-    <div class="modal-content" onclick="event.stopPropagation()">
-      <button class="modal-close" onclick="closeModal('modal1')" aria-label="Cerrar">&times;</button>
-      
-      <!-- Galería de fotos -->
-      <div class="foto-galeria">
-        <div class="foto-principal">
-          <img src="img/iphone15promax-1.jpg" alt="iPhone 15 Pro Max vista principal" id="foto-main-1" onclick="openZoom(this.src, this.alt)">
-        </div>
-        <div class="fotos-thumbnails">
-          <img src="img/iphone15promax-1.jpg" alt="Vista frontal" onclick="cambiarFoto('foto-main-1', this.src, this.alt)">
-          <img src="img/iphone15promax-2.jpg" alt="Vista trasera" onclick="cambiarFoto('foto-main-1', this.src, this.alt)">
-          <img src="img/iphone15promax-3.jpg" alt="Vista arriba" onclick="cambiarFoto('foto-main-1', this.src, this.alt)">
-          <img src="img/iphone15promax-4.jpg" alt="Vista abajo" onclick="cambiarFoto('foto-main-1', this.src, this.alt)">
-          <img src="img/iphone15promax-5.jpg" alt="Vista lateral" onclick="cambiarFoto('foto-main-1', this.src, this.alt)">
-        </div>
-      </div>
-      
-      <div class="separador-modal"></div>
-      <ul class="caracteristicas">
-        <li>128GB - Space Black</li>
-        <li>Batería al 95%</li>
-        <li>Sin rayones visibles</li>
-        <li>Caja y accesorios originales</li>
-        <li>Face ID funcionando perfectamente</li>
-        <li>Cámaras en perfecto estado</li>
-      </ul>
-      <div class="info-adicional">
-        <p><span class="highlight">Garantía:</span> 12 meses</p>
-        <p><span class="highlight">Entrega:</span> Inmediata</p>
-      </div>
-      <div class="btn-container">
-        <a href="https://wa.me/573046486740?text=¡Hola! Me interesa el iPhone 15 Pro Max de $2,450,000. ¿Está disponible?" class="btn-whatsapp" target="_blank">¡Me interesa este celular!</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Resto de modales mantener igual... -->
-  <div id="modal2" class="modal" onclick="closeModal('modal2')">
-    <div class="modal-content" onclick="event.stopPropagation()">
-      <button class="modal-close" onclick="closeModal('modal2')" aria-label="Cerrar">&times;</button>
-      
-      <!-- Galería de fotos -->
-      <div class="foto-galeria">
-        <div class="foto-principal">
-          <img src="img/samsung-s23-1.jpg" alt="Samsung Galaxy S23 vista principal" id="foto-main-2" onclick="openZoom(this.src, this.alt)">
-        </div>
-        <div class="fotos-thumbnails">
-          <img src="img/samsung-s23-1.jpg" alt="Vista frontal" onclick="cambiarFoto('foto-main-2', this.src, this.alt)">
-          <img src="img/samsung-s23-2.jpg" alt="Vista trasera" onclick="cambiarFoto('foto-main-2', this.src, this.alt)">
-          <img src="img/samsung-s23-3.jpg" alt="Vista lateral" onclick="cambiarFoto('foto-main-2', this.src, this.alt)">
-          <img src="img/samsung-s23-4.jpg" alt="Accesorios" onclick="cambiarFoto('foto-main-2', this.src, this.alt)">
-        </div>
-      </div>
-      
-      <div class="separador-modal"></div>
-      <ul class="caracteristicas">
-        <li>256GB - Phantom Black</li>
-        <li>Batería al 92%</li>
-        <li>Micro rayones normales de uso</li>
-        <li>Cargador incluido</li>
-        <li>S Pen funcionando</li>
-        <li>Pantalla sin daños</li>
-      </ul>
-      <div class="info-adicional">
-        <p><span class="highlight">Garantía:</span> 12 meses</p>
-        <p><span class="highlight">Entrega:</span> Inmediata</p>
-      </div>
-      <div class="btn-container">
-        <a href="https://wa.me/573046486740?text=¡Hola! Me interesa el Samsung Galaxy S23 de $1,850,000. ¿Está disponible?" class="btn-whatsapp" target="_blank">¡Me interesa este celular!</a>
-      </div>
-    </div>
-  </div>
-
-  <div id="modal3" class="modal" onclick="closeModal('modal3')">
-    <div class="modal-content" onclick="event.stopPropagation()">
-      <button class="modal-close" onclick="closeModal('modal3')" aria-label="Cerrar">&times;</button>
-      
-      <!-- Galería de fotos -->
-      <div class="foto-galeria">
-        <div class="foto-principal">
-          <img src="img/iphone13-1.jpg" alt="iPhone 13 vista principal" id="foto-main-3" onclick="openZoom(this.src, this.alt)">
-        </div>
-        <div class="fotos-thumbnails">
-          <img src="img/iphone13-1.jpg" alt="Vista frontal" onclick="cambiarFoto('foto-main-3', this.src, this.alt)">
-          <img src="img/iphone13-2.jpg" alt="Vista trasera" onclick="cambiarFoto('foto-main-3', this.src, this.alt)">
-          <img src="img/iphone13-3.jpg" alt="Vista lateral" onclick="cambiarFoto('foto-main-3', this.src, this.alt)">
-        </div>
-      </div>
-      
-      <div class="separador-modal"></div>
-      <ul class="caracteristicas">
-        <li>128GB - Blue</li>
-        <li>Batería al 88%</li>
-        <li>Signos normales de uso</li>
-        <li>Solo celular</li>
-        <li>Todas las funciones operativas</li>
-        <li>Touch ID funcionando</li>
-      </ul>
-      <div class="info-adicional">
-        <p><span class="highlight">Garantía:</span> 12 meses</p>
-        <p><span class="highlight">Entrega:</span> 2-3 días hábiles</p>
-      </div>
-      <div class="btn-container">
-        <a href="https://wa.me/573046486740?text=¡Hola! Me interesa el iPhone 13 de $1,650,000. ¿Está disponible?" class="btn-whatsapp" target="_blank">¡Me interesa este celular!</a>
-      </div>
-    </div>
-  </div>
-
-  <div id="modal4" class="modal" onclick="closeModal('modal4')">
-    <div class="modal-content" onclick="event.stopPropagation()">
-      <button class="modal-close" onclick="closeModal('modal4')" aria-label="Cerrar">&times;</button>
-      
-      <!-- Galería de fotos -->
-      <div class="foto-galeria">
-        <div class="foto-principal">
-          <img src="img/xiaomi-redmi-1.jpg" alt="Xiaomi Redmi Note 12 vista principal" id="foto-main-4" onclick="openZoom(this.src, this.alt)">
-        </div>
-        <div class="fotos-thumbnails">
-          <img src="img/xiaomi-redmi-1.jpg" alt="Vista frontal" onclick="cambiarFoto('foto-main-4', this.src, this.alt)">
-          <img src="img/xiaomi-redmi-2.jpg" alt="Vista trasera" onclick="cambiarFoto('foto-main-4', this.src, this.alt)">
-          <img src="img/xiaomi-redmi-3.jpg" alt="Vista lateral" onclick="cambiarFoto('foto-main-4', this.src, this.alt)">
-          <img src="img/xiaomi-redmi-4.jpg" alt="Accesorios" onclick="cambiarFoto('foto-main-4', this.src, this.alt)">
-        </div>
-      </div>
-      
-      <div class="separador-modal"></div>
-      <ul class="caracteristicas">
-        <li>128GB - Graphite Gray</li>
-        <li>Batería al 98%</li>
-        <li>Sin uso, como nuevo</li>
-        <li>Caja, cargador y accesorios</li>
-        <li>Dual SIM</li>
-        <li>Cámara de 50MP</li>
-      </ul>
-      <div class="info-adicional">
-        <p><span class="highlight">Garantía:</span> 12 meses</p>
-        <p><span class="highlight">Entrega:</span> Inmediata</p>
-      </div>
-      <div class="btn-container">
-        <a href="https://wa.me/573046486740?text=¡Hola! Me interesa el Xiaomi Redmi Note 12 de $480,000. ¿Está disponible?" class="btn-whatsapp" target="_blank">¡Me interesa este celular!</a>
-      </div>
-    </div>
-  </div>
-
-  <div id="modal5" class="modal" onclick="closeModal('modal5')">
-    <div class="modal-content" onclick="event.stopPropagation()">
-      <button class="modal-close" onclick="closeModal('modal5')" aria-label="Cerrar">&times;</button>
-      
-      <!-- Galería de fotos -->
-      <div class="foto-galeria">
-        <div class="foto-principal">
-          <img src="img/motorola-edge-1.jpg" alt="Motorola Edge 30 vista principal" id="foto-main-5" onclick="openZoom(this.src, this.alt)">
-        </div>
-        <div class="fotos-thumbnails">
-          <img src="img/motorola-edge-1.jpg" alt="Vista frontal" onclick="cambiarFoto('foto-main-5', this.src, this.alt)">
-          <img src="img/motorola-edge-2.jpg" alt="Vista trasera" onclick="cambiarFoto('foto-main-5', this.src, this.alt)">
-          <img src="img/motorola-edge-3.jpg" alt="Vista lateral" onclick="cambiarFoto('foto-main-5', this.src, this.alt)">
-          <img src="img/motorola-edge-4.jpg" alt="Accesorios" onclick="cambiarFoto('foto-main-5', this.src, this.alt)">
-        </div>
-      </div>
-      
-      <div class="separador-modal"></div>
-      <ul class="caracteristicas">
-        <li>256GB - Meteor Gray</li>
-        <li>Batería al 90%</li>
-        <li>Excelente estado general</li>
-        <li>Cargador original</li>
-        <li>Pantalla OLED perfecta</li>
-        <li>Carga rápida 68W</li>
-      </ul>
-      <div class="info-adicional">
-        <p><span class="highlight">Garantía:</span> 12 meses</p>
-        <p><span class="highlight">Entrega:</span> Inmediata</p>
-      </div>
-      <div class="btn-container">
-        <a href="https://wa.me/573046486740?text=¡Hola! Me interesa el Motorola Edge 30 de $750,000. ¿Está disponible?" class="btn-whatsapp" target="_blank">¡Me interesa este celular!</a>
-      </div>
-    </div>
-  </div>
-
-  <div id="modal6" class="modal" onclick="closeModal('modal6')">
-    <div class="modal-content" onclick="event.stopPropagation()">
-      <button class="modal-close" onclick="closeModal('modal6')" aria-label="Cerrar">&times;</button>
-      
-      <!-- Galería de fotos -->
-      <div class="foto-galeria">
-        <div class="foto-principal">
-          <img src="img/iphone14-1.jpg" alt="iPhone 14 vista principal" id="foto-main-6" onclick="openZoom(this.src, this.alt)">
-        </div>
-        <div class="fotos-thumbnails">
-          <img src="img/iphone14-1.jpg" alt="Vista frontal" onclick="cambiarFoto('foto-main-6', this.src, this.alt)">
-          <img src="img/iphone14-2.jpg" alt="Vista trasera" onclick="cambiarFoto('foto-main-6', this.src, this.alt)">
-          <img src="img/iphone14-3.jpg" alt="Vista lateral" onclick="cambiarFoto('foto-main-6', this.src, this.alt)">
-          <img src="img/iphone14-4.jpg" alt="Accesorios" onclick="cambiarFoto('foto-main-6', this.src, this.alt)">
-        </div>
-      </div>
-      
-      <div class="separador-modal"></div>
-      <ul class="caracteristicas">
-        <li>256GB - Purple</li>
-        <li>Batería al 94%</li>
-        <li>Como nuevo</li>
-        <li>Caja y accesorios originales</li>
-        <li>Face ID funcionando perfectamente</li>
-        <li>Cámaras en perfecto estado</li>
-      </ul>
-      <div class="info-adicional">
-        <p><span class="highlight">Garantía:</span> 12 meses</p>
-        <p><span class="highlight">Entrega:</span> Inmediata</p>
-      </div>
-      <div class="btn-container">
-        <a href="https://wa.me/573046486740?text=¡Hola! Me interesa el iPhone 14 de $2,180,000. ¿Está disponible?" class="btn-whatsapp" target="_blank">¡Me interesa este celular!</a>
-      </div>
-    </div>
-  </div>
-
-  <div id="modal7" class="modal" onclick="closeModal('modal7')">
-    <div class="modal-content" onclick="event.stopPropagation()">
-      <button class="modal-close" onclick="closeModal('modal7')" aria-label="Cerrar">&times;</button>
-      
-      <!-- Galería de fotos -->
-      <div class="foto-galeria">
-        <div class="foto-principal">
-          <img src="img/pixel7-1.jpg" alt="Google Pixel 7 vista principal" id="foto-main-7" onclick="openZoom(this.src, this.alt)">
-        </div>
-        <div class="fotos-thumbnails">
-          <img src="img/pixel7-1.jpg" alt="Vista frontal" onclick="cambiarFoto('foto-main-7', this.src, this.alt)">
-          <img src="img/pixel7-2.jpg" alt="Vista trasera" onclick="cambiarFoto('foto-main-7', this.src, this.alt)">
-          <img src="img/pixel7-3.jpg" alt="Vista lateral" onclick="cambiarFoto('foto-main-7', this.src, this.alt)">
-          <img src="img/pixel7-4.jpg" alt="Accesorios" onclick="cambiarFoto('foto-main-7', this.src, this.alt)">
-        </div>
-      </div>
-      
-      <div class="separador-modal"></div>
-      <ul class="caracteristicas">
-        <li>128GB - Snow White</li>
-        <li>Batería al 91%</li>
-        <li>Excelente estado</li>
-        <li>Cargador incluido</li>
-        <li>Cámaras Google AI</li>
-        <li>Android puro</li>
-      </ul>
-      <div class="info-adicional">
-        <p><span class="highlight">Garantía:</span> 12 meses</p>
-        <p><span class="highlight">Entrega:</span> Inmediata</p>
-      </div>
-      <div class="btn-container">
-        <a href="https://wa.me/573046486740?text=¡Hola! Me interesa el Google Pixel 7 de $980,000. ¿Está disponible?" class="btn-whatsapp" target="_blank">¡Me interesa este celular!</a>
-      </div>
-    </div>
-  </div>
-
-  <div id="modal8" class="modal" onclick="closeModal('modal8')">
-    <div class="modal-content" onclick="event.stopPropagation()">
-      <button class="modal-close" onclick="closeModal('modal8')" aria-label="Cerrar">&times;</button>
-      
-      <!-- Galería de fotos -->
-      <div class="foto-galeria">
-        <div class="foto-principal">
-          <img src="img/oneplus11-1.jpg" alt="OnePlus 11 vista principal" id="foto-main-8" onclick="openZoom(this.src, this.alt)">
-        </div>
-        <div class="fotos-thumbnails">
-          <img src="img/oneplus11-1.jpg" alt="Vista frontal" onclick="cambiarFoto('foto-main-8', this.src, this.alt)">
-          <img src="img/oneplus11-2.jpg" alt="Vista trasera" onclick="cambiarFoto('foto-main-8', this.src, this.alt)">
-          <img src="img/oneplus11-3.jpg" alt="Vista lateral" onclick="cambiarFoto('foto-main-8', this.src, this.alt)">
-          <img src="img/oneplus11-4.jpg" alt="Accesorios" onclick="cambiarFoto('foto-main-8', this.src, this.alt)">
-        </div>
-      </div>
-      
-      <div class="separador-modal"></div>
-      <ul class="caracteristicas">
-        <li>256GB - Titan Black</li>
-        <li>Batería al 89%</li>
-        <li>Muy bueno estado</li>
-        <li>Carga rápida 100W</li>
-        <li>Pantalla AMOLED 120Hz</li>
-        <li>Cámaras Hasselblad</li>
-      </ul>
-      <div class="info-adicional">
-        <p><span class="highlight">Garantía:</span> 12 meses</p>
-        <p><span class="highlight">Entrega:</span> 2-3 días hábiles</p>
-      </div>
-      <div class="btn-container">
-        <a href="https://wa.me/573046486740?text=¡Hola! Me interesa el OnePlus 11 de $1,350,000. ¿Está disponible?" class="btn-whatsapp" target="_blank">¡Me interesa este celular!</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- ZOOM MODAL -->
-  <div id="zoomModal" class="zoom-modal" onclick="closeZoom()">
-    <div class="zoom-content" onclick="event.stopPropagation()">
-      <button class="zoom-close" onclick="closeZoom()">&times;</button>
-      <img id="zoomImage" src="" alt="">
-    </div>
-  </div>
-
-  <!-- ====================================
-       FOOTER IGUAL A INDEX
-       ==================================== -->
-  <footer class="main-footer" role="contentinfo">
+  <footer class="main-footer">
     <div class="footer-wrapper container">
       <div class="footer-column">
-        <h2>Doctor Rayo</h2>
+        <h3>Doctor Rayo</h3>
         <p>Sitio ideal para comprar, vender o reparar tu celular.</p>
       </div>
       <div class="footer-column">
         <h3>Servicios</h3>
-        <nav aria-label="Servicios">
-          <ul>
-            <li><a href="comprar.html">Comprar</a></li>
-            <li><a href="renueva.html">Vender</a></li>
-            <li><a href="reparacion.html">Reparar</a></li>
-          </ul>
-        </nav>
+        <ul>
+          <li><a href="comprar.html">Comprar</a></li>
+          <li><a href="renueva.html">Vender</a></li>
+          <li><a href="reparacion.html">Reparar</a></li>
+        </ul>
       </div>
       <div class="footer-column">
         <h3>Contacto</h3>
-        <address>
-          <p>Email: <a href="/cdn-cgi/l/email-protection#f3909c9d879290879cb3979c90879c8181928a9cdd909c9e"><span class="__cf_email__" data-cfemail="85e6eaebf1e4e6f1eac5e1eae6f1eaf7f7e4fceaabe6eae8">[email&#160;protected]</span></a></p>
-          <p>Teléfono: <a href="tel:+573046486740">+57 304 6486740</a></p>
-          <p>Ciudad: Bogotá, Colombia</p>
-        </address>
+        <p>Email: contacto@doctorrayo.com</p>
+        <p>Teléfono: +57 304 6486740</p>
+        <p>Ciudad: Bogotá, Colombia</p>
       </div>
       <div class="footer-column">
         <h3>Síguenos</h3>
-        <ul class="redes-sociales">
-          <li><a href="https://www.instagram.com/doctorrayo" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a></li>
-        </ul>
+        <ul class="redes-sociales"><li><a href="#">Instagram</a></li></ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; <span id="current-year"></span> Doctor Rayo. Todos los derechos reservados.</p>
-    </div>
+    <div class="footer-bottom"><p>&copy; <span id="current-year"></span> Doctor Rayo.</p></div>
   </footer>
-  <!-- Botón flotante WhatsApp -->
-  <a href="https://wa.me/573046486740" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp">
-    <img src="whatsapp-icon.png" alt="WhatsApp" loading="lazy" decoding="async">
-  </a>
 
-  <!-- ========================================
-       JAVASCRIPT CON FAQ Y NAVEGACIÓN
-       ======================================== -->
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    // Variable global para trackear el modal activo
-    let currentModalId = null;
-    let currentImageIndex = 0;
-    let currentThumbnails = [];
+  <a href="https://wa.me/573046486740" target="_blank" class="whatsapp-float"><img src="whatsapp-icon.png" alt="WhatsApp"></a>
 
-    // FAQ Functionality
-    function toggleFAQ(element) {
-      const faqItem = element.parentElement;
-      const isActive = faqItem.classList.contains('active');
-      
-      // Cerrar todos los FAQs
-      document.querySelectorAll('.faq-item').forEach(item => {
-        item.classList.remove('active');
-      });
-      
-      // Abrir el clickeado si no estaba activo
-      if (!isActive) {
-        faqItem.classList.add('active');
-      }
-    }
+  <div id="product-modal" class="modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <div class="modal-body">
+        <div class="modal-img-container"><img id="modal-img" src="" alt="Producto"></div>
+        <h3 id="modal-title" class="modal-title"></h3>
+        <p id="modal-price" class="modal-price"></p>
+        
+        <div class="tech-specs-grid">
+          <div class="tech-item"><h4>Batería</h4><p id="modal-battery"></p></div>
+          <div class="tech-item"><h4>Estado</h4><p id="modal-condition"></p></div>
+          <div class="tech-item"><h4>Reparaciones</h4><p id="modal-repair"></p></div>
+          <div class="tech-item"><h4>Pantalla</h4><p id="modal-screen"></p></div>
+        </div>
 
-    function openModal(modalId) {
-      document.getElementById(modalId).classList.add('show');
-      document.body.style.overflow = 'hidden';
-      currentModalId = modalId;
-      
-      // Obtener todas las thumbnails del modal activo
-      const modal = document.getElementById(modalId);
-      currentThumbnails = Array.from(modal.querySelectorAll('.fotos-thumbnails img'));
-      currentImageIndex = 0; // Empezar en la primera imagen
-    }
+        <p class="modal-disclaimer">*Imágenes de referencia. El estado estético real se valida vía WhatsApp.</p>
 
-    function closeModal(modalId) {
-      document.getElementById(modalId).classList.remove('show');
-      document.body.style.overflow = 'auto';
-      currentModalId = null;
-      currentThumbnails = [];
-      currentImageIndex = 0;
-    }
+        <a id="modal-wpp-btn" href="#" target="_blank" class="btn-modal-wpp">Comprar ahora ⚡</a>
+      </div>
+    </div>
+  </div>
 
-    function cambiarFoto(mainId, newSrc, newAlt) {
-      const mainImg = document.getElementById(mainId);
-      mainImg.src = newSrc;
-      mainImg.alt = newAlt || mainImg.alt;
-      mainImg.onclick = function() {
-        openZoom(newSrc, newAlt || mainImg.alt);
-      };
-      
-      // Actualizar el índice actual
-      currentImageIndex = currentThumbnails.findIndex(thumb => thumb.src === newSrc);
-    }
+  <script>
+    // DATOS DE PRODUCTOS
+    var products = [
+      { id: 201, name: 'iPhone 15 Pro Max', specs: '256GB • Titanio', priceFrom: '$2.890.000', price: '$2.450.000', monthly: '$3.900 / mes*', badge: 'Más vendido', badgeClass: 'mas-vendido', img: 'img/iphone17pro.png', estado: 'Como nuevo', estadoClass: 'como-nuevo', detalles: { bateria: '95%', fisico: '10/10', reparado: 'No', pantalla: 'Original' } },
+      { id: 202, name: 'Samsung S23', specs: '128GB • Negro', priceFrom: '$1.890.000', price: '$1.850.000', monthly: '$2.950 / mes*', badge: 'Excelente', badgeClass: 'excelente-badge', img: 'img/samsung-s23-card.jpg', estado: 'Excelente', estadoClass: 'excelente', detalles: { bateria: '92%', fisico: '9.5/10', reparado: 'No', pantalla: 'Sin daños' } },
+      { id: 203, name: 'iPhone 13', specs: '128GB • Azul', priceFrom: '$1.790.000', price: '$1.650.000', monthly: '$2.630 / mes*', badge: 'Top ventas', badgeClass: 'top-ventas', img: 'img/iphone13-card.jpg', estado: 'Muy bueno', estadoClass: 'muy-bueno', detalles: { bateria: '88%', fisico: '9/10', reparado: 'No', pantalla: 'Original' } },
+      { id: 204, name: 'Redmi Note 12', specs: '64GB • Negro', price: '$480.000', monthly: '$760 / mes*', badge: 'Como nuevo', badgeClass: 'como-nuevo-badge', img: 'img/xiaomi-redmi-card.jpg', estado: 'Como nuevo', estadoClass: 'como-nuevo', detalles: { bateria: '98%', fisico: '10/10', reparado: 'No', pantalla: 'Original' } },
+      { id: 205, name: 'Moto Edge 30', specs: '256GB • Verde', priceFrom: '$950.000', price: '$750.000', monthly: '$1.200 / mes*', badge: 'Oferta', badgeClass: 'oferta', img: 'img/motorola-edge-card.jpg', estado: 'Excelente', estadoClass: 'excelente', detalles: { bateria: '90%', fisico: '9.5/10', reparado: 'No', pantalla: 'OLED' } },
+      { id: 206, name: 'iPhone 14', specs: '256GB • Morado', priceFrom: '$2.390.000', price: '$2.180.000', monthly: '$3.480 / mes*', badge: 'Recomendado', badgeClass: 'recomendado', img: 'img/iphone14-card.jpg', estado: 'Como nuevo', estadoClass: 'como-nuevo', detalles: { bateria: '94%', fisico: '10/10', reparado: 'No', pantalla: 'Original' } },
+      { id: 207, name: 'Pixel 7', specs: '128GB • Blanco', priceFrom: '$1.200.000', price: '$980.000', monthly: '$1.560 / mes*', badge: 'Oferta', badgeClass: 'oferta', img: 'img/pixel7-card.jpg', estado: 'Excelente', estadoClass: 'excelente', detalles: { bateria: '91%', fisico: '9.5/10', reparado: 'No', pantalla: 'Original' } },
+      { id: 208, name: 'OnePlus 11', specs: '256GB • Negro', price: '$1.350.000', monthly: '$2.150 / mes*', badge: 'Popular', badgeClass: 'popular', img: 'img/oneplus11-card.jpg', estado: 'Muy bueno', estadoClass: 'muy-bueno', detalles: { bateria: '89%', fisico: '9/10', reparado: 'No', pantalla: '120Hz' } }
+    ];
 
-    function navegarFoto(direction) {
-      if (!currentModalId || currentThumbnails.length === 0) return;
-      
-      // Calcular nuevo índice
-      if (direction === 'next') {
-        currentImageIndex = (currentImageIndex + 1) % currentThumbnails.length;
-      } else if (direction === 'prev') {
-        currentImageIndex = (currentImageIndex - 1 + currentThumbnails.length) % currentThumbnails.length;
-      }
-      
-      // Obtener la nueva imagen
-      const newThumb = currentThumbnails[currentImageIndex];
-      const mainId = 'foto-main-' + currentModalId.replace('modal', '');
-      
-      // Cambiar a la nueva imagen
-      cambiarFoto(mainId, newThumb.src, newThumb.alt);
-    }
-
-    function openZoom(imageSrc, imageAlt) {
-      const zoomModal = document.getElementById('zoomModal');
-      const zoomImage = document.getElementById('zoomImage');
-      zoomImage.src = imageSrc;
-      zoomImage.alt = imageAlt;
-      zoomModal.classList.add('show');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeZoom() {
-      const zoomModal = document.getElementById('zoomModal');
-      zoomModal.classList.remove('show');
-      document.body.style.overflow = 'auto';
-    }
-
-// Event listener para las teclas
-document.addEventListener('keydown', function(e) {
-  const zoomModal = document.getElementById('zoomModal');
-  const zoomAbierto = zoomModal && zoomModal.classList.contains('show');
-  
-  // Manejar ESC
-  if (e.key === 'Escape') {
-    if (zoomAbierto) {
-      closeZoom();
-    } else if (currentModalId) {
-      closeModal(currentModalId);
-    }
-    return;
-  }
-  
-  // Manejar flechas (funcionan tanto en modal como en zoom)
-  if (currentModalId) {
-    if (e.key === 'ArrowRight') {
-      e.preventDefault();
-      navegarFoto('next');
-      // Si el zoom está abierto, actualizar la imagen del zoom también
-      if (zoomAbierto) {
-        const mainId = 'foto-main-' + currentModalId.replace('modal', '');
-        const mainImg = document.getElementById(mainId);
-        setTimeout(() => {
-          document.getElementById('zoomImage').src = mainImg.src;
-          document.getElementById('zoomImage').alt = mainImg.alt;
-        }, 50);
-      }
-    } else if (e.key === 'ArrowLeft') {
-      e.preventDefault();
-      navegarFoto('prev');
-      // Si el zoom está abierto, actualizar la imagen del zoom también
-      if (zoomAbierto) {
-        const mainId = 'foto-main-' + currentModalId.replace('modal', '');
-        const mainImg = document.getElementById(mainId);
-        setTimeout(() => {
-          document.getElementById('zoomImage').src = mainImg.src;
-          document.getElementById('zoomImage').alt = mainImg.alt;
-        }, 50);
-      }
-    }
-  }
-});
-
-    // Año actual en footer
     document.addEventListener('DOMContentLoaded', function() {
-      const currentYear = new Date().getFullYear();
-      const yearElements = document.querySelectorAll('.current-year');
-      yearElements.forEach(element => {
-        element.textContent = currentYear;
-      });
+      var container = document.getElementById('grid-track');
+      if (container) {
+        container.innerHTML = products.map(function(p) {
+          var priceOld = p.priceFrom ? `<span class="precio-desde">${p.priceFrom}</span>` : '';
+          var linkWpp = "https://wa.me/573046486740?text=" + encodeURIComponent(`Hola, me interesa el ${p.name}`);
+
+          return `
+            <div class="dispositivo-card" onclick="openModal(${p.id})">
+              <div class="card-badge ${p.badgeClass}">${p.badge}</div>
+              <div class="dispositivo-imagen-container">
+                <img src="${p.img}" alt="${p.name}" class="dispositivo-foto" loading="lazy">
+              </div>
+              <div class="dispositivo-info">
+                <h3>${p.name}</h3>
+                <p class="dispositivo-specs">${p.specs}</p>
+                <div class="precio-container">
+                  ${priceOld}
+                  <span class="precio-actual">${p.price}</span>
+                  <span class="precio-mensual">${p.monthly || ''}</span>
+                </div>
+                <span class="estado ${p.estadoClass}">${p.estado}</span>
+                <div class="buttons-container">
+                  <button class="dispositivo-btn btn-outline" onclick="event.stopPropagation(); openModal(${p.id})">Ver info</button>
+                  <a class="dispositivo-btn btn-solid" href="${linkWpp}" target="_blank" onclick="event.stopPropagation()">Comprar ⚡</a>
+                </div>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+      
+      var yr = document.getElementById('current-year');
+      if(yr) yr.textContent = new Date().getFullYear();
     });
+
+    // LÓGICA DEL MODAL
+    function openModal(id) {
+      var p = products.find(x => x.id === id);
+      if(!p) return;
+      document.getElementById('modal-img').src = p.img;
+      document.getElementById('modal-title').textContent = p.name;
+      document.getElementById('modal-price').textContent = p.price;
+      if(p.detalles){
+        document.getElementById('modal-battery').textContent = p.detalles.bateria;
+        document.getElementById('modal-condition').textContent = p.detalles.fisico;
+        document.getElementById('modal-repair').textContent = p.detalles.reparado;
+        document.getElementById('modal-screen').textContent = p.detalles.pantalla;
+      }
+      var wppMsg = encodeURIComponent(`Hola Doctor Rayo, vi los detalles del ${p.name} (${p.price}) y quiero comprarlo.`);
+      document.getElementById('modal-wpp-btn').href = "https://wa.me/573046486740?text=" + wppMsg;
+      document.getElementById('product-modal').classList.add('active');
+      document.body.classList.add('modal-open');
+    }
+
+    function closeModal(){
+      document.getElementById('product-modal').classList.remove('active');
+      document.body.classList.remove('modal-open');
+    }
+    document.getElementById('product-modal').addEventListener('click', function(e){ if(e.target === this) closeModal(); });
+    function toggleFAQ(el) { el.parentElement.classList.toggle('active'); }
   </script>
 </body>
 </html>
