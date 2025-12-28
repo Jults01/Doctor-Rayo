@@ -1,14 +1,10 @@
 /* ====================================================
    VENDER (RENUEVA) - DOCTOR RAYO
-   Versión: 2.3 - Corrección Iconos Pixelados Móvil
-   Última actualización: Enero 2025
+   Versión: Final - Diseño Unificado (Header/Footer/Hero)
    ==================================================== */
 
-/* ====================================================
-   VARIABLES CSS
-   ==================================================== */
+/* --- 1. VARIABLES --- */
 :root {
-  /* Colores */
   --color-primary: #e60000;
   --color-primary-dark: #c40000;
   --color-accent-green: #25d366;
@@ -21,10 +17,9 @@
   --color-dark-gray: #444;
   --color-black: #000;
   --color-footer-text: #ccc;
-  --color-overlay: rgba(0, 0, 0, 0.65);
+  --color-overlay: rgba(0, 0, 0, 0.40);
   --color-text-light: #e6e6e6;
 
-  /* Espaciado */
   --gap-section: 25px;
   --gap-content: 24px;
   --space-xs: 5px;
@@ -35,846 +30,261 @@
   --space-xxl: 30px;
   --space-xxxl: 40px;
 
-  /* Tipografía */
-  --font-size-sm: 0.9rem;
   --font-size-base: 1rem;
-  --font-size-md: 15px;
-  --font-size-lg: 20px;
-  --font-size-xl: 20px;
   --font-size-xxl: 2rem;
-  --font-size-xxxl: 2.5rem;
-
-  /* Transiciones */
   --transition-speed: 0.3s;
 }
 
-/* ====================================================
-   RESET Y BASE
-   ==================================================== */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Poppins', sans-serif; background: var(--color-white); color: var(--color-text-dark); line-height: 1.6; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; height: auto; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-xl); }
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background: var(--color-white);
-  color: var(--color-text-dark);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--space-xl);
-}
-
-/* ====================================================
-   HEADER Y NAVEGACIÓN
-   ==================================================== */
-.main-header {
-  background: var(--color-white);
-  padding: var(--space-sm) 0;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-}
-
-.header-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+/* --- 2. HEADER (UNIFICADO) --- */
+.main-header { background: var(--color-white); padding: 10px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+.header-wrapper { display: flex; justify-content: space-between; align-items: center; }
 
 .logo h1 {
-  font-size: 32px;
-  font-weight: 700;
+  font-size: 32px; font-weight: 700;
   background: linear-gradient(135deg, #e60000, #ff4444);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
   transition: all 0.3s ease;
-  text-shadow: 0 2px 4px rgba(230,0,0,0.1);
 }
+.logo h1:hover { transform: scale(1.05); }
 
-.logo h1:hover {
-  transform: scale(1.05);
-  filter: brightness(1.1);
-}
-
-.header-nav {
-  margin-left: auto;
-}
-
-.nav-menu {
-  display: flex;
-  gap: 0.5rem;
-  list-style: none;
-  align-items: center;
-}
-
+.header-nav { margin-left: auto; }
+.nav-menu { display: flex; gap: 0.5rem; list-style: none; align-items: center; }
 .nav-menu li a {
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-  color: var(--color-text-medium);
-  transition: all var(--transition-speed) ease;
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px;
-  display: inline-block;
+  text-decoration: none; font-weight: 600; font-size: 1rem; color: var(--color-text-medium);
+  transition: all var(--transition-speed) ease; padding: 0.6rem 1.2rem; border-radius: 6px;
 }
+.nav-menu li a:hover { color: var(--color-primary); }
+.nav-vender { background: #f0f0f0; }
+.nav-vender:hover { background: var(--color-primary) !important; color: var(--color-white) !important; transform: translateY(-2px); }
 
-.nav-menu li a:hover {
-  color: var(--color-primary);
-}
 
-.nav-vender {
-  background: #f0f0f0;
-}
-
-.nav-vender:hover {
-  background: var(--color-primary) !important;
-  color: var(--color-white) !important;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(230, 0, 0, 0.3);
-}
-
-/* ====================================================
-   HERO
-   ==================================================== */
+/* --- 3. HERO (UNIFICADO) --- */
 .hero {
   background: url('../img/vender-celular.png') no-repeat center/cover;
   height: 350px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  text-align: center;
-  overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  position: relative; text-align: center; overflow: hidden;
 }
+/* Capa oscura separada para control */
+.hero::before { content: ""; position: absolute; inset: 0; background: var(--color-overlay); z-index: 1; }
 
 .hero-overlay {
-  background: var(--color-overlay);
-  padding: var(--space-xxl) var(--space-xxxl);
-  border-radius: 10px;
-  color: var(--color-text-light);
-  max-width: 90%;
+  position: relative; z-index: 2;
+  background: rgba(0,0,0,0.6);
+  padding: 30px 40px; border-radius: 10px;
+  color: var(--color-text-light); max-width: 90%;
 }
 
 .hero-overlay h2 {
-  font-size: var(--font-size-xxl);
-  margin-bottom: var(--gap-content);
-  line-height: 1.2;
-  color: var(--color-white);
+  font-size: 3.5rem; /* Igualado a Index/Reparar PC */
+  margin-bottom: 24px; line-height: 1.2; color: var(--color-white); font-weight: 700;
 }
 
 .hero-overlay p {
-  font-size: var(--font-size-base);
-  margin-bottom: var(--gap-content);
-  max-width: 500px;
-  margin-inline: auto;
-  color: #f5f5f5;
+  font-size: 1.1rem; margin-bottom: 24px; max-width: 600px; margin-inline: auto; color: #f5f5f5;
 }
 
-/* ====================================================
-   PASOS - DESKTOP
-   ==================================================== */
-.pasos {
-  padding: var(--gap-section) 0;
-}
 
-.pasos-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-lg);
-  margin-top: var(--gap-section);
-}
+/* --- 4. PASOS (DESKTOP) --- */
+.pasos { padding: 40px 0; }
+.pasos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-lg); margin-top: var(--gap-section); }
 
 .paso-item {
-  background: var(--color-white);
-  border: 1px solid var(--color-medium-gray);
-  border-radius: 12px;
-  padding: var(--space-xl);
-  text-align: center;
-  transition: all var(--transition-speed) ease;
+  background: var(--color-white); border: 1px solid var(--color-medium-gray); border-radius: 12px;
+  padding: var(--space-xl); text-align: center; transition: 0.3s ease;
 }
-
-.paso-item:hover {
-  border-color: var(--color-primary);
-  box-shadow: 0 4px 12px rgba(230, 0, 0, 0.1);
-}
+.paso-item:hover { border-color: var(--color-primary); box-shadow: 0 4px 12px rgba(230, 0, 0, 0.1); }
 
 .paso-numero {
-  width: 50px;
-  height: 50px;
-  background: var(--color-primary);
-  color: var(--color-white);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin: 0 auto var(--space-md);
+  width: 50px; height: 50px; background: var(--color-primary); color: var(--color-white);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; font-weight: 600; margin: 0 auto var(--space-md);
 }
 
-.paso-item h3 {
-  font-size: 1rem;
-  margin-bottom: 6px;
-  color: var(--color-text-dark);
-}
+.paso-item h3 { font-size: 1rem; margin-bottom: 6px; color: var(--color-text-dark); }
+.paso-item p { font-size: 0.85rem; color: #666; }
 
-.paso-item p {
-  font-size: 0.85rem;
-  color: #666;
-}
+.pasos-wrapper, .dots-container { display: none; }
 
-.pasos-wrapper,
-.dots-container {
-  display: none;
-}
 
-/* ====================================================
-   FORMULARIO DE COTIZACIÓN
-   ==================================================== */
-.cotizacion-form {
-  padding: var(--gap-section) 0;
-  background: var(--color-white);
-}
-
-.form-header {
-  text-align: center;
-  margin-bottom: var(--space-xxxl);
-}
-
-.form-header h2 {
-  font-size: 1.8rem;
-  color: var(--color-text-dark);
-  margin-bottom: 10px;
-}
-
-.form-header p {
-  color: #666;
-  font-size: 1rem;
-  margin-bottom: var(--space-xl);
-}
+/* --- 5. FORMULARIO DE COTIZACIÓN --- */
+.cotizacion-form { padding: 40px 0; background: var(--color-white); }
+.form-header { text-align: center; margin-bottom: 40px; }
+.form-header h2 { font-size: 1.8rem; color: var(--color-text-dark); margin-bottom: 10px; }
+.form-header p { color: #666; font-size: 1rem; margin-bottom: 20px; }
 
 .form-cotizacion {
-  max-width: 900px;
-  margin: 0 auto;
-  background: var(--color-white);
-  padding: var(--space-xxxl);
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  max-width: 900px; margin: 0 auto; background: var(--color-white);
+  padding: 40px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   border: 1px solid var(--color-medium-gray);
 }
 
-.form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-xl);
-  margin-bottom: var(--space-xl);
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+.form-group { display: flex; flex-direction: column; gap: 8px; }
+.form-group.full-width { grid-column: 1 / -1; }
+.form-group label { font-weight: 600; font-size: 0.9rem; color: var(--color-text-dark); }
+
+.form-group input, .form-group select {
+  padding: 12px 16px; border: 1px solid var(--color-medium-gray); border-radius: 8px;
+  font-size: 1rem; font-family: inherit; transition: 0.3s; background: var(--color-white);
+}
+.form-group input:focus, .form-group select:focus {
+  outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(230, 0, 0, 0.1);
 }
 
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-}
-
-.form-group.full-width {
-  grid-column: 1 / -1;
-}
-
-.form-group label {
-  font-weight: 600;
-  font-size: 0.9rem;
-  color: var(--color-text-dark);
-}
-
-.form-group input,
-.form-group select {
-  padding: 12px 16px;
-  border: 1px solid var(--color-medium-gray);
-  border-radius: 8px;
-  font-size: 1rem;
-  font-family: inherit;
-  transition: all var(--transition-speed) ease;
-  background: var(--color-white);
-}
-
-.form-group input:focus,
-.form-group select:focus {
-  outline: none;
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(230, 0, 0, 0.1);
-}
-
-/* Nota informativa sobre fotos */
+/* Nota informativa */
 .form-note {
-  background: #fff5f5;
-  border: 1px solid #ffdddd;
-  border-radius: 12px;
-  padding: var(--space-lg);
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-md);
-  margin-bottom: var(--space-xl);
+  background: #fff5f5; border: 1px solid #ffdddd; border-radius: 12px;
+  padding: 16px; display: flex; align-items: flex-start; gap: 12px; margin-bottom: 20px;
 }
+.note-icon { font-size: 1.5rem; flex-shrink: 0; }
+.form-note p { color: var(--color-text-medium); font-size: 0.9rem; margin: 0; }
 
-.note-icon {
-  font-size: 1.5rem;
-  flex-shrink: 0;
-}
-
-.form-note p {
-  color: var(--color-text-medium);
-  font-size: 0.9rem;
-  line-height: 1.6;
-  margin: 0;
-}
-
-/* Botón submit */
+/* Botón */
 .btn-submit {
-  padding: 16px 40px;
-  background: var(--color-accent-green);
-  color: var(--color-white);
-  border: none;
-  border-radius: 999px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all var(--transition-speed) ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin: 0 auto var(--space-xxl);
-  width: 100%;
-  max-width: 400px;
+  padding: 16px 40px; background: var(--color-accent-green); color: var(--color-white);
+  border: none; border-radius: 999px; font-size: 1.1rem; font-weight: 600; cursor: pointer;
+  transition: 0.3s ease; display: flex; align-items: center; justify-content: center;
+  gap: 10px; margin: 0 auto 30px; width: 100%; max-width: 400px;
 }
+.btn-submit:hover { background: var(--color-accent-green-dark); transform: translateY(-2px); }
 
-.btn-submit:hover {
-  background: var(--color-accent-green-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
-}
+/* Expectativas */
+.form-separador { height: 1px; background: linear-gradient(90deg, transparent, #ddd 20%, #ddd 80%, transparent); margin: 30px 0; }
+.expectativas-section { text-align: center; }
+.expectativas-title { font-size: 1.4rem; color: var(--color-text-dark); font-weight: 600; margin-bottom: 20px; }
+.expectativas-banner { background: var(--color-light-gray); border-radius: 12px; padding: 20px 25px; text-align: left; }
+.banner-text { font-size: 0.95rem; color: #555; line-height: 1.6; margin-bottom: 12px; }
+.banner-text strong { color: var(--color-primary); font-weight: 600; }
+.banner-items { font-size: 0.88rem; color: #666; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; }
+.banner-items span.separator { color: #888; }
 
-.btn-submit:active {
-  transform: translateY(0);
-}
 
-/* Separador visual */
-.form-separador {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--color-medium-gray) 20%, var(--color-medium-gray) 80%, transparent);
-  margin: var(--space-xxl) 0;
-}
-
-/* Expectativas realistas */
-.expectativas-section {
-  text-align: center;
-}
-
-.expectativas-title {
-  font-size: 1.4rem;
-  color: var(--color-text-dark);
-  font-weight: 600;
-  margin-bottom: var(--space-xl);
-}
-
-.expectativas-banner {
-  background: var(--color-light-gray);
-  border-radius: 12px;
-  padding: var(--space-xl) 25px;
-  text-align: left;
-}
-
-.banner-text {
-  font-size: 0.95rem;
-  color: #555;
-  line-height: 1.6;
-  margin-bottom: 12px;
-}
-
-.banner-text strong {
-  color: var(--color-primary);
-  font-weight: 600;
-}
-
-.banner-items {
-  font-size: 0.88rem;
-  color: #666;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  align-items: center;
-  justify-content: center;
-}
-
-.banner-items span.separator {
-  color: #888;
-}
-
-/* ====================================================
-   BENEFICIOS
-   ==================================================== */
-.beneficios {
-  padding: var(--gap-section) 0;
-  background: var(--color-light-gray);
-}
-
-.beneficios h2 {
-  text-align: center;
-  font-size: 1.5rem;
-  margin-bottom: var(--gap-section);
-  color: var(--color-text-dark);
-}
+/* --- 6. BENEFICIOS --- */
+.beneficios { padding: 40px 0; background: var(--color-light-gray); }
+.beneficios h2 { text-align: center; font-size: 1.5rem; margin-bottom: 25px; color: var(--color-text-dark); }
 
 .beneficios-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-md);
-  max-width: 600px;
-  margin: 0 auto;
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;
+  max-width: 600px; margin: 0 auto;
 }
-
 .beneficio-item {
-  background: var(--color-white);
-  border: 1px solid var(--color-medium-gray);
-  border-radius: 10px;
-  padding: var(--space-lg);
-  text-align: center;
-  transition: all var(--transition-speed) ease;
+  background: var(--color-white); border: 1px solid var(--color-medium-gray); border-radius: 10px;
+  padding: 16px; text-align: center; transition: 0.3s;
 }
+.beneficio-item:hover { border-color: var(--color-primary); box-shadow: 0 4px 12px rgba(230, 0, 0, 0.1); }
+.beneficio-icon { width: 44px; height: 44px; margin: 0 auto 10px; display: grid; place-items: center; }
+.beneficio-icon img { width: 80%; height: 80%; object-fit: contain; }
+.beneficio-item h3 { font-size: 0.95rem; color: var(--color-text-dark); font-weight: 600; }
 
-.beneficio-item:hover {
-  border-color: var(--color-primary);
-  box-shadow: 0 4px 12px rgba(230, 0, 0, 0.1);
-}
 
-.beneficio-icon {
-  width: 44px; /* Tamaño por defecto en escritorio */
-  height: 44px;
-  margin: 0 auto 10px;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-}
-
-.beneficio-icon img {
-  width: 80%;
-  height: 80%;
-  object-fit: contain;
-}
-
-.beneficio-item h3 {
-  font-size: 0.95rem;
-  color: var(--color-text-dark);
-  font-weight: 600;
-}
-
-/* ====================================================
-   TESTIMONIOS
-   ==================================================== */
-.testimonios {
-  padding: var(--gap-section) 0;
-}
-
-.testimonios h2 {
-  text-align: center;
-  font-size: 1.5rem;
-  margin-bottom: var(--gap-section);
-  color: var(--color-text-dark);
-}
+/* --- 7. TESTIMONIOS --- */
+.testimonios { padding: 40px 0; }
+.testimonios h2 { text-align: center; font-size: 1.5rem; margin-bottom: 25px; color: var(--color-text-dark); }
 
 .testimonios-track {
-  display: flex;
-  gap: var(--space-lg);
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  padding-bottom: 10px;
-  scrollbar-width: none;
+  display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory;
+  padding-bottom: 10px; scrollbar-width: none;
 }
-
-.testimonios-track::-webkit-scrollbar {
-  display: none;
-}
+.testimonios-track::-webkit-scrollbar { display: none; }
 
 .testimonio-card {
-  flex: 0 0 80%;
-  background: var(--color-white);
-  border: 1px solid var(--color-medium-gray);
-  border-radius: 12px;
-  padding: var(--space-xl);
-  scroll-snap-align: start;
+  flex: 0 0 80%; background: var(--color-white); border: 1px solid var(--color-medium-gray);
+  border-radius: 12px; padding: 20px; scroll-snap-align: start;
+}
+.testimonio-card p { font-size: 0.95rem; margin-bottom: 10px; color: var(--color-text-medium); line-height: 1.5; }
+.testimonio-autor { font-weight: 600; color: var(--color-primary); font-size: 0.9rem; }
+
+
+/* --- 8. FOOTER (UNIFICADO) --- */
+.main-footer { background: var(--color-black); color: var(--color-white); padding: 40px 20px 20px; font-size: 14px; }
+.footer-wrapper { max-width: 1200px; margin: 0 auto 20px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px; }
+.footer-column { flex: 1 1 180px; min-width: 180px; }
+.footer-column h2, .footer-column h3 { color: var(--color-white); margin-bottom: 12px; font-size: 1.25rem; }
+
+/* REGLA MAESTRA PARA CONTACTO */
+.footer-column address { font-style: normal; }
+.footer-column p, 
+.footer-column ul li a,
+.footer-column address p,
+.footer-column address a { 
+  color: var(--color-footer-text); line-height: 1.8; font-size: 14px; font-family: 'Poppins', sans-serif; text-decoration: none;
 }
 
-.testimonio-card p {
-  font-size: 0.95rem;
-  margin-bottom: 10px;
-  color: var(--color-text-medium);
-  line-height: 1.5;
-}
+.footer-column ul { list-style: none; padding: 0; }
+.footer-column ul li { margin-bottom: 8px; }
+.footer-column a:hover { color: var(--color-primary); }
+.redes-sociales { display: flex; gap: 16px; }
 
-.testimonio-autor {
-  font-weight: 600;
-  color: var(--color-primary);
-  font-size: 0.9rem;
-}
+.footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid #444; color: var(--color-footer-text); }
+.whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px; background: var(--color-accent-green); border-radius: 50%; box-shadow: 2px 2px 5px rgba(0,0,0,0.3); z-index: 1000; display: flex; align-items: center; justify-content: center; }
+.whatsapp-float img { width: 35px; }
+
 
 /* ====================================================
-   FOOTER
+   MEDIA QUERIES (DESKTOP)
    ==================================================== */
-.main-footer {
-  background: var(--color-black);
-  color: var(--color-white);
-  padding: var(--space-xxxl) var(--space-xl) var(--space-xl);
-  font-size: 14px;
-}
-
-.footer-wrapper {
-  max-width: 1200px;
-  margin: 0 auto var(--space-xl);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: var(--space-xxl);
-}
-
-.footer-column {
-  flex: 1 1 220px;
-  min-width: 180px;
-}
-
-.footer-column h2,
-.footer-column h3 {
-  color: var(--color-white);
-  margin-bottom: var(--space-md);
-  font-size: 20px;
-}
-
-.footer-column p,
-.footer-column ul li a {
-  color: var(--color-footer-text);
-  line-height: 1.8;
-}
-
-.footer-column ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-column ul li {
-  margin-bottom: var(--space-sm);
-}
-
-.footer-column ul li a {
-  transition: color var(--transition-speed) ease;
-}
-
-.footer-column ul li a:hover,
-.footer-column ul li a:focus {
-  color: var(--color-primary);
-}
-
-.footer-column address {
-  font-style: normal;
-}
-
-.redes-sociales {
-  display: flex;
-  gap: var(--space-lg);
-}
-
-.footer-bottom {
-  text-align: center;
-  padding-top: var(--space-xl);
-  border-top: 1px solid var(--color-dark-gray);
-  color: var(--color-footer-text);
-}
-
-/* ====================================================
-   WHATSAPP FLOTANTE
-   ==================================================== */
-.whatsapp-float {
-  position: fixed;
-  width: 60px;
-  height: 60px;
-  bottom: var(--space-xxl);
-  right: var(--space-xxl);
-  background: var(--color-accent-green);
-  border-radius: 50%;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  transition: all var(--transition-speed) ease;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.whatsapp-float img {
-  width: 35px;
-}
-
-.whatsapp-float:hover,
-.whatsapp-float:focus {
-  background: var(--color-accent-green-dark);
-  transform: scale(1.05);
-  outline: none;
-}
-
-/* ====================================================
-   MEDIA QUERIES
-   ==================================================== */
-
-/* Desktop (768px+) */
 @media (min-width: 768px) {
-  .hero {
-    height: 350px;
-  }
-
-  .hero-content h2 {
-    font-size: 2.5rem;
-  }
-
-  .hero-content p {
-    font-size: 1.3rem;
-  }
-
-  .beneficios-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-lg);
-    max-width: 900px;
-  }
-
-  .testimonio-card {
-    flex: 0 0 45%;
-  }
+  .hero { height: 350px; }
+  .hero-content h2 { font-size: 3.5rem; }
+  .beneficios-grid { grid-template-columns: repeat(4, 1fr); gap: 16px; max-width: 900px; }
+  .testimonio-card { flex: 0 0 45%; }
 }
 
-/* Móvil (max 767px) */
+/* ====================================================
+   MEDIA QUERIES (MÓVIL) - UNIFICADO
+   ==================================================== */
 @media (max-width: 767px) {
-  :root {
-    --gap-section: 13px;
-  }
+  /* HEADER MÓVIL */
+  .header-wrapper { flex-direction: column; gap: 10px; padding: 10px; }
+  .logo h1 { font-size: 1.5rem; margin: 0; }
+  .header-nav { display: block; width: 100%; }
+  .nav-menu { justify-content: center; gap: 10px; width: 100%; padding: 0; }
+  .nav-menu li a { font-size: 0.9rem; padding: 6px 12px; }
 
-  /* ========================================
-     HEADER MÓVIL - Layout Vertical
-     ======================================== */
-  .header-wrapper {
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-md);
-    padding: var(--space-md) var(--space-sm);
+  /* HERO MÓVIL (35vh) */
+  .hero { 
+    height: 35vh; min-height: 280px;
+    background-position: center bottom; background-size: cover;
   }
+  .hero-overlay { padding: 15px; max-width: 95%; }
+  .hero-overlay h2 { font-size: 1.8rem; margin-bottom: 10px; }
+  .hero-overlay p { font-size: 0.95rem; margin-bottom: 15px; }
+
+  /* PASOS MÓVIL */
+  .pasos-grid { display: none; }
+  .pasos-wrapper, .dots-container { display: block; }
   
-  .logo {
-    margin-bottom: 0;
-  }
-  
-  .logo h1 {
-    font-size: 1.3rem;
-  }
-  
-  .header-nav {
-    margin-left: 0;
-    width: 100%;
-  }
-  
-  .nav-menu {
-    justify-content: center;
-    gap: 0.4rem;
-    width: 100%;
-  }
-  
-  .nav-menu li a {
-    padding: 0.5rem 0.9rem;
-    font-size: 0.88rem;
-  }
-
-/* ========================================
-     HERO MÓVIL
-     ======================================== */
-  .hero {
-    height: 250px;
-  }
-
-  .hero-overlay {
-    padding: var(--space-lg) var(--space-md);
-  }
-
-  .hero-overlay h2 {
-    font-size: 1.6rem;
-    margin-bottom: var(--space-md);
-  }
-
-  .hero-overlay p {
-    font-size: 0.9rem;
-    margin-bottom: var(--space-md);
-  }
-  /* ========================================
-     PASOS MÓVIL - CARRUSEL
-     ======================================== */
-  .pasos-grid {
-    display: none;
-  }
-
-  .pasos-wrapper,
-  .dots-container {
-    display: block;
-  }
-
-  .pasos-wrapper {
-    overflow: hidden;
-    position: relative;
-  }
-
   .pasos-track {
-    display: flex;
-    gap: var(--space-lg);
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    padding: 0 var(--space-xl) 15px;
-    scrollbar-width: none;
-    scroll-behavior: smooth;
+    display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory;
+    padding: 0 20px 15px 20px; scrollbar-width: none;
   }
+  .paso-item { flex: 0 0 90%; scroll-snap-align: center; border-color: var(--color-primary); box-shadow: 0 4px 12px rgba(230,0,0,0.15); }
+  
+  .dots-container { display: flex; justify-content: center; gap: 8px; margin-top: 20px; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--color-medium-gray); }
+  .dot.active { background: var(--color-primary); width: 24px; border-radius: 5px; }
 
-  .pasos-track::-webkit-scrollbar {
-    display: none;
-  }
+  /* FORMULARIO MÓVIL */
+  .form-cotizacion { padding: 20px 15px; }
+  .form-header h2 { font-size: 1.5rem; }
+  .form-grid { grid-template-columns: 1fr; gap: 15px; }
+  .banner-items { flex-direction: column; gap: 4px; }
+  .banner-items span.separator { display: none; }
 
-  .paso-item {
-    flex: 0 0 90%;
-    scroll-snap-align: center;
-    transition: border-color 0.1s ease, box-shadow 0.1s ease;
-  }
+  /* BENEFICIOS MÓVIL */
+  .beneficios-grid { grid-template-columns: repeat(2, 1fr); }
+  .beneficio-icon { width: 60px; height: 60px; } /* Corrección pixeles */
 
-  .paso-item.active {
-    border-color: var(--color-primary);
-    box-shadow: 0 4px 12px rgba(230, 0, 0, 0.15);
-  }
-
-  .dots-container {
-    display: flex;
-    justify-content: center;
-    gap: var(--space-sm);
-    margin-top: var(--space-xl);
-  }
-
-  .dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--color-medium-gray);
-    transition: all var(--transition-speed) ease;
-    cursor: pointer;
-  }
-
-  .dot.active {
-    background: var(--color-primary);
-    width: 24px;
-    border-radius: 5px;
-  }
-
-  /* ========================================
-     FORMULARIO MÓVIL
-     ======================================== */
-  .form-cotizacion {
-    padding: var(--space-xl) var(--space-lg);
-  }
-
-  .form-header h2 {
-    font-size: 1.5rem;
-  }
-
-  .form-grid {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-
-  .form-note {
-    padding: var(--space-md);
-    gap: var(--space-sm);
-  }
-
-  .note-icon {
-    font-size: 1.2rem;
-  }
-
-  .form-note p {
-    font-size: 0.85rem;
-  }
-
-  .expectativas-title {
-    font-size: 1.2rem;
-  }
-
-  .expectativas-banner {
-    padding: 15px 20px;
-  }
-
-  .banner-text {
-    font-size: 0.88rem;
-  }
-
-  .banner-items {
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-    font-size: 0.85rem;
-  }
-
-  .banner-items span.separator {
-    display: none;
-  }
-
-  /* ========================================
-     CORRECCIÓN ICONOS PIXELADOS (AQUÍ ESTÁ EL ARREGLO)
-     ======================================== */
-  .beneficios-grid {
-    /* Mantenemos las 2 columnas pero aseguramos el espacio */
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .beneficio-icon {
-    /* AUMENTAMOS TAMAÑO SOLO EN MÓVIL */
-    width: 60px; 
-    height: 60px;
-    /* Esto da espacio para que una imagen HD respire */
-  }
-
-  /* ========================================
-     FOOTER Y WHATSAPP MÓVIL
-     ======================================== */
-  .footer-wrapper {
-    flex-direction: column;
-    gap: var(--space-xl);
-  }
-
-  .whatsapp-float {
-    width: 50px;
-    height: 50px;
-    bottom: var(--space-lg);
-    right: var(--space-lg);
-  }
-
-  .whatsapp-float img {
-    width: 28px;
-  }
+  /* FOOTER MÓVIL */
+  .footer-wrapper { flex-direction: column; gap: 30px; padding: 0 20px; }
+  .whatsapp-float { width: 50px; height: 50px; bottom: 20px; right: 20px; }
+  .whatsapp-float img { width: 28px; }
 }
