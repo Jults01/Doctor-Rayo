@@ -1,6 +1,6 @@
 /* ========================================================================
    REPARACION.CSS — ESTILOS UNIFICADOS (DOCTOR RAYO)
-   Versión: Final Definitiva - Footer y Pasos Corregidos
+   Versión: FINAL 100% - Footer Vertical Móvil Forzado
    ======================================================================== */
 
 /* --- 1. VARIABLES --- */
@@ -17,7 +17,7 @@
   --color-light-gray: #f9f9f9;
   --color-medium-gray: #ddd;
   --color-footer-text: #ccc;
-  --color-overlay: rgba(0, 0, 0, 0.40); /* AJUSTA AQUÍ LA OSCURIDAD DEL HERO (0.65 a 0.8) */
+  --color-overlay: rgba(0, 0, 0, 0.40);
   
   --space-xl: 20px;
   --font-size-xxl: 2rem;
@@ -38,16 +38,7 @@ body.modal-open { overflow: hidden; }
 .logo h1 { 
   font-weight: 700; 
   background: linear-gradient(135deg, #e60000, #ff4444); 
-  
-  /* Versión estándar (para quitar advertencias) */
-  background-clip: text;
-  
-  /* Versión WebKit (obligatoria para que funcione en Chrome/Safari/Edge) */
-  -webkit-background-clip: text;
-  
-  /* Hace el texto transparente para que se vea el fondo */
-  -webkit-text-fill-color: transparent; 
-  
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
   font-size: 32px; 
 }
 
@@ -181,7 +172,7 @@ details[open] { border-color: var(--color-primary); }
 details p { margin-top: 8px; color: var(--color-text-medium); }
 
 
-/* --- 7. FOOTER (CORREGIDO) --- */
+/* --- 7. FOOTER (GENERAL) --- */
 .main-footer { background: var(--color-black); color: var(--color-white); padding: 40px 20px 20px; font-size: 14px; }
 .footer-wrapper { 
   max-width: 1200px; margin: 0 auto 20px; 
@@ -191,7 +182,6 @@ details p { margin-top: 8px; color: var(--color-text-medium); }
 .footer-column { flex: 1 1 180px; min-width: 180px; }
 .footer-column h2, .footer-column h3 { color: var(--color-white); margin-bottom: 12px; font-size: 1.25rem; }
 
-/* REGLA MAESTRA PARA CONTACTO: Asegura que address, p y a sean iguales */
 .footer-column address { font-style: normal; }
 .footer-column p, 
 .footer-column ul li a,
@@ -279,12 +269,14 @@ details p { margin-top: 8px; color: var(--color-text-medium); }
 .btn-modal-wpp:hover { background: var(--color-accent-green-dark); transform: translateY(-2px); }
 
 
-/* --- 9. MEDIA QUERIES (MÓVIL) --- */
+/* --- 9. MEDIA QUERIES (MÓVIL DEFINITIVO) --- */
 @media (max-width: 767px) {
+  /* HEADER: Menú oculto */
   .header-wrapper { flex-direction: column; gap: 0; padding: 5px 10px; }
   .logo h1 { font-size: 1.3rem; margin: 0; } 
   .header-nav { display: none; } 
 
+  /* HERO */
   .banner-principal { 
     height: 35vh; 
     min-height: 280px;
@@ -295,10 +287,11 @@ details p { margin-top: 8px; color: var(--color-text-medium); }
   .banner-principal h2 { font-size: 1.8rem; margin-bottom: 10px; } 
   .banner-principal p { font-size: 0.95rem; margin-bottom: 15px; }
 
+  /* TÍTULOS */
   .elige-dano h2, .steps h2, .faq h2 { font-size: 1.25rem; }
   .elige-dano, .steps .container, .faq .container { padding: 0; } 
 
-  /* Carrusel Daños */
+  /* CARRUSEL DAÑOS */
   .grid-danos {
     display: flex; overflow-x: auto; gap: 15px;
     padding: 0 30px 25px 30px !important; 
@@ -312,15 +305,20 @@ details p { margin-top: 8px; color: var(--color-text-medium); }
     scroll-snap-align: start; padding: 15px;
   }
   
-  /* PASOS (Margen corregido para que no se corte el círculo) */
+  /* PASOS */
   .steps-grid {
     display: grid; grid-template-columns: 1fr; 
     gap: 1.5rem; padding: 0 20px; 
   }
-  .step { margin-top: 30px; } /* Aumentado a 30px para evitar corte */
+  .step { margin-top: 30px; } 
   
-  /* Footer */
-  .footer-wrapper { gap: 30px; padding: 0 20px; }
+  /* FOOTER MÓVIL (CORREGIDO ESPACIOS) */
+  .footer-wrapper { 
+    flex-direction: row; flex-wrap: wrap; /* Igual a Comprar */
+    gap: 30px; padding: 0 20px; 
+  }
+  .footer-column { flex: 1 1 100%; min-width: 100%; } /* Una columna en móvil */
+  
   .whatsapp-float { width: 50px; height: 50px; bottom: 20px; right: 20px; }
   .whatsapp-float img { width: 28px; }
 }

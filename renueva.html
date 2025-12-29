@@ -238,21 +238,19 @@
 
   <footer class="main-footer" role="contentinfo">
     <div class="footer-wrapper container">
-      <div class="footer-column">
+      <div class="footer-column footer-about">
         <h2>Doctor Rayo</h2>
         <p>Reparación, compra y venta de celulares.</p>
       </div>
-      <div class="footer-column">
+      <div class="footer-column footer-services">
         <h3>Servicios</h3>
-        <nav aria-label="Servicios">
-          <ul>
-            <li><a href="comprar.html">Comprar</a></li>
-            <li><a href="renueva.html">Vender</a></li>
-            <li><a href="reparacion.html">Reparar</a></li>
-          </ul>
-        </nav>
+        <ul>
+          <li><a href="comprar.html">Comprar</a></li>
+          <li><a href="renueva.html">Vender</a></li>
+          <li><a href="reparacion.html">Reparar</a></li>
+        </ul>
       </div>
-      <div class="footer-column">
+      <div class="footer-column footer-contact">
         <h3>Contacto</h3>
         <address>
           <p>Email: <a href="mailto:contacto@doctorrayo.com">contacto@doctorrayo.com</a></p>
@@ -260,10 +258,10 @@
           <p>Ciudad: Bogotá, Colombia</p>
         </address>
       </div>
-      <div class="footer-column">
+      <div class="footer-column footer-social">
         <h3>Síguenos</h3>
         <ul class="redes-sociales">
-          <li><a href="https://www.instagram.com/doctorrayo" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a></li>
+          <li><a href="https://www.instagram.com/doctorrayo" target="_blank" rel="noopener">Instagram</a></li>
         </ul>
       </div>
     </div>
@@ -272,14 +270,12 @@
     </div>
   </footer>
 
-  <a href="https://wa.me/573046486740" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp">
-    <img src="whatsapp-icon.png" alt="WhatsApp" loading="lazy" decoding="async">
+  <a href="https://wa.me/573046486740" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp Doctor Rayo">
+    <img src="whatsapp-icon.png" alt="" loading="lazy" decoding="async">
   </a>
 
   <script>
-    /**
-     * CARRUSEL DE PASOS - MÓVIL
-     */
+    /* CARRUSEL PASOS */
     if (window.innerWidth <= 767) {
       const track = document.getElementById('pasosTrack');
       const dots = document.querySelectorAll('.dot');
@@ -317,43 +313,28 @@
         
         if (newIndex !== currentIndex && newIndex >= 0 && newIndex < pasoItems.length) {
           currentIndex = newIndex;
-          
-          pasoItems.forEach((item, i) => {
-            item.classList.toggle('active', i === newIndex);
-          });
-          
-          dots.forEach((dot, i) => {
-            dot.classList.toggle('active', i === newIndex);
-          });
+          pasoItems.forEach((item, i) => item.classList.toggle('active', i === newIndex));
+          dots.forEach((dot, i) => dot.classList.toggle('active', i === newIndex));
         }
       });
     }
 
-    /**
-     * AÑO ACTUAL EN FOOTER
-     */
+    /* AÑO FOOTER */
     document.addEventListener('DOMContentLoaded', function() {
       const yearElement = document.getElementById('current-year');
-      if (yearElement) {
-        yearElement.textContent = new Date().getFullYear();
-      }
+      if (yearElement) yearElement.textContent = new Date().getFullYear();
     });
 
-    /**
-     * FORMULARIO DE COTIZACIÓN
-     */
+    /* FORMULARIO */
     const form = document.getElementById('cotizacionForm');
-
     if (form) {
       form.addEventListener('submit', (e) => {
         e.preventDefault();
-        
         const nombre = document.getElementById('nombre').value;
         const marca = document.getElementById('marca').value;
         const modelo = document.getElementById('modelo').value;
         const estado = document.getElementById('estado').value;
 
-        // Crear mensaje para WhatsApp
         const mensaje = `Hola, me llamo ${nombre}.\n\n` +
                        `Quiero vender mi celular:\n\n` +
                        `📱 Marca: ${marca}\n` +
@@ -363,12 +344,10 @@
 
         const mensajeCodificado = encodeURIComponent(mensaje);
         const urlWhatsApp = `https://wa.me/573046486740?text=${mensajeCodificado}`;
-
-        // Abrir WhatsApp
         window.open(urlWhatsApp, '_blank');
       });
     }
   </script>
 
 </body>
-</html>
+</html> 
