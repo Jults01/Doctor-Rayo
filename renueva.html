@@ -216,8 +216,8 @@
           </div>
 
           <div class="sticky-footer" id="stickyFooter">
-            <button class="btn btn-secondary" id="btnBack" style="display: none;">←</button>
-            <button class="btn btn-primary" id="btnNext">Siguiente Paso</button>
+            <button type="button" class="btn btn-secondary" id="btnBack" style="display: none;">←</button>
+            <button type="button" class="btn btn-primary" id="btnNext">Siguiente Paso</button>
           </div>
 
         </form>
@@ -443,9 +443,7 @@
                       `Quedo atento a la oferta para enviarles fotos.`;
 
       const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
-      window.open(url, '_blank');
-      
-      setTimeout(() => { location.reload(); }, 1000);
+      window.location.href = url;
     }
 
     btnNext.addEventListener('click', (e) => {
