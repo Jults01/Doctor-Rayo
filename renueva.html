@@ -101,111 +101,147 @@
   <section class="cotizacion-form">
     <div class="container">
       <div class="form-header">
-        <h2>📱 Vende tu celular</h2>
-        <p>Completa el formulario y recibe una oferta en minutos</p>
+        <h2>📱 Cotiza tu celular</h2>
+        <p>Completa los pasos y recibe una oferta por WhatsApp</p>
       </div>
 
-      <form id="cotizacionForm" class="form-cotizacion">
-        <div class="form-grid">
-          
-          <div class="form-group full-width">
-            <label for="nombre">Tu nombre *</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
-          </div>
-
-          <div class="form-group">
-            <label for="marca">Marca del celular *</label>
-            <select id="marca" name="marca" required>
-              <option value="">Selecciona una marca</option>
-              <option value="iPhone">iPhone (Apple)</option>
-              <option value="Samsung">Samsung</option>
-              <option value="Xiaomi">Xiaomi</option>
-              <option value="Motorola">Motorola</option>
-              <option value="Huawei">Huawei</option>
-              <option value="Realme">Realme</option>
-              <option value="OPPO">OPPO</option>
-              <option value="Otra">Otra marca</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="modelo">Modelo *</label>
-            <input type="text" id="modelo" name="modelo" placeholder="Ej: iPhone 13, Galaxy S21" required>
-          </div>
-
-          <div class="form-group full-width">
-            <label for="estado">Estado del equipo *</label>
-            <select id="estado" name="estado" required>
-              <option value="">Selecciona el estado</option>
-              <option value="Excelente">Excelente - Como nuevo</option>
-              <option value="Bueno">Bueno - Funciona perfecto</option>
-              <option value="Regular">Regular - Detalles estéticos</option>
-              <option value="Repuestos">Para repuestos</option>
-            </select>
-          </div>
-
+      <div class="form-cotizacion">
+        
+        <div class="progress-container" id="progressContainer">
+          <div class="progress-text"><span id="stepText">Paso 1 de 3</span><span id="stepPercentage">33%</span></div>
+          <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
         </div>
 
-        <div class="form-note">
-          <span class="note-icon">📸</span>
-          <p>Después de enviar, podrás compartir <strong>más de 5 fotos desde varios ángulos</strong> directamente por WhatsApp para que podamos darte la mejor oferta</p>
-        </div>
-
-        <button type="submit" class="btn-submit">
-          <span>💬</span>
-          Recibir oferta por WhatsApp
-        </button>
-
-        <div class="form-separador"></div>
-
-        <div class="expectativas-section">
-          <h3 class="expectativas-title">💡 Expectativas realistas</h3>
+        <form id="cotizadorWizard">
           
-          <div class="expectativas-banner">
-            <p class="banner-text">Los celulares usados tienen un valor de reventa que normalmente está entre el <strong>30% y 50%</strong> del precio original.</p>
-            <div class="banner-items">
-              <span>Depende de:</span>
-              <span>Tiempo de uso</span>
-              <span class="separator">•</span>
-              <span>Estado físico</span>
-              <span class="separator">•</span>
-              <span>Capacidad</span>
-              <span class="separator">•</span>
-              <span>Demanda del modelo</span>
+          <div class="step-wrapper active" id="step1">
+            <h3 class="step-title">Identifica tu equipo</h3>
+            <p class="step-subtitle">Empecemos por lo básico.</p>
+            
+            <div class="form-group">
+              <label class="main-label">Marca</label>
+              <select id="marca">
+                <option value="Apple">Apple (iPhone)</option>
+                <option value="Samsung">Samsung</option>
+                <option value="Xiaomi">Xiaomi</option>
+                <option value="Motorola">Motorola</option>
+                <option value="Otra">Otra</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="main-label">Modelo exacto</label>
+              <input type="text" id="modelo" placeholder="Ej. iPhone 13 Pro Max o S22 Ultra">
             </div>
           </div>
-        </div>
 
-      </form>
+          <div class="step-wrapper" id="step2">
+            <h3 class="step-title">Especificaciones</h3>
+            <p class="step-subtitle">Detalles técnicos del dispositivo.</p>
+            
+            <div class="form-group">
+              <label class="main-label">Capacidad (GB)</label>
+              <div class="tappable-grid">
+                <div class="tappable-item"><input type="radio" name="capacidad" id="cap64" value="64GB" checked><label for="cap64">64 GB</label></div>
+                <div class="tappable-item"><input type="radio" name="capacidad" id="cap128" value="128GB"><label for="cap128">128 GB</label></div>
+                <div class="tappable-item"><input type="radio" name="capacidad" id="cap256" value="256GB"><label for="cap256">256 GB</label></div>
+                <div class="tappable-item"><input type="radio" name="capacidad" id="cap512" value="512GB+"><label for="cap512">512 GB+</label></div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="main-label">Salud de Batería</label>
+              <div class="tappable-grid">
+                <div class="tappable-item"><input type="radio" name="bateria" id="batAlta" value="Excelente (95-100%)" checked><label for="batAlta">Excelente<span>95% - 100%</span></label></div>
+                <div class="tappable-item"><input type="radio" name="bateria" id="batBuena" value="Buena (94-90%)"><label for="batBuena">Buena<span>94% - 90%</span></label></div>
+                <div class="tappable-item"><input type="radio" name="bateria" id="batNormal" value="Normal (89-85%)"><label for="batNormal">Normal<span>89%-85%</span></label></div>
+                <div class="tappable-item"><input type="radio" name="bateria" id="batBaja" value="Baja (84-79%)"><label for="batBaja">Baja<span>84%-79%</span></label></div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="main-label">¿Ha sido reparado o destapado?</label>
+              <div class="tappable-grid">
+                <div class="tappable-item"><input type="radio" name="reparado" id="repNo" value="No" checked><label for="repNo">No, nunca</label></div>
+                <div class="tappable-item"><input type="radio" name="reparado" id="repSi" value="Sí"><label for="repSi">Sí</label></div>
+              </div>
+              
+              <div class="hidden-field" id="detalleReparacionDiv">
+                <label class="main-label" style="margin-top: 15px;">¿Qué reparación tiene?</label>
+                <input type="text" id="detalleReparacion" placeholder="Ej. Cambio de pantalla, batería...">
+              </div>
+            </div>
+          </div>
+
+          <div class="step-wrapper" id="step3">
+            <h3 class="step-title">Estado y Accesorios</h3>
+            <p class="step-subtitle">Últimos detalles para tu cotización.</p>
+
+            <div class="form-group">
+              <label class="main-label">Estado Físico</label>
+              <div class="condition-grid">
+                <div class="tappable-item"><input type="radio" name="estado" id="estExcel" value="Excelente" checked><label for="estExcel">Excelente<span>10/10, como nuevo.</span></label></div>
+                <div class="tappable-item"><input type="radio" name="estado" id="estBueno" value="Bueno"><label for="estBueno">Bueno<span>Marcas leves de uso normal.</span></label></div>
+                <div class="tappable-item"><input type="radio" name="estado" id="estReg" value="Regular"><label for="estReg">Regular<span>Golpes visibles o rayones profundos.</span></label></div>
+                <div class="tappable-item"><input type="radio" name="estado" id="estMalo" value="Solo Repuestos"><label for="estMalo">Solo repuestos<span>Pantalla rota, fallas graves.</span></label></div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="main-label">¿Qué accesorios incluyes?</label>
+              <div class="tappable-grid">
+                <div class="tappable-item"><input type="checkbox" id="accCaja" value="Caja"><label for="accCaja">Caja</label></div>
+                <div class="tappable-item"><input type="checkbox" id="accCable" value="Cable"><label for="accCable">Cable</label></div>
+                <div class="tappable-item"><input type="checkbox" id="accFactura" value="Factura"><label for="accFactura">Factura</label></div>
+                <div class="tappable-item"><input type="checkbox" id="accNada" value="Solo equipo" checked><label for="accNada">Solo el equipo</label></div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="main-label">¿Qué te motiva a venderlo?</label>
+              <select id="motivo">
+                <option value="Quiero renovar por uno mejor">Quiero renovar por uno mejor</option>
+                <option value="Necesito el dinero">Necesito el dinero</option>
+                <option value="Ya no lo uso">Ya no lo uso</option>
+                <option value="Otro motivo">Otro motivo</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="loaderState" class="loader-container">
+            <h3 style="color: var(--color-primary); margin-bottom: 20px;">Preparando tu cotización...</h3>
+            <div class="skeleton-box"></div>
+            <div class="skeleton-box" style="width: 80%; margin: 0 auto;"></div>
+            <p style="color: var(--color-text-medium); margin-top: 20px;">Redirigiendo a un asesor...</p>
+          </div>
+
+          <div class="sticky-footer" id="stickyFooter">
+            <button class="btn btn-secondary" id="btnBack" style="display: none;">←</button>
+            <button class="btn btn-primary" id="btnNext">Siguiente Paso</button>
+          </div>
+
+        </form>
+      </div>
     </div>
   </section>
-
   <section class="beneficios">
     <div class="container">
       <h2>¿Por qué vendernos tu celular?</h2>
       <div class="beneficios-grid">
         <div class="beneficio-item">
-          <div class="beneficio-icon">
-            <img src="img/pago-inmediato.png" alt="" aria-hidden="true">
-          </div>
+          <div class="beneficio-icon"><img src="img/pago-inmediato.png" alt="" aria-hidden="true"></div>
           <h3>Pago inmediato</h3>
         </div>
         <div class="beneficio-item">
-          <div class="beneficio-icon">
-            <img src="img/recogida-gratis.png" alt="" aria-hidden="true">
-          </div>
+          <div class="beneficio-icon"><img src="img/recogida-gratis.png" alt="" aria-hidden="true"></div>
           <h3>Recogida gratis</h3>
         </div>
         <div class="beneficio-item">
-          <div class="beneficio-icon">
-            <img src="img/sin-tramites.png" alt="" aria-hidden="true">
-          </div>
+          <div class="beneficio-icon"><img src="img/sin-tramites.png" alt="" aria-hidden="true"></div>
           <h3>Sin trámites</h3>
         </div>
         <div class="beneficio-item">
-          <div class="beneficio-icon">
-            <img src="img/mejor-precio.png" alt="" aria-hidden="true">
-          </div>
+          <div class="beneficio-icon"><img src="img/mejor-precio.png" alt="" aria-hidden="true"></div>
           <h3>Mejor precio</h3>
         </div>
       </div>
@@ -271,11 +307,13 @@
   </footer>
 
   <a href="https://wa.me/573046486740" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp Doctor Rayo">
-    <img src="whatsapp-icon.png" alt="" loading="lazy" decoding="async">
+    <img src="whatsapp-icon.png" alt="WhatsApp" loading="lazy" decoding="async">
   </a>
 
   <script>
-    /* CARRUSEL PASOS */
+    /* ------------------------------------------------
+       1. SCRIPTS ORIGINALES (Carrusel y Año Footer)
+       ------------------------------------------------ */
     if (window.innerWidth <= 767) {
       const track = document.getElementById('pasosTrack');
       const dots = document.querySelectorAll('.dot');
@@ -289,14 +327,8 @@
         const scrollAmount = (itemWidth + gap) * index;
         
         track.scrollTo({ left: scrollAmount, behavior: 'smooth' });
-        
-        pasoItems.forEach((item, i) => {
-          item.classList.toggle('active', i === index);
-        });
-        
-        dots.forEach((dot, i) => {
-          dot.classList.toggle('active', i === index);
-        });
+        pasoItems.forEach((item, i) => item.classList.toggle('active', i === index));
+        dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
       }
 
       dots.forEach(dot => {
@@ -319,35 +351,135 @@
       });
     }
 
-    /* AÑO FOOTER */
     document.addEventListener('DOMContentLoaded', function() {
       const yearElement = document.getElementById('current-year');
       if (yearElement) yearElement.textContent = new Date().getFullYear();
     });
 
-    /* FORMULARIO */
-    const form = document.getElementById('cotizacionForm');
-    if (form) {
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const nombre = document.getElementById('nombre').value;
-        const marca = document.getElementById('marca').value;
-        const modelo = document.getElementById('modelo').value;
-        const estado = document.getElementById('estado').value;
 
-        const mensaje = `Hola, me llamo ${nombre}.\n\n` +
-                       `Quiero vender mi celular:\n\n` +
-                       `📱 Marca: ${marca}\n` +
-                       `📱 Modelo: ${modelo}\n` +
-                       `⭐ Estado: ${estado}\n\n` +
-                       `Enviaré las fotos a este chat (más de 5 desde varios ángulos para detallar el celular).`;
+    /* ------------------------------------------------
+       2. NUEVOS SCRIPTS DEL WIZARD COTIZADOR
+       ------------------------------------------------ */
+    const numeroWhatsApp = "573046486740"; 
+    
+    let currentStep = 1;
+    const totalSteps = 3;
+    
+    const stepWrappers = document.querySelectorAll('.step-wrapper');
+    const btnNext = document.getElementById('btnNext');
+    const btnBack = document.getElementById('btnBack');
+    const stickyFooter = document.getElementById('stickyFooter');
 
-        const mensajeCodificado = encodeURIComponent(mensaje);
-        const urlWhatsApp = `https://wa.me/573046486740?text=${mensajeCodificado}`;
-        window.open(urlWhatsApp, '_blank');
+    // Campo condicional de reparación
+    const repRadios = document.querySelectorAll('input[name="reparado"]');
+    const detalleDiv = document.getElementById('detalleReparacionDiv');
+    repRadios.forEach(radio => {
+      radio.addEventListener('change', (e) => {
+        detalleDiv.style.display = e.target.value === 'Sí' ? 'block' : 'none';
       });
-    }
-  </script>
+    });
 
+    // Lógica Excluyente Accesorios
+    document.getElementById('accNada').addEventListener('change', function() {
+      if(this.checked) {
+        document.getElementById('accCaja').checked = false;
+        document.getElementById('accCable').checked = false;
+        document.getElementById('accFactura').checked = false;
+      }
+    });
+    ['accCaja', 'accCable', 'accFactura'].forEach(id => {
+      document.getElementById(id).addEventListener('change', function() {
+        if(this.checked) document.getElementById('accNada').checked = false;
+      });
+    });
+
+    function updateUI() {
+      stepWrappers.forEach((step, index) => {
+        step.classList.remove('active');
+        if (index + 1 === currentStep) step.classList.add('active');
+      });
+
+      const progress = (currentStep / totalSteps) * 100;
+      document.getElementById('progressFill').style.width = `${progress}%`;
+      document.getElementById('stepText').innerText = `Paso ${currentStep} de ${totalSteps}`;
+      document.getElementById('stepPercentage').innerText = `${Math.round(progress)}%`;
+
+      btnBack.style.display = currentStep > 1 ? 'flex' : 'none';
+      
+      if (currentStep === totalSteps) {
+        btnNext.innerText = 'Cotizar por WhatsApp';
+        btnNext.style.background = 'var(--color-accent-green)'; // Usa tu verde original
+      } else {
+        btnNext.innerText = 'Siguiente Paso';
+        btnNext.style.background = 'var(--color-primary)'; // Usa tu rojo original
+      }
+    }
+
+    function enviarWhatsApp() {
+      const marca = document.getElementById('marca').value;
+      const modelo = document.getElementById('modelo').value || 'No especificado';
+      const capacidad = document.querySelector('input[name="capacidad"]:checked').value;
+      const bateria = document.querySelector('input[name="bateria"]:checked').value;
+      const reparado = document.querySelector('input[name="reparado"]:checked').value;
+      const detalleRep = reparado === 'Sí' ? ` (${document.getElementById('detalleReparacion').value || 'Sin detalles'})` : '';
+      const estado = document.querySelector('input[name="estado"]:checked').value;
+      const motivo = document.getElementById('motivo').value;
+
+      let accesorios = [];
+      if(document.getElementById('accCaja').checked) accesorios.push('Caja');
+      if(document.getElementById('accCable').checked) accesorios.push('Cable');
+      if(document.getElementById('accFactura').checked) accesorios.push('Factura');
+      if(document.getElementById('accNada').checked) accesorios.push('Solo equipo');
+
+      const mensaje = `¡Hola Doctor Rayo! Quiero vender mi equipo:\n\n` +
+                      `📱 *Marca:* ${marca}\n` +
+                      `📳 *Modelo:* ${modelo}\n` +
+                      `💾 *Capacidad:* ${capacidad}\n` +
+                      `🔋 *Batería:* ${bateria}\n` +
+                      `🛠️ *Reparado:* ${reparado}${detalleRep}\n` +
+                      `✨ *Estado:* ${estado}\n` +
+                      `📦 *Incluye:* ${accesorios.join(', ')}\n` +
+                      `💡 *Motivo:* ${motivo}\n\n` +
+                      `Quedo atento a la oferta para enviarles fotos.`;
+
+      const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
+      window.open(url, '_blank');
+      
+      setTimeout(() => { location.reload(); }, 1000);
+    }
+
+    btnNext.addEventListener('click', (e) => {
+      e.preventDefault();
+      
+      // Validación básica paso 1
+      if (currentStep === 1 && document.getElementById('modelo').value.trim() === '') {
+        document.getElementById('modelo').style.borderColor = 'red';
+        document.getElementById('modelo').focus();
+        return;
+      } else {
+        document.getElementById('modelo').style.borderColor = 'var(--color-medium-gray)';
+      }
+
+      if (currentStep < totalSteps) {
+        currentStep++;
+        updateUI();
+      } else {
+        document.getElementById('progressContainer').style.display = 'none';
+        stickyFooter.style.display = 'none';
+        stepWrappers.forEach(s => s.classList.remove('active'));
+        document.getElementById('loaderState').classList.add('active');
+
+        setTimeout(() => { enviarWhatsApp(); }, 2000);
+      }
+    });
+
+    btnBack.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (currentStep > 1) {
+        currentStep--;
+        updateUI();
+      }
+    });
+  </script>
 </body>
-</html> 
+</html>
