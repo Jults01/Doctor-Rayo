@@ -1,6 +1,6 @@
 /* ====================================================
    VENDER (RENUEVA) - DOCTOR RAYO
-   Versión: Final Definitiva - Con Wizard Integrado
+   Versión: Final Estratégica - Rangos y Filtros
    ==================================================== */
 
 /* --- 1. VARIABLES --- */
@@ -19,7 +19,7 @@
   --color-footer-text: #ccc;
   --color-overlay: rgba(0, 0, 0, 0.40);
   --color-text-light: #e6e6e6;
-  --color-primary-dim: rgba(230, 0, 0, 0.05); /* Nuevo para el wizard */
+  --color-primary-dim: rgba(230, 0, 0, 0.05);
 
   --gap-section: 25px;
   --space-xl: 20px;
@@ -28,7 +28,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Poppins', sans-serif; background: var(--color-white); color: var(--color-text-dark); line-height: 1.6; padding-bottom: 80px; /* Espacio para el sticky footer del wizard */ }
+body { font-family: 'Poppins', sans-serif; background: var(--color-white); color: var(--color-text-dark); line-height: 1.6; padding-bottom: 80px; }
 a { text-decoration: none; color: inherit; }
 img { max-width: 100%; height: auto; display: block; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-xl); }
@@ -129,21 +129,17 @@ img { max-width: 100%; height: auto; display: block; }
 .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 90px; right: 20px; background: var(--color-accent-green); border-radius: 50%; box-shadow: 2px 2px 5px rgba(0,0,0,0.3); z-index: 1000; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
 .whatsapp-float img { width: 35px; }
 
-
 /* ====================================================
-   MEDIA QUERIES (DESKTOP)
+   MEDIA QUERIES
    ==================================================== */
 @media (min-width: 768px) {
   .hero { height: 350px; }
   .beneficios-grid { grid-template-columns: repeat(4, 1fr); gap: 16px; max-width: 900px; }
   .testimonio-card { flex: 0 0 45%; }
-  body { padding-bottom: 0; } /* Reseteo para desktop */
+  body { padding-bottom: 0; } 
   .whatsapp-float { bottom: 30px; right: 30px; }
 }
 
-/* ====================================================
-   MEDIA QUERIES (MÓVIL)
-   ==================================================== */
 @media (max-width: 767px) {
   .header-wrapper { flex-direction: column; gap: 0; padding: 5px 10px; }
   .logo h1 { font-size: 1.5rem; margin: 0; }
@@ -166,7 +162,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 /* ====================================================
-   5. FORMULARIO WIZARD (NUEVO ESTILO LIGHT THEME)
+   5. FORMULARIO WIZARD
    ==================================================== */
 .cotizacion-form { padding: 40px 0; background: var(--color-white); }
 .form-header { text-align: center; margin-bottom: 30px; }
@@ -202,7 +198,41 @@ select, input[type="text"], input[type="number"] {
 }
 select:focus, input:focus { outline: none; border-color: var(--color-primary); background: var(--color-white); box-shadow: 0 0 0 3px rgba(230,0,0,0.1); }
 
-/* Tappable Cards Light Theme */
+/* Quitar flechas a inputs numéricos */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; margin: 0; 
+}
+input[type=number] { -moz-appearance: textfield; }
+
+/* Grid de especificaciones a mitad de tamaño */
+.specs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+.specs-grid .form-group { margin-bottom: 0; }
+
+/* Sufijo GB */
+.input-with-suffix {
+  position: relative;
+  width: 100%;
+}
+.input-with-suffix input {
+  padding-right: 45px;
+}
+.input-with-suffix span {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 700;
+  color: #777;
+  pointer-events: none;
+}
+
+/* Tappable Cards */
 .tappable-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .tappable-item { position: relative; }
 .tappable-item input { position: absolute; opacity: 0; cursor: pointer; }
@@ -214,13 +244,13 @@ select:focus, input:focus { outline: none; border-color: var(--color-primary); b
 .tappable-item input:checked ~ label { border-color: var(--color-primary); background: var(--color-primary-dim); color: var(--color-primary-dark); }
 .tappable-item label span { display: block; font-size: 0.75rem; color: #666; font-weight: 400; margin-top: 4px; }
 
-/* Condition Cards (Vertical) */
+/* Condition Grid */
 .condition-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
 .condition-grid .tappable-item label { align-items: flex-start; padding: 15px 20px; text-align: left; }
 
 .hidden-field { display: none; margin-top: 15px; animation: slideIn 0.3s ease; }
 
-/* --- STICKY CTA (Optimizado para Light Theme) --- */
+/* Sticky CTA */
 .sticky-footer {
   position: fixed; bottom: 0; left: 0; width: 100%; background: var(--color-white);
   padding: 15px 20px; border-top: 1px solid var(--color-medium-gray); z-index: 1000;
@@ -229,14 +259,12 @@ select:focus, input:focus { outline: none; border-color: var(--color-primary); b
 .btn { padding: 14px; border-radius: 50px; font-size: 1rem; font-weight: 700; cursor: pointer; transition: 0.3s; border: none; font-family: inherit; }
 .btn-secondary { background: var(--color-light-gray); color: var(--color-text-dark); border: 1px solid var(--color-medium-gray); flex: 0 0 60px; display: flex; align-items: center; justify-content: center; }
 .btn-primary { background: var(--color-primary); color: #fff; flex: 1; max-width: 400px; }
-.btn:active { transform: scale(0.98); }
 
 @media (min-width: 768px) {
-  /* En desktop, el botón se mete dentro del formulario en vez de flotar */
   .sticky-footer { position: relative; background: transparent; border: none; box-shadow: none; padding: 20px 0 0 0; }
 }
 
-/* --- LOADER --- */
+/* Loader & Skeleton */
 .loader-container { text-align: center; padding: 40px 0; display: none; }
 .loader-container.active { display: block; }
 .skeleton-box { height: 60px; background: var(--color-light-gray); border-radius: 12px; margin-bottom: 15px; position: relative; overflow: hidden; border: 1px solid var(--color-medium-gray); }
