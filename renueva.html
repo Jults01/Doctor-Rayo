@@ -13,6 +13,16 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11319781557"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-11319781557');
+    gtag('config', 'G-NLTGJHPMWC');
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -356,7 +366,7 @@
     });
 
     /* ------------------------------------------------
-       2. NUEVOS SCRIPTS DEL WIZARD (3 PASOS DIRECTOS)
+       2. NUEVOS SCRIPTS DEL WIZARD (3 PASOS DIRECTOS + TRACKING)
        ------------------------------------------------ */
     const numeroWhatsApp = "573046486740";
     let currentStep = 1;
@@ -472,14 +482,21 @@
         if (step2Error) return;
       }
 
-      // Si es el último paso, procesar WhatsApp
+      // Si es el último paso, procesar WhatsApp y Trackear Conversión
       if (currentStep === totalSteps) {
+        
+        // --- ETIQUETA DE CONVERSIÓN GOOGLE ADS/ANALYTICS ---
+        gtag('event', 'generate_lead_whatsapp', {
+          'event_category': 'Leads',
+          'event_label': 'Formulario de Venta Completado'
+        });
+
         document.getElementById('progressContainer').style.display = 'none';
         document.getElementById('formActions').style.display = 'none';
         stepWrappers.forEach(s => s.classList.remove('active'));
         document.getElementById('loaderState').classList.add('active');
 
-        setTimeout(() => { enviarWhatsApp(); }, 2000);
+        setTimeout(() => { enviarWhatsApp(); }, 1500);
         return;
       }
 
