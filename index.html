@@ -7,7 +7,7 @@
   <meta name="description" content="Doctor Rayo es tu sitio ideal para comprar, vender o reparar celulares en Bogotá. Servicio técnico a domicilio con garantía, compra y venta segura de celulares.">
   <link rel="canonical" href="https://www.doctorrayo.com/">
 
- <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -28,6 +28,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
 
   <link rel="stylesheet" href="css/index.css?v=2.1">
 </head>
@@ -93,42 +94,69 @@
       </div>
     </section>
 
-    <section class="why-doctor-rayo">
+<section class="why-doctor-rayo">
       <div class="container">
-        <h2>¿Por qué Doctor Rayo?</h2>
-        <div class="why-grid">
-          <div class="why-card">
-            <div class="why-icon">
-              <img src="img/profesionales-certificados.png" alt="Profesionales certificados">
+        <div class="why-head">
+          <h2>¿Por qué Doctor Rayo?</h2>
+        </div>
+        
+        <div class="flip-grid">
+          <!-- Tarjeta 1 -->
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="flip-icon">
+                  <img src="img/profesionales-certificados.png" alt="Profesionales certificados" loading="lazy">
+                </div>
+                <h3>Profesionales certificados</h3>
+              </div>
+              <div class="flip-card-back">
+                <p>Técnicos especializados con años de experiencia en reparación de dispositivos móviles.</p>
+              </div>
             </div>
-            <h3>Profesionales certificados</h3>
-            <p>Técnicos especializados con años de experiencia en reparación de dispositivos móviles.</p>
           </div>
-          <div class="why-card">
-            <div class="why-icon">
-              <img src="img/precios-justos.png" alt="Precios justos">
+
+          <!-- Tarjeta 2 -->
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="flip-icon">
+                  <img src="img/precios-justos.png" alt="Precios justos" loading="lazy">
+                </div>
+                <h3>Precios justos</h3>
+              </div>
+              <div class="flip-card-back">
+                <p>Evaluaciones transparentes y ofertas competitivas tanto para compra como para venta.</p>
+              </div>
             </div>
-            <h3>Precios justos</h3>
-            <p>Evaluaciones transparentes y ofertas competitivas tanto para compra como para venta.</p>
           </div>
-          <div class="why-card">
-            <div class="why-icon">
-              <img src="img/confianza-total.png" alt="Confianza total">
+
+          <!-- Tarjeta 3 -->
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="flip-icon">
+                  <img src="img/confianza-total.png" alt="Confianza total" loading="lazy">
+                </div>
+                <h3>Confianza total</h3>
+              </div>
+              <div class="flip-card-back">
+                <p>Más de 2000 clientes satisfechos nos respaldan. Proceso seguro y garantizado.</p>
+              </div>
             </div>
-            <h3>Confianza total</h3>
-            <p>Más de 2000 clientes satisfechos nos respaldan. Proceso seguro y garantizado.</p>
           </div>
+
         </div>
       </div>
     </section>
 
-    <section class="shelf" aria-label="Modelos destacados">
+<section class="shelf" aria-label="Celulares disponibles">
       <div class="container">
         <div class="shelf-head">
           <h2>Celulares disponibles</h2>
-          <a class="shelf-ver-todo" href="comprar.html">Ver todos</a>
+          <a class="shelf-ver-todo" href="comprar.html">Explorar todos los equipos →</a>
         </div>
-        <div class="shelf-track" id="shelf-track" aria-live="polite"></div>
+        <div class="marketplace-grid" id="marketplace-track" aria-live="polite"></div>
       </div>
     </section>
 
@@ -536,44 +564,52 @@
       
     ];
 
-    /* =====================================
-       3. RENDERIZADO DE TARJETAS
+/* =====================================
+       3. RENDERIZADO DE TARJETAS (NUEVO DISEÑO)
        ===================================== */
     document.addEventListener('DOMContentLoaded', function() {
-      var track = document.getElementById('shelf-track');
+      // 1. Inyectar las 4 tarjetas de celulares
+      var track = document.getElementById('marketplace-track');
       if (track) {
-        track.innerHTML = shelfData.map(function(p) {
+        // Cortamos el array para mostrar solo los 4 primeros
+        var top4Phones = shelfData.slice(0, 4);
+        
+        track.innerHTML = top4Phones.map(function(p) {
+          // Extraemos la capacidad (ej. "256GB") y la batería
+          var cap = p.specs ? p.specs.split(' • ')[0] : '128GB';
+          var bat = (p.detalles && p.detalles.bateria) ? p.detalles.bateria : 'Excelente';
+          var priceOld = p.priceFrom ? '<span class="price-old">' + p.priceFrom + '</span>' : '';
           
-          var priceFromHtml = p.priceFrom ? '<span class="precio-desde">' + p.priceFrom + '</span>' : '';
-          var mensajeWpp = encodeURIComponent("Hola Doctor Rayo, me interesa el " + p.name + ". ¿Está disponible?");
+          // Mensaje automático para WhatsApp
+          var mensajeWpp = encodeURIComponent("Hola Doctor Rayo, me interesa el " + p.name + " de " + p.price + ". ¿Aún lo tienes disponible?");
           var linkWpp = "https://wa.me/573046486740?text=" + mensajeWpp;
 
-          return '<article class="shelf-card">' +
-            '<div class="card-badge ' + p.badgeClass + '">' + p.badge + '</div>' +
-            '<div class="producto-imagen-container">' +
+          return '<div class="product-card">' +
+            '<div class="product-badge badge-excellent">' + p.estado + '</div>' +
+            '<div class="product-image">' +
               '<img src="' + p.img + '" alt="' + p.name + '" loading="lazy">' +
             '</div>' +
-            '<div class="producto-info">' +
-              '<h3>' + p.name + '</h3>' +
-              '<p class="producto-specs">' + p.specs + '</p>' +
-              '<div class="precio-container">' +
-                priceFromHtml +
-                '<span class="precio-actual">' + p.price + '</span>' +
-                (p.monthly ? '<span class="precio-mensual">' + p.monthly + '</span>' : '') +
+            '<div class="product-info">' +
+              '<h3 class="product-title">' + p.name + '</h3>' +
+              '<div class="product-specs">' +
+                '<span class="spec-item"><i class="fas fa-hdd"></i> ' + cap + '</span>' +
+                '<span class="spec-item spec-battery"><i class="fas fa-battery-full"></i> ' + bat + '</span>' +
               '</div>' +
-              '<span class="estado ' + p.estadoClass + '">' + p.estado + '</span>' +
-              
-              '<div class="buttons-container">' +
-                  // IMPORTANTE: Aquí se llama a la función pasando el ID único
-                  '<button class="shelf-btn btn-outline" onclick="openProductModal(' + p.id + ')">Ver info</button>' +
-                  '<a class="shelf-btn btn-solid" href="' + linkWpp + '" target="_blank">Comprar ⚡</a>' +
+              '<div class="product-price-container">' + priceOld +
+                '<span class="price-current">' + p.price + '</span>' +
+              '</div>' +
+              '<div class="trust-seal">' +
+                '<i class="fas fa-check-circle"></i> 100% Funcional y Garantizado' +
               '</div>' +
             '</div>' +
-          '</article>';
+            '<a href="' + linkWpp + '" target="_blank" class="product-btn">' +
+              '<i class="fab fa-whatsapp"></i> Me Interesa' +
+            '</a>' +
+          '</div>';
         }).join('');
       }
 
-      // Inicializar reviews
+      // 2. Inicializar reviews (Mantenido de tu código original)
       var viewport = document.querySelector('.reviews-viewport');
       var reviewsTrack = document.getElementById('reviews-track');
       if (viewport && reviewsTrack) {
@@ -583,7 +619,7 @@
         });
       }
       
-      // Año footer
+      // 3. Año footer (Mantenido de tu código original)
       var yearElement = document.getElementById('current-year');
       if (yearElement) yearElement.textContent = new Date().getFullYear();
     });
@@ -623,6 +659,27 @@
       document.getElementById('product-modal').classList.remove('active');
       document.body.classList.remove('modal-open');
     }
+
+    /* =====================================
+       5. SLIDER DINÁMICO DEL HERO (NUEVO)
+       ===================================== */
+    document.addEventListener('DOMContentLoaded', function() {
+      const heroImages = [
+        'url("img/celular-vertical.jpg")', 
+        'url("img/hero-2.jpg")', // Ajusta estas rutas a las tuyas reales
+        'url("img/hero-3.jpg")'
+      ];
+      
+      let currentIndex = 0;
+      const heroSection = document.querySelector('.hero-kavak');
+
+      if (heroSection) {
+        setInterval(() => {
+          currentIndex = (currentIndex + 1) % heroImages.length;
+          heroSection.style.backgroundImage = heroImages[currentIndex];
+        }, 4000); 
+      }
+    });
 
     // Cerrar al dar clic afuera
     document.getElementById('product-modal').addEventListener('click', function(e) {
