@@ -6,13 +6,11 @@
   <title>Compra, vende o repara tu celular | Doctor Rayo</title>
   <meta name="description" content="Doctor Rayo es tu sitio ideal para comprar, vender o reparar celulares en Bogotá. Servicio técnico a domicilio con garantía, compra y venta segura de celulares.">
   <link rel="canonical" href="https://www.doctorrayo.com/">
-
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
-
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11319781557"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -21,12 +19,11 @@
     gtag('config', 'AW-11319781557'); 
     gtag('config', 'G-NLTGJHPMWC');   
   </script>
-  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="css/index.css?v=3.1">
+  <link rel="stylesheet" href="css/index.css?v=3.2">
 </head>
 <body>
   <header class="main-header">
@@ -47,7 +44,6 @@
       </div>
     </div>
   </header>
-
   <main>
     <section class="hero-kavak" role="banner">
       <div class="hero-content">
@@ -60,7 +56,6 @@
         </div>
       </div>
     </section>
-
     <section class="why-doctor-rayo">
       <div class="container">
         <div class="why-head">
@@ -109,7 +104,6 @@
         </div>
       </div>
     </section>
-
     <section class="shelf" aria-label="Celulares disponibles">
       <div class="container">
         <div class="shelf-head">
@@ -119,21 +113,34 @@
         <div class="marketplace-grid" id="marketplace-track" aria-live="polite"></div>
       </div>
     </section>
-
     <section class="repair-section">
       <div class="container">
-        <div class="repair-content">
+        <div class="repair-card">
           <div class="repair-text">
-            <h2>Reparamos tu celular sin salir de casa</h2>
-            <p>Nuestro equipo técnico especializado llega hasta tu ubicación con todas las herramientas necesarias para reparar tu dispositivo en el momento.</p>
-            <ul class="repair-benefits">
-              <li><span class="check-icon">✓</span>Servicio a domicilio</li>
-              <li><span class="check-icon">✓</span>Repuestos de calidad</li>
-              <li><span class="check-icon">✓</span>Garantía 90 días</li>
-              <li><span class="check-icon">✓</span>Cobertura Bogotá</li>
-            </ul>
+            <h2>Reparamos tu celular, <span style="color: var(--color-primary);">donde tú estés.</span></h2>
+            <p>Olvídate de los trancones o de dejar tu equipo días en un taller. Nuestro técnico especializado llega hasta tu casa u oficina y soluciona el problema frente a ti.</p>
+            <div class="repair-badges">
+              <div class="r-badge">
+                <i class="fas fa-motorcycle"></i>
+                <span>Vamos a domicilio</span>
+              </div>
+              <div class="r-badge">
+                <i class="fas fa-cogs"></i>
+                <span>Repuestos calidad</span>
+              </div>
+              <div class="r-badge">
+                <i class="fas fa-shield-alt"></i>
+                <span>Garantía 90 días</span>
+              </div>
+              <div class="r-badge">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Cobertura Bogotá</span>
+              </div>
+            </div>
             <div class="repair-cta">
-              <a class="button" href="reparacion.html">Solicitar reparación</a>
+              <a class="wpp-button" href="https://wa.me/573046486740?text=Hola%20Doctor%20Rayo%2C%20necesito%20cotizar%20una%20reparaci%C3%B3n%20a%20domicilio." target="_blank">
+                <i class="fab fa-whatsapp"></i> Cotizar en WhatsApp
+              </a>
             </div>
           </div>
           <div class="repair-visual">
@@ -142,64 +149,70 @@
         </div>
       </div>
     </section>
-
-    <section class="toggle-process-section">
+    <section class="interactive-process">
       <div class="container">
-        <div class="toggle-buttons">
-          <button class="toggle-btn active" data-section="comprar">Compra</button>
-          <button class="toggle-btn" data-section="vender">Vende</button>
+        <div class="process-header">
+          <h2>¿Cómo funciona Doctor Rayo?</h2>
+          <p>Elige una opción para ver lo fácil que es nuestro proceso.</p>
+          <div class="process-toggle">
+            <button class="p-btn active" data-target="comprar-timeline">
+              <i class="fas fa-shopping-bag"></i> Quiero Comprar
+            </button>
+            <button class="p-btn" data-target="vender-timeline">
+              <i class="fas fa-hand-holding-usd"></i> Quiero Vender
+            </button>
+          </div>
         </div>
-        <div class="process-content">
-          <div class="process-section-content active" id="comprar-content">
-            <div class="process-info">
-              <h2>El celular que quieres, más cerca de lo que imaginas</h2>
-              <a href="comprar.html" class="process-cta">Ver celulares →</a>
-            </div>
-            <div class="steps-grid">
-              <div class="step-card">
-                <div class="step-number">1</div>
+        <div class="process-timelines">
+          <div class="timeline-wrapper active" id="comprar-timeline">
+            <div class="timeline-item">
+              <div class="timeline-marker">1</div>
+              <div class="timeline-content">
                 <h3>Encuentra tu celular ideal</h3>
-                <p>Elige un celular entre miles que tenemos disponibles para ti</p>
+                <p>Explora nuestro catálogo y elige entre miles de equipos certificados disponibles para ti.</p>
               </div>
-              <div class="step-card">
-                <div class="step-number">2</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-marker">2</div>
+              <div class="timeline-content">
                 <h3>Elige tu forma de pago</h3>
-                <p>Compra al contado o con un plan de pagos que se ajuste a tu presupuesto</p>
+                <p>Compra al contado o accede a planes de financiamiento que se ajusten a tu presupuesto.</p>
               </div>
-              <div class="step-card">
-                <div class="step-number">3</div>
-                <h3>Recoge tu celular</h3>
-                <p>Agenda una cita y busca tu celular Doctor Rayo</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-marker">3</div>
+              <div class="timeline-content">
+                <h3>Recibe y disfruta</h3>
+                <p>Recoge tu equipo en nuestro punto o recíbelo directamente en tu casa. ¡Así de simple!</p>
               </div>
             </div>
           </div>
-          <div class="process-section-content" id="vender-content">
-            <div class="process-info">
-              <h2>Descubre cuánto vale tu celular y elige el mejor momento para vender</h2>
-              <a href="renueva.html" class="process-cta">Cotizar →</a>
+          <div class="timeline-wrapper" id="vender-timeline">
+            <div class="timeline-item">
+              <div class="timeline-marker">1</div>
+              <div class="timeline-content">
+                <h3>Cotiza en un clic</h3>
+                <p>Escríbenos por WhatsApp con los detalles de tu equipo y recibe una oferta preliminar al instante.</p>
+              </div>
             </div>
-            <div class="steps-grid">
-              <div class="step-card">
-                <div class="step-number">1</div>
-                <h3>Ingresa los datos</h3>
-                <p>Proporciona los detalles de tu celular y recibe una cotización al instante</p>
+            <div class="timeline-item">
+              <div class="timeline-marker">2</div>
+              <div class="timeline-content">
+                <h3>Revisión a domicilio</h3>
+                <p>Nuestro técnico te visita, inspecciona el celular frente a ti y confirma la oferta final.</p>
               </div>
-              <div class="step-card">
-                <div class="step-number">2</div>
-                <h3>Elige una oferta</h3>
-                <p>Conoce nuestras opciones y elige la que mejor se adapta a ti</p>
-              </div>
-              <div class="step-card">
-                <div class="step-number">3</div>
-                <h3>Agenda la inspección</h3>
-                <p>Programa una cita para que verifiquemos tu celular y realicemos el pago</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-marker">3</div>
+              <div class="timeline-content">
+                <h3>Pago inmediato</h3>
+                <p>Si aceptas la oferta, te transferimos el dinero en ese mismo momento. Seguro y sin salir de casa.</p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-
     <section class="reviews" aria-label="Opiniones de clientes">
       <div class="container">
         <h2>Testimonios reales de Google</h2>
@@ -240,7 +253,6 @@
       </div>
     </section>
   </main>
-
   <footer class="main-footer" role="contentinfo">
     <div class="footer-wrapper container">
       <div class="footer-column">
@@ -276,27 +288,22 @@
       <p>&copy; <span id="current-year"></span> Doctor Rayo. Todos los derechos reservados.</p>
     </div>
   </footer>
-
   <a href="https://wa.me/573046486740" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp">
     <img src="whatsapp-icon.png" alt="WhatsApp" loading="lazy" decoding="async">
   </a>
-
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // 1. Toggle Compra/Vende
-      const toggleButtons = document.querySelectorAll('.toggle-btn');
-      const processContents = document.querySelectorAll('.process-section-content');
-      toggleButtons.forEach(button => {
-        button.addEventListener('click', function() {
-          const targetSection = this.dataset.section;
-          toggleButtons.forEach(btn => btn.classList.remove('active'));
-          processContents.forEach(content => content.classList.remove('active'));
+      const processBtns = document.querySelectorAll('.p-btn');
+      const timelines = document.querySelectorAll('.timeline-wrapper');
+      processBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const targetId = this.getAttribute('data-target');
+          processBtns.forEach(b => b.classList.remove('active'));
+          timelines.forEach(t => t.classList.remove('active'));
           this.classList.add('active');
-          document.getElementById(targetSection + '-content').classList.add('active');
+          document.getElementById(targetId).classList.add('active');
         });
       });
-
-      // 2. Data Celulares
       var shelfData = [
         { id: 101, name: 'iPhone 17 Pro Max', specs: '256GB • Naranja Cosmico', priceFrom: '$6.100.000', price: '$5.790.000', img: 'img/iphone17promax.png', estado: 'Nuevo', detalles: { bateria: '100%' } },
         { id: 108, name: 'iPhone 17 Pro', specs: '256GB • Azul intenso', priceFrom: '$5.600.000', price: '$5.350.000', img: 'img/iphone17pro.png', estado: 'Nuevo', detalles: { bateria: '100%' } },
@@ -304,8 +311,6 @@
         { id: 109, name: 'iPhone 17', specs: '256GB', priceFrom: '$4.200.000', price: '$3.990.000', img: 'img/iphone17.png', estado: 'Nuevo', detalles: { bateria: '100%' } },
         { id: 102, name: 'iPhone 15 Pro', specs: '256GB • Titanio Natural', priceFrom: '$3.290.000', price: '$2.890.000', img: 'img/iphone15pro.png', estado: 'Como nuevo', detalles: { bateria: '100%' } }
       ];
-
-      // 3. Render Marketplace Compacto (4 tarjetas)
       var track = document.getElementById('marketplace-track');
       if (track) {
         track.innerHTML = shelfData.slice(0, 4).map(function(p) {
@@ -313,7 +318,6 @@
           var bat = (p.detalles && p.detalles.bateria) ? p.detalles.bateria : 'Excelente';
           var priceOld = p.priceFrom ? '<span class="price-old">' + p.priceFrom + '</span>' : '';
           var mensajeWpp = encodeURIComponent("Hola Doctor Rayo, me interesa el " + p.name + " de " + p.price + ". ¿Aún lo tienes disponible?");
-          
           return '<div class="product-card">' +
             '<div class="product-badge badge-excellent">' + p.estado + '</div>' +
             '<div class="product-image"><img src="' + p.img + '" alt="' + p.name + '" loading="lazy"></div>' +
@@ -330,8 +334,6 @@
           '</div>';
         }).join('');
       }
-
-      // 4. Reviews Scroll & Footer Year
       var viewport = document.querySelector('.reviews-viewport');
       var reviewsTrack = document.getElementById('reviews-track');
       if (viewport && reviewsTrack) {
