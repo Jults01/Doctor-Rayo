@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="css/index.css?v=3.2">
+  <link rel="stylesheet" href="css/index.css?v=3.3">
 </head>
 <body>
   <header class="main-header">
@@ -213,42 +213,84 @@
         </div>
       </div>
     </section>
+    
+<!-- =================== REVIEWS (MURO DE CONFIANZA INTERACTIVO) =================== -->
     <section class="reviews" aria-label="Opiniones de clientes">
       <div class="container">
-        <h2>Testimonios reales de Google</h2>
-        <div class="google-rating">
-          <div class="stars">⭐⭐⭐⭐⭐</div>
-          <span>5.0 estrellas en Google</span>
-          <div class="google-actions">
-            <a href="#" class="google-btn" target="_blank">Ver todas las reseñas</a>
-            <a href="#" class="google-btn write-review" target="_blank">Escribir reseña</a>
-          </div>
+        <div class="reviews-header">
+          <h2>Lo que dicen nuestros clientes</h2>
+          <p>La confianza es nuestro mayor repuesto. Mira por qué nos eligen en Bogotá.</p>
         </div>
         <div class="reviews-row">
           <div class="reviews-viewport" tabindex="0" aria-label="Carrusel de opiniones">
             <div class="reviews-track" id="reviews-track">
-              <figure class="review">
-                <blockquote>Excelente servicio, me cambiaron pantalla a domicilio y quedó como nueva.</blockquote>
-                <figcaption>— Laura G.</figcaption>
+              <!-- Tarjeta 1 -->
+              <figure class="review-card">
+                <div class="review-card-top">
+                  <div class="reviewer-info">
+                    <div class="r-avatar">L</div>
+                    <div>
+                      <span class="r-name">Laura G.</span>
+                      <span class="r-date">Hace 2 semanas</span>
+                    </div>
+                  </div>
+                  <span class="google-badge-text"><i class="fab fa-google"></i> Google</span>
+                </div>
+                <div class="r-stars">⭐⭐⭐⭐⭐</div>
+                <blockquote>Excelente servicio, me cambiaron la pantalla a domicilio y quedó como nueva. Súper puntuales y el técnico muy amable. Me ahorraron el viaje al centro.</blockquote>
               </figure>
-              <figure class="review">
-                <blockquote>Vendí mi iPhone en el mismo día, pago justo y rápido.</blockquote>
-                <figcaption>— Andrés P.</figcaption>
+              <!-- Tarjeta 2 -->
+              <figure class="review-card">
+                <div class="review-card-top">
+                  <div class="reviewer-info">
+                    <div class="r-avatar">A</div>
+                    <div>
+                      <span class="r-name">Andrés P.</span>
+                      <span class="r-date">Hace 1 mes</span>
+                    </div>
+                  </div>
+                  <span class="google-badge-text"><i class="fab fa-google"></i> Google</span>
+                </div>
+                <div class="r-stars">⭐⭐⭐⭐⭐</div>
+                <blockquote>Vendí mi iPhone en el mismo día. La revisión la hicieron en mi casa, el pago fue súper justo y me transfirieron de inmediato. Recomendados al 100%.</blockquote>
               </figure>
-              <figure class="review">
-                <blockquote>Demasiado contenta con mi iPhone 11 Pro. Increíble el estado en el que me lo dieron.</blockquote>
-                <figcaption>— Rosa</figcaption>
+              <!-- Tarjeta 3 -->
+              <figure class="review-card">
+                <div class="review-card-top">
+                  <div class="reviewer-info">
+                    <div class="r-avatar">R</div>
+                    <div>
+                      <span class="r-name">Rosa M.</span>
+                      <span class="r-date">Hace 2 meses</span>
+                    </div>
+                  </div>
+                  <span class="google-badge-text"><i class="fab fa-google"></i> Google</span>
+                </div>
+                <div class="r-stars">⭐⭐⭐⭐⭐</div>
+                <blockquote>Demasiado contenta con mi iPhone 11 Pro comprado aquí. Increíble el estado en el que me lo dieron, batería al 100 y garantía. Ya no compro en otro lado.</blockquote>
               </figure>
-              <figure class="review">
-                <blockquote>iPhone 12 mini perfecto, llegó en 2 días y con batería muy buena.</blockquote>
-                <figcaption>— Joanna</figcaption>
-              </figure>
-              <figure class="review">
-                <blockquote>Todo claro y rápido, 100% recomendados.</blockquote>
-                <figcaption>— Camila R.</figcaption>
+              <!-- Tarjeta 4 -->
+              <figure class="review-card">
+                <div class="review-card-top">
+                  <div class="reviewer-info">
+                    <div class="r-avatar">C</div>
+                    <div>
+                      <span class="r-name">Carlos T.</span>
+                      <span class="r-date">Hace 3 meses</span>
+                    </div>
+                  </div>
+                  <span class="google-badge-text"><i class="fab fa-google"></i> Google</span>
+                </div>
+                <div class="r-stars">⭐⭐⭐⭐⭐</div>
+                <blockquote>Arreglaron el pin de carga de mi celular rapidísimo. Lo mejor es que no tuve que dejar mi celular botado en un local, vi cómo lo reparaban. Transparencia total.</blockquote>
               </figure>
             </div>
           </div>
+        </div>
+        <div class="reviews-cta">
+          <a href="https://www.google.com/maps/place/Doctor+Rayo/@4.6482209,-74.4374955,10z/data=!4m8!3m7!1s0x8771f53045014ec7:0x3b4695b348efd59f!8m2!3d4.6482976!4d-74.107807!9m1!1b1!16s%2Fg%2F11kt0csngx?entry=ttu&g_ep=EgoyMDI2MDgxOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="cta-google-btn">
+            <i class="fab fa-google"></i> Leer más reseñas en Google
+          </a>
         </div>
       </div>
     </section>

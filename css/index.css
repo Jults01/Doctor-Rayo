@@ -1,6 +1,6 @@
 /* ====================================================
    DOCTOR RAYO - HOJA DE ESTILOS PRINCIPAL SINTETIZADA
-   Versión: 3.2 - UI Limpia, Interactiva, Mobile First
+   Versión: 3.3 - Muro de Confianza y UI Ajustada
    ==================================================== */
 
 :root {
@@ -110,7 +110,7 @@ img { max-width: 100%; height: auto; }
 .repair-badges { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 35px; }
 .r-badge { display: flex; align-items: center; gap: 12px; background: #f1f3f5; padding: 12px 15px; border-radius: 10px; font-weight: 600; color: var(--color-text-dark); font-size: 0.9rem; }
 .r-badge i { color: var(--color-primary); font-size: 1.2rem; }
-.wpp-button { display: inline-flex; align-items: center; gap: 10px; background-color: var(--color-accent-green); color: var(--color-white); padding: 15px 30px; border-radius: 30px; font-weight: 700; font-size: 1rem; text-transform: uppercase; transition: all 0.3s ease; width: fit-content; }
+.wpp-button { display: inline-flex; align-items: center; gap: 8px; background-color: var(--color-accent-green); color: var(--color-white); padding: 12px 28px; border-radius: 30px; font-weight: 700; font-size: 0.95rem; text-transform: uppercase; transition: all 0.3s ease; width: fit-content; }
 .wpp-button:hover { background-color: var(--color-accent-green-dark); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3); }
 .repair-visual { width: 100%; height: 100%; }
 .repair-visual img { width: 100%; height: 100%; object-fit: cover; }
@@ -132,26 +132,31 @@ img { max-width: 100%; height: auto; }
 .timeline-content h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; color: var(--color-text-dark); }
 .timeline-content p { color: var(--color-text-medium); font-size: 0.9rem; line-height: 1.5; padding: 0 10px; }
 
-/* =================== REVIEWS =================== */
-.reviews { background: var(--color-white); padding: var(--gap-section) 0; }
-.reviews h2 { font-size: var(--font-size-xxl); text-align: center; margin-bottom: 24px; }
-.google-rating { text-align: center; margin-bottom: var(--space-xl); }
-.stars { font-size: 2rem; color: #ffd700; margin-bottom: var(--space-sm); }
-.google-rating span { display: block; font-size: 1.1rem; color: var(--color-text-medium); margin-bottom: var(--space-lg); }
-.google-actions { display: flex; justify-content: center; gap: var(--space-lg); flex-wrap: wrap; }
-.google-btn { padding: 12px 25px; background: var(--color-primary); color: var(--color-white); border-radius: 25px; font-weight: 600; transition: transform 0.3s ease; }
-.google-btn:hover { background: var(--color-primary-dark); transform: translateY(-2px); }
-.write-review { background: var(--color-accent-green); }
-.write-review:hover { background: var(--color-accent-green-dark); }
-.reviews-viewport { position: relative; flex: 1 1 auto; overflow: hidden; padding-inline: 6px; }
-.reviews-viewport::before, .reviews-viewport::after { content: ''; position: absolute; top: 0; bottom: 0; width: 34px; pointer-events: none; }
-.reviews-viewport::before { left: 0; background: linear-gradient(90deg, var(--color-white) 40%, transparent); }
-.reviews-viewport::after { right: 0; background: linear-gradient(270deg, var(--color-white) 40%, transparent); }
-.reviews-track { display: grid; grid-auto-flow: column; gap: 14px; overflow-x: auto; scroll-snap-type: x proximity; scrollbar-width: none; padding: 6px 0; grid-auto-columns: minmax(220px, min(280px, calc((100% - 42px) / 4))); }
-.reviews-track::-webkit-scrollbar { display: none; }
-.review { scroll-snap-align: start; border: 1px solid var(--color-medium-gray); border-radius: 10px; padding: var(--space-md); box-shadow: var(--shadow-light); }
-.review blockquote { margin: 0 0 6px; font-size: .95rem; line-height: 1.45; }
-.review figcaption { color: var(--color-text-medium); font-weight: 600; font-size: .9rem; }
+/* =================== REVIEWS (MURO DE CONFIANZA INTERACTIVO) =================== */
+.reviews { padding: var(--gap-section) 0; background: #fdfdfd; }
+.reviews-header { text-align: center; margin-bottom: 40px; }
+.reviews-header h2 { font-size: var(--font-size-xxl); color: var(--color-text-dark); margin-bottom: 8px; }
+.reviews-header p { color: var(--color-text-medium); font-size: 1.05rem; }
+.reviews-viewport { position: relative; overflow: hidden; padding: 10px 5px; }
+.reviews-track { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 25px; scrollbar-width: none; }
+.reviews-track::-webkit-scrollbar { height: 6px; }
+.reviews-track::-webkit-scrollbar-track { background: var(--color-light-gray); border-radius: 10px; margin: 0 40px; }
+.reviews-track::-webkit-scrollbar-thumb { background: #fbbc05; border-radius: 10px; }
+.review-card { flex: 0 0 320px; scroll-snap-align: start; background: var(--color-white); border: 1px solid rgba(0,0,0,0.05); border-radius: 15px; padding: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column; }
+.review-card:hover { transform: translateY(-5px); box-shadow: 0 12px 25px rgba(0,0,0,0.08); }
+.review-card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+.reviewer-info { display: flex; align-items: center; gap: 12px; }
+.r-avatar { width: 40px; height: 40px; background: var(--color-primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; }
+.r-name { display: block; font-weight: 700; color: var(--color-text-dark); font-size: 0.95rem; line-height: 1.2; }
+.r-date { display: block; font-size: 0.75rem; color: #777; }
+.google-badge-text { font-size: 0.8rem; font-weight: 600; color: #555; display: flex; align-items: center; gap: 4px; background: #f1f3f5; padding: 4px 8px; border-radius: 6px; }
+.google-badge-text i { color: #ea4335; }
+.r-stars { font-size: 1rem; color: #fbbc05; margin-bottom: 12px; letter-spacing: 2px; }
+.review-card blockquote { margin: 0; font-size: 0.95rem; line-height: 1.6; color: #333; font-style: normal; font-weight: 400; flex-grow: 1; }
+.reviews-cta { text-align: center; margin-top: 10px; }
+.cta-google-btn { display: inline-flex; align-items: center; gap: 10px; background: white; color: var(--color-text-dark); padding: 12px 30px; border-radius: 30px; font-weight: 600; font-size: 1rem; border: 1px solid var(--color-medium-gray); box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: all 0.3s ease; }
+.cta-google-btn i { color: #ea4335; font-size: 1.2rem; }
+.cta-google-btn:hover { border-color: #ea4335; color: #ea4335; transform: translateY(-2px); box-shadow: 0 6px 15px rgba(234, 67, 53, 0.15); }
 
 /* =================== FOOTER & WHATSAPP =================== */
 .main-footer { background: var(--color-black); color: var(--color-white); padding: var(--space-xxxl) var(--space-xl) var(--space-xl); font-size: 14px; }
@@ -206,12 +211,12 @@ img { max-width: 100%; height: auto; }
   /* Reparación */
   .repair-card { grid-template-columns: 1fr; border-radius: 15px; }
   .repair-visual { height: 250px; order: -1; }
-  .repair-text { padding: 30px 20px; }
+  .repair-text { padding: 30px 20px; display: flex; flex-direction: column; align-items: center; }
   .repair-text h2 { font-size: 1.7rem; text-align: center; }
   .repair-text p { text-align: center; }
-  .repair-badges { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .repair-badges { grid-template-columns: 1fr 1fr; gap: 10px; width: 100%; margin-bottom: 25px; }
   .r-badge { padding: 10px; font-size: 0.8rem; flex-direction: column; text-align: center; gap: 5px; }
-  .wpp-button { width: 100%; justify-content: center; }
+  .wpp-button { margin: 0; padding: 12px 25px; font-size: 0.9rem; }
   
   /* Proceso Interactivo */
   .process-header h2 { font-size: 1.8rem; }
@@ -225,8 +230,9 @@ img { max-width: 100%; height: auto; }
   .timeline-item::after { display: none !important; }
   
   /* Reviews & Extras */
-  .reviews-track { grid-auto-columns: 60%; }
-  .google-actions { flex-direction: column; align-items: center; }
+  .reviews-header h2 { font-size: 1.8rem; }
+  .review-card { flex: 0 0 85vw; scroll-snap-align: center; }
+  .cta-google-btn { width: 90%; justify-content: center; }
   .whatsapp-float { width: 50px; height: 50px; bottom: var(--space-lg); right: var(--space-lg); }
   .whatsapp-float img { width: 28px; }
 }
