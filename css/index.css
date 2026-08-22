@@ -478,34 +478,68 @@ body.modal-open {
   font-weight: 500;
 }
 
-/* Ajustes para Móvil: Prioridad total a la legibilidad */
+/* Ajustes para Móvil: Mostrar todo sin necesidad de tocar (Mejor UX) */
 @media (max-width: 768px) {
   .flip-grid {
     grid-template-columns: 1fr;
     gap: var(--space-lg);
-    max-width: 300px; /* Un poco más estrecho para que se vea más centrado */
+    max-width: 320px;
     margin: 0 auto;
   }
   
   .flip-card {
-    height: 200px; /* <-- ALTURA RECUPERADA: Más espacio para que respire el texto */
+    height: auto; /* La altura se ajusta al contenido automáticamente */
+    perspective: none; /* Apagamos el motor 3D en celular */
+  }
+
+  .flip-card-inner {
+    transform: none !important; /* Desactiva el giro */
+    transition: none;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-light-gray);
+    border-radius: 12px;
+    padding: 25px 20px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   }
   
+  /* Convertimos las "caras" en bloques normales apilados */
+  .flip-card-front, 
+  .flip-card-back {
+    position: relative; 
+    height: auto;
+    border: none;
+    box-shadow: none;
+    transform: none !important;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .flip-card-front {
+    margin-bottom: 12px; /* Espacio sutil entre el título y el párrafo */
+  }
+
+  .flip-card-back {
+    color: var(--color-text-medium); /* Hacemos el texto gris oscuro para que resalte sobre el blanco */
+  }
+
+  .flip-card-back p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    font-weight: 400;
+    margin: 0;
+  }
+
   .flip-icon {
-    width: 60px; /* <-- ÍCONOS LIGERAMENTE MÁS PEQUEÑOS: Para que no aplasten el título */
-    height: 60px;
+    width: 65px;
+    height: 65px;
+    margin-bottom: 10px;
   }
   
   .flip-card-front h3 {
-    font-size: 1.05rem; /* Título un poquito más fino para que sea claro */
+    font-size: 1.15rem;
     line-height: 1.2;
-    padding: 0 10px; /* Un poco de respiro lateral */
-  }
-  
-  .flip-card-back p {
-    font-size: 0.95rem; /* Fuente más legible y clara */
-    line-height: 1.5; /* Más espacio entre líneas = mayor claridad */
-    padding: 0 15px;
   }
 }
 
@@ -1359,8 +1393,11 @@ body.modal-open {
     margin-bottom: 0;
   }
   
-  .logo h1 {
-    font-size: 1.3rem;
+.logo h1 {
+    font-size: 1.6rem; /* Un poco más grande para recuperar presencia */
+    line-height: 1;    /* Elimina el espacio vertical sobrante que lo hace ver alto */
+    text-shadow: 1px 1px 0px #8B0000, 0px 2px 3px rgba(0,0,0,0.4); /* Sombra más fina y proporcionada al móvil */
+    letter-spacing: 0; /* Evita deformaciones laterales */
   }
   
   .header-nav {
