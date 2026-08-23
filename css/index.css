@@ -52,7 +52,7 @@ img { max-width: 100%; height: auto; }
 .button:hover, .cta-button:hover { background: var(--color-primary-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(230, 0, 0, 0.3); }
 
 /* =================== HERO ESTATICO =================== */
-.hero-kavak { height: 100vh; background: url('../img/celular-vertical.jpg') no-repeat center/cover; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+.hero-kavak { height: 420px; background: url('../img/celular-vertical.jpg') no-repeat center/cover; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
 .hero-kavak::before { content: ''; position: absolute; inset: 0; background: rgba(0, 0, 0, 0.4); z-index: 1; }
 .hero-content { position: relative; z-index: 2; text-align: center; color: var(--color-white); max-width: 800px; padding: 0 var(--space-xl); }
 .hero-title { font-size: 3.5rem; font-weight: 700; margin-bottom: var(--space-xl); line-height: 1.2; }
@@ -101,19 +101,24 @@ img { max-width: 100%; height: auto; }
 .product-btn { margin: 0 15px 15px 15px; background-color: var(--color-accent-green); color: var(--color-white); padding: 10px 0; border-radius: 8px; font-weight: 700; font-size: 0.95rem; text-transform: uppercase; display: flex; justify-content: center; align-items: center; transition: all 0.3s ease; }
 .product-btn:hover { background-color: var(--color-accent-green-dark); box-shadow: 0 4px 10px rgba(37,211,102,0.3); }
 
-/* =================== SECCION REPARACION =================== */
-.repair-section { padding: var(--gap-section) 0; background: #f8f9fa; }
-.repair-card { display: grid; grid-template-columns: 1.2fr 1fr; background: var(--color-white); border-radius: 20px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06); overflow: hidden; border: 1px solid rgba(0,0,0,0.03); }
-.repair-text { padding: 50px; display: flex; flex-direction: column; justify-content: center; }
-.repair-text h2 { font-size: 2.2rem; margin-bottom: 20px; line-height: 1.2; font-weight: 800; color: var(--color-text-dark); }
-.repair-text p { color: #555; margin-bottom: 30px; font-size: 1.05rem; line-height: 1.6; }
-.repair-badges { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 35px; }
-.r-badge { display: flex; align-items: center; gap: 12px; background: #f1f3f5; padding: 12px 15px; border-radius: 10px; font-weight: 600; color: var(--color-text-dark); font-size: 0.9rem; }
-.r-badge i { color: var(--color-primary); font-size: 1.2rem; }
-.wpp-button { display: inline-flex; align-items: center; gap: 8px; background-color: var(--color-accent-green); color: var(--color-white); padding: 12px 28px; border-radius: 30px; font-weight: 700; font-size: 0.95rem; text-transform: uppercase; transition: all 0.3s ease; width: fit-content; }
-.wpp-button:hover { background-color: var(--color-accent-green-dark); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3); }
-.repair-visual { width: 100%; height: 100%; }
-.repair-visual img { width: 100%; height: 100%; object-fit: cover; }
+/* REPARACIÓN MINIMALISTA (INDEX) */
+.repair-minimal { padding: 40px 0 60px 0; background: var(--color-white); border-top: 1px solid rgba(0,0,0,0.03); }
+.repair-header { text-align: center; margin-bottom: 50px; }
+.repair-header h2 { font-size: 2.2rem; color: var(--color-text-dark); margin-bottom: 15px; font-weight: 700; }
+.repair-header p { font-size: 1.05rem; color: var(--color-text-medium); max-width: 600px; margin: 0 auto; }
+
+.repair-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 900px; margin: 0 auto 50px; }
+.repair-item { text-align: center; padding: 0 15px; }
+/* Hacemos que el icono sea rojo (tu color primario) para que resalte elegante sobre el blanco */
+.repair-item i { font-size: 2.5rem; color: var(--color-primary); margin-bottom: 20px; }
+.repair-item h3 { font-size: 1.15rem; font-weight: 700; color: var(--color-text-dark); margin-bottom: 10px; }
+.repair-item p { font-size: 0.95rem; color: #666; line-height: 1.5; margin: 0; }
+
+.repair-cta { text-align: center; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+.btn-repair-outline { padding: 12px 25px; border: 2px solid var(--color-text-dark); color: var(--color-text-dark); border-radius: 30px; font-weight: 600; transition: 0.3s; }
+.btn-repair-outline:hover { background: var(--color-text-dark); color: var(--color-white); }
+.btn-repair-wpp { padding: 12px 25px; background: var(--color-accent-green); color: var(--color-white); border-radius: 30px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; transition: 0.3s; }
+.btn-repair-wpp:hover { background: var(--color-accent-green-dark); transform: translateY(-2px); box-shadow: 0 6px 15px rgba(37,211,102,0.3); }
 
 /* =================== SECCIÓN INTERACTIVA DE PROCESO (LÍNEA DE TIEMPO) =================== */
 .interactive-process { padding: var(--gap-section) 0; background: var(--color-white); }
@@ -181,7 +186,7 @@ img { max-width: 100%; height: auto; }
   /* Header y Hero */
   .header-wrapper { flex-direction: column; padding: var(--space-md) 0; }
   .header-nav { display: none; }
-  .hero-kavak { height: 40vh; background-size: 100% auto; background-position: center center; background-repeat: no-repeat; }
+  .hero-kavak { height: 220px; background-size: 100% auto; background-position: center center; background-repeat: no-repeat; }
   .hero-content { padding: 0 15px; }
   .hero-title { font-size: 1.8rem; margin-bottom: 10px; }
   .hero-subtitle { font-size: 0.95rem; margin-bottom: 20px; }
@@ -208,15 +213,11 @@ img { max-width: 100%; height: auto; }
   .marketplace-grid::-webkit-scrollbar { display: none; }
   .marketplace-grid .product-card { flex: 0 0 80vw; max-width: 300px; scroll-snap-align: center; }
   
-  /* Reparación */
-  .repair-card { grid-template-columns: 1fr; border-radius: 15px; }
-  .repair-visual { height: 250px; order: -1; }
-  .repair-text { padding: 30px 20px; display: flex; flex-direction: column; align-items: center; }
-  .repair-text h2 { font-size: 1.7rem; text-align: center; }
-  .repair-text p { text-align: center; }
-  .repair-badges { grid-template-columns: 1fr 1fr; gap: 10px; width: 100%; margin-bottom: 25px; }
-  .r-badge { padding: 10px; font-size: 0.8rem; flex-direction: column; text-align: center; gap: 5px; }
-  .wpp-button { margin: 0; padding: 12px 25px; font-size: 0.9rem; }
+  /* Reparación Minimalista Móvil */
+  .repair-header h2 { font-size: 1.8rem; }
+  .repair-grid { grid-template-columns: 1fr; gap: 40px; margin-bottom: 40px; }
+  .repair-cta { flex-direction: column; gap: 15px; align-items: center; padding: 0; }
+  .btn-repair-outline, .btn-repair-wpp { width: max-content; padding: 12px 30px; justify-content: center; }
   
   /* Proceso Interactivo */
   .process-header h2 { font-size: 1.8rem; }
