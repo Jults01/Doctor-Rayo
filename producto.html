@@ -3,16 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>iPhone 14 Pro Max - Doctor Rayo</title>
-  <meta name="description" content="Compra tu iPhone 14 Pro Max usado como nuevo, certificado y con garantía en Bogotá.">
+  <title>Cargando Producto... | Doctor Rayo</title>
+  <meta name="description" content="Compra tu celular usado como nuevo, certificado y con garantía en Bogotá.">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   
-  <!-- Tipografía Poppins -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <!-- Iconos FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
-  <!-- Estilos (El global y el de producto) -->
   <link rel="stylesheet" href="css/comprar.css?v=2.0"> 
   <link rel="stylesheet" href="css/producto.css?v=3.0">
 </head>
@@ -41,35 +38,35 @@
       <nav class="breadcrumbs">
         <a href="index.html">Inicio</a> <i class="fas fa-chevron-right"></i> 
         <a href="comprar.html">Celulares</a> <i class="fas fa-chevron-right"></i> 
-        <span>iPhone 14 Pro Max</span>
+        <span id="breadcrumb-name">Cargando...</span>
       </nav>
 
-      <!-- ESTRUCTURA PRINCIPAL -->
-      <section class="product-core">
+      <!-- ESTRUCTURA PRINCIPAL (Oculta por defecto para evitar el flash fantasma) -->
+      <section class="product-core" id="main-product-core" style="opacity: 0; transition: opacity 0.4s ease;">
         
         <!-- COLUMNA IZQUIERDA: GALERÍA Y DETALLES -->
         <div class="product-gallery">
           
           <div class="main-image">
-            <img src="img/iphone14promax.png" alt="iPhone 14 Pro Max">
+            <img src="" alt="Celular" id="img-main">
           </div>
           <div class="thumbnail-list">
-            <div class="thumb active"><img src="img/iphone14promax.png" alt="Frontal"></div>
-            <div class="thumb"><img src="img/iphone14promax.png" alt="Trasera"></div>
-            <div class="thumb"><img src="img/iphone14promax.png" alt="Cámara"></div>
+            <div class="thumb active"><img src="" alt="Frontal" class="img-thumb"></div>
+            <div class="thumb"><img src="" alt="Trasera" class="img-thumb"></div>
+            <div class="thumb"><img src="" alt="Cámara" class="img-thumb"></div>
           </div>
 
           <!-- LA DESCRIPCIÓN Y ESPECIFICACIONES -->
           <div class="product-details-extended">
             <h2>¿Por qué elegir este equipo?</h2>
-            <p>El iPhone 14 Pro Max redefine lo que un smartphone puede hacer. Equipado con el chip A16 Bionic, ofrece una fluidez brutal para aplicaciones exigentes. Su cámara principal de 48 MP captura un nivel de detalle asombroso.</p>
-            <p>Al comprar con <strong>Doctor Rayo</strong>, te llevas un equipo minuciosamente testeado en más de 30 puntos de control, garantizando que su rendimiento y batería estén al máximo nivel para acompañarte todo el día.</p>
+            <p>Este equipo redefine lo que un smartphone puede hacer. Ofrece una fluidez brutal para aplicaciones exigentes y captura un nivel de detalle asombroso.</p>
+            <p>Al comprar con <strong>Doctor Rayo</strong>, te llevas un celular minuciosamente testeado en más de 30 puntos de control, garantizando que su rendimiento y batería estén al máximo nivel para acompañarte todo el día.</p>
             
             <h2 class="mt-40">Especificaciones Clave</h2>
             <ul class="specs-list">
-              <li><span class="spec-label"><i class="fas fa-battery-full"></i> Salud de Batería</span><span class="spec-value">Superior al 85%</span></li>
-              <li><span class="spec-label"><i class="fas fa-hdd"></i> Almacenamiento</span><span class="spec-value">256 GB</span></li>
-              <li><span class="spec-label"><i class="fas fa-mobile-alt"></i> Pantalla</span><span class="spec-value">6.7" Super Retina XDR</span></li>
+              <li><span class="spec-label"><i class="fas fa-battery-full"></i> Salud de Batería</span><span class="spec-value" id="spec-bat">Calculando...</span></li>
+              <li><span class="spec-label"><i class="fas fa-hdd"></i> Almacenamiento</span><span class="spec-value" id="spec-cap">Calculando...</span></li>
+              <li><span class="spec-label"><i class="fas fa-mobile-alt"></i> Pantalla</span><span class="spec-value" id="spec-pan">Calculando...</span></li>
               <li><span class="spec-label"><i class="fas fa-unlock-alt"></i> Red</span><span class="spec-value">Libre de fábrica</span></li>
             </ul>
           </div>
@@ -80,7 +77,7 @@
         <div class="product-checkout-wrapper">
           <div class="product-checkout-card">
             
-            <h1 class="product-title">iPhone 14 Pro Max - Libre</h1>
+            <h1 class="product-title">Cargando...</h1>
             
             <!-- Reseñas -->
             <div class="product-reviews">
@@ -88,15 +85,15 @@
               <span class="review-count">4.8 (124 opiniones)</span>
             </div>
             
-            <!-- Precio Pro Estilo Back Market -->
+            <!-- Precio Pro -->
             <div class="product-price-box">
               <div class="price-main">
-                <span class="current-price">$ 3.850.000</span>
+                <span class="current-price">Calculando...</span>
                 <span class="currency">COP</span>
               </div>
-              <div class="price-secondary">
-                <span class="old-price">Nuevo: $ 4.500.000</span>
-                <span class="savings-badge">Ahorras $ 650.000</span>
+              <div class="price-secondary" id="savings-box">
+                <span class="old-price">Nuevo: --</span>
+                <span class="savings-badge" id="savings-amount">Ahorras --</span>
               </div>
             </div>
 
@@ -106,15 +103,7 @@
               <div class="option-group">
                 <label class="radio-btn">
                   <input type="radio" name="estado" value="excelente" checked>
-                  <span class="radio-label">Excelente</span>
-                </label>
-                <label class="radio-btn">
-                  <input type="radio" name="estado" value="muy-bueno">
-                  <span class="radio-label">Muy Bueno</span>
-                </label>
-                <label class="radio-btn">
-                  <input type="radio" name="estado" value="correcto">
-                  <span class="radio-label">Correcto</span>
+                  <span class="radio-label" id="estado-label">Excelente</span>
                 </label>
               </div>
             </div>
@@ -124,28 +113,9 @@
               <h3>Capacidad</h3>
               <div class="option-group">
                 <label class="radio-btn">
-                  <input type="radio" name="capacidad" value="128gb">
-                  <span class="radio-label">128 GB</span>
+                  <input type="radio" name="capacidad" value="current" checked>
+                  <span class="radio-label" id="capacidad-label">-- GB</span>
                 </label>
-                <label class="radio-btn">
-                  <input type="radio" name="capacidad" value="256gb" checked>
-                  <span class="radio-label">256 GB</span>
-                </label>
-                <label class="radio-btn">
-                  <input type="radio" name="capacidad" value="512gb">
-                  <span class="radio-label">512 GB</span>
-                </label>
-              </div>
-            </div>
-
-            <!-- Selector: Color -->
-            <div class="product-options">
-              <h3>Color <span id="color-name" style="font-weight: 400; font-size: 0.9rem; margin-left: 5px;">(Morado Oscuro)</span></h3>
-              <div class="color-group">
-                <label class="color-btn"><input type="radio" name="color" value="purple" checked><span class="color-circle" style="background: #594f63;"></span></label>
-                <label class="color-btn"><input type="radio" name="color" value="black"><span class="color-circle" style="background: #222;"></span></label>
-                <label class="color-btn"><input type="radio" name="color" value="silver"><span class="color-circle" style="background: #f0f2f2;"></span></label>
-                <label class="color-btn"><input type="radio" name="color" value="gold"><span class="color-circle" style="background: #f4e8ce;"></span></label>
               </div>
             </div>
 
@@ -154,7 +124,7 @@
               <i class="fas fa-shopping-cart"></i> Añadir al Carrito
             </button>
             
-            <!-- Badges de confianza corporativos -->
+            <!-- Badges de confianza -->
             <div class="checkout-trust">
               <div class="trust-row"><i class="fas fa-shield-halved"></i> <span><strong>12 meses</strong> de Garantía Doctor Rayo</span></div>
               <div class="trust-row"><i class="fas fa-motorcycle"></i> <span>Envío rápido y seguro en <strong>Bogotá</strong></span></div>
@@ -178,67 +148,86 @@
     <div class="footer-bottom"><p>&copy; <span id="current-year">2026</span> Doctor Rayo. Todos los derechos reservados.</p></div>
   </footer>
 
-  <!-- SCRIPT CEREBRO: GALERÍA Y CARGA DINÁMICA -->
+  <!-- SCRIPT CEREBRO MEJORADO -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       
-      // 1. NUESTRA BASE DE DATOS (Copia exacta de la que tienes en comprar.html)
       const products = [
-        { id: 201, name: 'iPhone 15 Pro Max', specs: '256GB • Titanio Negro', priceFrom: '$ 3.290.000', price: '$ 3.150.000', img: 'img/iphone15promax.png', estado: 'Como nuevo', detalles: { bateria: '88%', pantalla: '6.7"' } },
-        { id: 202, name: 'Samsung S25 Ultra', specs: '256GB • Negro', priceFrom: '$ 4.050.000', price: '$ 3.900.000', img: 'img/samsungs25ultra.png', estado: 'Nuevo', detalles: { bateria: '100%', pantalla: '6.8"' } },
-        { id: 203, name: 'iPhone 15 Pro', specs: '128GB • Titanio Azul', priceFrom: '$ 2.750.000', price: '$ 2.600.000', img: 'img/iph15pro.png', estado: 'Muy bueno', detalles: { bateria: '91%', pantalla: '6.1"' } },
-        { id: 204, name: 'iPhone 14 Pro Max', specs: '256GB • Morado', priceFrom: '$ 4.500.000', price: '$ 3.850.000', img: 'img/iphone14promax.png', estado: 'Como nuevo', detalles: { bateria: '89%', pantalla: '6.7"' } },
-        { id: 205, name: 'iPhone 13', specs: '128GB • Blanco', priceFrom: '$ 1.650.000', price: '$ 1.500.000', img: 'img/iphone13-card.png', estado: 'Excelente', detalles: { bateria: '90%', pantalla: '6.1"' } },
-        { id: 206, name: 'iPhone 14', specs: '128GB • Rosado', priceFrom: '$ 1.700.000', price: '$ 1.550.000', img: 'img/iphone14-card.png', estado: 'Como nuevo', detalles: { bateria: '90%', pantalla: '6.1"' } },
-        { id: 207, name: 'iPhone 17', specs: '256GB • Negro', priceFrom: '$ 4.200.000', price: '$ 4.000.000', img: 'img/iphone17-card.png', estado: 'Nuevo', detalles: { bateria: '100%', pantalla: '6.1"' } },
-        { id: 208, name: 'iPhone 17 Pro', specs: '256GB • Negro', priceFrom: '$ 5.600.000', price: '$ 5.300.000', img: 'img/iphone17pro-card.png', estado: 'Nuevo', detalles: { bateria: '100%', pantalla: '6.3"' } }
+        { id: 201, name: 'iPhone 15 Pro Max', specs: '256GB', priceFrom: '$ 3.290.000', price: '$ 3.150.000', img: 'img/iphone15promax.png', estado: 'Como nuevo', detalles: { bateria: '88%', pantalla: '6.7" Super Retina XDR' } },
+        { id: 202, name: 'Samsung S25 Ultra', specs: '256GB', priceFrom: '$ 4.050.000', price: '$ 3.900.000', img: 'img/samsungs25ultra.png', estado: 'Nuevo', detalles: { bateria: '100%', pantalla: '6.8" Dynamic AMOLED' } },
+        { id: 203, name: 'iPhone 15 Pro', specs: '128GB', priceFrom: '$ 2.750.000', price: '$ 2.600.000', img: 'img/iph15pro.png', estado: 'Muy bueno', detalles: { bateria: '91%', pantalla: '6.1" Super Retina XDR' } },
+        { id: 204, name: 'iPhone 14 Pro Max', specs: '256GB', priceFrom: '$ 4.500.000', price: '$ 3.850.000', img: 'img/iphone14promax.png', estado: 'Como nuevo', detalles: { bateria: '89%', pantalla: '6.7" Super Retina XDR' } },
+        { id: 205, name: 'iPhone 13', specs: '128GB', priceFrom: '$ 1.650.000', price: '$ 1.500.000', img: 'img/iphone13-card.png', estado: 'Excelente', detalles: { bateria: '90%', pantalla: '6.1" Super Retina XDR' } },
+        { id: 206, name: 'iPhone 14', specs: '128GB', priceFrom: '$ 1.700.000', price: '$ 1.550.000', img: 'img/iphone14-card.png', estado: 'Como nuevo', detalles: { bateria: '90%', pantalla: '6.1" Super Retina XDR' } },
+        { id: 207, name: 'iPhone 17', specs: '256GB', priceFrom: '$ 4.200.000', price: '$ 4.000.000', img: 'img/iphone17-card.png', estado: 'Nuevo', detalles: { bateria: '100%', pantalla: '6.1" Super Retina XDR' } },
+        { id: 208, name: 'iPhone 17 Pro', specs: '256GB', priceFrom: '$ 5.600.000', price: '$ 5.300.000', img: 'img/iphone17pro-card.png', estado: 'Nuevo', detalles: { bateria: '100%', pantalla: '6.3" Super Retina XDR' } }
       ];
 
-      // 2. LEER LA URL (Buscar el ?id=...)
       const urlParams = new URLSearchParams(window.location.search);
-      const productId = parseInt(urlParams.get('id'));
+      const idParam = urlParams.get('id');
+      const coreSection = document.getElementById('main-product-core');
 
-      // 3. BUSCAR EL PRODUCTO EN LA BASE DE DATOS
-      const product = products.find(p => p.id === productId);
-
-      if (product) {
-        // 4. SI EXISTE, REEMPLAZAR LOS DATOS EN EL HTML
-        document.querySelector('.product-title').textContent = product.name;
-        document.querySelector('.current-price').textContent = product.price;
-        
-        // Reemplazar precio viejo si existe
-        if (product.priceFrom) {
-          document.querySelector('.old-price').textContent = 'Nuevo: ' + product.priceFrom;
-        } else {
-          document.querySelector('.price-secondary').style.display = 'none'; // Ocultar si no hay ahorro
-        }
-
-        // Reemplazar la imagen principal y las miniaturas
-        document.querySelector('.main-image img').src = product.img;
-        document.querySelectorAll('.thumb img').forEach(img => {
-          img.src = product.img; // (Más adelante puedes añadir un arreglo de fotos por cada equipo)
-        });
-
-        // Actualizar migas de pan (Breadcrumbs)
-        document.querySelector('.breadcrumbs span').textContent = product.name;
-
-      } else {
-        // Si alguien entra directo a producto.html sin ID
-        document.querySelector('.product-title').textContent = "Celular no encontrado";
+      if (!idParam) {
+        document.querySelector('.product-title').textContent = "Celular no seleccionado";
+        coreSection.style.opacity = '1';
+        return;
       }
 
-      // ---------------------------------------------------------
-      // LÓGICA DE LA GALERÍA (Para cuando tengas varias fotos)
-      // ---------------------------------------------------------
-      const mainImage = document.querySelector('.main-image img');
-      const thumbnails = document.querySelectorAll('.thumb');
+      const product = products.find(p => p.id === parseInt(idParam));
 
+      if (product) {
+        // 1. Textos Generales
+        document.title = product.name + " - Doctor Rayo";
+        document.querySelector('.product-title').textContent = product.name + " - Libre";
+        document.getElementById('breadcrumb-name').textContent = product.name;
+        document.querySelector('.current-price').textContent = product.price;
+
+        // 2. Especificaciones Dinámicas
+        document.getElementById('spec-bat').textContent = product.detalles.bateria;
+        document.getElementById('spec-cap').textContent = product.specs;
+        document.getElementById('spec-pan').textContent = product.detalles.pantalla;
+        document.getElementById('estado-label').textContent = product.estado;
+        document.getElementById('capacidad-label').textContent = product.specs;
+
+        // 3. Matemáticas: Calcular el ahorro real
+        const savingsBox = document.getElementById('savings-box');
+        if (product.priceFrom) {
+          document.querySelector('.old-price').textContent = 'Nuevo: ' + product.priceFrom;
+          // Limpiamos los signos de peso y puntos para poder restar
+          const numOld = parseInt(product.priceFrom.replace(/\D/g, ''));
+          const numCurrent = parseInt(product.price.replace(/\D/g, ''));
+          const ahorro = numOld - numCurrent;
+          
+          if (ahorro > 0) {
+            document.getElementById('savings-amount').textContent = 'Ahorras $ ' + ahorro.toLocaleString('es-CO');
+            savingsBox.style.display = 'flex';
+          } else {
+            savingsBox.style.display = 'none';
+          }
+        } else {
+          savingsBox.style.display = 'none';
+        }
+
+        // 4. Imágenes
+        document.getElementById('img-main').src = product.img;
+        document.querySelectorAll('.img-thumb').forEach(img => img.src = product.img);
+
+        // 5. ¡Aparece la página suavemente!
+        coreSection.style.opacity = '1';
+
+      } else {
+        document.querySelector('.product-title').textContent = "Celular no encontrado";
+        coreSection.style.opacity = '1';
+      }
+
+      // LÓGICA DE LA GALERÍA
+      const mainImage = document.getElementById('img-main');
+      const thumbnails = document.querySelectorAll('.thumb');
       thumbnails.forEach(thumb => {
         thumb.addEventListener('click', function() {
           thumbnails.forEach(t => t.classList.remove('active'));
           this.classList.add('active');
-          const newImageSrc = this.querySelector('img').getAttribute('src');
-          mainImage.setAttribute('src', newImageSrc);
+          mainImage.setAttribute('src', this.querySelector('img').getAttribute('src'));
         });
       });
 

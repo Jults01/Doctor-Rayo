@@ -19,9 +19,10 @@ body { font-family: 'Poppins', sans-serif; background-color: #ffffff; color: var
 /* GRID PRINCIPAL (Layout Asimétrico) */
 .product-core { 
   display: grid; 
-  grid-template-columns: 1.3fr 1fr; /* Columna de fotos más ancha */
+  grid-template-columns: 1.3fr 1fr; 
   gap: 60px; 
-  align-items: start; /* Vital para que la caja sticky funcione bien */
+  align-items: start;
+  transition: opacity 0.4s ease-in-out; /* NUEVO: Hace que la carga del JS sea súper suave */
 }
 
 /* COLUMNA IZQUIERDA: GALERÍA */
@@ -47,13 +48,13 @@ body { font-family: 'Poppins', sans-serif; background-color: #ffffff; color: var
 .thumb:hover { border-color: #d1d5db; }
 .thumb.active { border-color: var(--color-text-dark); background: #fff; }
 
-/* DETALLES Y ESPECIFICACIONES (Debajo de fotos) */
+/* DETALLES Y ESPECIFICACIONES */
 .product-details-extended { margin-top: 50px; border-top: 1px solid var(--color-border); padding-top: 40px; }
 .product-details-extended h2 { font-size: 1.5rem; margin-bottom: 15px; }
 .product-details-extended p { color: var(--color-text-medium); line-height: 1.7; margin-bottom: 15px; font-size: 1.05rem; }
 .mt-40 { margin-top: 40px; }
 
-.specs-list { list-style: none; padding: 0; }
+.specs-list { list-style: none; padding: 0; margin: 0; }
 .specs-list li { display: flex; justify-content: space-between; padding: 16px 0; border-bottom: 1px solid var(--color-border); }
 .spec-label { font-weight: 600; display: flex; align-items: center; gap: 12px; }
 .spec-label i { color: var(--color-text-medium); font-size: 1.1rem; width: 20px; text-align: center; }
@@ -61,8 +62,8 @@ body { font-family: 'Poppins', sans-serif; background-color: #ffffff; color: var
 /* COLUMNA DERECHA: CAJA DE COMPRA (Sticky) */
 .product-checkout-wrapper {
   position: sticky; 
-  top: 30px; /* Margen al hacer scroll */
-  align-self: start; /* Fix del scroll */
+  top: 30px; 
+  align-self: start; 
 }
 .product-checkout-card {
   background: #ffffff;
