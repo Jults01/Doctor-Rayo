@@ -4,18 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cargando Producto... | Doctor Rayo</title>
-  <meta name="description" content="Compra tu celular usado como nuevo, certificado y con garantía en Bogotá.">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <link rel="stylesheet" href="css/comprar.css?v=2.0"> 
-  <link rel="stylesheet" href="css/producto.css?v=3.0">
+  <link rel="stylesheet" href="css/producto.css?v=7.0">
 </head>
 <body>
 
-  <!-- HEADER REAL -->
   <header class="main-header">
     <div class="container">
       <div class="header-wrapper">
@@ -34,77 +32,52 @@
   <main class="product-page">
     <div class="container">
       
-      <!-- Migas de pan (Breadcrumbs) -->
       <nav class="breadcrumbs">
         <a href="index.html">Inicio</a> <i class="fas fa-chevron-right"></i> 
         <a href="comprar.html">Celulares</a> <i class="fas fa-chevron-right"></i> 
         <span id="breadcrumb-name">Cargando...</span>
       </nav>
 
-      <!-- ESTRUCTURA PRINCIPAL (Oculta por defecto para evitar el flash fantasma) -->
-      <section class="product-core" id="main-product-core" style="opacity: 0; transition: opacity 0.4s ease;">
+      <section class="product-core" id="main-product-core" style="opacity: 0;">
         
-        <!-- COLUMNA IZQUIERDA: GALERÍA Y DETALLES -->
-        <div class="product-gallery">
-          
-          <div class="main-image">
-            <img src="" alt="Celular" id="img-main">
+        <!-- COLUMNA IZQUIERDA (Solo Fotos) -->
+        <div class="product-left-column">
+          <div class="product-gallery">
+            <div class="main-image"><img src="" alt="Celular" id="img-main"></div>
+            <div class="thumbnail-list">
+              <div class="thumb active"><img src="" alt="Frontal" class="img-thumb"></div>
+              <div class="thumb"><img src="" alt="Trasera" class="img-thumb"></div>
+              <div class="thumb"><img src="" alt="Cámara" class="img-thumb"></div>
+            </div>
           </div>
-          <div class="thumbnail-list">
-            <div class="thumb active"><img src="" alt="Frontal" class="img-thumb"></div>
-            <div class="thumb"><img src="" alt="Trasera" class="img-thumb"></div>
-            <div class="thumb"><img src="" alt="Cámara" class="img-thumb"></div>
-          </div>
-
-          <!-- LA DESCRIPCIÓN Y ESPECIFICACIONES -->
-          <div class="product-details-extended">
-            <h2>¿Por qué elegir este equipo?</h2>
-            <p>Este equipo redefine lo que un smartphone puede hacer. Ofrece una fluidez brutal para aplicaciones exigentes y captura un nivel de detalle asombroso.</p>
-            <p>Al comprar con <strong>Doctor Rayo</strong>, te llevas un celular minuciosamente testeado en más de 30 puntos de control, garantizando que su rendimiento y batería estén al máximo nivel para acompañarte todo el día.</p>
-            
-            <h2 class="mt-40">Especificaciones Clave</h2>
-            <ul class="specs-list">
-              <li><span class="spec-label"><i class="fas fa-battery-full"></i> Salud de Batería</span><span class="spec-value" id="spec-bat">Calculando...</span></li>
-              <li><span class="spec-label"><i class="fas fa-hdd"></i> Almacenamiento</span><span class="spec-value" id="spec-cap">Calculando...</span></li>
-              <li><span class="spec-label"><i class="fas fa-mobile-alt"></i> Pantalla</span><span class="spec-value" id="spec-pan">Calculando...</span></li>
-              <li><span class="spec-label"><i class="fas fa-unlock-alt"></i> Red</span><span class="spec-value">Libre de fábrica</span></li>
-            </ul>
-          </div>
-
         </div>
 
-        <!-- COLUMNA DERECHA: CAJA DE COMPRA (Sticky) -->
+        <!-- COLUMNA DERECHA: CONFIGURADOR PREMIUM Y CROSS-SELL -->
         <div class="product-checkout-wrapper">
           <div class="product-checkout-card">
             
             <h1 class="product-title">Cargando...</h1>
-            
-            <!-- Reseñas -->
-            <div class="product-reviews">
+            <div class="product-reviews-mini">
               <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></span>
-              <span class="review-count">4.8 (124 opiniones)</span>
+              <a href="#reviews" class="review-count">Ver 124 reseñas</a>
             </div>
             
-            <!-- Precio Pro -->
             <div class="product-price-box">
-              <div class="price-main">
-                <span class="current-price">Calculando...</span>
-                <span class="currency">COP</span>
-              </div>
+              <div class="price-main"><span class="current-price" id="final-price">--</span><span class="currency">COP</span></div>
               <div class="price-secondary" id="savings-box">
                 <span class="old-price">Nuevo: --</span>
                 <span class="savings-badge" id="savings-amount">Ahorras --</span>
               </div>
+              <div class="free-shipping-badge"><i class="fas fa-truck"></i> Envío gratis estándar</div>
             </div>
 
             <!-- Selector: Estado Estético -->
             <div class="product-options">
-              <h3>Estado Estético <i class="fas fa-info-circle tooltip-icon"></i></h3>
+              <h3>Estado Estético</h3>
               <div class="option-group">
-                <label class="radio-btn">
-                  <input type="radio" name="estado" value="excelente" checked>
-                  <span class="radio-label" id="estado-label">Excelente</span>
-                </label>
+                <label class="radio-btn"><input type="radio" name="estado" value="0" class="price-modifier" checked><span class="radio-label">Excelente</span></label>
+                <label class="radio-btn"><input type="radio" name="estado" value="-150000" class="price-modifier"><span class="radio-label">Muy Bueno</span></label>
+                <label class="radio-btn"><input type="radio" name="estado" value="-300000" class="price-modifier"><span class="radio-label">Correcto</span></label>
               </div>
             </div>
 
@@ -112,115 +85,242 @@
             <div class="product-options">
               <h3>Capacidad</h3>
               <div class="option-group">
-                <label class="radio-btn">
-                  <input type="radio" name="capacidad" value="current" checked>
-                  <span class="radio-label" id="capacidad-label">-- GB</span>
+                <label class="radio-btn"><input type="radio" name="capacidad" value="0" class="price-modifier" checked><span class="radio-label" id="cap-base">128 GB</span></label>
+                <label class="radio-btn"><input type="radio" name="capacidad" value="250000" class="price-modifier"><span class="radio-label">256 GB</span></label>
+                <label class="radio-btn"><input type="radio" name="capacidad" value="450000" class="price-modifier"><span class="radio-label">512 GB</span></label>
+              </div>
+            </div>
+
+            <!-- Selector: Batería -->
+            <div class="product-options">
+              <h3>Salud de Batería</h3>
+              <div class="option-group">
+                <label class="radio-btn"><input type="radio" name="bateria" value="0" class="price-modifier" checked>
+                  <span class="radio-label">Estándar (85%+)<br><strong class="op-price" id="label-bat-estandar">--</strong></span>
+                </label>
+                <label class="radio-btn"><input type="radio" name="bateria" value="120000" class="price-modifier">
+                  <span class="radio-label">Nueva (100%)<br><strong class="op-price" id="label-bat-nueva">--</strong></span>
                 </label>
               </div>
             </div>
 
-            <!-- Botón Transaccional -->
-            <button class="btn-add-cart">
-              <i class="fas fa-shopping-cart"></i> Añadir al Carrito
-            </button>
-            
-            <!-- Badges de confianza -->
-            <div class="checkout-trust">
-              <div class="trust-row"><i class="fas fa-shield-halved"></i> <span><strong>12 meses</strong> de Garantía Doctor Rayo</span></div>
-              <div class="trust-row"><i class="fas fa-motorcycle"></i> <span>Envío rápido y seguro en <strong>Bogotá</strong></span></div>
-              <div class="trust-row"><i class="fas fa-lock"></i> <span>Pago <strong>100% seguro</strong> al recibir</span></div>
+            <!-- Plan Retoma -->
+            <div class="trade-in-box">
+              <div class="trade-in-header">
+                <h4><i class="fas fa-exchange-alt"></i> Plan Retoma Doctor Rayo</h4>
+              </div>
+              <p>¿Tienes un celular para cambiar? Te lo compramos y descontamos el valor de tu nuevo equipo.</p>
+              <!-- Botón ajustado al tamaño del texto -->
+              <button class="btn-outline-tradein">Cotizar mi equipo</button>
+            </div>
+
+            <!-- Accesorios Imprescindibles -->
+            <div class="cross-sell-box">
+              <h3>Agrega los imprescindibles</h3>
+              <label class="accessory-item">
+                <div class="acc-info">
+                  <input type="checkbox" class="acc-checkbox price-modifier" value="60000">
+                  <div class="acc-icon-box"><i class="fas fa-plug"></i></div>
+                  <div class="acc-text"><span class="acc-name">Cargador Rápido 20W</span><span class="acc-price">+$ 60.000</span></div>
+                </div>
+              </label>
+              <label class="accessory-item">
+                <div class="acc-info">
+                  <input type="checkbox" class="acc-checkbox price-modifier" value="30000">
+                  <div class="acc-icon-box"><i class="fas fa-mobile-screen"></i></div>
+                  <div class="acc-text"><span class="acc-name">Vidrio Templado Premium</span><span class="acc-price">+$ 30.000</span></div>
+                </div>
+              </label>
+            </div>
+
+            <!-- Botón de añadir carrito ajustado al texto -->
+            <div class="checkout-action">
+              <button class="btn-add-cart"><i class="fas fa-shopping-cart"></i> Añadir al Carrito</button>
             </div>
 
           </div>
         </div>
-
       </section>
+
+<!-- 1. FRANJA DE CONFIANZA ANIMADA -->
+    <section class="trust-banner">
+      <div class="container">
+        <div class="trust-pill">
+          <!-- El contenedor que se mueve -->
+          <div class="trust-track">
+            <!-- Bloque 1 -->
+            <div class="trust-item"><div class="t-icon"><i class="fas fa-check-double"></i></div><span>Revisión técnica certificada</span></div>
+            <div class="trust-item"><div class="t-icon"><i class="fas fa-shield-alt"></i></div><span>12 meses de garantía</span></div>
+            <div class="trust-item"><div class="t-icon"><i class="fas fa-handshake"></i></div><span>Pago seguro contra entrega</span></div>
+            <div class="trust-item"><div class="t-icon"><i class="fas fa-motorcycle"></i></div><span>Entrega a domicilio Bogotá</span></div>
+            <!-- Bloque 2 (Duplicado exacto para el efecto infinito) -->
+            <div class="trust-item"><div class="t-icon"><i class="fas fa-check-double"></i></div><span>Revisión técnica certificada</span></div>
+            <div class="trust-item"><div class="t-icon"><i class="fas fa-shield-alt"></i></div><span>12 meses de garantía</span></div>
+            <div class="trust-item"><div class="t-icon"><i class="fas fa-handshake"></i></div><span>Pago seguro contra entrega</span></div>
+            <div class="trust-item"><div class="t-icon"><i class="fas fa-motorcycle"></i></div><span>Entrega a domicilio Bogotá</span></div>
+          </div>
+        </div>
+      </div>
+      </section>
+
+      <!-- FICHA TÉCNICA EN RECUADROS -->
+      <section class="detailed-specs-section mt-60">
+        <h2 id="specs-title">Todo lo que necesitas saber</h2>
+        <div class="tech-specs-boxes">
+          <div class="ts-box">
+            <span class="ts-value" id="ts-brand">Apple</span>
+            <span class="ts-label">Marca</span>
+          </div>
+          <div class="ts-box">
+            <span class="ts-value">Libre / 5G</span>
+            <span class="ts-label">Cobertura</span>
+          </div>
+          <div class="ts-box">
+            <span class="ts-value">12 megapixels</span>
+            <span class="ts-label">Cámara frontal</span>
+          </div>
+          <div class="ts-box">
+            <span class="ts-value" id="ts-memory">128 GB</span>
+            <span class="ts-label">Memoria (GB)</span>
+          </div>
+          <div class="ts-box">
+            <span class="ts-value">Super Retina</span>
+            <span class="ts-label">Pantalla</span>
+          </div>
+          <div class="ts-box">
+            <span class="ts-value">Nano SIM / eSIM</span>
+            <span class="ts-label">Tarjeta SIM</span>
+          </div>
+          <div class="ts-box">
+            <span class="ts-value">Face ID</span>
+            <span class="ts-label">Seguridad</span>
+          </div>
+          <div class="ts-box">
+            <span class="ts-value">Sí</span>
+            <span class="ts-label">NFC</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- RESEÑAS MINIMALISTAS -->
+      <section id="reviews" class="social-proof-section mt-60">
+        <h2>Experiencias Reales</h2>
+        <div class="reviews-grid">
+          <div class="review-card-minimal">
+            <div class="review-content">
+              <div class="review-header">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <span class="verified"><i class="fas fa-check-circle"></i> Compra Verificada</span>
+              </div>
+              <p class="review-text">"Me llegó a mi oficina en Chapinero. Pude revisar la batería y cámaras antes de pagar. Literal parece sacado de la caja."</p>
+              <span class="review-author">- Carlos Mendoza, Bogotá</span>
+            </div>
+            <div class="review-thumb"><img src="img/iphone14promax.png" alt="Cliente"></div>
+          </div>
+          <div class="review-card-minimal">
+            <div class="review-content">
+              <div class="review-header">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <span class="verified"><i class="fas fa-check-circle"></i> Compra Verificada</span>
+              </div>
+              <p class="review-text">"Entregué mi iPhone 11 en parte de pago. El proceso fue rápido y el descuento valió toda la pena. Lo recomiendo."</p>
+              <span class="review-author">- Laura G., Bogotá</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RELACIONADOS -->
+      <section class="related-products-section mt-60">
+        <h2>También te puede interesar</h2>
+        <div class="products-grid" id="related-products-grid"></div>
+      </section>
+
     </div>
   </main>
 
-  <!-- FOOTER REAL -->
-  <footer class="main-footer">
+  <footer class="main-footer mt-60">
     <div class="footer-wrapper container">
       <div class="footer-column"><h3>Doctor Rayo</h3><p>Sitio ideal para comprar, vender o reparar tu celular.</p></div>
       <div class="footer-column"><h3>Servicios</h3><ul><li><a href="comprar.html">Comprar</a></li><li><a href="renueva.html">Vender</a></li><li><a href="reparacion.html">Reparar</a></li></ul></div>
       <div class="footer-column"><h3>Contacto</h3><p>Teléfono: +57 304 6486740</p><p>Bogotá, Colombia</p></div>
     </div>
-    <div class="footer-bottom"><p>&copy; <span id="current-year">2026</span> Doctor Rayo. Todos los derechos reservados.</p></div>
   </footer>
 
-  <!-- SCRIPT CEREBRO MEJORADO -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       
       const products = [
-        { id: 201, name: 'iPhone 15 Pro Max', specs: '256GB', priceFrom: '$ 3.290.000', price: '$ 3.150.000', img: 'img/iphone15promax.png', estado: 'Como nuevo', detalles: { bateria: '88%', pantalla: '6.7" Super Retina XDR' } },
-        { id: 202, name: 'Samsung S25 Ultra', specs: '256GB', priceFrom: '$ 4.050.000', price: '$ 3.900.000', img: 'img/samsungs25ultra.png', estado: 'Nuevo', detalles: { bateria: '100%', pantalla: '6.8" Dynamic AMOLED' } },
-        { id: 203, name: 'iPhone 15 Pro', specs: '128GB', priceFrom: '$ 2.750.000', price: '$ 2.600.000', img: 'img/iph15pro.png', estado: 'Muy bueno', detalles: { bateria: '91%', pantalla: '6.1" Super Retina XDR' } },
-        { id: 204, name: 'iPhone 14 Pro Max', specs: '256GB', priceFrom: '$ 4.500.000', price: '$ 3.850.000', img: 'img/iphone14promax.png', estado: 'Como nuevo', detalles: { bateria: '89%', pantalla: '6.7" Super Retina XDR' } },
-        { id: 205, name: 'iPhone 13', specs: '128GB', priceFrom: '$ 1.650.000', price: '$ 1.500.000', img: 'img/iphone13-card.png', estado: 'Excelente', detalles: { bateria: '90%', pantalla: '6.1" Super Retina XDR' } },
-        { id: 206, name: 'iPhone 14', specs: '128GB', priceFrom: '$ 1.700.000', price: '$ 1.550.000', img: 'img/iphone14-card.png', estado: 'Como nuevo', detalles: { bateria: '90%', pantalla: '6.1" Super Retina XDR' } },
-        { id: 207, name: 'iPhone 17', specs: '256GB', priceFrom: '$ 4.200.000', price: '$ 4.000.000', img: 'img/iphone17-card.png', estado: 'Nuevo', detalles: { bateria: '100%', pantalla: '6.1" Super Retina XDR' } },
-        { id: 208, name: 'iPhone 17 Pro', specs: '256GB', priceFrom: '$ 5.600.000', price: '$ 5.300.000', img: 'img/iphone17pro-card.png', estado: 'Nuevo', detalles: { bateria: '100%', pantalla: '6.3" Super Retina XDR' } }
+        { id: 201, name: 'iPhone 15 Pro Max', specs: '256GB', priceFrom: '$ 3.290.000', price: '$ 3.150.000', img: 'img/iphone15promax.png', marca: 'Apple' },
+        { id: 202, name: 'Samsung S25 Ultra', specs: '256GB', priceFrom: '$ 4.050.000', price: '$ 3.900.000', img: 'img/samsungs25ultra.png', marca: 'Samsung' },
+        { id: 203, name: 'iPhone 15 Pro', specs: '128GB', priceFrom: '$ 2.750.000', price: '$ 2.600.000', img: 'img/iph15pro.png', marca: 'Apple' },
+        { id: 204, name: 'iPhone 14 Pro Max', specs: '256GB', priceFrom: '$ 4.500.000', price: '$ 3.850.000', img: 'img/iphone14promax.png', marca: 'Apple' },
+        { id: 205, name: 'iPhone 13', specs: '128GB', priceFrom: '$ 1.650.000', price: '$ 1.500.000', img: 'img/iphone13-card.png', marca: 'Apple' },
+        { id: 206, name: 'iPhone 14', specs: '128GB', priceFrom: '$ 1.700.000', price: '$ 1.550.000', img: 'img/iphone14-card.png', marca: 'Apple' }
       ];
 
       const urlParams = new URLSearchParams(window.location.search);
-      const idParam = urlParams.get('id');
+      const idParam = parseInt(urlParams.get('id'));
       const coreSection = document.getElementById('main-product-core');
+      let basePrice = 0;
 
       if (!idParam) {
-        document.querySelector('.product-title').textContent = "Celular no seleccionado";
+        document.querySelector('.product-title').textContent = "No seleccionado";
         coreSection.style.opacity = '1';
         return;
       }
 
-      const product = products.find(p => p.id === parseInt(idParam));
+      const product = products.find(p => p.id === idParam);
 
       if (product) {
-        // 1. Textos Generales
         document.title = product.name + " - Doctor Rayo";
-        document.querySelector('.product-title').textContent = product.name + " - Libre";
+        document.querySelector('.product-title').textContent = product.name;
         document.getElementById('breadcrumb-name').textContent = product.name;
-        document.querySelector('.current-price').textContent = product.price;
+        document.getElementById('cap-base').textContent = product.specs;
+        
+        // Ficha Técnica Inferior
+        document.getElementById('specs-title').textContent = product.name + ': todo lo que necesitas saber';
+        document.getElementById('ts-brand').textContent = product.marca;
+        document.getElementById('ts-memory').textContent = product.specs;
+        
+        basePrice = parseInt(product.price.replace(/\D/g, ''));
+        document.getElementById('final-price').textContent = '$ ' + basePrice.toLocaleString('es-CO');
+        
+        // Inyectar precios exactos en la caja de batería
+        document.getElementById('label-bat-estandar').textContent = '$ ' + basePrice.toLocaleString('es-CO');
+        document.getElementById('label-bat-nueva').textContent = '$ ' + (basePrice + 120000).toLocaleString('es-CO');
 
-        // 2. Especificaciones Dinámicas
-        document.getElementById('spec-bat').textContent = product.detalles.bateria;
-        document.getElementById('spec-cap').textContent = product.specs;
-        document.getElementById('spec-pan').textContent = product.detalles.pantalla;
-        document.getElementById('estado-label').textContent = product.estado;
-        document.getElementById('capacidad-label').textContent = product.specs;
-
-        // 3. Matemáticas: Calcular el ahorro real
         const savingsBox = document.getElementById('savings-box');
         if (product.priceFrom) {
           document.querySelector('.old-price').textContent = 'Nuevo: ' + product.priceFrom;
-          // Limpiamos los signos de peso y puntos para poder restar
           const numOld = parseInt(product.priceFrom.replace(/\D/g, ''));
-          const numCurrent = parseInt(product.price.replace(/\D/g, ''));
-          const ahorro = numOld - numCurrent;
-          
+          const ahorro = numOld - basePrice;
           if (ahorro > 0) {
             document.getElementById('savings-amount').textContent = 'Ahorras $ ' + ahorro.toLocaleString('es-CO');
             savingsBox.style.display = 'flex';
-          } else {
-            savingsBox.style.display = 'none';
-          }
-        } else {
-          savingsBox.style.display = 'none';
-        }
+          } else { savingsBox.style.display = 'none'; }
+        } else { savingsBox.style.display = 'none'; }
 
-        // 4. Imágenes
         document.getElementById('img-main').src = product.img;
         document.querySelectorAll('.img-thumb').forEach(img => img.src = product.img);
 
-        // 5. ¡Aparece la página suavemente!
         coreSection.style.opacity = '1';
-
-      } else {
-        document.querySelector('.product-title').textContent = "Celular no encontrado";
-        coreSection.style.opacity = '1';
+        renderRelatedProducts(idParam);
       }
 
-      // LÓGICA DE LA GALERÍA
+      function calcularPrecioTotal() {
+        let extraTotal = 0;
+        document.querySelectorAll('.price-modifier:checked').forEach(input => {
+          extraTotal += parseInt(input.value);
+        });
+        const finalPrice = basePrice + extraTotal;
+        document.getElementById('final-price').textContent = '$ ' + finalPrice.toLocaleString('es-CO');
+      }
+
+      document.querySelectorAll('.price-modifier').forEach(element => {
+        element.addEventListener('change', calcularPrecioTotal);
+      });
+
       const mainImage = document.getElementById('img-main');
       const thumbnails = document.querySelectorAll('.thumb');
       thumbnails.forEach(thumb => {
@@ -231,6 +331,24 @@
         });
       });
 
+      function renderRelatedProducts(currentId) {
+        const relatedGrid = document.getElementById('related-products-grid');
+        const related = products.filter(p => p.id !== currentId).slice(0, 4); 
+        related.forEach(p => {
+          let cardHTML = `
+            <div class="product-card" onclick="window.location.href='producto.html?id=${p.id}'" style="cursor:pointer; background:#fff; border:1px solid #e5e7eb; border-radius:16px; padding:20px; transition:all 0.2s;">
+              <div style="display:flex; justify-content:center; margin-bottom:15px; height:180px;"><img src="${p.img}" alt="${p.name}" style="height:100%; object-fit:contain;"></div>
+              <div>
+                <h3 style="font-size:1.05rem; font-weight:700; margin-bottom:5px;">${p.name}</h3>
+                <p style="font-size:0.85rem; color:#4b5563; margin-bottom:10px;">${p.specs}</p>
+                <div style="display:flex; align-items:baseline; gap:8px;">
+                  <span style="font-size:1.2rem; font-weight:700;">${p.price}</span>
+                </div>
+              </div>
+            </div>`;
+          relatedGrid.innerHTML += cardHTML;
+        });
+      }
     });
   </script>
 </body>
