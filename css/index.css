@@ -185,7 +185,11 @@ img { max-width: 100%; height: auto; }
 @media (max-width: 768px) {
   /* Header y Hero */
   .header-wrapper { flex-direction: column; padding: var(--space-md) 0; }
-  .header-nav { display: none; }
+  /* MENÚ MÓVIL: tres opciones siempre visibles */
+  .header-nav { display: block; width: 100%; margin: 8px 0 0; }
+  .nav-menu { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin: 0; padding: 0; }
+  .nav-menu li a { display: block; text-align: center; padding: 8px 4px; font-size: 0.9rem; background: #f3f4f6; border-radius: 8px; }
+  .nav-menu li a[aria-current="page"] { background: var(--color-primary); color: #fff; }
   .hero-kavak { height: 220px; background-size: 100% auto; background-position: center center; background-repeat: no-repeat; }
   .hero-content { padding: 0 15px; }
   .hero-title { font-size: 1.8rem; margin-bottom: 10px; }

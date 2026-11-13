@@ -37,13 +37,8 @@ img { max-width: 100%; height: auto; display: block; }
 .main-header { background: var(--color-white); padding: 10px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
 .header-wrapper { display: flex; justify-content: space-between; align-items: center; }
 
-.logo h1 {
-  font-size: 32px; font-weight: 700;
-  background: linear-gradient(135deg, #e60000, #ff4444);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-  transition: all 0.3s ease;
-}
-.logo h1:hover { transform: scale(1.05); }
+.logo h1 { font-size: 32px; font-weight: 800; color: var(--color-primary); font-family: 'Poppins', sans-serif; text-transform: uppercase; letter-spacing: -0.5px; text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.08); transition: all 0.3s ease; margin: 0; }
+.logo h1:hover { transform: scale(1.02); color: #ff1a1a; text-shadow: 0px 6px 12px rgba(230, 0, 0, 0.2); }
 
 .header-nav { margin-left: auto; }
 .nav-menu { display: flex; gap: 0.5rem; list-style: none; align-items: center; }
@@ -140,8 +135,12 @@ img { max-width: 100%; height: auto; display: block; }
 
 @media (max-width: 767px) {
   .header-wrapper { flex-direction: column; gap: 0; padding: 5px 10px; }
-  .logo h1 { font-size: 1.5rem; margin: 0; }
-  .header-nav { display: none; }
+  .logo h1 { font-size: 1.6rem; color: var(--color-primary); line-height: 1; letter-spacing: -0.5px; text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05); }
+  /* MENÚ MÓVIL: tres opciones siempre visibles */
+  .header-nav { display: block; width: 100%; margin: 8px 0 0; }
+  .nav-menu { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin: 0; padding: 0; }
+  .nav-menu li a { display: block; text-align: center; padding: 8px 4px; font-size: 0.9rem; background: #f3f4f6; border-radius: 8px; }
+  .nav-menu li a[aria-current="page"] { background: var(--color-primary); color: #fff; }
   .hero { height: 35vh; min-height: 280px; background-position: center bottom; background-size: cover; }
   .hero-overlay { padding: 15px; max-width: 95%; }
   .hero-overlay h2 { font-size: 1.8rem; margin-bottom: 10px; }

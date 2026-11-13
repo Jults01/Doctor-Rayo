@@ -11,7 +11,8 @@ body.modal-open { overflow: hidden; }
 /* HEADER */
 .main-header { background: var(--color-white); padding: 10px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
 .header-wrapper { display: flex; justify-content: space-between; align-items: center; }
-.logo h1 { font-weight: 800; color: var(--color-primary); font-size: 32px; text-transform: uppercase; margin: 0; letter-spacing: -0.5px; }
+.logo h1 { font-size: 32px; font-weight: 800; color: #e60000; font-family: 'Poppins', sans-serif; text-transform: uppercase; letter-spacing: -0.5px; text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.08); transition: all 0.3s ease; margin: 0; }
+.logo h1:hover { transform: scale(1.02); color: #ff1a1a; text-shadow: 0px 6px 12px rgba(230, 0, 0, 0.2); }
 .header-nav { margin-left: auto; } .nav-menu { display: flex; gap: .5rem; list-style: none; align-items: center; }
 .nav-menu li a { font-weight: 600; color: var(--color-text-medium); padding: .6rem 1.2rem; border-radius: 6px; transition: 0.3s; }
 .nav-menu li a:hover { color: var(--color-primary); } .nav-vender { background: #f0f0f0; }
@@ -110,7 +111,12 @@ body.modal-open { overflow: hidden; }
 @media (max-width: 768px) {
   /* Header y Hero */
   .header-wrapper { flex-direction: column; padding: 10px; } 
-  .header-nav { display: none; }
+  .logo h1 { font-size: 1.6rem; color: #e60000; line-height: 1; letter-spacing: -0.5px; text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05); }
+  /* MENÚ MÓVIL: tres opciones siempre visibles */
+  .header-nav { display: block; width: 100%; margin: 8px 0 0; }
+  .nav-menu { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin: 0; padding: 0; }
+  .nav-menu li a { display: block; text-align: center; padding: 8px 4px; font-size: 0.9rem; background: #f3f4f6; border-radius: 8px; }
+  .nav-menu li a[aria-current="page"] { background: var(--color-primary); color: #fff; }
   .comprar-hero { height: 220px; background-size: cover; background-position: center; } 
   .comprar-overlay h1 { font-size: 1.8rem; margin-bottom: 10px; }
   .comprar-overlay p { font-size: 0.95rem; }
