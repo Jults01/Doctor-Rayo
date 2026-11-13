@@ -124,3 +124,28 @@ body { font-family: 'Poppins', sans-serif; background-color: #ffffff; color: var
   .trust-track-static::-webkit-scrollbar { display: none; }
   .trust-item { flex: 0 0 auto; padding: 0 25px 0 0; }
 }
+
+/* =====================================================
+   FICHA CONECTADA AL CATÁLOGO (js/productos.js)
+   ===================================================== */
+.condicion-badge { display:inline-block; background:#111827; color:#fff; font-size:.72rem; font-weight:700; text-transform:uppercase; padding:4px 10px; border-radius:20px; margin-bottom:10px; letter-spacing:.3px; }
+.product-subtitle { color:var(--color-text-medium); font-size:.9rem; margin:0 0 18px; }
+.garantia-badge { font-size:.9rem; font-weight:600; color:var(--color-text-dark); display:flex; align-items:center; gap:6px; }
+.datos-rapidos { display:flex; flex-wrap:wrap; gap:8px; margin:-10px 0 24px; }
+.datos-rapidos span { background:#f3f4f6; border-radius:8px; padding:6px 10px; font-size:.8rem; font-weight:600; }
+.datos-rapidos i { color:var(--color-text-medium); margin-right:3px; }
+.bateria-nota, .acc-nota { font-size:.78rem; color:var(--color-text-medium); margin:8px 0 0; }
+.foto-real-nota { font-size:.8rem; color:var(--color-text-medium); margin:0; text-align:center; }
+.btn-add-cart { width:auto; padding:12px 28px; font-size:1rem; font-weight:600; text-decoration:none; background:#25d366; }
+.btn-add-cart:hover { background:#1ebe57; box-shadow:0 8px 20px rgba(37,211,102,.25); }
+.btn-outline-tradein { display:inline-block; text-decoration:none; color:var(--color-text-dark); }
+.trade-in-box { text-align:left; }
+.rel-card { display:block; text-decoration:none; color:inherit; background:#fff; border:1px solid #e5e7eb; border-radius:16px; padding:20px; transition:all .2s; }
+.rel-img { display:flex; justify-content:center; height:170px; margin-bottom:12px; }
+.rel-img img { height:100%; object-fit:contain; }
+.rel-card h3 { font-size:1.05rem; font-weight:700; margin:0 0 4px; }
+.rel-card p { font-size:.85rem; color:#4b5563; margin:0 0 8px; }
+.rel-card strong { font-size:1.15rem; }
+.no-disponible { text-align:center; padding:60px 20px; }
+.no-disponible h1 { font-size:1.6rem; margin-bottom:10px; }
+.no-disponible p { color:var(--color-text-medium); margin-bottom:20px; }

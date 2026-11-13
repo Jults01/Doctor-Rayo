@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <link rel="stylesheet" href="css/comprar.css?v=2.0"> 
-  <link rel="stylesheet" href="css/producto.css?v=7.0">
+  <link rel="stylesheet" href="css/producto.css?v=8.0">
 </head>
 <body>
 
@@ -31,113 +31,72 @@
 
   <main class="product-page">
     <div class="container">
-      
+
       <nav class="breadcrumbs">
-        <a href="index.html">Inicio</a> <i class="fas fa-chevron-right"></i> 
-        <a href="comprar.html">Celulares</a> <i class="fas fa-chevron-right"></i> 
+        <a href="index.html">Inicio</a> <i class="fas fa-chevron-right"></i>
+        <a href="comprar.html">Celulares</a> <i class="fas fa-chevron-right"></i>
         <span id="breadcrumb-name">Cargando...</span>
       </nav>
 
       <section class="product-core" id="main-product-core" style="opacity: 0;">
-        
-        <!-- COLUMNA IZQUIERDA (Solo Fotos) -->
+        <!-- COLUMNA IZQUIERDA: FOTOS REALES DEL EQUIPO -->
         <div class="product-left-column">
           <div class="product-gallery">
-            <div class="main-image"><img src="" alt="Celular" id="img-main"></div>
-            <div class="thumbnail-list">
-              <div class="thumb active"><img src="" alt="Frontal" class="img-thumb"></div>
-              <div class="thumb"><img src="" alt="Trasera" class="img-thumb"></div>
-              <div class="thumb"><img src="" alt="Cámara" class="img-thumb"></div>
-            </div>
+            <div class="main-image"><img src="" alt="" id="img-main"></div>
+            <div class="thumbnail-list" id="thumbs"></div>
+            <p class="foto-real-nota"><i class="fas fa-camera"></i> <span id="foto-nota"></span></p>
           </div>
         </div>
 
-        <!-- COLUMNA DERECHA: CONFIGURADOR PREMIUM Y CROSS-SELL -->
+        <!-- COLUMNA DERECHA: COMPRA -->
         <div class="product-checkout-wrapper">
           <div class="product-checkout-card">
-            
+            <span class="condicion-badge" id="condicion">--</span>
             <h1 class="product-title">Cargando...</h1>
-            <div class="product-reviews-mini">
-              <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></span>
-              <a href="#reviews" class="review-count">Ver 124 reseñas</a>
-            </div>
-            
+            <p class="product-subtitle" id="subtitulo">--</p>
+
             <div class="product-price-box">
               <div class="price-main"><span class="current-price" id="final-price">--</span><span class="currency">COP</span></div>
-              <div class="price-secondary" id="savings-box">
-                <span class="old-price">Nuevo: --</span>
-                <span class="savings-badge" id="savings-amount">Ahorras --</span>
-              </div>
-              <div class="free-shipping-badge"><i class="fas fa-truck"></i> Envío gratis estándar</div>
+              <div class="free-shipping-badge"><i class="fas fa-truck"></i> <span id="envio">--</span></div>
+              <div class="garantia-badge"><i class="fas fa-shield-alt"></i> <span id="garantia">--</span></div>
             </div>
 
-            <!-- Selector: Estado Estético -->
-            <div class="product-options">
-              <h3>Estado Estético</h3>
-              <div class="option-group">
-                <label class="radio-btn"><input type="radio" name="estado" value="0" class="price-modifier" checked><span class="radio-label">Excelente</span></label>
-                <label class="radio-btn"><input type="radio" name="estado" value="-150000" class="price-modifier"><span class="radio-label">Muy Bueno</span></label>
-                <label class="radio-btn"><input type="radio" name="estado" value="-300000" class="price-modifier"><span class="radio-label">Correcto</span></label>
-              </div>
-            </div>
+            <!-- Datos clave del equipo -->
+            <div class="datos-rapidos" id="datos-rapidos"></div>
 
-            <!-- Selector: Capacidad -->
-            <div class="product-options">
-              <h3>Capacidad</h3>
+            <!-- Batería (solo si se ofrece cambio) -->
+            <div class="product-options" id="bateria-box">
+              <h3>Batería</h3>
               <div class="option-group">
-                <label class="radio-btn"><input type="radio" name="capacidad" value="0" class="price-modifier" checked><span class="radio-label" id="cap-base">128 GB</span></label>
-                <label class="radio-btn"><input type="radio" name="capacidad" value="250000" class="price-modifier"><span class="radio-label">256 GB</span></label>
-                <label class="radio-btn"><input type="radio" name="capacidad" value="450000" class="price-modifier"><span class="radio-label">512 GB</span></label>
-              </div>
-            </div>
-
-            <!-- Selector: Batería -->
-            <div class="product-options">
-              <h3>Salud de Batería</h3>
-              <div class="option-group">
-                <label class="radio-btn"><input type="radio" name="bateria" value="0" class="price-modifier" checked>
-                  <span class="radio-label">Estándar (85%+)<br><strong class="op-price" id="label-bat-estandar">--</strong></span>
+                <label class="radio-btn"><input type="radio" name="bateria" value="0" checked>
+                  <span class="radio-label"><span>Batería actual: <b id="bat-actual">--</b></span><strong class="op-price" id="label-bat-actual">--</strong></span>
                 </label>
-                <label class="radio-btn"><input type="radio" name="bateria" value="120000" class="price-modifier">
-                  <span class="radio-label">Nueva (100%)<br><strong class="op-price" id="label-bat-nueva">--</strong></span>
+                <label class="radio-btn"><input type="radio" name="bateria" value="" id="bat-nueva-input">
+                  <span class="radio-label"><span>Batería nueva</span><strong class="op-price" id="label-bat-nueva">--</strong></span>
                 </label>
               </div>
+              <p class="bateria-nota" id="bateria-nota"></p>
+            </div>
+
+            <!-- Accesorios sin precio -->
+            <div class="cross-sell-box">
+              <h3>¿Quieres agregar accesorios?</h3>
+              <div id="accesorios"></div>
+              <p class="acc-nota">Te confirmamos el precio por WhatsApp.</p>
+            </div>
+
+            <div class="checkout-action">
+              <a class="btn-add-cart" id="btn-comprar" href="#" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Comprar por WhatsApp</a>
             </div>
 
             <!-- Plan Retoma -->
-            <div class="trade-in-box">
+            <div class="trade-in-box" style="margin-top:25px;">
               <div class="trade-in-header">
-                <h4><i class="fas fa-exchange-alt"></i> Plan Retoma Doctor Rayo</h4>
+                <h4><i class="fas fa-exchange-alt"></i> Entrega tu celular como parte de pago</h4>
               </div>
-              <p>¿Tienes un celular para cambiar? Te lo compramos y descontamos el valor de tu nuevo equipo.</p>
-              <!-- Botón ajustado al tamaño del texto -->
-              <button class="btn-outline-tradein">Cotizar mi equipo</button>
+              <p>Cuéntanos qué equipo tienes y te damos un valor. Lo descontamos del precio de este equipo.</p>
+              <a class="btn-outline-tradein" id="btn-retoma" href="#" target="_blank" rel="noopener">Cotizar mi celular</a>
             </div>
-
-            <!-- Accesorios Imprescindibles -->
-            <div class="cross-sell-box">
-              <h3>Agrega los imprescindibles</h3>
-              <label class="accessory-item">
-                <div class="acc-info">
-                  <input type="checkbox" class="acc-checkbox price-modifier" value="60000">
-                  <div class="acc-icon-box"><i class="fas fa-plug"></i></div>
-                  <div class="acc-text"><span class="acc-name">Cargador Rápido 20W</span><span class="acc-price">+$ 60.000</span></div>
-                </div>
-              </label>
-              <label class="accessory-item">
-                <div class="acc-info">
-                  <input type="checkbox" class="acc-checkbox price-modifier" value="30000">
-                  <div class="acc-icon-box"><i class="fas fa-mobile-screen"></i></div>
-                  <div class="acc-text"><span class="acc-name">Vidrio Templado Premium</span><span class="acc-price">+$ 30.000</span></div>
-                </div>
-              </label>
-            </div>
-
-            <!-- Botón de añadir carrito ajustado al texto -->
-            <div class="checkout-action">
-              <button class="btn-add-cart"><i class="fas fa-shopping-cart"></i> Añadir al Carrito</button>
-            </div>
-
           </div>
         </div>
       </section>
@@ -146,14 +105,11 @@
     <section class="trust-banner">
       <div class="container">
         <div class="trust-pill">
-          <!-- El contenedor que se mueve -->
           <div class="trust-track">
-            <!-- Bloque 1 -->
             <div class="trust-item"><div class="t-icon"><i class="fas fa-check-double"></i></div><span>Revisión técnica certificada</span></div>
             <div class="trust-item"><div class="t-icon"><i class="fas fa-shield-alt"></i></div><span>12 meses de garantía</span></div>
             <div class="trust-item"><div class="t-icon"><i class="fas fa-handshake"></i></div><span>Pago seguro contra entrega</span></div>
             <div class="trust-item"><div class="t-icon"><i class="fas fa-motorcycle"></i></div><span>Entrega a domicilio Bogotá</span></div>
-            <!-- Bloque 2 (Duplicado exacto para el efecto infinito) -->
             <div class="trust-item"><div class="t-icon"><i class="fas fa-check-double"></i></div><span>Revisión técnica certificada</span></div>
             <div class="trust-item"><div class="t-icon"><i class="fas fa-shield-alt"></i></div><span>12 meses de garantía</span></div>
             <div class="trust-item"><div class="t-icon"><i class="fas fa-handshake"></i></div><span>Pago seguro contra entrega</span></div>
@@ -161,73 +117,12 @@
           </div>
         </div>
       </div>
-      </section>
+    </section>
 
-      <!-- FICHA TÉCNICA EN RECUADROS -->
+      <!-- DATOS DE ESTE EQUIPO -->
       <section class="detailed-specs-section mt-60">
-        <h2 id="specs-title">Todo lo que necesitas saber</h2>
-        <div class="tech-specs-boxes">
-          <div class="ts-box">
-            <span class="ts-value" id="ts-brand">Apple</span>
-            <span class="ts-label">Marca</span>
-          </div>
-          <div class="ts-box">
-            <span class="ts-value">Libre / 5G</span>
-            <span class="ts-label">Cobertura</span>
-          </div>
-          <div class="ts-box">
-            <span class="ts-value">12 megapixels</span>
-            <span class="ts-label">Cámara frontal</span>
-          </div>
-          <div class="ts-box">
-            <span class="ts-value" id="ts-memory">128 GB</span>
-            <span class="ts-label">Memoria (GB)</span>
-          </div>
-          <div class="ts-box">
-            <span class="ts-value">Super Retina</span>
-            <span class="ts-label">Pantalla</span>
-          </div>
-          <div class="ts-box">
-            <span class="ts-value">Nano SIM / eSIM</span>
-            <span class="ts-label">Tarjeta SIM</span>
-          </div>
-          <div class="ts-box">
-            <span class="ts-value">Face ID</span>
-            <span class="ts-label">Seguridad</span>
-          </div>
-          <div class="ts-box">
-            <span class="ts-value">Sí</span>
-            <span class="ts-label">NFC</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- RESEÑAS MINIMALISTAS -->
-      <section id="reviews" class="social-proof-section mt-60">
-        <h2>Experiencias Reales</h2>
-        <div class="reviews-grid">
-          <div class="review-card-minimal">
-            <div class="review-content">
-              <div class="review-header">
-                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <span class="verified"><i class="fas fa-check-circle"></i> Compra Verificada</span>
-              </div>
-              <p class="review-text">"Me llegó a mi oficina en Chapinero. Pude revisar la batería y cámaras antes de pagar. Literal parece sacado de la caja."</p>
-              <span class="review-author">- Carlos Mendoza, Bogotá</span>
-            </div>
-            <div class="review-thumb"><img src="img/iphone14promax.png" alt="Cliente"></div>
-          </div>
-          <div class="review-card-minimal">
-            <div class="review-content">
-              <div class="review-header">
-                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <span class="verified"><i class="fas fa-check-circle"></i> Compra Verificada</span>
-              </div>
-              <p class="review-text">"Entregué mi iPhone 11 en parte de pago. El proceso fue rápido y el descuento valió toda la pena. Lo recomiendo."</p>
-              <span class="review-author">- Laura G., Bogotá</span>
-            </div>
-          </div>
-        </div>
+        <h2 id="specs-title">Datos de este equipo</h2>
+        <div class="tech-specs-boxes" id="ficha"></div>
       </section>
 
       <!-- RELACIONADOS -->
@@ -235,7 +130,6 @@
         <h2>También te puede interesar</h2>
         <div class="products-grid" id="related-products-grid"></div>
       </section>
-
     </div>
   </main>
 
@@ -247,108 +141,129 @@
     </div>
   </footer>
 
+  <script src="js/productos.js?v=1"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      
-      const products = [
-        { id: 201, name: 'iPhone 15 Pro Max', specs: '256GB', priceFrom: '$ 3.290.000', price: '$ 3.150.000', img: 'img/iphone15promax.png', marca: 'Apple' },
-        { id: 202, name: 'Samsung S25 Ultra', specs: '256GB', priceFrom: '$ 4.050.000', price: '$ 3.900.000', img: 'img/samsungs25ultra.png', marca: 'Samsung' },
-        { id: 203, name: 'iPhone 15 Pro', specs: '128GB', priceFrom: '$ 2.750.000', price: '$ 2.600.000', img: 'img/iph15pro.png', marca: 'Apple' },
-        { id: 204, name: 'iPhone 14 Pro Max', specs: '256GB', priceFrom: '$ 4.500.000', price: '$ 3.850.000', img: 'img/iphone14promax.png', marca: 'Apple' },
-        { id: 205, name: 'iPhone 13', specs: '128GB', priceFrom: '$ 1.650.000', price: '$ 1.500.000', img: 'img/iphone13-card.png', marca: 'Apple' },
-        { id: 206, name: 'iPhone 14', specs: '128GB', priceFrom: '$ 1.700.000', price: '$ 1.550.000', img: 'img/iphone14-card.png', marca: 'Apple' }
-      ];
+    document.addEventListener('DOMContentLoaded', function () {
+      const pesos = n => '$ ' + n.toLocaleString('es-CO');
+      const wa = txt => 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(txt);
+      const core = document.getElementById('main-product-core');
+      let codigo = (new URLSearchParams(location.search).get('id') || '').trim().toUpperCase();
+      if (/^\d+$/.test(codigo)) codigo = 'DR-' + codigo;   // enlaces antiguos: ?id=203
+      const eq = EQUIPOS.find(e => e.codigo === codigo && e.disponible);
 
-      const urlParams = new URLSearchParams(window.location.search);
-      const idParam = parseInt(urlParams.get('id'));
-      const coreSection = document.getElementById('main-product-core');
-      let basePrice = 0;
-
-      if (!idParam) {
-        document.querySelector('.product-title').textContent = "No seleccionado";
-        coreSection.style.opacity = '1';
+      if (!eq) {
+        document.title = 'Equipo no disponible | Doctor Rayo';
+        document.getElementById('breadcrumb-name').textContent = 'No disponible';
+        core.innerHTML = '<div class="no-disponible"><h1>Este equipo ya no está disponible</h1>' +
+          '<p>Es posible que ya se haya vendido. Mira los equipos que tenemos hoy.</p>' +
+          '<a class="btn-outline-tradein" href="comprar.html">Ver celulares disponibles</a></div>';
+        core.style.display = 'block';
+        core.style.opacity = '1';
+        document.querySelector('.detailed-specs-section').style.display = 'none';
+        document.querySelector('.related-products-section').style.display = 'none';
         return;
       }
 
-      const product = products.find(p => p.id === idParam);
+      const nombre = eq.modelo;
+      const esNuevo = eq.condicion === 'Nuevo';
+      document.title = nombre + ' ' + eq.capacidad + ' | Doctor Rayo';
+      document.getElementById('breadcrumb-name').textContent = nombre;
+      document.querySelector('.product-title').textContent = nombre;
+      document.getElementById('subtitulo').textContent = eq.capacidad + ' · ' + eq.color + ' · Código ' + eq.codigo;
+      document.getElementById('condicion').textContent = esNuevo ? 'Nuevo' : 'Usado · ' + eq.estado;
+      document.getElementById('envio').textContent = CONFIG.envio;
+      document.getElementById('garantia').textContent = 'Garantía de ' + CONFIG.garantiaMeses + ' meses';
+      // "Fotos reales" solo si las fotos están en img/equipos/ (fotos tomadas al equipo)
+      const fotosReales = eq.fotos.length && eq.fotos.every(f => f.indexOf('img/equipos/') === 0);
+      document.getElementById('foto-nota').textContent = fotosReales ? 'Fotos reales de este equipo'
+        : (esNuevo ? 'Imagen de referencia · Equipo sellado en caja' : 'Imagen de referencia');
 
-      if (product) {
-        document.title = product.name + " - Doctor Rayo";
-        document.querySelector('.product-title').textContent = product.name;
-        document.getElementById('breadcrumb-name').textContent = product.name;
-        document.getElementById('cap-base').textContent = product.specs;
-        
-        // Ficha Técnica Inferior
-        document.getElementById('specs-title').textContent = product.name + ': todo lo que necesitas saber';
-        document.getElementById('ts-brand').textContent = product.marca;
-        document.getElementById('ts-memory').textContent = product.specs;
-        
-        basePrice = parseInt(product.price.replace(/\D/g, ''));
-        document.getElementById('final-price').textContent = '$ ' + basePrice.toLocaleString('es-CO');
-        
-        // Inyectar precios exactos en la caja de batería
-        document.getElementById('label-bat-estandar').textContent = '$ ' + basePrice.toLocaleString('es-CO');
-        document.getElementById('label-bat-nueva').textContent = '$ ' + (basePrice + 120000).toLocaleString('es-CO');
-
-        const savingsBox = document.getElementById('savings-box');
-        if (product.priceFrom) {
-          document.querySelector('.old-price').textContent = 'Nuevo: ' + product.priceFrom;
-          const numOld = parseInt(product.priceFrom.replace(/\D/g, ''));
-          const ahorro = numOld - basePrice;
-          if (ahorro > 0) {
-            document.getElementById('savings-amount').textContent = 'Ahorras $ ' + ahorro.toLocaleString('es-CO');
-            savingsBox.style.display = 'flex';
-          } else { savingsBox.style.display = 'none'; }
-        } else { savingsBox.style.display = 'none'; }
-
-        document.getElementById('img-main').src = product.img;
-        document.querySelectorAll('.img-thumb').forEach(img => img.src = product.img);
-
-        coreSection.style.opacity = '1';
-        renderRelatedProducts(idParam);
-      }
-
-      function calcularPrecioTotal() {
-        let extraTotal = 0;
-        document.querySelectorAll('.price-modifier:checked').forEach(input => {
-          extraTotal += parseInt(input.value);
-        });
-        const finalPrice = basePrice + extraTotal;
-        document.getElementById('final-price').textContent = '$ ' + finalPrice.toLocaleString('es-CO');
-      }
-
-      document.querySelectorAll('.price-modifier').forEach(element => {
-        element.addEventListener('change', calcularPrecioTotal);
-      });
-
-      const mainImage = document.getElementById('img-main');
-      const thumbnails = document.querySelectorAll('.thumb');
-      thumbnails.forEach(thumb => {
-        thumb.addEventListener('click', function() {
-          thumbnails.forEach(t => t.classList.remove('active'));
-          this.classList.add('active');
-          mainImage.setAttribute('src', this.querySelector('img').getAttribute('src'));
-        });
-      });
-
-      function renderRelatedProducts(currentId) {
-        const relatedGrid = document.getElementById('related-products-grid');
-        const related = products.filter(p => p.id !== currentId).slice(0, 4); 
-        related.forEach(p => {
-          let cardHTML = `
-            <div class="product-card" onclick="window.location.href='producto.html?id=${p.id}'" style="cursor:pointer; background:#fff; border:1px solid #e5e7eb; border-radius:16px; padding:20px; transition:all 0.2s;">
-              <div style="display:flex; justify-content:center; margin-bottom:15px; height:180px;"><img src="${p.img}" alt="${p.name}" style="height:100%; object-fit:contain;"></div>
-              <div>
-                <h3 style="font-size:1.05rem; font-weight:700; margin-bottom:5px;">${p.name}</h3>
-                <p style="font-size:0.85rem; color:#4b5563; margin-bottom:10px;">${p.specs}</p>
-                <div style="display:flex; align-items:baseline; gap:8px;">
-                  <span style="font-size:1.2rem; font-weight:700;">${p.price}</span>
-                </div>
-              </div>
-            </div>`;
-          relatedGrid.innerHTML += cardHTML;
+      // Fotos
+      const main = document.getElementById('img-main');
+      main.src = eq.fotos[0]; main.alt = nombre;
+      const thumbs = document.getElementById('thumbs');
+      if (eq.fotos.length > 1) {
+        eq.fotos.forEach((f, i) => {
+          const t = document.createElement('div');
+          t.className = 'thumb' + (i === 0 ? ' active' : '');
+          t.innerHTML = '<img src="' + f + '" alt="' + nombre + ' foto ' + (i + 1) + '">';
+          t.onclick = () => { thumbs.querySelectorAll('.thumb').forEach(x => x.classList.remove('active')); t.classList.add('active'); main.src = f; };
+          thumbs.appendChild(t);
         });
       }
+
+      // Datos rápidos
+      const rapidos = [
+        ['fa-hdd', eq.capacidad],
+        ['fa-battery-full', 'Batería ' + eq.bateria + '%'],
+        ['fa-palette', eq.color]
+      ];
+      document.getElementById('datos-rapidos').innerHTML = rapidos.map(d => '<span><i class="fas ' + d[0] + '"></i> ' + d[1] + '</span>').join('');
+
+      // Batería
+      const batBox = document.getElementById('bateria-box');
+      if (eq.precioBateriaNueva && eq.bateria < 100) {
+        document.getElementById('bat-actual').textContent = eq.bateria + '%';
+        document.getElementById('label-bat-actual').textContent = pesos(eq.precio);
+        document.getElementById('label-bat-nueva').textContent = pesos(eq.precio + eq.precioBateriaNueva);
+        document.getElementById('bat-nueva-input').value = eq.precioBateriaNueva;
+        document.getElementById('bateria-nota').textContent = 'Instalada por nuestro técnico' + (CONFIG.garantiaBateriaMeses ? ', con garantía de ' + CONFIG.garantiaBateriaMeses + ' meses.' : '.');
+      } else {
+        batBox.style.display = 'none';
+      }
+
+      // Accesorios
+      document.getElementById('accesorios').innerHTML = CONFIG.accesorios.map(a =>
+        '<label class="accessory-item"><div class="acc-info"><input type="checkbox" class="acc-checkbox" value="' + a + '"><span class="acc-name">' + a + '</span></div></label>'
+      ).join('');
+
+      // Ficha "Datos de este equipo"
+      const si = v => v ? 'Sí' : 'No';
+      const ficha = [
+        ['Condición', esNuevo ? 'Nuevo, sellado' : 'Usado · ' + eq.estado],
+        ['Capacidad', eq.capacidad],
+        ['Color', eq.color],
+        ['Salud de batería', eq.bateria + '%'],
+        ['IMEI verificado', si(eq.imeiVerificado)],
+        ['Libre de operador', si(eq.libreOperador)],
+        ['Cuenta desvinculada', si(eq.cuentaDesvinculada)],
+        ['Reparaciones previas', eq.reparaciones],
+        ['Piezas', eq.piezas],
+        ['Garantía', CONFIG.garantiaMeses + ' meses']
+      ];
+      if (eq.nota) ficha.push(['Detalle', eq.nota]);
+      document.getElementById('ficha').innerHTML = ficha.map(f =>
+        '<div class="ts-box"><span class="ts-value">' + f[1] + '</span><span class="ts-label">' + f[0] + '</span></div>').join('');
+
+      // Precio y botón de compra
+      function actualizar() {
+        const bat = document.querySelector('input[name="bateria"]:checked');
+        const extraBat = bat ? parseInt(bat.value || 0) : 0;
+        const total = eq.precio + extraBat;
+        document.getElementById('final-price').textContent = pesos(total);
+        const acc = [...document.querySelectorAll('.acc-checkbox:checked')].map(c => c.value);
+        let msg = 'Hola Doctor Rayo, quiero comprar este equipo:\n' +
+          '• ' + nombre + ' ' + eq.capacidad + ' ' + eq.color + '\n' +
+          '• Código: ' + eq.codigo + '\n' +
+          '• Precio: ' + pesos(total) + (extraBat ? ' (con batería nueva)' : '');
+        if (acc.length) msg += '\n• Accesorios: ' + acc.join(', ');
+        msg += '\n¿Está disponible?';
+        document.getElementById('btn-comprar').href = wa(msg);
+      }
+      document.querySelectorAll('input[name="bateria"], .acc-checkbox').forEach(i => i.addEventListener('change', actualizar));
+      actualizar();
+
+      document.getElementById('btn-retoma').href = wa('Hola Doctor Rayo, me interesa el ' + nombre + ' (' + eq.codigo + ') y quiero entregar mi celular en parte de pago. Mi equipo es: ');
+
+      // Relacionados
+      document.getElementById('related-products-grid').innerHTML = EQUIPOS
+        .filter(e => e.disponible && e.codigo !== eq.codigo).slice(0, 4)
+        .map(e => '<a class="product-card rel-card" href="producto.html?id=' + e.codigo + '">' +
+          '<div class="rel-img"><img src="' + e.fotos[0] + '" alt="' + e.modelo + '"></div>' +
+          '<h3>' + e.modelo + '</h3><p>' + e.capacidad + ' · Batería ' + e.bateria + '%</p>' +
+          '<strong>' + pesos(e.precio) + '</strong></a>').join('');
+
+      core.style.opacity = '1';
     });
   </script>
 </body>
