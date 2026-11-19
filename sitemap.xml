@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Va en la raíz del sitio: https://doctorrayo.com/sitemap.xml
+     Usa la MISMA dirección de cada página que su etiqueta canonical (con o sin www, con o sin .html). -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://doctorrayo.com/</loc>
+  </url>
+  <url>
+    <loc>https://doctorrayo.com/renueva.html</loc>
+    <lastmod>2026-11-18</lastmod>
+  </url>
+  <url>
+    <loc>https://doctorrayo.com/comprar.html</loc>
+  </url>
+  <url>
+    <loc>https://doctorrayo.com/reparacion.html</loc>
+  </url>
+</urlset>

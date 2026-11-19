@@ -1,0 +1,6 @@
+# robots.txt - Doctor Rayo
+# Va en la raíz del sitio: https://doctorrayo.com/robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://doctorrayo.com/sitemap.xml
