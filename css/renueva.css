@@ -214,7 +214,8 @@ input[type=number] { -moz-appearance: textfield; }
   .nav-menu li a { display: block; text-align: center; padding: 8px 4px; font-size: 0.9rem; background: #f3f4f6; border-radius: 8px; }
   .nav-menu li a[aria-current="page"] { background: var(--color-primary); color: #fff; }
 
-  .hero { height: auto; min-height: max(35vh, 280px); padding: 20px 0; }
+  /* Mismo alto que Inicio y Comprar en celular (220px); crece solo si el texto no cabe */
+  .hero { height: auto; min-height: 220px; padding: 12px 0; }
   .hero-overlay { padding: 0 15px; }
   .hero-overlay h1 { font-size: 1.8rem; margin-bottom: 10px; }
   .hero-overlay p { font-size: 0.95rem; margin-bottom: 15px; }
